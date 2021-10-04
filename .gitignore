@@ -37,6 +37,8 @@
 *.synctex.gz
 *.synctex.gz(busy)
 *.pdfsync
+*.xmpdata
+*.xmpi
 
 ## Auxiliary and intermediate files from other packages:
 # algorithms
