@@ -15,13 +15,19 @@
 
 \chapter*{Sommario}
 
-Il presente documento descrive il lavoro svolto durante il periodo di stage, della durata di circa trecento ore, dal laureando Pinco Pallino presso l'azienda Azienda S.p.A.
-Gli obbiettivi da raggiungere erano molteplici.\\
-In primo luogo era richiesto lo sviluppo di ...
-In secondo luogo era richiesta l'implementazione di un ... 
-Tale framework permette di registrare gli eventi di un controllore programmabile, quali segnali applicati 
-Terzo ed ultimo obbiettivo era l'integrazione ...
-
+Il presente documento descrive il lavoro svolto durante il periodo di stage, della durata di 320 ore, dal laureando \myName presso l'azienda \myCompany, situata a Padova.
+Lo stage ha avuto come argomento principale l'integrazione di un nuovo microservizio nel \textit{back-end} dell'applicazione \textbf{\textit{SportWill}}.
+La \textit{web app} di \textbf{\textit{SportWill}} dà modo all'utente di divulgare la sua intenzione (\textit{will}) di effettuare un'attività sportiva. La piattaforma fa vedere tutto a tutti, rendendo troppo caotica la fruizione. 
+L'esigenza è di dare la possibilità all'utente (con le nuove implementazioni) di creare uno o più gruppi a cui utenti \enquote*{amici} possano unirsi, quindi vedere solo le \enquote*{will} di gruppo.
+Le attività svolte nel corso dello stage sono \textbf{DA SCRIVERE}.
+La prima è un \gls{microservizio} Java sviluppato mediante il \gls{framework} \gls{Spring} che consente di effettuare le funzionalità \gls{CRUD} sui gruppi, 
+la visualizzazione delle \enquote*{will} degli utenti appartenenti allo stesso gruppo.\\
+La seconda è la modifica dei microservizi esistenti affinchè le \enquote*{Will} possano essere visualizzate o da tutti gli utenti oppure solo dagli utenti appartenenti agli stessi gruppi.\\
+La terza è l'implementazione di un microservizio, sviluppato sempre mediante il \textit{framework} Spring, che permette di aggregare le chiamate 
+alle \gls{api} dei vari servizi presenti e restituire i risultati appropriati.
+La quarta è l'implementazione di un \gls{Eureka Server} un microservizio che contiene le informazioni su tutti i servizi che si registrano nel suo server.
+La quinta è la \gls{containerizzazione} di tutti i microservizi su \gls{Docker}.
+L'ultima attività è stata la modifica del \textit{front-end}, mediante il framework \textbf{Angular}, per adeguarla alle nuove funzionalità del \textit{back-end}.
 %\vfill
 %
 %\selectlanguage{english}
