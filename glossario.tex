@@ -10,6 +10,9 @@
 \newacronym[description={\glslink{umlg}{Unified Modeling Language}}]
     {uml}{UML}{Unified Modeling Language}
 
+\newacronym[description={\glslink{CRUDg}{Create Read Update Delete}}]
+    {CRUD}{CRUD}{Create Read Update Delete}
+
 %**************************************************************
 % Glossario
 %**************************************************************
@@ -34,7 +37,8 @@
 \newglossaryentry{microservizio}
 {
     name={microservizio},
-    description={}
+    description={},
+    plural = {microservizi}
 }
 
 \newglossaryentry{framework}
@@ -48,10 +52,12 @@
     description={}
 }
 
-\newglossaryentry{CRUD}
+\newglossaryentry{CRUDg}
 {
     name={CRUD},
-    description={}
+    description={Operazioni di base che possono essere svolte su un database. In particolare,
+    sono creazione (Create), lettura (Read), modifica/aggiornamento (Update) ed
+    eliminazione (Delete).}
 }
 
 \newglossaryentry{API Gateway}
