@@ -13,6 +13,8 @@
 \newacronym[description={\glslink{CRUDg}{Create Read Update Delete}}]
     {CRUD}{CRUD}{Create Read Update Delete}
 
+\newacronym[description={\glslink{ICTg}{Create Read Update Delete}}]
+    {ICT}{ICT}{Information and Comunications Tecnology}
 %**************************************************************
 % Glossario
 %**************************************************************
@@ -73,6 +75,13 @@
 }
 
 
+\newglossaryentry{will}
+{
+    name={\textit{will}},
+    description={Intenzione di un utente di fare sport.}
+}
+
+
 \newglossaryentry{containerizzazione}
 {
     name={containerizzazione},
@@ -85,6 +94,15 @@
     description={}
 }
 
+\newglossaryentry{ICTg}
+{
+    name={ICT},
+    description={in informatica con il termine \textit{Information and Comunications Tecnology} 
+    si indica l'insieme dei metodi e delle tecniche utilizzate nella trasmissione, ricezione 
+    ed elaborazione di dati e informazioni.}
+}
 
 
-
+% Customize the format of the first use.  See the manual for details if
+% you want to include more information here such as the definition.
+\defglsdisplayfirst[\glsdefaulttype]{#1\glsfirstoccur}

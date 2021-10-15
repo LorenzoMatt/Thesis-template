@@ -15,24 +15,24 @@
 
 \chapter*{Sommario}
 
-Il presente documento descrive il lavoro svolto durante il periodo di stage, della durata di 320 ore, dal laureando \myName presso
+Il presente documento descrive il lavoro svolto durante il periodo di stage, della durata di 320 ore, dal laureando \myName\xspace presso
  l'azienda \myCompany, situata a Padova.
-Lo stage ha avuto come argomento principale l'implementazione di nuove funzionalità nel contesto dell'applicazione \textbf{\textit{SportWill}}, una
-\textit{web app} che dà modo all'utente di divulgare la sua intenzione (\textit{will}) di effettuare un'attività sportiva.
+Lo stage ha avuto come argomento principale l'implementazione di nuove funzionalità nel contesto dell'applicazione \productName, una
+\textit{web app} che dà modo all'utente di divulgare la sua intenzione (\gls{will}) di effettuare un'attività sportiva.
 La piattaforma fa vedere tutto a tutti, rendendo troppo caotica la fruizione, quindi l'esigenza era di dare la possibilità all'utente 
-di creare uno o più gruppi a cui utenti \enquote*{amici} possano unirsi, vedendo quindi solo le \textit{will} di gruppo.
+di creare uno o più gruppi a cui utenti \enquote*{amici} possano unirsi, vedendo quindi solo le \gls{will} di gruppo.
 Le attività svolte nel corso dello stage sono due:
 \begin{itemize}
     \item la prima è un insieme di attività che sono legate al \textit{back-end} della \textit{web app}, come lo sviluppo di tre \glspl{microservizio} mediante il \gls{framework} \gls{Spring} Java. 
     In particolare: 
         \begin{enumerate}
-            \item il primo microservizio consente l'effettuazione delle funzionalità \gls{CRUD} per la gestione dei gruppi e la visualizzazione delle \textit{will} 
+            \item il primo microservizio consente l'effettuazione delle funzionalità \gls{CRUD} per la gestione dei gruppi e la visualizzazione delle \gls{will} 
             degli utenti appartenenti allo stesso gruppo;
             \item il secondo è l'implementazione di un \gls{API Gateway}, che permette di esporre le \gls{api} dei vari servizi presenti in un 
             unico punto di accesso;
             \item il terzo è l'implementazione di un \gls{Eureka Server} che contiene le informazioni di tutti i servizi che si registrano nel suo server.
         \end{enumerate}
-    Oltre all'implementazione di nuovi microservizi, quelli esistenti sono stati modificati affinchè le \textit{will} possano
+    Oltre all'implementazione di nuovi microservizi, quelli esistenti sono stati modificati affinchè le \gls{will} possano
     essere visualizzate o da tutti gli utenti oppure solo dagli utenti appartenenti agli stessi gruppi. 
     Ultimate le attività lato \textit{back-end}, è stata effettuata la \gls{containerizzazione} di tutti i microservizi su Docker.
     \item La seconda attività è stata la modifica del \textit{front-end}, mediante il framework \gls{Angular}, per adeguarla alle nuove funzionalità del \textit{back-end}.
