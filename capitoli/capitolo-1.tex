@@ -17,7 +17,7 @@ Durante la stesura del documento sono state adottate le seguenti convenzioni tip
 % % TODO: da rimuovere il testo scritto sotto
 
 % \noindent Esempio di utilizzo di un termine nel glossario \\
-% \gls{api}. \\
+% \gls{API}. \\
 
 % \noindent Esempio di citazione in linea \\
 % \cite{site:agile-manifesto}. \\
@@ -53,14 +53,79 @@ la suddivisione delle visualizzazioni delle \gls{will} solo agli utenti che
 appartengono agli stessi gruppi.\\
 Gli obbiettivi da raggiungere nel corso dello stage sono principalmente due:
 \begin{itemize}
-    \item sviluppo di un microservizio utilizzando il \gls{framework} \gls{Spring} Java per la creazione dei gruppi;
-    \item modifica dei microservizi esistenti affinchè permettano la visualizzazione solo delle \gls{will} di utenti appartenenti allo stesso gruppo.
+    \item sviluppo di un \gls{microservizio} utilizzando il \gls{framework} \gls{Spring} Java per la creazione dei gruppi;
+    \item modifica dei \glspl{microservizio} esistenti affinchè permettano la visualizzazione solo delle \gls{will} di utenti appartenenti allo stesso gruppo.
 \end{itemize}
-Non è richiesta la modifica del \textit{front-end} in modo da adeguarlo alle nuove funzionalità del \textit{back-end}, a meno che 
+Non è richiesta la modifica del \textit{frontend} in modo da adeguarlo alle nuove funzionalità del \textit{backend}, a meno che 
 non rimanga tempo da investire su questa attività.
 
+\section{Strumenti utilizzati}
+\subsection{Visual Studio Code}
+Visual Studio Code è un editor di codice sorgente sviluppato da Microsoft per Windows, Linux e macOS. 
+Include il supporto per debugging, un controllo per Git integrato, Syntax highlighting, IntelliSense, 
+Snippet e refactoring del codice.\\
+Punto di forza di Visual Studio Code sono le estensioni grazie alle quali è possibile ampliare 
+notevolmente le funzionalità del programma.\\
+Le estensioni utilizzate nel corso dello stage sono:
+    \begin{itemize}
+        \item \textbf{GitLens}: permette di ampliare le funzionalità di Git integrate in Visual Studio Code;
+        \item \textbf{Spring Boot Extension Pack}: raccolta di estensioni per lo sviluppo con Spring Boot Application;
+        \item \textbf{W3C Web Validator}: permette di controllare la validità del \textit{markup} dei documenti html e css;
+        \item \textbf{Web Accessibility}: permette di verificare l'accessibilità dei documenti html, evidenziando gli 
+        elementi che si potrebbe prendere in conisderazione di cambiare e dando suggerimenti su come potrebbe modificato;
+        \item \textbf{Docker Extension Pack}: raccolta di estensioni per lo gestione dei \textit{container} Docker, Docker images, Dockerfile e file Docker-compose;
+        \item \textbf{Angular Extension Pack}: raccolta di estensioni per lo sviluppo con Angular;
+        \item \textbf{Extension Pack for Java}: raccolta di estensioni popolari che possono aiutare a scrivere, testare e fare il
+        \textit{debugging} di applicazioni Java.
+    \end{itemize}
+\subsection{Figma}
+Figma è un \textit{tool} per la progettazione di interfacce, che si rivolge principalmente ai \textit{web designer} che hanno bisogno di un software studiato 
+appositamente per realizzare il \textit{design} di siti web e applicazioni.\\
+Nel contesto dello stage è stato utilizzato per la realizzazione delle pagine web per la visualizzazione, creazione e modifica di un gruppo. 
+\subsection{Git}
+\textit{Software} di versionamento utile a tracciare modifiche e cambiamenti di insiemi di file.
+\subsection{Postman}
+Si tratta di uno strumento che permette di eseguire richieste HTTP ad un \textit{server} di \textit{backend}. Quando si lavora con un altro sviluppatore 
+\textit{backend} è possibile condividere le \gls{API}, ma la sua vera forza è quella di farci sapere tutto di una richiesta HTTP.
+\subsection{DbVisualizer}
+DbVisualizer è uno strumento multi-database intuitivo e ricco di funzionalità per sviluppatori, analisti e amministratori di database, che fornisce 
+un'unica, potente interfaccia su un'ampia gamma di sistemi operativi. Grazie alla sua interfaccia chiara e facile da usare, DbVisualizer si è dimostrato 
+uno strumento di database molto conveniente, che funziona su tutti i principali sistemi operativi e supporta molte varietà di database. 
 
-%**************************************************************
+
+\section{Prodotto ottenuto}
+Al termine dello stage le integrazioni delle funzionalità con la \textit{web-app} sono state realizzata con successo. Tutte le chiamate alle \gls{API} 
+sono state testate e sono state integrate anche nel \textit{frontend}. 
+L'integrazione delle nuove funzionalità permettono alla \textit{web-app} di: 
+\begin{itemize}
+    \item  visualizzare le \gls{will} appartenenti agli utenti che partecipano agli stessi 
+    gruppi;
+    \item visualizzare le \gls{will} con visibilità globale (quindi che non sono visibili solo agli utenti che partecipano agli stessi gruppi);
+    \item visualizzare i gruppi a cui partecipa un utente;
+    \item visualizzare e modificare i gruppi creati da un utente;
+    \item visualizzare e cercare i gruppi;
+    \item creare nuovi gruppi.
+\end{itemize}
+% TODO: da vedere dove inserire la prossima sezione
+\pagebreak
+\section{Accessibilità}
+
+Durante la realizzazione del sito è stata resa la navigazione più efficace attraverso l'uso di accesskey.\\
+Le immagini sono tutte marcate con gli appositi \textit{tag alt}, che sono stati lasciati vuoti nel caso servissero solo per il layout.\\
+È presente una barra di navigazione che aiuta a navigare nel sito.\\ 
+Ogni \textit{link} è stato reso distinguibile da ogni altro elemento tramite appositi CSS, \textit{hover} e \textit{visited}, in modo da aiutare l'utente ad orientarsi. \\
+Inoltre, per evitare \textit{link} circolari, nella barra di navigazione le pagine non contengono \textit{link} che navigano alla pagina corrente.\\
+I form contengono dei tag label per ogni input.\\ 
+Non sono stati aggiunti \textit{tag optgroup} o \textit{fieldset} in quanto sono utili nel caso di \textit{form} molto grandi, ma essendo presenti solo \textit{form} di piccole dimensioni è stato ritenuto non necessario.\\ 
+Sono presenti gli attributi \textit{accesskey} con chiave uguale alla prima lettera della parola del \textit{tag label} associato per migliorare l'accessibilità alle \textit{form} da tastiera senza l'uso del \textit{mouse}. 
+Sono presenti degli aiuti contestuali che mostrano gli errori nel caso fossero presenti. Non sono stati aggiunti tabindex nei form dato che l'ordine di tabulazione è già corretto.\\
+Sono stato evitati i tag ed attributi deprecati.\\
+È presente del testo nascosto utile agli utenti con disabilità visive, come il \textit{link} con la funzione  di saltare al contenuto, ovvero di permettere di non far leggere allo \textit{screen reader} la barra di navigazione, passando direttamente al contenuto, ed è presente all'inizio della navigazione
+ per segnalare che le scorciatoie da tastiera sono attive.\\
+Inoltre per migliorare la navigazione dello scroll, viene mostrato un pulsante in basso
+a destra dello schermo e, se un utente lo clicca, viene effettuato uno scroll verso l'alto fino all'inizio della pagina.
+Per agevolare la navigazione è stato inserito un pulsante in basso a destra che, se cliccato, permette di visualizzare l'inizio della pagina. Il pulsante è un \textit{link} con testo nascosto e come immagine di \textit{background} una freccia, in modo che lo \textit{screen reader} riesca comunque a leggere il testo.
+Le parole in lingua straniera sono state racchiuse dentro un \textit{tag} con l'attributo lang, in modo da permettere allo \textit{screen reader} di leggere la parola correttamente.
 \section{Organizzazione del testo}
 
 \begin{description}
