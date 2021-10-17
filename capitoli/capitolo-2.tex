@@ -3,11 +3,111 @@
 % !TEX root = ../tesi.tex
 
 %**************************************************************
-\chapter{Processi e metodologie}
-\label{cap:processi-metodologie}
+\chapter{Descrizione dello stage}
+\label{cap:descrizione-stage}
 %**************************************************************
 
-\intro{Brevissima introduzione al capitolo}\\
-
+\intro{In questo capitolo è presente un'analisi preventiva dei rischi che potevano venire riscontrati
+durante lo svolgimento dello stage, la lista degli obiettivi da raggiungere e la pianificazione
+delle ore di lavoro.}\\
 %**************************************************************
-\section{Processo sviluppo prodotto}
+\section{Analisi preventiva dei rischi}
+
+Qui vengono analizzati i rischi emersi durante la fase di analisi iniziale a cui è possibile incombere.
+Per ogni rischio individuato, si è proceduto ad elaborare un piano di contingenza per far fronte a tali rischi.
+
+\begin{risk}{Inesperienza tecnologica}
+    \riskdescription{le tecnologie da utilizzare sono nuove o esplorate parzialmente, il che può portare
+     alla nascita di problemi operativi}
+    \risksolution{le attività che richiedono maggior tempo oppure con un livello di capacità tecniche elevate
+    saranno trattate per prime, in modo da migliorarle incrementalmente durante il periodo di stage}
+    \label{risk:Inesperienza tecnologica} 
+\end{risk}
+
+\begin{risk}{Problematiche \textit{software} di supporto}
+    \riskdescription{il \textit{computer} in cui si sviluppa il prodotto potrebbe guastarsi, e nel caso 
+    accadesse potrebbe causare gravi ritardi}
+    \risksolution{ad ogni \textit{commit} effettuato è necessario aggiornare la \textit{repository} remota.
+    Inoltre deve essere possibile replicare velocemente l'ambiente di lavoro in un altro \textit{computer} 
+    in modo da tornare operativi nel minor tempo possibile. Un modo per ripristinare velocemente le impostazioni
+    di lavoro è la creazione di una cartella da versionare chiamata \texttt{.vscode} in cui inserire: 
+    \begin{itemize}
+        \item il file \texttt{settings.json}, in cui salvare le impostazioni dell'editor;
+        \item il file \texttt{extensions.json}, in cui aggingere gli id di ogni estensione utilizzata in Visual Studio Code;
+        \item Il file \texttt{launch.json}, che viene usato per configurare il \texttt{debugger} in Visual Studio Code. 
+    \end{itemize}
+    }\label{risk:Problematiche software di supporto}
+\end{risk}
+
+\begin{risk}{Tempistiche}
+    \riskdescription{il tempo di apprendimento di nuove tecnologie potrebbe portare a ritardi sulle scadenze previste. 
+    I ritardi verranno individuati nel caso in cui il lavoro da effettuare si scostasse dalla pianificazione presente su \gls{Trello}}
+    \risksolution{appena si rilevano difficoltà o scostamenti rispetto al piano di lavoro, si dovrà avvisare tempestivamente il 
+    \textit{tutor} aziendale, con cui ci si potrà confrontare, e solo in caso estremo rimandare le scadenze prefissate.}
+    \label{risk:Tempistiche} 
+\end{risk}
+
+\begin{risk}{Impegni personali}
+    \riskdescription{è possibile che vi siano degli impegni personali da adempiere e che di conseguenza abbia meno tempo
+    da poter dedicare allo sviluppo del progetto.}
+    \risksolution{gli incarichi con le relative scadenze sono stati predisposti nel rispetto degli eventuali impegni personali.
+    In caso di imprevisti, bisognerà immediatamente contattare il \textit{tutor} aziendale.}
+    \label{risk:Impegni personali} 
+\end{risk}
+
+\begin{risk}{Interpretazione errata o non sufficiente dei requisiti}
+    \riskdescription{Dopo una prima analisi dei requisiti, è possibile che si noti la necessità di modificare o aggiungere
+     nuovi requisiti in un secondo momento.}
+    \risksolution{Due volte a settimana verrà fatto il punto della situazione con il \textit{tutor} aziendale. 
+    Nel caso si notassero assenze nei requisiti, si procederà alla sua conseguante analisi e si deciderà come 
+    procedere in maniera da limitare un eventuale rallentamento sulla di sviluppo.}
+    \label{risk:Interpretazione errata o non sufficiente dei requisiti} 
+\end{risk}
+%**************************************************************
+\section{Requisiti e obiettivi}
+\subsection*{Notazione}
+Si farà riferimento ai requisiti secondo le seguenti notazioni:
+\begin{itemize}
+	\item \textit{O} per i requisiti obbligatori, vincolanti in quanto obiettivo primario richiesto dal committente;
+	\item \textit{D} per i requisiti desiderabili, non vincolanti o strettamente necessari,
+		  ma dal riconoscibile valore aggiunto;
+	\item \textit{F} per i requisiti facoltativi, rappresentanti valore aggiunto non strettamente 
+		  competitivo.
+\end{itemize}
+
+Le sigle precedentemente indicate saranno seguite da una coppia sequenziale di numeri, identificativo del requisito.
+
+\subsection*{Obiettivi fissati}
+Si prevede lo svolgimento dei seguenti obiettivi:
+\begin{itemize}
+	\item Obbligatori
+	\begin{itemize}
+		\obiettiviObbligatori
+	\end{itemize}
+	
+	\item Desiderabili 
+	\begin{itemize}
+		\obiettiviDesiderabili
+	\end{itemize}
+	
+	\item Facoltativi
+	\begin{itemize}
+		\obiettiviFacoltativi
+	\end{itemize} 
+\end{itemize}
+
+
+\section{Pianificazione del lavoro}
+
+\subsection*{Pianificazione settimanale}
+\prospettoSettimanale
+
+\subsection*{Ripartizione ore}
+La pianificazione, in termini di quantità di ore di lavoro, sarà così distribuita:
+\begin{center}
+    \input{tabelle/tabellaRipartizioneOre.tex}
+\end{center}
+%**************************************************************
+
+% TODO: vedere se aggiungere la sezione sotto
+% \section{Processo sviluppo prodotto}

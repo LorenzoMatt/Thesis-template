@@ -109,35 +109,32 @@ L'integrazione delle nuove funzionalità permettono alla \textit{web-app} di:
 % TODO: da vedere dove inserire la prossima sezione
 \pagebreak
 \section{Accessibilità}
-
 Durante la realizzazione del sito è stata resa la navigazione più efficace attraverso l'uso di accesskey.\\
-Le immagini sono tutte marcate con gli appositi \textit{tag alt}, che sono stati lasciati vuoti nel caso servissero solo per il layout.\\
+Le immagini sono tutte marcate con gli appositi \textit{tag alt}, che sono stati lasciati vuoti nel caso servissero solo per il \textit{layout}.\\
 È presente una barra di navigazione che aiuta a navigare nel sito.\\ 
 Ogni \textit{link} è stato reso distinguibile da ogni altro elemento tramite appositi CSS, \textit{hover} e \textit{visited}, in modo da aiutare l'utente ad orientarsi. \\
 Inoltre, per evitare \textit{link} circolari, nella barra di navigazione le pagine non contengono \textit{link} che navigano alla pagina corrente.\\
 I form contengono dei tag label per ogni input.\\ 
 Non sono stati aggiunti \textit{tag optgroup} o \textit{fieldset} in quanto sono utili nel caso di \textit{form} molto grandi, ma essendo presenti solo \textit{form} di piccole dimensioni è stato ritenuto non necessario.\\ 
 Sono presenti gli attributi \textit{accesskey} con chiave uguale alla prima lettera della parola del \textit{tag label} associato per migliorare l'accessibilità alle \textit{form} da tastiera senza l'uso del \textit{mouse}. 
-Sono presenti degli aiuti contestuali che mostrano gli errori nel caso fossero presenti. Non sono stati aggiunti tabindex nei form dato che l'ordine di tabulazione è già corretto.\\
+Sono presenti degli aiuti contestuali che mostrano gli errori nel caso fossero presenti. Non sono stati aggiunti \textit{tabindex} nei \textit{form} dato che l'ordine di tabulazione è già corretto.\\
 Sono stato evitati i tag ed attributi deprecati.\\
 È presente del testo nascosto utile agli utenti con disabilità visive, come il \textit{link} con la funzione  di saltare al contenuto, ovvero di permettere di non far leggere allo \textit{screen reader} la barra di navigazione, passando direttamente al contenuto, ed è presente all'inizio della navigazione
  per segnalare che le scorciatoie da tastiera sono attive.\\
-Inoltre per migliorare la navigazione dello scroll, viene mostrato un pulsante in basso
-a destra dello schermo e, se un utente lo clicca, viene effettuato uno scroll verso l'alto fino all'inizio della pagina.
-Per agevolare la navigazione è stato inserito un pulsante in basso a destra che, se cliccato, permette di visualizzare l'inizio della pagina. Il pulsante è un \textit{link} con testo nascosto e come immagine di \textit{background} una freccia, in modo che lo \textit{screen reader} riesca comunque a leggere il testo.
-Le parole in lingua straniera sono state racchiuse dentro un \textit{tag} con l'attributo lang, in modo da permettere allo \textit{screen reader} di leggere la parola correttamente.
+Inoltre per migliorare la navigazione dello \textit{scroll}, viene mostrato un pulsante in basso
+a destra dello schermo che, se un utente lo clicca, viene effettuato uno \textit{scroll} verso l'alto fino all'inizio della pagina.\\
+Il pulsante è un \textit{link} con testo nascosto e come immagine di \textit{background} una freccia, in modo che lo \textit{screen reader} riesca comunque a leggere il testo.
+Le parole in lingua straniera sono state racchiuse dentro un \textit{tag} con l'attributo \textit{lang}, in modo da permettere allo \textit{screen reader} di leggere la parola correttamente.
 \section{Organizzazione del testo}
 
-\begin{description}
-    \item[{\hyperref[cap:processi-metodologie]{Il secondo capitolo}}] descrive ...
+\begin{description}    
+    \item[{\hyperref[cap:descrizione-stage]{Il secondo capitolo}}] descrive l'analisi preventiva dei rischi, gli obiettivi dello stage e
+    la pianificazione delle ore di lavoro.
+    \item[{\hyperref[cap:analisi-requisiti]{Il terzo capitolo}}] approfondisce l'analisi dei requisiti del prodotto.
     
-    \item[{\hyperref[cap:descrizione-stage]{Il terzo capitolo}}] approfondisce ...
+    \item[{\hyperref[cap:progettazione-codifica]{Il quarto capitolo}}] approfondisce la fase di progettazione e codifica.
     
-    \item[{\hyperref[cap:analisi-requisiti]{Il quarto capitolo}}] approfondisce ...
+    \item[{\hyperref[cap:verifica-validazione]{Il quinto capitolo}}] approfondisce l'accessibilità e la fase di verifica e validazione.
     
-    \item[{\hyperref[cap:progettazione-codifica]{Il quinto capitolo}}] approfondisce ...
-    
-    \item[{\hyperref[cap:verifica-validazione]{Il sesto capitolo}}] approfondisce ...
-    
-    \item[{\hyperref[cap:conclusioni]{Nel settimo capitolo}}] descrive ...
+    \item[{\hyperref[cap:conclusioni]{Il sesto capitolo}}] contiene un’analisi del lavoro svolto e le conclusioni tratte.
 \end{description}
