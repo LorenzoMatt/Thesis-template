@@ -7,13 +7,20 @@
 \label{cap:analisi-requisiti}
 %**************************************************************
 
-\intro{Breve introduzione al capitolo}\\
+\intro{Il presente capitolo descrive in maniera dettagliata requisiti e casi d'uso individuati durante
+l'analisi del progetto di \textit{stage}.}\\
 
 \section{Casi d'uso}
+\subsubsection{Attori pricipali}
+Nell'analisi del progetto di \textit{stage} è emerso solo un attore, ovvero l'\textbf{utente autenticato}, 
+attore che indica un utente che ha effettuato l'autenticazione
+all'interno dell'applicazione web. Ha quindi la possibilità di vedere tutte le
+informazioni sui gruppi e sulle \gls{will}  che sarebbero altrimenti inaccessibili. 
+
+\subsubsection{Elenco dei casi d'uso}
 
 Per lo studio dei casi di utilizzo del prodotto sono stati creati dei diagrammi.
 I diagrammi dei casi d'uso (in inglese \emph{Use Case Diagram}) sono diagrammi di tipo \gls{uml} dedicati alla descrizione delle funzioni o servizi offerti da un sistema, così come sono percepiti e utilizzati dagli attori che interagiscono col sistema stesso.
-Essendo il progetto finalizzato alla creazione di un tool per l'automazione di un processo, le interazioni da parte dell'utilizzatore devono essere ovviamente ridotte allo stretto necessario. Per questo motivo i diagrammi d'uso risultano semplici e in numero ridotto.
 
 \begin{figure}[!h] 
     \centering 
@@ -21,13 +28,25 @@ Essendo il progetto finalizzato alla creazione di un tool per l'automazione di u
     \caption{Use Case - UC0: Scenario principale}
 \end{figure}
 
-\begin{usecase}{0}{Scenario principale}
-\usecaseactors{Sviluppatore applicativi}
-\usecasepre{Lo sviluppatore è entrato nel plug-in di simulazione all'interno dell'IDE}
-\usecasedesc{La finestra di simulazione mette a disposizione i comandi per configurare, registrare o eseguire un test}
-\usecasepost{Il sistema è pronto per permettere una nuova interazione}
-\label{uc:scenario-principale}
+
+
+
+
+\begin{usecase}{Prova2}
+    \usecaseactors{Sviluppatore applicativi}
+    \usecasepre{Lo sviluppatore è entrato nel plug-in di simulazione all'interno dell'IDE}
+    \usecasedesc{La finestra di simulazione mette a disposizione i comandi per configurare, registrare o eseguire un test}
+    \usecasepost{Il sistema è pronto per permettere una nuova interazione}
+    \label{uc:scenario-due}
 \end{usecase}
+
+\begin{usecase}{Prova1}
+    \usecaseactors{Sviluppatore applicativi}
+    \usecasepre{Lo sviluppatore è entrato nel plug-in di simulazione all'interno dell'IDE}
+    \usecasedesc{La finestra di simulazione mette a disposizione i comandi per configurare, registrare o eseguire un test}
+    \usecasepost{Il sistema è pronto per permettere una nuova interazione}
+    \label{uc:scenario-principale}
+    \end{usecase}
 
 \section{Tracciamento dei requisiti}
 
