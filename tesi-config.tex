@@ -228,6 +228,7 @@
 %%%% Parameters
 % #1: Nome
 \newenvironment{usecase}[1]{
+    \resetcounter
     \renewcommand{\theusecasecounter}{\usecasename #1}  % this is where the display of                                                         % the counter is overwritten/modified
     \refstepcounter{usecasecounter}             % increment counter
     \protected@edef\@currentlabelname{\textbf{\usecasename \arabic{usecasecounter}}}% addition here
@@ -241,8 +242,65 @@
 }{
     \medskip
 }
-\makeatother
 
+
+
+
+%**************************************************************
+% Environment per ``sub use case''
+%**************************************************************
+\newcounter{subusecasecounter}             % define a counter
+\setcounter{subusecasecounter}{0}          % set the counter to some initial value
+
+
+
+\newenvironment{subusecase}[1]{
+    \setcounter{subsubusecasecounter}{0}
+    \refstepcounter{subusecasecounter}             % increment counter
+    \protected@edef\@currentlabelname{\textbf{\usecasename \arabic{usecasecounter}.\arabic{subusecasecounter}}}% addition here
+
+    % \def\@currentlabelname{\textbf{\usecasename \arabic{usecasecounter}}%
+    \vspace{10pt}
+    \par \noindent                              % start new paragraph
+    {\large \textbf{\usecasename \arabic{usecasecounter}.\arabic{subusecasecounter}: #1}}       % display the title before the 
+                                                % content of the environment is displayed 
+    \medskip
+}{
+    \medskip
+}
+
+
+
+%**************************************************************
+% Environment per ``sub sub use case''
+%**************************************************************
+
+
+\newcounter{subsubusecasecounter}             % define a counter
+\setcounter{subsubusecasecounter}{0}          % set the counter to some initial value
+
+
+
+\newenvironment{subsubusecase}[1]{
+    \refstepcounter{subsubusecasecounter}             % increment counter
+    \protected@edef\@currentlabelname{\textbf{\usecasename \arabic{usecasecounter}.\arabic{subusecasecounter}.\arabic{subsubusecasecounter}}}% addition here
+
+    % \def\@currentlabelname{\textbf{\usecasename \arabic{usecasecounter}}%
+    \vspace{10pt}
+    \par \noindent                              % start new paragraph
+    {\large \textbf{\usecasename \arabic{usecasecounter}.\arabic{subusecasecounter}.\arabic{subsubusecasecounter}: #1}}       % display the title before the 
+                                                % content of the environment is displayed 
+    \medskip
+}{
+    \medskip
+}
+
+
+
+%**************************************************************
+% reset sub use case and sub sub use case counter
+%**************************************************************
+\newcommand{\resetcounter}{\setcounter{subusecasecounter}{0} \setcounter{subsubusecasecounter}{0}}
 
 \setlength\epigraphwidth{8cm}
 \setlength\epigraphrule{0pt}
@@ -253,6 +311,7 @@
 \newcommand{\usecasepre}[1]{\textbf{\\Precondizioni:} #1. \vspace{4pt}}
 \newcommand{\usecasedesc}[1]{\textbf{\\Descrizione:} #1. \vspace{4pt}}
 \newcommand{\usecasepost}[1]{\textbf{\\Postcondizioni:} #1. \vspace{4pt}}
+\newcommand{\usecasescenarioprincipale}[1]{\textbf{\\Scenario principale:} #1 \vspace{4pt}}
 \newcommand{\usecasealt}[1]{\textbf{\\Scenario Alternativo:} #1. \vspace{4pt}}
 
 %**************************************************************

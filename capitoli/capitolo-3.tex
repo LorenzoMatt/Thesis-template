@@ -19,20 +19,36 @@ informazioni sui gruppi e sulle \gls{will}  che sarebbero altrimenti inaccessibi
 
 \subsubsection{Elenco dei casi d'uso}
 Per lo studio dei casi di utilizzo del prodotto sono stati creati dei diagrammi.
-I diagrammi dei casi d'uso (in inglese \emph{Use Case Diagram}) sono diagrammi di tipo \gls{uml} dedicati alla descrizione delle funzioni o servizi offerti da un sistema, così come sono percepiti e utilizzati dagli attori che interagiscono col sistema stesso.
+I diagrammi dei casi d'uso (in inglese \emph{Use Case Diagram}) sono diagrammi di tipo \gls{uml} dedicati alla descrizione delle funzioni o servizi offerti da un sistema, così come sono percepiti e utilizzati dagli attori che interagiscono col sistema stesso.\\
+I casi d'uso che riportati in seguito descrivono solo le funzionalità che dovranno essere implementate, senza quindi descrivere quelle già presenti nella \textit{web-app}. 
 \begin{figure}[H] 
     \centering 
     \includegraphics[width=1.2\columnwidth]{usecase/diagramma generale dei casi d'uso.png} 
-    \caption{Use Case - UC0: Scenario principale}
+    \caption{Diagramma generale dei casi d'uso}
 \end{figure}
 
-\begin{usecase}{Prova2}
-    \usecaseactors{Sviluppatore applicativi}
-    \usecasepre{Lo sviluppatore è entrato nel plug-in di simulazione all'interno dell'IDE}
-    \usecasedesc{La finestra di simulazione mette a disposizione i comandi per configurare, registrare o eseguire un test}
-    \usecasepost{Il sistema è pronto per permettere una nuova interazione}
-    \label{uc:scenario-due}
+\begin{usecase}{Visualizzazione lista dei gruppi}
+    \usecaseactors{Utente autenticato}
+    \usecasepre{L'utente ha aperto la \textit{web-app} ed è autenticato}
+    \usecasedesc{L'utente vuole visualizzare la lista dei gruppi}
+    \usecasepost{L'utente ha visualizzato la lista dei gruppi}
+    \usecasescenarioprincipale{
+        \begin{enumerate}
+            \item L'utete visualizza la lista dei gruppi.
+        \end{enumerate}
+    }
+    \label{uc:scenario-visualizzazione-lista-gruppi}
 \end{usecase}
+
+\begin{subusecase}{}
+\end{subusecase}
+
+\begin{subsubusecase}{}
+\end{subsubusecase}
+\begin{subsubusecase}{}
+\end{subsubusecase}
+\begin{subsubusecase}{}
+\end{subsubusecase}
 
 \begin{usecase}{Prova1}
     \usecaseactors{Sviluppatore applicativi}
@@ -40,10 +56,26 @@ I diagrammi dei casi d'uso (in inglese \emph{Use Case Diagram}) sono diagrammi d
     \usecasedesc{La finestra di simulazione mette a disposizione i comandi per configurare, registrare o eseguire un test}
     \usecasepost{Il sistema è pronto per permettere una nuova interazione}
     \label{uc:scenario-principale}
-    \end{usecase}
+\end{usecase}
+\begin{subusecase}{}
+\end{subusecase}
+
+\begin{subsubusecase}{}
+\begin{subusecase}{}
+\end{subusecase}
+\end{subsubusecase}
+\begin{subusecase}{}
+\end{subusecase}
+\begin{subsubusecase}{   
+    }
+
+\end{subsubusecase}
+\newpage
+\begin{subsubusecase}{}
+    \label{subsubuc:scenario-principale}
+\end{subsubusecase}
 
 \section{Tracciamento dei requisiti}
-
 Da un'attenta analisi dei requisiti e degli use case effettuata sul progetto è stata stilata la tabella che traccia i requisiti in rapporto agli use case.\\
 Sono stati individuati diversi tipi di requisiti e si è quindi fatto utilizzo di un codice identificativo per distinguerli.\\
 Il codice dei requisiti è così strutturato R(F/Q/V)(N/D/O) dove:
