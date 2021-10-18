@@ -23,7 +23,7 @@ I diagrammi dei casi d'uso (in inglese \emph{Use Case Diagram}) sono diagrammi d
 I casi d'uso che riportati in seguito descrivono solo le funzionalità che dovranno essere implementate, senza quindi descrivere quelle già presenti nella \textit{web-app}. 
 \begin{figure}[H] 
     \centering 
-    \includegraphics[width=1.2\columnwidth]{usecase/diagramma generale dei casi d'uso.png} 
+    \includegraphics[width=1\columnwidth]{usecase/diagramma generale dei casi d'uso.png} 
     \caption{Diagramma generale dei casi d'uso}
 \end{figure}
 
@@ -149,13 +149,12 @@ I casi d'uso che riportati in seguito descrivono solo le funzionalità che dovra
         \end{enumerate}
     }
 \end{usecase}
-\newpage
 \begin{figure}[H] 
     \centering 
     \includegraphics[width=1\columnwidth]{usecase/sottocasi UC5.png} 
     \caption{UC5: Vis. dettagli di un gruppo}
 \end{figure}
-
+\newpage
 
 
 \begin{subusecase}{Visualizzazione nome del gruppo}
@@ -226,11 +225,11 @@ I casi d'uso che riportati in seguito descrivono solo le funzionalità che dovra
     \label{subsubsub:visualizzazione-singolo-partecipante-gruppo}
     \usecaseactors{Utente autenticato}
     \usecasepre{L'utente ha aperto la \textit{web-app}, è autenticato e sta visualizzando un partecipante dalla lista dei partecipanti}
-    \usecasedesc{L'utente vuole visualizzare il nome e cognome di un partecipante dalla lista dei partecipanti}
-    \usecasepost{L'utente ha visualizzato il nome e cognome di un partecipante dalla lista dei partecipanti}
+    \usecasedesc{L'utente vuole visualizzare nome e cognome di un partecipante dalla lista dei partecipanti}
+    \usecasepost{L'utente ha visualizzato nome e cognome di un partecipante dalla lista dei partecipanti}
     \usecasescenarioprincipale{
         \begin{enumerate}[nolistsep]
-            \item L'utente ha visualizza il nome e cognome di un partecipante dalla lista dei partecipanti.
+            \item L'utente ha visualizza nome e cognome di un partecipante dalla lista dei partecipanti.
         \end{enumerate}
     }
 \end{subsubsubusecase}
@@ -288,10 +287,11 @@ I casi d'uso che riportati in seguito descrivono solo le funzionalità che dovra
     }
 \end{usecase}
 
+\newpage
 
 \begin{figure}[H] 
     \centering 
-    \includegraphics[width=1\columnwidth]{usecase/sottocasi UC6.png} 
+    \includegraphics[scale=0.17]{usecase/sottocasi UC6.png} 
     \caption{UC6: Modifica di un gruppo}
 \end{figure}
 
@@ -397,11 +397,11 @@ I casi d'uso che riportati in seguito descrivono solo le funzionalità che dovra
     \label{sub:inserimento-nome-gruppo}
     \usecaseactors{Utente autenticato}
     \usecasepre{L'utente ha aperto la \textit{web-app}, è autenticato e sta creando un nuovo gruppo}
-    \usecasedesc{L'utente vuole inserire il nome di un gruppo}
-    \usecasepost{L'utente ha inserito il nome di un gruppo}
+    \usecasedesc{L'utente vuole inserire il nome del gruppo}
+    \usecasepost{L'utente ha inserito il nome del gruppo}
     \usecasescenarioprincipale{
         \begin{enumerate}[nolistsep]
-            \item L'utente inserisce il nome di un gruppo.
+            \item L'utente inserisce il nome del gruppo.
         \end{enumerate}
     }
 \end{subusecase}
@@ -411,11 +411,11 @@ I casi d'uso che riportati in seguito descrivono solo le funzionalità che dovra
     \label{sub:inserimento-descrizione-gruppo}
     \usecaseactors{Utente autenticato}
     \usecasepre{L'utente ha aperto la \textit{web-app}, è autenticato e sta creando un nuovo gruppo}
-    \usecasedesc{L'utente vuole inserire la descrizione di un gruppo}
-    \usecasepost{L'utente ha inserito la descrizione di un gruppo}
+    \usecasedesc{L'utente vuole inserire la descrizione del gruppo}
+    \usecasepost{L'utente ha inserito la descrizione del gruppo}
     \usecasescenarioprincipale{
         \begin{enumerate}[nolistsep]
-            \item L'utente inserisce la descrizione di un gruppo.
+            \item L'utente inserisce la descrizione del gruppo.
         \end{enumerate}
     }
 \end{subusecase}
@@ -424,11 +424,11 @@ I casi d'uso che riportati in seguito descrivono solo le funzionalità che dovra
     \label{sub:inserimento-obbiettivi-gruppo}
     \usecaseactors{Utente autenticato}
     \usecasepre{L'utente ha aperto la \textit{web-app}, è autenticato e sta creando un nuovo gruppo}
-    \usecasedesc{L'utente vuole inserire gli obbiettivi di un gruppo}
-    \usecasepost{L'utente ha inserito gli obbiettivi di un gruppo}
+    \usecasedesc{L'utente vuole inserire gli obbiettivi del gruppo}
+    \usecasepost{L'utente ha inserito gli obbiettivi del gruppo}
     \usecasescenarioprincipale{
         \begin{enumerate}[nolistsep]
-            \item L'utente inserisce gli obbiettivi di un gruppo.
+            \item L'utente inserisce gli obbiettivi del gruppo.
         \end{enumerate}
     }
 \end{subusecase}
@@ -438,11 +438,11 @@ I casi d'uso che riportati in seguito descrivono solo le funzionalità che dovra
     \label{sub:inserimento-numero-utenti-gruppo}
     \usecaseactors{Utente autenticato}
     \usecasepre{L'utente ha aperto la \textit{web-app}, è autenticato e sta creando un nuovo gruppo}
-    \usecasedesc{L'utente vuole inserire il numero massimo di utenti nel gruppo}
-    \usecasepost{L'utente ha inserito il numero massimo di utenti nel gruppo}
+    \usecasedesc{L'utente vuole inserire il numero massimo di utenti del gruppo}
+    \usecasepost{L'utente ha inserito il numero massimo di utenti del gruppo}
     \usecasescenarioprincipale{
         \begin{enumerate}[nolistsep]
-            \item L'utente inserisce il numero massimo di utenti nel gruppo.
+            \item L'utente inserisce il numero massimo di utenti del gruppo.
         \end{enumerate}
     }
 \end{subusecase}
@@ -451,11 +451,11 @@ I casi d'uso che riportati in seguito descrivono solo le funzionalità che dovra
     \label{sub:inserimento-località-gruppo}
     \usecaseactors{Utente autenticato}
     \usecasepre{L'utente ha aperto la \textit{web-app}, è autenticato e sta creando un nuovo gruppo}
-    \usecasedesc{L'utente vuole inserire la località di un gruppo}
-    \usecasepost{L'utente ha inserito la località di un gruppo}
+    \usecasedesc{L'utente vuole inserire la località del gruppo}
+    \usecasepost{L'utente ha inserito la località del gruppo}
     \usecasescenarioprincipale{
         \begin{enumerate}[nolistsep]
-            \item L'utente inserisce la località di un gruppo.
+            \item L'utente inserisce la località del gruppo.
         \end{enumerate}
     }
 \end{subusecase}
@@ -530,6 +530,8 @@ I casi d'uso che riportati in seguito descrivono solo le funzionalità che dovra
         \end{enumerate}
     }
 \end{usecase}
+
+\newpage 
 
 \begin{figure}[H] 
     \centering 
