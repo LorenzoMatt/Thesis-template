@@ -232,8 +232,6 @@
     \renewcommand{\theusecasecounter}{\usecasename #1}  % this is where the display of                                                         % the counter is overwritten/modified
     \refstepcounter{usecasecounter}             % increment counter
     \protected@edef\@currentlabelname{\textbf{\usecasename \arabic{usecasecounter}}}% addition here
-
-    % \def\@currentlabelname{\textbf{\usecasename \arabic{usecasecounter}}%
     \vspace{10pt}
     \par \noindent                              % start new paragraph
     {\large \textbf{\usecasename \arabic{usecasecounter}: #1}}       % display the title before the 
@@ -244,6 +242,8 @@
 }
 
 
+\titlespacing*{\section}{0pt}{1.1\baselineskip}{\baselineskip}
+\titlespacing*{\subsection}{0pt}{1.1\baselineskip}{\baselineskip}
 
 
 %**************************************************************
@@ -261,10 +261,9 @@
 
     % \def\@currentlabelname{\textbf{\usecasename \arabic{usecasecounter}}%
     \vspace{10pt}
-    \par \noindent                              % start new paragraph
+    \noindent                              % start new paragraph
     {\large \textbf{\usecasename \arabic{usecasecounter}.\arabic{subusecasecounter}: #1}}       % display the title before the 
                                                 % content of the environment is displayed 
-    \medskip
 }{
     \medskip
 }
@@ -282,6 +281,8 @@
 
 
 \newenvironment{subsubusecase}[1]{
+    \setcounter{subsubsubusecasecounter}{0}
+
     \refstepcounter{subsubusecasecounter}             % increment counter
     \protected@edef\@currentlabelname{\textbf{\usecasename \arabic{usecasecounter}.\arabic{subusecasecounter}.\arabic{subsubusecasecounter}}}% addition here
 
@@ -289,6 +290,30 @@
     \vspace{10pt}
     \par \noindent                              % start new paragraph
     {\large \textbf{\usecasename \arabic{usecasecounter}.\arabic{subusecasecounter}.\arabic{subsubusecasecounter}: #1}}       % display the title before the 
+                                                % content of the environment is displayed 
+    \medskip
+}{
+    \medskip
+}
+
+
+%**************************************************************
+% Environment per ``sub sub sub use case''
+%**************************************************************
+
+
+\newcounter{subsubsubusecasecounter}             % define a counter
+\setcounter{subsubsubusecasecounter}{0}          % set the counter to some initial value
+
+
+
+\newenvironment{subsubsubusecase}[1]{
+    \refstepcounter{subsubsubusecasecounter}             % increment counter
+    \protected@edef\@currentlabelname{\textbf{\usecasename \arabic{usecasecounter}.\arabic{subusecasecounter}.\arabic{subsubusecasecounter}.\arabic{subsubsubusecasecounter}}}% addition here
+
+    \vspace{10pt}
+    \par \noindent                              % start new paragraph
+    {\large \textbf{\usecasename \arabic{usecasecounter}.\arabic{subusecasecounter}.\arabic{subsubusecasecounter}.\arabic{subsubsubusecasecounter}: #1}}       % display the title before the 
                                                 % content of the environment is displayed 
     \medskip
 }{
@@ -305,6 +330,7 @@
 \setlength\epigraphwidth{8cm}
 \setlength\epigraphrule{0pt}
 
+
 \newcommand{\usecasename}{UC}
 
 \newcommand{\usecaseactors}[1]{\textbf{\\Attori Principali:} #1. \vspace{4pt}}
@@ -313,6 +339,7 @@
 \newcommand{\usecasepost}[1]{\textbf{\\Postcondizioni:} #1. \vspace{4pt}}
 \newcommand{\usecasescenarioprincipale}[1]{\textbf{\\Scenario principale:} #1 \vspace{4pt}}
 \newcommand{\usecasealt}[1]{\textbf{\\Scenario Alternativo:} #1. \vspace{4pt}}
+\newcommand{\usecaseest}[1]{\textbf{\\Estensioni:} #1. \vspace{4pt}}
 
 %**************************************************************
 % Environment per ``namespace description''

@@ -11,13 +11,13 @@
 l'analisi del progetto di \textit{stage}.}\\
 
 \section{Casi d'uso}
-\subsubsection{Attori pricipali}
+\subsection*{Attori pricipali}
 Nell'analisi del progetto di \textit{stage} è emerso solo un attore, ovvero l'\textbf{utente autenticato}, 
 attore che indica un utente che ha effettuato l'autenticazione
 all'interno dell'applicazione web. Ha quindi la possibilità di vedere tutte le
 informazioni sui gruppi e sulle \gls{will}  che sarebbero altrimenti inaccessibili. 
 
-\subsubsection{Elenco dei casi d'uso}
+\subsection*{Elenco dei casi d'uso}
 Per lo studio dei casi di utilizzo del prodotto sono stati creati dei diagrammi.
 I diagrammi dei casi d'uso (in inglese \emph{Use Case Diagram}) sono diagrammi di tipo \gls{uml} dedicati alla descrizione delle funzioni o servizi offerti da un sistema, così come sono percepiti e utilizzati dagli attori che interagiscono col sistema stesso.\\
 I casi d'uso che riportati in seguito descrivono solo le funzionalità che dovranno essere implementate, senza quindi descrivere quelle già presenti nella \textit{web-app}. 
@@ -33,53 +33,575 @@ I casi d'uso che riportati in seguito descrivono solo le funzionalità che dovra
     \usecasedesc{L'utente vuole visualizzare la lista dei gruppi}
     \usecasepost{L'utente ha visualizzato la lista dei gruppi}
     \usecasescenarioprincipale{
-        \begin{enumerate}
-            \item L'utete visualizza la lista dei gruppi.
+        \begin{enumerate}[nolistsep]
+            \item L'utente visualizza la lista dei gruppi.
         \end{enumerate}
     }
     \label{uc:scenario-visualizzazione-lista-gruppi}
 \end{usecase}
-
-\begin{subusecase}{}
-\end{subusecase}
-
-\begin{subsubusecase}{}
-\end{subsubusecase}
-\begin{subsubusecase}{}
-\end{subsubusecase}
-\begin{subsubusecase}{}
-\end{subsubusecase}
-
-\begin{usecase}{Prova1}
-    \usecaseactors{Sviluppatore applicativi}
-    \usecasepre{Lo sviluppatore è entrato nel plug-in di simulazione all'interno dell'IDE}
-    \usecasedesc{La finestra di simulazione mette a disposizione i comandi per configurare, registrare o eseguire un test}
-    \usecasepost{Il sistema è pronto per permettere una nuova interazione}
-    \label{uc:scenario-principale}
-\end{usecase}
-\begin{subusecase}{}
-\end{subusecase}
-
-\begin{subsubusecase}{}
-\begin{subusecase}{}
-\end{subusecase}
-\end{subsubusecase}
-\begin{subusecase}{}
-\end{subusecase}
-\begin{subsubusecase}{   
-    }
-
-\end{subsubusecase}
 \newpage
-\begin{subsubusecase}{}
-    \label{subsubuc:scenario-principale}
+
+\begin{figure}[H] 
+    \centering 
+    \includegraphics[width=1.2\columnwidth]{usecase/sottocasi UC1.png} 
+    \caption{UC1: Vis. lista dei gruppi}
+\end{figure}
+
+\begin{subusecase}{Visualizzazione singolo gruppo in lista}
+    \label{sub:visualizzazione-singolo-gruppo}
+    \usecaseactors{Utente autenticato}
+    \usecasepre{L'utente ha aperto la \textit{web-app}, è autenticato e sta visualizzando la lista dei gruppi}
+    \usecasedesc{L'utente vuole visualizzare un singolo gruppo nella lista dei gruppi}
+    \usecasepost{L'utente ha visualizzato un singolo gruppo nella lista dei gruppi}
+    \usecasescenarioprincipale{
+        \begin{enumerate}[nolistsep]
+            \item L'utente visualizza un singolo gruppo nella lista dei gruppi.
+        \end{enumerate}
+    }
+\end{subusecase}
+
+\begin{figure}[H] 
+    \centering 
+    \includegraphics[width=1.2\columnwidth]{usecase/sottocasi UC1.1.png} 
+    \caption{UC1.1: Vis. singolo gruppo in lista}
+\end{figure}
+
+\newpage
+
+\begin{subsubusecase}{Visualizzazione nome del gruppo}
+    \label{subsub:visualizzazione-nome-gruppo}
+    \usecaseactors{Utente autenticato}
+    \usecasepre{L'utente ha aperto la \textit{web-app}, è autenticato e sta visualizzando un gruppo dalla lista dei gruppi}
+    \usecasedesc{L'utente vuole visualizzare il nome di un gruppo dalla lista dei gruppi}
+    \usecasepost{L'utente ha visualizzato il nome di un gruppo dalla lista dei gruppi}
+    \usecasescenarioprincipale{
+        \begin{enumerate}[nolistsep]
+            \item L'utente visualizza il nome di un gruppo dalla lista dei gruppi.
+        \end{enumerate}
+    }
 \end{subsubusecase}
+
+
+\begin{subsubusecase}{Visualizzazione descrizione del gruppo}
+    \label{subsub:visualizzazione-descrizione-gruppo}
+    \usecaseactors{Utente autenticato}
+    \usecasepre{L'utente ha aperto la \textit{web-app}, è autenticato e sta visualizzando un gruppo dalla lista dei gruppi}
+    \usecasedesc{L'utente vuole visualizzare la descrizione di gruppo della lista dei gruppi}
+    \usecasepost{L'utente ha visualizzato la descrizione di un gruppo dalla lista dei gruppi}
+    \usecasescenarioprincipale{
+        \begin{enumerate}[nolistsep]
+            \item L'utente visualizza la descrizione di un gruppo dalla lista dei gruppi.
+        \end{enumerate}
+    }
+\end{subsubusecase}
+
+
+\begin{usecase}{Visualizzazione lista dei gruppi creati dall'utente}
+    \label{uc:scenario-visualizzazione-lista-gruppi-creati}
+    \usecaseactors{Utente autenticato}
+    \usecasepre{L'utente ha aperto la \textit{web-app} ed è autenticato}
+    \usecasedesc{L'utente vuole visualizzare la lista dei gruppi creati da lui}
+    \usecasepost{L'utente ha visualizzato la lista dei gruppi creati da lui}
+    \usecasescenarioprincipale{
+        \begin{enumerate}[nolistsep]
+            \item L'utente visualizza la lista dei gruppi creati da lui.
+        \end{enumerate}
+    }
+\end{usecase}
+
+\begin{usecase}{Visualizzazione lista dei gruppi a cui partecipa un utente}
+    \label{uc:scenario-visualizzazione-lista-gruppi-partecipa}
+    \usecaseactors{Utente autenticato}
+    \usecasepre{L'utente ha aperto la \textit{web-app} ed è autenticato}
+    \usecasedesc{L'utente vuole visualizzare la lista dei gruppi a cui partecipa}
+    \usecasepost{L'utente ha visualizzato la lista dei gruppi a cui partecipa}
+    \usecasescenarioprincipale{
+        \begin{enumerate}[nolistsep]
+            \item L'utente visualizza la lista dei gruppi a cui partecipa.
+        \end{enumerate}
+    }
+\end{usecase}
+
+
+\begin{usecase}{Visualizzazione lista dei gruppi creati da altri utenti}
+    \label{uc:scenario-visualizzazione-lista-gruppi-altri}
+    \usecaseactors{Utente autenticato}
+    \usecasepre{L'utente ha aperto la \textit{web-app} ed è autenticato}
+    \usecasedesc{L'utente vuole visualizzare la lista dei gruppi creati da altri utenti}
+    \usecasepost{L'utente ha visualizzato la lista dei gruppi creati da altri utenti}
+    \usecasescenarioprincipale{
+        \begin{enumerate}[nolistsep]
+            \item L'utente visualizza la lista dei gruppi creati da altri utenti.
+        \end{enumerate}
+    }
+\end{usecase}
+
+
+\begin{usecase}{Visualizzazione dettagli di un gruppo}
+    \label{uc:scenario-visualizzazione-dettaglio-gruppo}
+    \usecaseactors{Utente autenticato}
+    \usecasepre{L'utente ha aperto la \textit{web-app} ed è autenticato}
+    \usecasedesc{L'utente vuole visualizzare i dettagli di un gruppo}
+    \usecasepost{L'utente ha visualizzato i dettagli di un gruppo}
+    \usecasescenarioprincipale{
+        \begin{enumerate}[nolistsep]
+            \item L'utente visualizza i dettagli di un gruppo.
+        \end{enumerate}
+    }
+\end{usecase}
+\newpage
+\begin{figure}[H] 
+    \centering 
+    \includegraphics[width=1\columnwidth]{usecase/sottocasi UC5.png} 
+    \caption{UC5: Vis. dettagli di un gruppo}
+\end{figure}
+
+
+
+\begin{subusecase}{Visualizzazione nome del gruppo}
+    \label{sub:visualizzazione-nome-gruppo}
+    \usecaseactors{Utente autenticato}
+    \usecasepre{L'utente ha aperto la \textit{web-app}, è autenticato e sta visualizzando i dettagli di un gruppo}
+    \usecasedesc{L'utente vuole visualizzare il nome di un gruppo}
+    \usecasepost{L'utente ha visualizzato il nome di un gruppo}
+    \usecasescenarioprincipale{
+        \begin{enumerate}[nolistsep]
+            \item L'utente visualizza il nome di un gruppo.
+        \end{enumerate}
+    }
+\end{subusecase}
+
+\begin{subusecase}{Visualizzazione immagine del gruppo}
+    \label{sub:visualizzazione-immagine-gruppo}
+    \usecaseactors{Utente autenticato}
+    \usecasepre{L'utente ha aperto la \textit{web-app}, è autenticato e sta visualizzando i dettagli di un gruppo}
+    \usecasedesc{L'utente vuole visualizzare l'immagine di un gruppo}
+    \usecasepost{L'utente ha visualizzato l'immagine di un gruppo}
+    \usecasescenarioprincipale{
+        \begin{enumerate}[nolistsep]
+            \item L'utente visualizza l'immagine di un gruppo.
+        \end{enumerate}
+    }
+\end{subusecase}
+
+\begin{subusecase}{Visualizzazione lista dei partecipanti di un gruppo}
+    \label{sub:visualizzazione-utenti-gruppo}
+    \usecaseactors{Utente autenticato}
+    \usecasepre{L'utente ha aperto la \textit{web-app}, è autenticato e sta visualizzando i dettagli di un gruppo}
+    \usecasedesc{L'utente vuole visualizzare la lista dei partecipanti ad un gruppo}
+    \usecasepost{L'utente ha visualizzato la lista dei partecipanti ad un gruppo}
+    \usecasescenarioprincipale{
+        \begin{enumerate}[nolistsep]
+            \item L'utente visualizza la lista dei partecipanti ad un gruppo.
+        \end{enumerate}
+    }
+\end{subusecase}
+
+\begin{figure}[H] 
+    \centering 
+    \includegraphics[width=1\columnwidth]{usecase/sottocasi UC5.3.png} 
+    \caption{UC5.3: Vis. lista dei partecipanti di un gruppo}
+\end{figure}
+
+\begin{subsubusecase}{Visualizzazione singolo partecipante in lista}
+    \label{subsub:visualizzazione-partecipanti-gruppo}
+    \usecaseactors{Utente autenticato}
+    \usecasepre{L'utente ha aperto la \textit{web-app}, è autenticato e sta visualizzando la lista dei partecipanti ad un gruppo}
+    \usecasedesc{L'utente vuole visualizzare un partecipante dalla lista dei partecipanti ad un gruppo}
+    \usecasepost{L'utente ha visualizzato un partecipante dalla lista dei partecipanti ad un gruppo}
+    \usecasescenarioprincipale{
+        \begin{enumerate}[nolistsep]
+            \item L'utente visualizza un partecipante dalla lista dei partecipanti ad un gruppo.
+        \end{enumerate}
+    }
+\end{subsubusecase}
+
+\begin{figure}[H] 
+    \centering 
+    \includegraphics[width=1\columnwidth]{usecase/sottocasi UC5.3.1.png} 
+    \caption{UC5.3.1: Vis. singolo partecipante in lista}
+\end{figure}
+
+\begin{subsubsubusecase}{Visualizzazione singolo partecipante in lista}
+    \label{subsubsub:visualizzazione-singolo-partecipante-gruppo}
+    \usecaseactors{Utente autenticato}
+    \usecasepre{L'utente ha aperto la \textit{web-app}, è autenticato e sta visualizzando un partecipante dalla lista dei partecipanti}
+    \usecasedesc{L'utente vuole visualizzare il nome e cognome di un partecipante dalla lista dei partecipanti}
+    \usecasepost{L'utente ha visualizzato il nome e cognome di un partecipante dalla lista dei partecipanti}
+    \usecasescenarioprincipale{
+        \begin{enumerate}[nolistsep]
+            \item L'utente ha visualizza il nome e cognome di un partecipante dalla lista dei partecipanti.
+        \end{enumerate}
+    }
+\end{subsubsubusecase}
+
+\begin{subusecase}{Visualizzazione descrizione del gruppo}
+    \label{sub:visualizzazione-descrizione-gruppo}
+    \usecaseactors{Utente autenticato}
+    \usecasepre{L'utente ha aperto la \textit{web-app}, è autenticato e sta visualizzando i dettagli di un gruppo}
+    \usecasedesc{L'utente vuole visualizzare la descrizione di un gruppo}
+    \usecasepost{L'utente ha visualizzato la descrizione di un gruppo}
+    \usecasescenarioprincipale{
+        \begin{enumerate}[nolistsep]
+            \item L'utente visualizza la descrizione di un gruppo.
+        \end{enumerate}
+    }
+\end{subusecase}
+
+\begin{subusecase}{Visualizzazione obbiettivi del gruppo}
+    \label{sub:visualizzazione-obbiettivi-gruppo}
+    \usecaseactors{Utente autenticato}
+    \usecasepre{L'utente ha aperto la \textit{web-app}, è autenticato e sta visualizzando i dettagli di un gruppo}
+    \usecasedesc{L'utente vuole visualizzare gli obbiettivi di un gruppo}
+    \usecasepost{L'utente ha visualizzato gli obbiettivi di un gruppo}
+    \usecasescenarioprincipale{
+        \begin{enumerate}[nolistsep]
+            \item L'utente visualizza gli obbiettivi di un gruppo.
+        \end{enumerate}
+    }
+\end{subusecase}
+
+
+\begin{subusecase}{Visualizzazione località del gruppo}
+    \label{sub:visualizzazione-località-gruppo}
+    \usecaseactors{Utente autenticato}
+    \usecasepre{L'utente ha aperto la \textit{web-app}, è autenticato e sta visualizzando i dettagli di un gruppo}
+    \usecasedesc{L'utente vuole visualizzare la località di un gruppo}
+    \usecasepost{L'utente ha visualizzato la località di un gruppo}
+    \usecasescenarioprincipale{
+        \begin{enumerate}[nolistsep]
+            \item L'utente visualizza la località di un gruppo.
+        \end{enumerate}
+    }
+\end{subusecase}
+
+\begin{usecase}{Modifica di un gruppo}
+    \label{uc:scenario-modifica-gruppo}
+    \usecaseactors{Utente autenticato}
+    \usecasepre{L'utente ha aperto la \textit{web-app} ed è autenticato}
+    \usecasedesc{L'utente vuole modificare i dettagli di un gruppo}
+    \usecasepost{L'utente ha modificato i dettagli di un gruppo}
+    \usecasescenarioprincipale{
+        \begin{enumerate}[nolistsep]
+            \item L'utente modifica i dettagli di un gruppo.
+        \end{enumerate}
+    }
+\end{usecase}
+
+
+\begin{figure}[H] 
+    \centering 
+    \includegraphics[width=1\columnwidth]{usecase/sottocasi UC6.png} 
+    \caption{UC6: Modifica di un gruppo}
+\end{figure}
+
+\begin{subusecase}{Modifica nome del gruppo}
+    \label{sub:modifica-nome-gruppo}
+    \usecaseactors{Utente autenticato}
+    \usecasepre{L'utente ha aperto la \textit{web-app}, è autenticato e sta modificando i dettagli di un gruppo}
+    \usecasedesc{L'utente vuole modificare il nome di un gruppo}
+    \usecasepost{L'utente ha modificato il nome di un gruppo}
+    \usecasescenarioprincipale{
+        \begin{enumerate}[nolistsep]
+            \item L'utente modifica il nome di un gruppo.
+        \end{enumerate}
+    }
+\end{subusecase}
+
+\begin{subusecase}{Modifica descrizione del gruppo}
+    \label{sub:modifica-descrizione-gruppo}
+    \usecaseactors{Utente autenticato}
+    \usecasepre{L'utente ha aperto la \textit{web-app}, è autenticato e sta modificando i dettagli di un gruppo}
+    \usecasedesc{L'utente vuole modificare la descrizione di un gruppo}
+    \usecasepost{L'utente ha modificato la descrizione di un gruppo}
+    \usecasescenarioprincipale{
+        \begin{enumerate}[nolistsep]
+            \item L'utente modifica la descrizione di un gruppo.
+        \end{enumerate}
+    }
+\end{subusecase}
+
+\begin{subusecase}{Modifica obbiettivi del gruppo}
+    \label{sub:modifica-obbiettivi-gruppo}
+    \usecaseactors{Utente autenticato}
+    \usecasepre{L'utente ha aperto la \textit{web-app}, è autenticato e sta modificando i dettagli di un gruppo}
+    \usecasedesc{L'utente vuole modificare gli obbiettivi di un gruppo}
+    \usecasepost{L'utente ha modificato gli obbiettivi di un gruppo}
+    \usecasescenarioprincipale{
+        \begin{enumerate}[nolistsep]
+            \item L'utente modifica gli obbiettivi di un gruppo.
+        \end{enumerate}
+    }
+\end{subusecase}
+
+
+\begin{subusecase}{Modifica numero massimo di utenti}
+    \label{sub:modifica-numero-utenti-gruppo}
+    \usecaseactors{Utente autenticato}
+    \usecasepre{L'utente ha aperto la \textit{web-app}, è autenticato e sta modificando i dettagli di un gruppo}
+    \usecasedesc{L'utente vuole modificare il numero massimo di utenti di un gruppo}
+    \usecasepost{L'utente ha modificato il numero massimo di utenti di un gruppo}
+    \usecasescenarioprincipale{
+        \begin{enumerate}[nolistsep]
+            \item L'utente modifica il numero massimo di utenti di un gruppo.
+        \end{enumerate}
+    }
+\end{subusecase}
+
+\begin{subusecase}{Modifica località del gruppo}
+    \label{sub:modifica-località-gruppo}
+    \usecaseactors{Utente autenticato}
+    \usecasepre{L'utente ha aperto la \textit{web-app}, è autenticato e sta modificando i dettagli di un gruppo}
+    \usecasedesc{L'utente vuole modificare la località di un gruppo}
+    \usecasepost{L'utente ha modificato la località di un gruppo}
+    \usecasescenarioprincipale{
+        \begin{enumerate}[nolistsep]
+            \item L'utente modifica la località di un gruppo.
+        \end{enumerate}
+    }
+\end{subusecase}
+
+\begin{subusecase}{Rimozione utente}
+    \label{sub:-gruppo}
+    \usecaseactors{Utente autenticato}
+    \usecasepre{L'utente ha aperto la \textit{web-app}, è autenticato e sta modificando i dettagli di un gruppo}
+    \usecasedesc{L'utente vuole rimuovere un utente dal gruppo}
+    \usecasepost{L'utente ha rimosso un utente dal gruppo}
+    \usecasescenarioprincipale{
+        \begin{enumerate}[nolistsep]
+            \item L'utente rimuove un utente dal gruppo.
+        \end{enumerate}
+    }
+\end{subusecase}
+
+\begin{usecase}{Crea un nuovo gruppo}
+    \label{uc:scenario-creazione-nuovo-gruppo}
+    \usecaseactors{Utente autenticato}
+    \usecasepre{L'utente ha aperto la \textit{web-app} ed è autenticato}
+    \usecasedesc{L'utente vuole creare un nuovo gruppo}
+    \usecasepost{L'utente ha creato un nuovo gruppo}
+    \usecasescenarioprincipale{
+        \begin{enumerate}[nolistsep]
+            \item L'utente crea un nuovo gruppo.
+        \end{enumerate}
+    }
+\end{usecase}
+
+\begin{figure}[H] 
+    \centering 
+    \includegraphics[width=1\columnwidth]{usecase/sottocasi UC7.png} 
+    \caption{UC7: Crea un nuovo gruppo}
+\end{figure}
+
+\begin{subusecase}{Inserimento nome del gruppo}
+    \label{sub:inserimento-nome-gruppo}
+    \usecaseactors{Utente autenticato}
+    \usecasepre{L'utente ha aperto la \textit{web-app}, è autenticato e sta creando un nuovo gruppo}
+    \usecasedesc{L'utente vuole inserire il nome di un gruppo}
+    \usecasepost{L'utente ha inserito il nome di un gruppo}
+    \usecasescenarioprincipale{
+        \begin{enumerate}[nolistsep]
+            \item L'utente inserisce il nome di un gruppo.
+        \end{enumerate}
+    }
+\end{subusecase}
+
+
+\begin{subusecase}{Inserimento descrizione del gruppo}
+    \label{sub:inserimento-descrizione-gruppo}
+    \usecaseactors{Utente autenticato}
+    \usecasepre{L'utente ha aperto la \textit{web-app}, è autenticato e sta creando un nuovo gruppo}
+    \usecasedesc{L'utente vuole inserire la descrizione di un gruppo}
+    \usecasepost{L'utente ha inserito la descrizione di un gruppo}
+    \usecasescenarioprincipale{
+        \begin{enumerate}[nolistsep]
+            \item L'utente inserisce la descrizione di un gruppo.
+        \end{enumerate}
+    }
+\end{subusecase}
+
+\begin{subusecase}{Inserimento obbiettivi del gruppo}
+    \label{sub:inserimento-obbiettivi-gruppo}
+    \usecaseactors{Utente autenticato}
+    \usecasepre{L'utente ha aperto la \textit{web-app}, è autenticato e sta creando un nuovo gruppo}
+    \usecasedesc{L'utente vuole inserire gli obbiettivi di un gruppo}
+    \usecasepost{L'utente ha inserito gli obbiettivi di un gruppo}
+    \usecasescenarioprincipale{
+        \begin{enumerate}[nolistsep]
+            \item L'utente inserisce gli obbiettivi di un gruppo.
+        \end{enumerate}
+    }
+\end{subusecase}
+
+
+\begin{subusecase}{Inserimento numero massimo di utenti nel gruppo}
+    \label{sub:inserimento-numero-utenti-gruppo}
+    \usecaseactors{Utente autenticato}
+    \usecasepre{L'utente ha aperto la \textit{web-app}, è autenticato e sta creando un nuovo gruppo}
+    \usecasedesc{L'utente vuole inserire il numero massimo di utenti nel gruppo}
+    \usecasepost{L'utente ha inserito il numero massimo di utenti nel gruppo}
+    \usecasescenarioprincipale{
+        \begin{enumerate}[nolistsep]
+            \item L'utente inserisce il numero massimo di utenti nel gruppo.
+        \end{enumerate}
+    }
+\end{subusecase}
+
+\begin{subusecase}{Inserimento località del gruppo}
+    \label{sub:inserimento-località-gruppo}
+    \usecaseactors{Utente autenticato}
+    \usecasepre{L'utente ha aperto la \textit{web-app}, è autenticato e sta creando un nuovo gruppo}
+    \usecasedesc{L'utente vuole inserire la località di un gruppo}
+    \usecasepost{L'utente ha inserito la località di un gruppo}
+    \usecasescenarioprincipale{
+        \begin{enumerate}[nolistsep]
+            \item L'utente inserisce la località di un gruppo.
+        \end{enumerate}
+    }
+\end{subusecase}
+
+\begin{usecase}{Elimina un gruppo}
+    \label{uc:scenario-elimina-gruppo}
+    \usecaseactors{Utente autenticato}
+    \usecasepre{L'utente ha aperto la \textit{web-app} ed è autenticato}
+    \usecasedesc{L'utente vuole eliminare un gruppo}
+    \usecasepost{L'utente ha eliminato un gruppo}
+    \usecasescenarioprincipale{
+        \begin{enumerate}[nolistsep]
+            \item L'utente elimina un gruppo.
+        \end{enumerate}
+    }
+\end{usecase}
+
+
+\begin{usecase}{Partecipa ad un gruppo}
+    \label{uc:scenario-partecipa-gruppo}
+    \usecaseactors{Utente autenticato}
+    \usecasepre{L'utente ha aperto la \textit{web-app} ed è autenticato}
+    \usecasedesc{L'utente vuole partecipare ad un gruppo}
+    \usecasepost{L'utente ha partecipato ad un gruppo}
+    \usecasescenarioprincipale{
+        \begin{enumerate}[nolistsep]
+            \item L'utente partecipa ad un gruppo.
+        \end{enumerate}
+    }
+    \usecasealt{il gruppo ha raggiunto la capienza massima}
+    \usecaseest{viene visualizzato un messaggio di errore a causa della capienza massima raggiunta dal gruppo}
+\end{usecase}
+
+
+\begin{usecase}{Visualizzazione errore numero di utenti massimo raggiunto}
+    \label{uc:errore-numero-utenti}
+    \usecaseactors{Utente autenticato}
+    \usecasepre{L'utente ha aperto la \textit{web-app} ed è autenticato}
+    \usecasedesc{L'utente vuole partecipare ad un gruppo}
+    \usecasepost{L'utente non si unisce al gruppo}
+    \usecasescenarioprincipale{
+        \begin{enumerate}[nolistsep]
+            \item l'utente sceglie di partecipare ad un gruppo;
+            \item viene visualizzato un messaggio di errore a causa della capienza massima raggiunta dal gruppo.
+        \end{enumerate}
+    }
+\end{usecase}
+
+
+\begin{usecase}{Annulla partecipazione ad un gruppo}
+    \label{uc:scenario-annulla-partecipazione}
+    \usecaseactors{Utente autenticato}
+    \usecasepre{L'utente ha aperto la \textit{web-app} ed è autenticato}
+    \usecasedesc{L'utente vuole annullare la partecipazione ad un gruppo}
+    \usecasepost{L'utente ha annullato la partecipazione ad un gruppo}
+    \usecasescenarioprincipale{
+        \begin{enumerate}[nolistsep]
+            \item L'utente annulla la partecipazione ad un gruppo.
+        \end{enumerate}
+    }
+\end{usecase}
+
+\begin{usecase}{Visualizzazione lista delle will degli utenti appartenenti agli stessi gruppi}
+    \label{uc:scenario-visualizzazione-will}
+    \usecaseactors{Utente autenticato}
+    \usecasepre{L'utente ha aperto la \textit{web-app} ed è autenticato}
+    \usecasedesc{L'utente vuole visualizzare la lista delle will degli utenti appartenenti agli stessi gruppi}
+    \usecasepost{L'utente ha visualizzato la lista delle will degli utenti appartenenti agli stessi gruppi}
+    \usecasescenarioprincipale{
+        \begin{enumerate}[nolistsep]
+            \item L'utente visualizza la lista delle will degli utenti appartenenti agli stessi gruppi.
+        \end{enumerate}
+    }
+\end{usecase}
+
+\begin{figure}[H] 
+    \centering 
+    \includegraphics[width=1.2\columnwidth]{usecase/sottocasi UC12.png} 
+    \caption{UC12: Vis. lista will degli utenti appartenenti agli stessi gruppi}
+\end{figure}
+
+\begin{subusecase}{Visualizzazione singola will in lista}
+    \label{sub:visualizzazione-singola-will}
+    \usecaseactors{Utente autenticato}
+    \usecasepre{L'utente ha aperto la \textit{web-app}, è autenticato e sta visualizzando la lista dei gruppi}
+    \usecasedesc{L'utente vuole visualizzare una singola \gls{will} dalla lista delle \gls{will}}
+    \usecasepost{L'utente ha visualizzato una singola \gls{will} dalla lista delle \gls{will}}
+    \usecasescenarioprincipale{
+        \begin{enumerate}[nolistsep]
+            \item L'utente visualizza una singola \gls{will} dalla lista delle \gls{will}.
+        \end{enumerate}
+    }
+\end{subusecase}
+
+\begin{figure}[H] 
+    \centering 
+    \includegraphics[width=1.2\columnwidth]{usecase/sottocasi UC12.1.png} 
+    \caption{UC12.1: Vis. singola \textit{will}}
+\end{figure}
+
+
+\begin{subsubusecase}{Visualizzazione nome del proprietario}
+    \label{subsub:visualizzazione-will-nome-proprietario}
+    \usecaseactors{Utente autenticato}
+    \usecasepre{L'utente ha aperto la \textit{web-app}, è autenticato e sta visualizzando un \gls{will} dalla lista delle \gls{will}}
+    \usecasedesc{L'utente vuole visualizzare il nome del proprietario della \gls{will}}
+    \usecasepost{L'utente ha visualizzato il nome del proprietario della \gls{will}}
+    \usecasescenarioprincipale{
+        \begin{enumerate}[nolistsep]
+            \item L'utente visualizza il nome del proprietario della \gls{will}.
+        \end{enumerate}
+    }
+\end{subsubusecase}
+
+\begin{subsubusecase}{Visualizzazione descrizione}
+    \label{subsub:visualizzazione-will-descrizione}
+    \usecaseactors{Utente autenticato}
+    \usecasepre{L'utente ha aperto la \textit{web-app}, è autenticato e sta visualizzando un \gls{will} dalla lista delle \gls{will}}
+    \usecasedesc{L'utente vuole visualizzare la descrizione della \gls{will}}
+    \usecasepost{L'utente ha visualizzato la descrizione della \gls{will}}
+    \usecasescenarioprincipale{
+        \begin{enumerate}[nolistsep]
+            \item L'utente visualizza la descrizione della \gls{will}.
+        \end{enumerate}
+    }
+\end{subsubusecase}
+
+\begin{subsubusecase}{Visualizzazione data}
+    \label{subsub:visualizzazione-will-data}
+    \usecaseactors{Utente autenticato}
+    \usecasepre{L'utente ha aperto la \textit{web-app}, è autenticato e sta visualizzando un \gls{will} dalla lista delle \gls{will}}
+    \usecasedesc{L'utente vuole visualizzare la data in cui verrà effettuata l'uscita}
+    \usecasepost{L'utente ha visualizzato la data in cui verrà effettuata l'uscita}
+    \usecasescenarioprincipale{
+        \begin{enumerate}[nolistsep]
+            \item L'utente visualizza la data in cui verrà effettuata l'uscita.
+        \end{enumerate}
+    }
+\end{subsubusecase}
+
 
 \section{Tracciamento dei requisiti}
 Da un'attenta analisi dei requisiti e degli use case effettuata sul progetto è stata stilata la tabella che traccia i requisiti in rapporto agli use case.\\
 Sono stati individuati diversi tipi di requisiti e si è quindi fatto utilizzo di un codice identificativo per distinguerli.\\
 Il codice dei requisiti è così strutturato R(F/Q/V)(N/D/O) dove:
-\begin{enumerate}
+\begin{enumerate}[nolistsep]
 	\item[R =] requisito
     \item[F =] funzionale
     \item[Q =] qualitativo
@@ -89,10 +611,7 @@ Il codice dei requisiti è così strutturato R(F/Q/V)(N/D/O) dove:
     \item[Z =] opzionale
 \end{enumerate}
 Nelle tabelle \ref{tab:requisiti-funzionali}, \ref{tab:requisiti-qualitativi} e \ref{tab:requisiti-vincolo} sono riassunti i requisiti e il loro tracciamento con gli use case delineati in fase di analisi.
-
-\newpage
-
-\begin{table}%
+\begin{table}[H]%
 \caption{Tabella del tracciamento dei requisti funzionali}
 \label{tab:requisiti-funzionali}
 \begin{tabularx}{\textwidth}{lXl}
@@ -104,7 +623,7 @@ RFN-1     & L'interfaccia permette di configurare il tipo di sonde del test & UC
 \end{tabularx}
 \end{table}%
 
-\begin{table}%
+\begin{table}[H]%
 \caption{Tabella del tracciamento dei requisiti qualitativi}
 \label{tab:requisiti-qualitativi}
 \begin{tabularx}{\textwidth}{lXl}
@@ -116,7 +635,7 @@ RQD-1    & Le prestazioni del simulatore hardware deve garantire la giusta esecu
 \end{tabularx}
 \end{table}%
 
-\begin{table}%
+\begin{table}[H]%
 \caption{Tabella del tracciamento dei requisiti di vincolo}
 \label{tab:requisiti-vincolo}
 \begin{tabularx}{\textwidth}{lXl}
