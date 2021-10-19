@@ -1,0 +1,6 @@
+{    
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.wordWrapColumn": 80,
+    "cSpell.enabled": true,
+    "cSpell.language": "it-IT",
+}

@@ -7,27 +7,80 @@
 \label{cap:progettazione-codifica}
 %**************************************************************
 
-\intro{Breve introduzione al capitolo}\\
+\intro{Il seguente capitolo descrive gli strumenti e la progettazione con cui sono 
+state implementate le integrazione con la \textit{web-app} \productName.}\\
 
 %**************************************************************
-\section{Tecnologie e strumenti}
+\section{Tecnologie}
 \label{sec:tecnologie-strumenti}
 
 Di seguito viene data una panoramica delle tecnologie e strumenti utilizzati.
 
-\subsection*{Tecnologia 1}
-Descrizione Tecnologia 1.
+\subsection*{Java}
+Java è un linguaggio di programmazione e una piattaforma di elaborazione 
+rilasciato per la prima volta da Sun Microsystems nel 1995. Si è evoluto da umili
+ origini per sostenere gran parte del mondo digitale di oggi, fornendo una
+ piattaforma affidabile su cui sono costruiti molti servizi e applicazioni. 
+ Anche i nuovi prodotti, innovativi nei servizi digitali progettati per il futuro,  
+ continuano a fare affidamento su Java.
+%TODO: aggiungere bibliografia, link: https://java.com/en/download/help/whatis_java.html
+\subsection*{Spring}
+Spring è un \textit{framework} open source per lo sviluppo di applicazioni su piattaforma Java.
+A questo \textit{framework} sono associati tanti altri progetti, che hanno nomi composti come 
+Spring Boot, Spring Data, Spring Batch, etc. Questi progetti sono stati ideati per
+fornire funzionalità aggiuntive al \textit{framework}.
+%TODO: aggiungere bibliografia, link: https://it.wikipedia.org/wiki/Spring_Framework
 
-\subsection*{Tecnologia 2}
-Descrizione Tecnologia 2
-
+\subsection*{Typescript}
 %**************************************************************
-\section{Ciclo di vita del software}
-\label{sec:ciclo-vita-software}
+TypeScript è un linguaggio di programmazione sviluppato e gestito da Microsoft. 
+È un \gls{superset} di JavaScript, che permette di aggiungere la tipizzazione 
+statica opzionale al linguaggio. TypeScript è progettato per lo sviluppo di applicazioni 
+di grandi dimensioni e per la \gls{transcompilazione} in JavaScript. Poiché TypeScript è un \gls{superset} di JavaScript, anche i programmi JavaScript esistenti sono validi programmi TypeScript.
+%TODO: aggiungere bibliografia, link: https://en.wikipedia.org/wiki/TypeScript
+
+\subsection*{Angular}
+%**************************************************************
+Angular è un \textit{framework} JavaScript per applicazioni \textit{web} dinamiche, utilizzato in particolare per la creazione di \gls{spa} e \textit{web-app}. Consente di utilizzare HTML come linguaggio template e di estenderne la sintassi per esprimere le componenti di un'applicazione in modo chiaro e succinto.
+%TODO: aggiungere bibliografia, link: https://psicografici.com/angular-js/#:~:text=Angular%20%C3%A8%20un%20framework%20JavaScript,in%20modo%20chiaro%20e%20succinto.
+
+\subsection*{Angular Material}
+%**************************************************************
+Angular Material è una libreria sviluppata da Google nel 2014 progettata per aiutare a sviluppare pagine \textit{web} in modo strutturato. \\
+I suoi componenti aiutano a creare pagine \textit{web} e applicazioni \textit{web} attraenti, coerenti e funzionali.
+%TODO: aggiungere bibliografia, link: https://psicografici.com/angular-js/#:~:text=Angular%20%C3%A8%20un%20framework%20JavaScript,in%20modo%20chiaro%20e%20succinto.
+
+\subsection*{Node.js}
+Node.js è una piattaforma di sviluppo open source per l'esecuzione di codice JavaScript lato \textit{server}. Node è utile per sviluppare applicazioni che richiedono una connessione permanente dal \textit{browser} al \textit{server} ed è spesso utilizzato per applicazioni in tempo reale come chat, feed di notizie e di notifiche.\\
+Node.js è utilizzato da Angular per gestire le dipendenze, permettendo la dichiarazione di due insiemi di dipendenze: per gli sviluppatori e per far funzionare l'applicativo. In questo modo è possibile differenziare quali librerie si possono tralasciare in fase di \textit{deploy} dell'applicazione perché, ad esempio, necessarie solo per effettuare i test.
+%TODO: aggiungere bibliografia, link: https://whatis.techtarget.com/definition/Nodejs#:~:text=James%20Denman-,Node.,feeds%20and%20web%20push%20notifications.
 
 %**************************************************************
 \section{Progettazione}
 \label{sec:progettazione}
+
+\subsection{Back-end}
+\subsubsection{Architettura Spring}
+\paragraph{Spring Boot}
+\paragraph{Spring Core}
+\paragraph{Spring Data JPA}
+
+Descrizione dettagliata su come funziona Spring Boot, Spring Data JPA e Spring Core.
+
+\subsubsection{Architettura Docker}
+\subsubsection{Organizzazione del codice}
+Struttura del progetto
+\subsubsection{Progettazione delle API}
+
+
+\subsection{Front-end}
+\subsubsection{Architettura Angular}
+Descrizione dettagliata su come funziona Angular
+\subsubsection{Organizzazione del codice}
+
+\subsubsection{Progettazione delle maschere}
+Descrizione Figma e delle scelte realizzative del mockup realizzato.
+
 
 \subsubsection{Namespace 1} %**************************
 Descrizione namespace 1.
@@ -40,7 +93,26 @@ Descrizione namespace 1.
 
 %**************************************************************
 \section{Design Pattern utilizzati}
-\nameref{subsubuc:scenario-principale}
+\subsection{Microservizi}
+\subsection{Api Gateway}
+\subsection{Service Discovery}
+\subsection{Service Registry}
+\subsection{Dependency Injection}
+\subsection{Singleton}
+\subsection{Feature Service}
+\subsection{Decorator}
+\subsection{Lazy Loading}
+\subsection{Observer}
 
 %**************************************************************
 \section{Codifica}
+\subsection{Back-end}
+
+\subsubsection{Gruppi service}
+\subsubsection{Modifica dei servizi esistenti}
+\subsubsection{Api Gateway ed Eureka Server}
+\subsubsection{Docker}
+
+\subsection{Front-end}
+\subsubsection{Maschere}
+\subsubsection{Componenti}
