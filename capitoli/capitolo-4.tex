@@ -59,7 +59,7 @@ Node.js è utilizzato da Angular per gestire le dipendenze, permettendo la dichi
 \section{Progettazione}
 \label{sec:progettazione}
 
-\subsection{Back-end}
+\subsection{Back end}
 \subsubsection{Architettura Spring Boot}
 Spring Boot è un modulo di Spring \textit{framework}. Viene utilizzato per creare applicazioni \textit{stand-alone} di livello produttivo con il minimo sforzo.\\
 Spring Boot segue un'architettura a strati, in cui ogni livello comunica con gli strati vicini.\\
@@ -111,9 +111,9 @@ La cartella che contiene il codice del \gls{microservizio} è \texttt{src\textba
 \end{itemize}
 % TODO aggiungere alla bibliografia: https://microservices.io/patterns/apigateway.html
 \subsubsection{Progettazione delle API}
-Il \textit{back-end} del progetto è strutturato a \glspl{microservizio}, ognuno contenente una business logic atta a soddisfare un certo tipo di richieste.\\
-Il \textit{front-end} comunica con il \textit{back-end} attraverso gli \gls{endpoint} che ogni \gls{microservizio} espone. \\
-Tuttavia, effettuare connessioni dirette fra \textit{front-end} e ogni \gls{microservizio} presenta alcuni problemi, come: 
+Il \textit{back end} del progetto è strutturato a \glspl{microservizio}, ognuno contenente una business logic atta a soddisfare un certo tipo di richieste.\\
+Il \textit{front end} comunica con il \textit{back end} attraverso gli \gls{endpoint} che ogni \gls{microservizio} espone. \\
+Tuttavia, effettuare connessioni dirette fra \textit{front end} e ogni \gls{microservizio} presenta alcuni problemi, come: 
 \begin{itemize}
     \item numerose connessioni a seconda della quantità dei \glspl{microservizio};
     \item i \glspl{microservizio} devono esporre pubblicamente il proprio \gls{IP}, causando problemi sia di sicurezza, dovuta all'esposizione degli indirizzi IP al mondo esterno, sia in fase di latenza, ovvero il tempo che intercorre tra l'invio di una richiesta ed una risposta tenderà ad essere
@@ -122,9 +122,9 @@ Tuttavia, effettuare connessioni dirette fra \textit{front-end} e ogni \gls{micr
 
 \noindent Per far fronte a queste problematiche si è deciso di utilizzare un \gls{API Gateway}.\\
 In questo modo, solamente un \gls{IP} sarà visibile pubblicamente, mentre quelli dei \glspl{microservizio} possono diventare privati.\\
-Per quanto riguarda la latenza il \textit{front-end} comunicherà attraverso l'\gls{API Gateway}, stabilendo solo le connessioni per la richiesta e la risposta, lasciando all'\gls{API Gateway} il compito di smistare le richieste al giusto \gls{microservizio}, permettendo una connessione più rapida rispetto  all'utilizzo di connessioni diverse per ogni \gls{microservizio}, essendo tutti all'interno dello stesso \textit{network}.
+Per quanto riguarda la latenza il \textit{front end} comunicherà attraverso l'\gls{API Gateway}, stabilendo solo le connessioni per la richiesta e la risposta, lasciando all'\gls{API Gateway} il compito di smistare le richieste al giusto \gls{microservizio}, permettendo una connessione più rapida rispetto  all'utilizzo di connessioni diverse per ogni \gls{microservizio}, essendo tutti all'interno dello stesso \textit{network}.
 
-\subsection{Front-end}
+\subsection{Front end}
 \subsubsection{Architettura Angular}
 % TODO aggiungere alla bibliografia: https://angular.io/guide/architecture
 Il componente principale di Angular è il \textbf{modulo}. Un modulo è un contenitore di funzionalità che sono esposte ad altri moduli. Questa suddivisione in moduli rende la struttura dell'applicazione ordinata e il codice mantenibile.\\
@@ -135,26 +135,71 @@ Ad ogni component è associato un \textit{template}, ovvero del codice HTML in c
 È possibile creare un component che rappresenta la pagina completa, in cui inserire diversi component per ogni elemento contenuto in quella pagina.
 Ogni component contenuto si occuperà così di gestire la grafica di quella determinata funzionalità e di comunicare con i servizi di cui necessita; sarà poi il component \enquote*{padre} a gestire la disposizione dei component utilizzati. 
 \subsubsection{Organizzazione del codice}
-
+% TODO: aggiungere questa sezione alla parte di codifica
 \subsubsection{Progettazione delle maschere}
-Descrizione Figma e delle scelte realizzative del mockup realizzato.
+Con il \textit{tutor} aziendale è stato discusso come dovrebbe essere la grafica delle nuove maschere da aggiungere a \productName. Da queste discussioni è stato poi utilizzato \nameref{sub: Figma} per fare il \textit{mockup}, in modo da  testare come i vari elementi visivi lavorano insieme.\\
+Durante la progettazione del \textit{mockup} è stato seguito lo stile presente nella \textit{web-app}, in modo da non disorientare l'utente durante la navigazione. \\
+I risultati della progettazione sono riportati in seguito.
+\begin{figure}[H] 
+    \centering 
+    \includegraphics[scale=0.6]{mockup/le-mie-crew.png} 
+    \caption{Mockup pagina per la visualizzazione dei gruppi creati dall'utente}
+\end{figure}
+
+\begin{figure}[H] 
+    \centering 
+    \includegraphics[scale=0.6]{mockup/lista-crew.png} 
+    \caption{Mockup pagina per la visualizzazione dei gruppi a cui partecipa l'utente}
+\end{figure}
+
+\begin{figure}[H] 
+    \centering 
+    \includegraphics[scale=0.56]{mockup/dettagli-crew.png} 
+    \caption{Mockup pagina per la visualizzazione dei dettagli di un gruppo}
+\end{figure}
+
+\begin{figure}[H] 
+    \centering 
+    \includegraphics[scale=0.56]{mockup/modifica-crew.png} 
+    \caption{Mockup pagina per la modifica dei dettagli di un gruppo}
+\end{figure}
+
+Come si può notare dalle immagini, sono stati omessi dalla progettazione l'header e il footer, in quanto sono già presenti nella \textit{web-app}.
 
 
-\subsubsection{Namespace 1} %**************************
-Descrizione namespace 1.
+% \subsubsection{Namespace 1} %**************************
+% Descrizione namespace 1.
 
-\begin{namespacedesc}
-    \classdesc{Classe 1}{Descrizione classe 1}
-    \classdesc{Classe 2}{Descrizione classe 2}
-\end{namespacedesc}
+% \begin{namespacedesc}
+%     \classdesc{Classe 1}{Descrizione classe 1}
+%     \classdesc{Classe 2}{Descrizione classe 2}
+% \end{namespacedesc}
 
 
 %**************************************************************
 \section{Design Pattern utilizzati}
 \subsection{Microservizi}
-\subsection{Api Gateway}
+% TODO: aggiungere alla bibliografia: https://aws.amazon.com/it/microservices/
+I \glspl{microservizio} sono un approccio per sviluppare e organizzare l'architettura dei \textit{software} secondo cui quest'ultimi sono composti di servizi indipendenti di piccole dimensioni che comunicano tra loro tramite \gls{API} ben definite.\\
+Nel contesto di questo progetto, sono stati implementati tre \glspl{microservizio}: 
+\begin{itemize}
+    \item \textbf{SW\_Gruppi}: \gls{microservizio} responsabile per la gestione delle funzionalità legate ai gruppi;
+    \item \textbf{ApiGateway}: \gls{microservizio} che implementa il \textit{pattern} \nameref{sub: ApiGateway};
+    \item \textbf{EurekaServer}: \gls{microservizio} che implementa il pattern \nameref{sub: ServiceRegistry}. 
+\end{itemize}
+\subsection{API Gateway}
+\label{sub: ApiGateway}
+Un \gls{API Gateway} è uno strumento di gestione delle \gls{API} che si situa tra un client e una raccolta di servizi \textit{back end}. Un \gls{API Gateway} si comporta come un proxy inverso per accettare tutte le chiamate \gls{API}, aggregare i vari servizi richiesti per gestirle e restituire i risultati appropriati.\\
+Utilizzare un \gls{API Gateway} è vantaggioso perché: 
+\begin{itemize}
+    \item permette di centralizzare il punto di ingresso per le chiamate;
+    \item permette di monitorare le risorse utilizzate;
+    \item permette di proteggere un servizio che è aperto a tutti;
+    \item latenza minore rispetto alla chiamata a diversi 
+\end{itemize}
 \subsection{Service Discovery}
 \subsection{Service Registry}
+\label{sub: ServiceRegistry}
 \subsection{Dependency Injection}
 \subsection{Singleton}
 \subsection{Feature Service}
@@ -164,13 +209,13 @@ Descrizione namespace 1.
 
 %**************************************************************
 \section{Codifica}
-\subsection{Back-end}
+\subsection{Back end}
 
 \subsubsection{Gruppi service}
 \subsubsection{Modifica dei servizi esistenti}
 \subsubsection{Api Gateway ed Eureka Server}
 \subsubsection{Docker}
 
-\subsection{Front-end}
+\subsection{Front end}
 \subsubsection{Maschere}
 \subsubsection{Componenti}
