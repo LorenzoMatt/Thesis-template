@@ -127,7 +127,8 @@ Per quanto riguarda la latenza il \textit{front end} comunicherà attraverso l'\
 \subsection{Front end}
 \subsubsection{Architettura Angular}
 % TODO aggiungere alla bibliografia: https://angular.io/guide/architecture
-Il componente principale di Angular è il \textbf{modulo}. Un modulo è un contenitore di funzionalità che sono esposte ad altri moduli. Questa suddivisione in moduli rende la struttura dell'applicazione ordinata e il codice mantenibile.\\
+Il componente principale di Angular è il \textbf{modulo}. Un modulo è un contenitore di funzionalità che sono es
+poste ad altri moduli. Questa suddivisione in moduli rende la struttura dell'applicazione ordinata e il codice mantenibile.\\
 Un elemento fondamentale di Angular è il \textbf{component}, ovvero delle classi che gestiscono le \textit{view} dell'applicazione e la loro logica.\\
 I dati da visualizzare nella \textit{view} vengono forniti dalle classi dette \textbf{servizi}. Queste classi svolgono diverse funzioni, come per esempio  l'esecuzione delle richieste HTTP.\\  
 Ad ogni component è associato un \textit{template}, ovvero del codice HTML in cui si definisce come viene visualizzato il component.\\
@@ -197,9 +198,23 @@ Utilizzare un \gls{API Gateway} è vantaggioso perché:
     \item permette di proteggere un servizio che è aperto a tutti;
     \item latenza minore rispetto alla chiamata a diversi 
 \end{itemize}
-\subsection{Service Discovery}
-\subsection{Service Registry}
-\label{sub: ServiceRegistry}
+\subsection{Client-Side Service Discovery e Service Registry}
+\begin{figure}[H] 
+    \centering 
+    \includegraphics[scale=0.3]{progettazione/registrazione-servizi.png} 
+    \caption{Diagramma concettuale che descrive la registrazione dei microservizi all'Eureka Server}
+\end{figure}
+%TODO: aggungere bibliografia: https://lalverma.medium.com/spring-boot-microservices-implementing-service-discovery-cfc98e49b74f, https://microservices.io/patterns/service-registry.html
+I \glspl{microservizio} hanno una natura dinamica, in quanto è possibile che più istanze di un singolo \gls{microservizio} coesistano, probabilmente esponendo le loro \gls{API} in un indirizzo \gls{IP} diverso o una porta diversa. Queste evenienze portano all'impossibilità di: 
+\begin{itemize}
+    \item conoscere la posizione di qualsiasi istanza dei \glspl{microservizio};
+    \item tenere traccia di tutte le istanze;
+    \item selezionare un'istanza di \gls{microservizio}.
+\end{itemize}
+La soluzione a questi problemi è l'utilizzo del \textit{pattern} \textbf{\textit{Client-side Service Discovery}}, che fornisce un meccanismo che tiene traccia di tutti i servizi e delle relative istanze. Tutti i \glspl{microservizio} si registrano e continuano ad aggiornare regolarmente le proprie informazioni di rete.\\
+Per registrare un \gls{microservizio} è stato utilizzato il \textit{pattern} 
+\textbf{\textit{Service registry}}, applicato mediante un l'implementazione di un \textbf{Eureka Server}. L'Eureka Server è un \textit{database} di servizi che tiene traccia di ogni \gls{microservizio}, delle loro istanze e delle loro locazioni. I \glspl{microservizio} si registrano all'avvio dell'applicazione e vengono rimossi alla chiusura.\\
+L'utilizzo di questi \textit{pattern}  permette ai servizi di comunicare fra di loro, ottenendo le informazioni degli altri servizi direttamente dall'Eureka Server.
 \subsection{Dependency Injection}
 \subsection{Singleton}
 \subsection{Feature Service}
