@@ -253,11 +253,32 @@ Nel dettaglio, le fasi sono le seguenti:
 Angular e Spring integrano fra i loro \textit{pattern} il \textbf{Singleton}, che viene implementato mediante l'utilizzo della \nameref{sub:Dependency-Injection}.\\
 Utilizzando questo \textit{pattern} è stato possibile creare una sola istanza di una classe, potendola utilizzare fra i vari servizi e componenti.\\
 L'utilizzo del \textit{pattern Singleton}, tuttavia, potrebbe violare il \gls{SRP}, rendendolo un \textit{anti-pattern}. Nel contesto del progetto di \textit{stage}, questo \textit{pattern} è stato utilizzato per le classi di tipo \textit{Controller}, \textit{Service} e \textit{Repository}. In questo caso l'utilizzo del \textit{pattern Singleton} in quanto sarebbe logicamente sbagliato avere più istanze per le classi sopra citate.
+
 \subsection{Feature Service}
+%TODO: aggiungere alla bibliografia: https://angular.io/guide/feature-modules
 Questo \textit{pattern} è utilizzato da Angular per estrarre da una classe di tipo \textit{Component} la sua relativa logica, come per esempio la visualizzazione dei dettagli di un gruppo. Mediante l'utilizzo del \textit{pattern} \nameref{sub:Singleton} e \nameref{sub:Dependency-Injection} è possibile utilizzare i vari componenti in tutti i componenti dell'applicazione.
-\subsection{Decorator}
 \subsection{Lazy Loading}
+%TODO: aggiungere alla bibliografia: https://angular.io/guide/lazy-loading-ngmodules
+Questo \textit{pattern} è utilizzato da Angular per caricare i moduli solo nel momento in cui effettivamente vengono utilizzati, ottenendo così bassa la quantità di dati scaricata dall'utente iniziale e una diminuzione del tempo necessario al caricamento dell'applicazione.\\
+Viene utilizzato questo \textit{pattern} per la gestione del \textit{routing}, associando ad una specifica \textit{view} dell'applicazione un \textit{path} di navigazione presente nella \gls{URL}, come rappresentato in seguito:
+\begin{figure}[H] 
+    \centering 
+    \includegraphics[scale=0.3]{progettazione/routing.png}
+    \caption{Implementazione del \textit{pattern} \textit{Lazy loading} nel \class{AppRoutingModule}}
+\end{figure}
 \subsection{Observer}
+%TODO: aggiungere alla bibliografia: https://angular.io/guide/observables
+% Il pattern \class{Observable} consente a un oggetto, chiamato \class{Subject}, di tenere traccia di altri oggetti, chiamati \class{Observer}, interessati allo stato del \textit{Subject}. Quando lo stato del \textit{Subject} cambia, notifica i suoi \textit{Observer}.\\
+Gli \textit{\textbf{Observable}} forniscono supporto per il passaggio di messaggi tra le parti dell'applicazione. Sono usati frequentemente in Angular e sono una tecnica per la gestione ad eventi e la programmazione asincrona.\\
+Il \textit{pattern Observer} è un \textit{design pattern} in cui un oggetto, chiamato \class{Subject}, contiene una lista di suoi osservatori, chiamati \class{Observers}, e li notifica automaticamente ai cambiamenti di stato.\\
+Gli \textit{Observable} sono dichiarativi, ovvero viene definita una funzione che non viene eseguita fino a quando un \textit{Observer} si sottoscrive. L'\textit{Observer} viene quindi notificato al completamento della funzione, e il tipo di ritorno di un \textit{Observable} può essere cambia in base al contesto, che nel caso nel progetto di \textit{stage} è stato prevalentemente di tipo HTTP \textit{response}. \\
+\begin{figure}[H] 
+    \centering 
+    \includegraphics[scale=0.28]{progettazione/subscribe-example.png}
+    \caption{Esempio implementazione \textit{pattern Observer}}
+\end{figure}
+
+% Gli \textit{\textbf{Observable}} forniscono supporto per il passaggio di messaggi tra parti dell'applicazione. Sono usati frequentemente in Angular e sono una tecnica per la gestione degli eventi, la programmazione asincrona e la gestione di più valori.
 
 %**************************************************************
 \section{Codifica}
