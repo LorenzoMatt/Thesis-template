@@ -138,7 +138,7 @@ Ogni component contenuto si occuperà così di gestire la grafica di quella dete
 \subsubsection{Organizzazione del codice}
 % TODO: aggiungere questa sezione alla parte di codifica
 \subsubsection{Progettazione delle maschere}
-Con il \textit{tutor} aziendale è stato discusso come dovrebbe essere la grafica delle nuove maschere da aggiungere a \productName. Da queste discussioni è stato poi utilizzato \nameref{sub: Figma} per fare il \textit{mockup}, in modo da  testare come i vari elementi visivi lavorano insieme.\\
+Con il \textit{tutor} aziendale è stato discusso come dovrebbe essere la grafica delle nuove maschere da aggiungere a \productName. Da queste discussioni è stato poi utilizzato \nameref{sub:Figma} per fare il \textit{mockup}, in modo da  testare come i vari elementi visivi lavorano insieme.\\
 Durante la progettazione del \textit{mockup} è stato seguito lo stile presente nella \textit{web-app}, in modo da non disorientare l'utente durante la navigazione. \\
 I risultati della progettazione sono riportati in seguito.
 \begin{figure}[H] 
@@ -185,11 +185,11 @@ I \glspl{microservizio} sono un approccio per sviluppare e organizzare l'archite
 Nel contesto di questo progetto, sono stati implementati tre \glspl{microservizio}: 
 \begin{itemize}
     \item \textbf{SW\_Gruppi}: \gls{microservizio} responsabile per la gestione delle funzionalità legate ai gruppi;
-    \item \textbf{ApiGateway}: \gls{microservizio} che implementa il \textit{pattern} \nameref{sub: ApiGateway};
-    \item \textbf{EurekaServer}: \gls{microservizio} che implementa il pattern \nameref{sub: ServiceRegistry}. 
+    \item \textbf{ApiGateway}: \gls{microservizio} che implementa il \textit{pattern} \nameref{sub:ApiGateway};
+    \item \textbf{EurekaServer}: \gls{microservizio} che implementa il pattern \hyperref[sub:ServiceRegistry]{ServiceRegistry}. 
 \end{itemize}
 \subsection{API Gateway}
-\label{sub: ApiGateway}
+\label{sub:ApiGateway}
 Un \gls{API Gateway} è uno strumento di gestione delle \gls{API} che si situa tra un client e una raccolta di servizi \textit{back end}. Un \gls{API Gateway} si comporta come un proxy inverso per accettare tutte le chiamate \gls{API}, aggregare i vari servizi richiesti per gestirle e restituire i risultati appropriati.\\
 Utilizzare un \gls{API Gateway} è vantaggioso perché: 
 \begin{itemize}
@@ -199,6 +199,7 @@ Utilizzare un \gls{API Gateway} è vantaggioso perché:
     \item latenza minore rispetto alla chiamata a diversi 
 \end{itemize}
 \subsection{Client-Side Service Discovery e Service Registry}
+\label{sub:ServiceRegistry}
 \begin{figure}[H] 
     \centering 
     \includegraphics[scale=0.3]{progettazione/registrazione-servizi.png} 
@@ -216,8 +217,44 @@ Per registrare un \gls{microservizio} è stato utilizzato il \textit{pattern}
 \textbf{\textit{Service registry}}, applicato mediante un l'implementazione di un \textbf{Eureka Server}. L'Eureka Server è un \textit{database} di servizi che tiene traccia di ogni \gls{microservizio}, delle loro istanze e delle loro locazioni. I \glspl{microservizio} si registrano all'avvio dell'applicazione e vengono rimossi alla chiusura.\\
 L'utilizzo di questi \textit{pattern}  permette ai servizi di comunicare fra di loro, ottenendo le informazioni degli altri servizi direttamente dall'Eureka Server.
 \subsection{Dependency Injection}
+\label{sub:Dependency-Injection}
+% TODO: aggiungere alla bibliografia: https://davioooh.com/blog/2017/08/19/spring-dependency-injection
+Sia Angular sia Spring sono dei \textit{framework} che implementano delle convenzioni che permettono l'utilizzo del \textit{patter Dependency Injection}.\\
+L'ecosistema all'interno del quale le applicazioni Spring vivono viene definito \textbf{IoC container}. Lo \textit{IoC container} si occupa di istanziare gli oggetti (\textit{beans}) dichiarati nel progetto e di reperire e iniettare tutte le dipendenze ad essi associate. Tali dipendenze possono essere componenti del \textit{framework} o altri \textit{bean} dichiarati nel contesto applicativo.\\
+La dichiarazione di una classe come componente nel progetto avviene tramite l'utilizzo dell'annotazione \code{@Component}, che rappresenta la categoria più generica per la dichiarazione di un componente.
+Durante la fase di codifica del progetto sono state utilizzate le annotazioni \code{@Controller}, \code{@Service} e \code{@Repository}, che sono le categorie di componenti principali di un'applicazione Spring.
+Per iniettare delle classi da recuperare dal \textit{IoC container} è sufficiente utilizzare l'annotazione \code{@Autowired}.
+\begin{figure}[H] 
+    \centering 
+    \includegraphics[scale=0.2]{progettazione/autowired-code.png}
+    \caption{Esempio di Dependency Injection con Spring}
+\end{figure}
+% TODO: aggiungere alla bibliografia: https://angular.io/guide/dependency-injection
+Angular permette di utilizzare la \textit{Dependency Injection} di tipo \textit{constructor}, che prevede che una classe dichiari nel costruttore le dipendenze di cui ha bisogno che in fase di inizializzazione gli verranno fornite.\\
+Angular include un meccanismo di \textit{Dependency Injection} davvero solido e molto flessibile, il cui utilizzo si può riassumere in due semplici passi: si crea il servizio e si inietta la dipendenza ove necessario.
+Nel dettaglio, le fasi sono le seguenti: 
+\begin{itemize}
+    \item si crea un servizio, ovvero una classe Angular, che viene annotata come \code{@Injectable}. Di \textit{default}, questo decoratore ha una proprietà \texttt{ProvideIn}, che crea un \textit{provider} per il servizio. Nel caso, per esempio, di \code{ProvideIn: `root'}, viene specificato  che Angular dovrebbe fornire il servizio nella \textit{root injector}, ovvero diponibile a tutte le classi;
+    \begin{figure}[H] 
+        \centering 
+        \includegraphics[scale=0.2]{progettazione/injectable.png}
+        \caption{Esempio di creazione di un servizio}
+    \end{figure}
+    \item  si inietta il servizio e lo si utilizza ovunque sia necessario.
+    \begin{figure}[H] 
+        \centering 
+        \includegraphics[scale=0.2]{progettazione/injected-service.png}
+        \caption{Esempio di \textit{constructor injection}}
+    \end{figure}
+\end{itemize}
 \subsection{Singleton}
+\label{sub:Singleton}
+%TODO: aggiungere alla bibliografia: https://refactoring.guru/design-patterns/singleton
+Angular e Spring integrano fra i loro \textit{pattern} il \textbf{Singleton}, che viene implementato mediante l'utilizzo della \nameref{sub:Dependency-Injection}.\\
+Utilizzando questo \textit{pattern} è stato possibile creare una sola istanza di una classe, potendola utilizzare fra i vari servizi e componenti.\\
+L'utilizzo del \textit{pattern Singleton}, tuttavia, potrebbe violare il \gls{SRP}, rendendolo un \textit{anti-pattern}. Nel contesto del progetto di \textit{stage}, questo \textit{pattern} è stato utilizzato per le classi di tipo \textit{Controller}, \textit{Service} e \textit{Repository}. In questo caso l'utilizzo del \textit{pattern Singleton} in quanto sarebbe logicamente sbagliato avere più istanze per le classi sopra citate.
 \subsection{Feature Service}
+Questo \textit{pattern} è utilizzato da Angular per estrarre da una classe di tipo \textit{Component} la sua relativa logica, come per esempio la visualizzazione dei dettagli di un gruppo. Mediante l'utilizzo del \textit{pattern} \nameref{sub:Singleton} e \nameref{sub:Dependency-Injection} è possibile utilizzare i vari componenti in tutti i componenti dell'applicazione.
 \subsection{Decorator}
 \subsection{Lazy Loading}
 \subsection{Observer}
