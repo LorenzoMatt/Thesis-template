@@ -155,13 +155,13 @@ I risultati della progettazione sono riportati in seguito.
 
 \begin{figure}[H] 
     \centering 
-    \includegraphics[scale=0.56]{mockup/dettagli-crew.png} 
+    \includegraphics[scale=0.54]{mockup/dettagli-crew.png} 
     \caption{Mockup pagina per la visualizzazione dei dettagli di un gruppo}
 \end{figure}
 
 \begin{figure}[H] 
     \centering 
-    \includegraphics[scale=0.56]{mockup/modifica-crew.png} 
+    \includegraphics[scale=0.54]{mockup/modifica-crew.png} 
     \caption{Mockup pagina per la modifica dei dettagli di un gruppo}
 \end{figure}
 
@@ -181,7 +181,7 @@ Come si può notare dalle immagini, sono stati omessi dalla progettazione l'head
 \section{Design Pattern utilizzati}
 \subsection{Microservizi}
 % TODO: aggiungere alla bibliografia: https://aws.amazon.com/it/microservices/
-I \glspl{microservizio} sono un approccio per sviluppare e organizzare l'architettura dei \textit{software} secondo cui quest'ultimi sono composti di servizi indipendenti di piccole dimensioni che comunicano tra loro tramite \gls{API} ben definite.\\
+I \glspl{microservizio} sono un approccio per lo sviluppo e l'organizzazione dell'architettura \textit{software} secondo cui quest'ultimi sono composti di servizi indipendenti di piccole dimensioni che comunicano tra loro tramite \gls{API} ben definite.\\
 Nel contesto di questo progetto, sono stati implementati tre \glspl{microservizio}: 
 \begin{itemize}
     \item \textbf{SW\_Gruppi}: \gls{microservizio} responsabile per la gestione delle funzionalità legate ai gruppi;
@@ -190,39 +190,44 @@ Nel contesto di questo progetto, sono stati implementati tre \glspl{microservizi
 \end{itemize}
 \subsection{API Gateway}
 \label{sub:ApiGateway}
-Un \gls{API Gateway} è uno strumento di gestione delle \gls{API} che si situa tra un client e una raccolta di servizi \textit{back end}. Un \gls{API Gateway} si comporta come un proxy inverso per accettare tutte le chiamate \gls{API}, aggregare i vari servizi richiesti per gestirle e restituire i risultati appropriati.\\
+\begin{figure}[H] 
+    \centering 
+    \includegraphics[scale=0.68]{progettazione/API-Gateway.png} 
+    \caption{Diagramma concettuale che descrive l'API Gateway}
+\end{figure}
+Un \gls{API Gateway} è uno strumento di gestione delle \gls{API} che si situa tra un \textit{client} e una raccolta di servizi \textit{back end}. Un \gls{API Gateway} si comporta come un \textit{proxy} inverso per riceve tutte le chiamate \gls{API}, aggregando le chiamate alle \gls{API} dei servizi richiesti, gestendo e restituendo i risultati appropriati in base alle richieste ricevute.\\
 Utilizzare un \gls{API Gateway} è vantaggioso perché: 
 \begin{itemize}
     \item permette di centralizzare il punto di ingresso per le chiamate;
     \item permette di monitorare le risorse utilizzate;
     \item permette di proteggere un servizio che è aperto a tutti;
-    \item latenza minore rispetto alla chiamata a diversi 
+    \item ha latenza minore rispetto alla chiamata a diversi servizi.
 \end{itemize}
+
 \subsection{Client-Side Service Discovery e Service Registry}
 \label{sub:ServiceRegistry}
 \begin{figure}[H] 
     \centering 
-    \includegraphics[scale=0.3]{progettazione/registrazione-servizi.png} 
+    \includegraphics[scale=0.4]{progettazione/registrazione-servizi.png} 
     \caption{Diagramma concettuale che descrive la registrazione dei microservizi all'Eureka Server}
 \end{figure}
 %TODO: aggungere bibliografia: https://lalverma.medium.com/spring-boot-microservices-implementing-service-discovery-cfc98e49b74f, https://microservices.io/patterns/service-registry.html
-I \glspl{microservizio} hanno una natura dinamica, in quanto è possibile che più istanze di un singolo \gls{microservizio} coesistano, probabilmente esponendo le loro \gls{API} in un indirizzo \gls{IP} diverso o una porta diversa. Queste evenienze portano all'impossibilità di: 
+I \glspl{microservizio} hanno una natura dinamica, in quanto è possibile che più istanze di un singolo \gls{microservizio} coesistano, probabilmente esponendo le loro \gls{API} in un indirizzo \gls{IP} diverso o in una porta diversa. Queste evenienze portano all'impossibilità di: 
 \begin{itemize}
     \item conoscere la posizione di qualsiasi istanza dei \glspl{microservizio};
     \item tenere traccia di tutte le istanze;
     \item selezionare un'istanza di \gls{microservizio}.
 \end{itemize}
-La soluzione a questi problemi è l'utilizzo del \textit{pattern} \textbf{\textit{Client-side Service Discovery}}, che fornisce un meccanismo che tiene traccia di tutti i servizi e delle relative istanze. Tutti i \glspl{microservizio} si registrano e continuano ad aggiornare regolarmente le proprie informazioni di rete.\\
-Per registrare un \gls{microservizio} è stato utilizzato il \textit{pattern} 
-\textbf{\textit{Service registry}}, applicato mediante un l'implementazione di un \textbf{Eureka Server}. L'Eureka Server è un \textit{database} di servizi che tiene traccia di ogni \gls{microservizio}, delle loro istanze e delle loro locazioni. I \glspl{microservizio} si registrano all'avvio dell'applicazione e vengono rimossi alla chiusura.\\
+La soluzione a questi problemi è l'utilizzo del \textit{pattern} \textbf{\textit{Client-side Service Discovery}}, che fornisce un meccanismo che tiene traccia di tutti i servizi e delle relative istanze. Tutti i \glspl{microservizio} si registrano ad un \textit{Service registry} e continuano ad aggiornare regolarmente le proprie informazioni di rete.\\
+Il \textit{pattern} \textbf{\textit{Service registry}} è stato applicato mediante l'implementazione di un \class{Eureka Server}. L'\textit{Eureka Server} è un \textit{database} di servizi che tiene traccia di ogni \gls{microservizio}, delle loro istanze e delle loro locazioni. I \glspl{microservizio} si registrano all'avvio dell'applicazione e vengono rimossi alla sua chiusura.\\
 L'utilizzo di questi \textit{pattern}  permette ai servizi di comunicare fra di loro, ottenendo le informazioni degli altri servizi direttamente dall'Eureka Server.
 \subsection{Dependency Injection}
 \label{sub:Dependency-Injection}
 % TODO: aggiungere alla bibliografia: https://davioooh.com/blog/2017/08/19/spring-dependency-injection
-Sia Angular sia Spring sono dei \textit{framework} che implementano delle convenzioni che permettono l'utilizzo del \textit{patter Dependency Injection}.\\
+Sia Angular sia Spring sono dei \textit{framework} che implementano delle convenzioni che permettono l'utilizzo del \textit{patter} \class{Dependency Injection}.\\
 L'ecosistema all'interno del quale le applicazioni Spring vivono viene definito \textbf{IoC container}. Lo \textit{IoC container} si occupa di istanziare gli oggetti (\textit{beans}) dichiarati nel progetto e di reperire e iniettare tutte le dipendenze ad essi associate. Tali dipendenze possono essere componenti del \textit{framework} o altri \textit{bean} dichiarati nel contesto applicativo.\\
 La dichiarazione di una classe come componente nel progetto avviene tramite l'utilizzo dell'annotazione \code{@Component}, che rappresenta la categoria più generica per la dichiarazione di un componente.
-Durante la fase di codifica del progetto sono state utilizzate le annotazioni \code{@Controller}, \code{@Service} e \code{@Repository}, che sono le categorie di componenti principali di un'applicazione Spring.
+Durante la fase di codifica del progetto sono state utilizzate le annotazioni \code{@Controller}, \code{@Service} e \code{@Repository}, che sono le categorie di componenti principali di un'applicazione Spring.\\
 Per iniettare delle classi da recuperare dal \textit{IoC container} è sufficiente utilizzare l'annotazione \code{@Autowired}.
 \begin{figure}[H] 
     \centering 
@@ -230,11 +235,11 @@ Per iniettare delle classi da recuperare dal \textit{IoC container} è sufficien
     \caption{Esempio di Dependency Injection con Spring}
 \end{figure}
 % TODO: aggiungere alla bibliografia: https://angular.io/guide/dependency-injection
-Angular permette di utilizzare la \textit{Dependency Injection} di tipo \textit{constructor}, che prevede che una classe dichiari nel costruttore le dipendenze di cui ha bisogno che in fase di inizializzazione gli verranno fornite.\\
-Angular include un meccanismo di \textit{Dependency Injection} davvero solido e molto flessibile, il cui utilizzo si può riassumere in due semplici passi: si crea il servizio e si inietta la dipendenza ove necessario.
+\noindent Angular permette l'utilizzo della \textit{Dependency Injection} di tipo \textit{constructor}, che prevede che una classe dichiari nel costruttore le dipendenze di cui ha bisogno che in fase di inizializzazione gli verranno fornite.\\
+Angular include un meccanismo di \textit{Dependency Injection} davvero solido e molto flessibile, il cui utilizzo si può riassumere in due semplici passi: si crea il servizio e si inietta la dipendenza ove necessario.\\
 Nel dettaglio, le fasi sono le seguenti: 
 \begin{itemize}
-    \item si crea un servizio, ovvero una classe Angular, che viene annotata come \code{@Injectable}. Di \textit{default}, questo decoratore ha una proprietà \texttt{ProvideIn}, che crea un \textit{provider} per il servizio. Nel caso, per esempio, di \code{ProvideIn: `root'}, viene specificato  che Angular dovrebbe fornire il servizio nella \textit{root injector}, ovvero diponibile a tutte le classi;
+    \item si crea un servizio, ovvero una classe Angular, che viene annotata come \code{@Injectable}. Di \textit{default}, questo decoratore ha una proprietà \code{ProvideIn}, che crea un \textit{provider} per il servizio. Nel caso, per esempio, di \code{ProvideIn: `root'}, viene specificato  che Angular dovrebbe fornire il servizio nella \textit{root injector}, ovvero diponibile a tutte le classi;
     \begin{figure}[H] 
         \centering 
         \includegraphics[scale=0.2]{progettazione/injectable.png}
@@ -250,17 +255,18 @@ Nel dettaglio, le fasi sono le seguenti:
 \subsection{Singleton}
 \label{sub:Singleton}
 %TODO: aggiungere alla bibliografia: https://refactoring.guru/design-patterns/singleton
-Angular e Spring integrano fra i loro \textit{pattern} il \textbf{Singleton}, che viene implementato mediante l'utilizzo della \nameref{sub:Dependency-Injection}.\\
+Angular e Spring integrano fra i loro \textit{pattern} il \class{Singleton}, che viene implementato mediante l'utilizzo della \nameref{sub:Dependency-Injection}.\\
 Utilizzando questo \textit{pattern} è stato possibile creare una sola istanza di una classe, potendola utilizzare fra i vari servizi e componenti.\\
-L'utilizzo del \textit{pattern Singleton}, tuttavia, potrebbe violare il \gls{SRP}, rendendolo un \textit{anti-pattern}. Nel contesto del progetto di \textit{stage}, questo \textit{pattern} è stato utilizzato per le classi di tipo \textit{Controller}, \textit{Service} e \textit{Repository}. In questo caso l'utilizzo del \textit{pattern Singleton} in quanto sarebbe logicamente sbagliato avere più istanze per le classi sopra citate.
+L'utilizzo del \textit{pattern Singleton}, tuttavia, potrebbe violare il \gls{SRP}, rendendolo un \textit{anti-pattern}. Nel contesto del progetto di \textit{stage}, questo \textit{pattern} è stato utilizzato per le classi di tipo \textit{Controller}, \textit{Service} e \textit{Repository}. In questo caso il suo utilizzo è necessario in quanto sarebbe logicamente sbagliato avere più istanze per il tipo di classi sopra citate.
 
 \subsection{Feature Service}
 %TODO: aggiungere alla bibliografia: https://angular.io/guide/feature-modules
-Questo \textit{pattern} è utilizzato da Angular per estrarre da una classe di tipo \textit{Component} la sua relativa logica, come per esempio la visualizzazione dei dettagli di un gruppo. Mediante l'utilizzo del \textit{pattern} \nameref{sub:Singleton} e \nameref{sub:Dependency-Injection} è possibile utilizzare i vari componenti in tutti i componenti dell'applicazione.
+Questo \textit{pattern} è utilizzato da Angular per estrarre da una classe di tipo \textit{Component} la sua relativa logica, che può essere per esempio la visualizzazione dei dettagli di un gruppo.\\
+ Mediante l'utilizzo del \textit{pattern} \nameref{sub:Singleton} e \nameref{sub:Dependency-Injection} è possibile utilizzare i vari componenti in tutti i componenti dell'applicazione.
 \subsection{Lazy Loading}
 %TODO: aggiungere alla bibliografia: https://angular.io/guide/lazy-loading-ngmodules
 Questo \textit{pattern} è utilizzato da Angular per caricare i moduli solo nel momento in cui effettivamente vengono utilizzati, ottenendo così bassa la quantità di dati scaricata dall'utente iniziale e una diminuzione del tempo necessario al caricamento dell'applicazione.\\
-Viene utilizzato questo \textit{pattern} per la gestione del \textit{routing}, associando ad una specifica \textit{view} dell'applicazione un \textit{path} di navigazione presente nella \gls{URL}, come rappresentato in seguito:
+Viene utilizzato questo \textit{pattern} per la gestione del \textit{routing}, associando ad una specifica \textit{view} dell'applicazione un \textit{path} di navigazione presente nella \gls{URL}.
 \begin{figure}[H] 
     \centering 
     \includegraphics[scale=0.3]{progettazione/routing.png}
@@ -271,7 +277,7 @@ Viene utilizzato questo \textit{pattern} per la gestione del \textit{routing}, a
 % Il pattern \class{Observable} consente a un oggetto, chiamato \class{Subject}, di tenere traccia di altri oggetti, chiamati \class{Observer}, interessati allo stato del \textit{Subject}. Quando lo stato del \textit{Subject} cambia, notifica i suoi \textit{Observer}.\\
 Gli \textit{\textbf{Observable}} forniscono supporto per il passaggio di messaggi tra le parti dell'applicazione. Sono usati frequentemente in Angular e sono una tecnica per la gestione ad eventi e la programmazione asincrona.\\
 Il \textit{pattern Observer} è un \textit{design pattern} in cui un oggetto, chiamato \class{Subject}, contiene una lista di suoi osservatori, chiamati \class{Observers}, e li notifica automaticamente ai cambiamenti di stato.\\
-Gli \textit{Observable} sono dichiarativi, ovvero viene definita una funzione che non viene eseguita fino a quando un \textit{Observer} si sottoscrive. L'\textit{Observer} viene quindi notificato al completamento della funzione, e il tipo di ritorno di un \textit{Observable} può essere cambia in base al contesto, che nel caso nel progetto di \textit{stage} è stato prevalentemente di tipo HTTP \textit{response}. \\
+Gli \textit{Observable} sono dichiarativi, ovvero viene definita una funzione che non viene eseguita fino a quando un \textit{Observer} si sottoscrive ad esso. L'\textit{Observer} viene quindi notificato al completamento della funzione, e il tipo di ritorno di un \textit{Observable} può cambiare in base al contesto, che nel caso nel progetto di \textit{stage} è stato prevalentemente di tipo HTTP \textit{response}. \\
 \begin{figure}[H] 
     \centering 
     \includegraphics[scale=0.28]{progettazione/subscribe-example.png}
