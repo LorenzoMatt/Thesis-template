@@ -28,6 +28,15 @@
 
 \newacronym[description={\glslink{ICTg}{Information and Comunications Tecnology}}]
     {ICT}{ICT}{Information and Comunications Tecnology}
+
+
+\newacronym[description={\glslink{DAOg}{Data Access Object}}]
+{DAO}{DAO}{Data Access Object}
+
+\newacronym[first={JPA},description={\glslink{JPAg}{}}]
+{JPA}{JPA}{Java Persistence API}
+
+
 %**************************************************************
 % Glossario
 %**************************************************************
@@ -40,6 +49,12 @@
     sort=api,
     description={in informatica con il termine \emph{Application Programming Interface API} (ing. interfaccia di programmazione di un'applicazione) si indica ogni insieme di procedure disponibili al programmatore, di solito raggruppate a formare un set di strumenti specifici per l'espletamento di un determinato compito all'interno di un certo programma. La finalità è ottenere un'astrazione, di solito tra l'hardware e il programmatore o tra software a basso e quello ad alto livello semplificando così il lavoro di programmazione}
 }
+\newglossaryentry{DAOg}
+{
+    name=DAO,
+    description={\textit{pattern} che consente di isolare l'\textit{application}/\textit{business layer} dal \textit{persistence layer} (di solito un database relazionale, ma potrebbe essere qualsiasi altro meccanismo di persistenza)}
+}
+
 
 \newglossaryentry{superset}
 {
@@ -52,6 +67,18 @@
     description={Canale da cui le \gls{API} possono accedere alle risorse di cui hanno bisogno per eseguire la loro funzione}
 }
 
+\newglossaryentry{JPAg}
+{
+    name=JPA,
+    description={\textit{framework} che offre delle \gls{API} per aiutare gli sviluppatori nelle operazioni di persistenza dei dati su un \textit{database} relazionale}
+}
+
+
+\newglossaryentry{EntityManager}
+{
+    name=EntityManager,
+    description={API che gestisce il ciclo di vita delle istanze di entità}
+}
 
 \newglossaryentry{JSPg}
 {
