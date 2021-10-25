@@ -301,33 +301,74 @@ Siccome fornisce funzionalità di \textit{business}, questa classe è annotata c
 
 \myparagraph{Repository}
 \label{Repository}
-Classi con funzionalità \gls{JPA} che permettono di mappare una classe in una tabella di un \textit{database} relazionale, svolgendo anche il compito \gls{EntityManager}, effettuando l'accesso agli oggetti ed eseguendo operazioni \gls{CRUD} sui dati immagazzinati nelle tabelle del \textit{database}.\\
-Tutte queste classi estendono l'interfaccia \code{JpaRepository<T,ID>}, dove T è il tipo della classe da mappare, ed ID è il tipo dell'identificativo della classe mappata.\\
-La classe \textit{JpaRepository} permette di creare le \textit{query} dal nome del metodo, senza  dover necessariamente implementare il metodo.
-Il meccanismo del generatore di query integrato nell'infrastruttura \textit{JPA Spring Data} è utile per creare query vincolanti sulle entità del \textit{repository}. Il meccanismo rimuove i prefissi find...By, read...By e get...By dal metodo e avvia l'analisi del resto.
+Interfacce con funzionalità \gls{JPA} che permettono di mappare una classe in una tabella di un \textit{database} relazionale, svolgendo anche il compito \gls{EntityManager}, effettuando l'accesso agli oggetti ed eseguendo operazioni \gls{CRUD} sui dati immagazzinati nelle tabelle del \textit{database}.\\
+Tutte queste interfacce estendono l'interfaccia \code{JpaRepository<T,ID>}, dove T è il tipo della classe da mappare, ed ID è il tipo dell'identificativo della classe mappata.\\
+L'interfaccia \textit{JpaRepository} permette di creare le \textit{query} a partire dal nome del metodo, senza doverlo necessariamente implementare.\\
+Il meccanismo che permette di generare le \textit{query} integrato nell'infrastruttura \textit{JPA Spring Data} è utile per creare \textit{query} vincolante sulle entità del \textit{repository}. Questo meccanismo rimuove i prefissi \textit{find...By}, \textit{read...By} e \textit{get...By} dal metodo ed effettua il \textit{parsing} della funzione alla ricerca dei nomi delle proprietà dell'entità mappata nel \textit{JpaRepository}, come nel seguente esempio: 
+\begin{center}
+    \code{Crew findById(int id);}
+\end{center}
+in cui \textit{id} è una proprietà dell'entità \class{Crew}.\\ 
+ Le proprietà inserite nel nome del metodo possono essere concatenate con \textit{And} e \textit{Or}, ma anche con operatori come \textit{Between}, \textit{LessThan}, \textit{GreaterThan}, \textit{Like}. \\
+ Un esempio è il seguente: 
+ \begin{center}
+     \code{long deleteByIdUscitaAndIdCrew (int idUscita, int idCrew);}
+ \end{center}
+È possibile applicare l'ordinamento statico aggiungendo una clausola \textit{OrderBy} al metodo di \textit{query} facendo riferimento ad una proprietà, come nel seguente caso:  
+\begin{center}
+    \code{List<Crew> findByOrderById()};
+\end{center}
+Ci sono tre \textit{repository} nel \gls{microservizio}: \class{JointUsciteCrewRepository, JointUtentiCrewRepository} e \class{CrewRepository}. 
+\mysubparagraph{JointUsciteCrewRepository} 
+\label{JointUsciteCrewRepository}
+\textit{Repository} che contiene le uscite di un gruppo. Ogni qualvolta un utente aggiunge un uscita, essa viene aggiunta alle uscite di tutti i gruppi a cui appartiene. Viceversa quando viene eliminata un'uscita viene eliminata dalle uscite di tutti i gruppi.\\
+Un accorgimento che è stato fatto è che quando viene rimosso un gruppo, tutte le uscite associate a quel gruppo vengono rimosse da questa tabella (n.b. le uscite non vengono eliminate dalla tabella Uscite presente nel \textit{database}, vengono solo eliminate le voci relative nella tabella \textit{joint\_uscite\_crew}).
+\subsubparagraph{Metodi}
+\begin{itemize}
+    \item \class{List<JointUsciteCrew> findAllByIdCrew(int idCrew)}: restituisce tutte le occorrenze in base all'id del gruppo;
+    \item \class{Long deleteByIdUscitaAndIdCrew (int idUscita, int idCrew)}: elimina le occorrenze in base all'id del gruppo e all'id dell'uscita. Ritorna il numero di occorrenze eliminate (che sono al più una);
+    \item \class{JointUsciteCrew getByIdUscitaAndIdCrew(int idUscita, int idCrew)}: restituisce un'occorrenza in base all'id dell'uscita e all'id del gruppo;
+    \item \class{Long deleteByIdCrew(int idCrew)}: elimina tutte le occorrenze in base all'id del gruppo. Ritorna il numero di occorrenze eliminate;
+    \item \class{void deleteByIdUscita(int idUscita)}: elimina tutte le occorrenze in base all'id dell'uscita.
+\end{itemize}
+
+%TODO: riportare un esempio con un immagine
+
+
+
+
+
+\mysubparagraph{JointUtentiCrewRepository}
+% TODO: aggiungere immagine della classe
+\label{JointUtentiCrewRepository}
+\textit{Repository} che contiene le partecipazioni degli utenti ai gruppi. \\
+Come in \hyperref[JointUsciteCrewRepository]{JointUsciteCrewRepository}, quando viene eliminato un utente vengono rimosse le partecipazioni degli utenti a tutti i gruppi a cui partecipava. Tuttavia è stato deciso di non eliminare i gruppi creati da un utente nel caso di eliminazione, in quanto i gruppi non sono strettamente associati al suo creatore, ma sono delle entità indipendenti.
+\subsubparagraph{Metodi}
+\begin{itemize}
+    \item \class{List<JointUtentiCrew> findAllByIdUtente(String utenteId)}: restituisce tutte le occorrenze in base all'id dell'utente;
+    \item \class{void deleteByIdUtenteAndIdCrew(String idUtente, int idCrew)}: elimina le occorrenze in base all'id dell'utente e all'id del gruppo;
+    \item \class{JointUtentiCrew getByIdUtenteAndIdCrew(String idUtente, int idCrew)}: restituisce un'occorrenza in base all'id dell'utente e all'id del gruppo;
+    \item \class{Long deleteByIdCrew(int idCrew)}: elimina tutte le occorrenze in base all'id del gruppo. Ritorna il numero di occorrenze eliminate;
+    \item \class{List<JointUtentiCrew> findAllByIdCrew(int id)}: restituisce tutte le occorrenze in base all'id del gruppo;
+    \item \class{void deleteByIdUtente(String idUtente)}: elimina tutte le occorrenze in base all'id dell'utente.
+    
+\end{itemize} 
 
 
 
 
 
 
-\myparagraph{CrewRepository}
+\mysubparagraph{CrewRepository}
 % TODO: aggiungere immagine della classe
 \label{CrewRepository}
-Classe con funzionalità \gls{JPA} che permette di mappare la classe \class{Crew} in una tabella di un \textit{database} relazionale, svolgendo anche il compito \gls{EntityManager}, effettuando operazioni di recupero, ricerca ed eliminazione dei gruppi.\\ 
-
-
-
-
-
-\myparagraph{JointUtentiCrewRepository}
-% TODO: aggiungere immagine della classe
-Classe con funzionalità \gls{JPA} che permette di mappare la classe \class{JointUtentiCrew} in una tabella di un \textit{database} relazionale, svolgendo anche il compito \gls{EntityManager}, effettuando operazioni di recupero, ricerca ed eliminazione dei gruppi. 
-
-\label{JointUtentiCrewRepository}
-\myparagraph{JointUsciteCrewRepository}
-% TODO: aggiungere immagine della classe
-\label{JointUsciteCrewRepository}
+\textit{Repository} che contiene i dettagli dei gruppi. \\
+\subsubparagraph{Metodi}
+\begin{itemize}
+    \item \class{List<Crew> findByOrderById()}: restituisce tutti i gruppi ordinati per id;
+    \item \class{Crew findById(int id)}: restituisce un gruppo in base al suo id;
+    \item \class{Long deleteById(int id)}: elimina un'occorrenza in base all'id. Ritorna uno se avviene un'eliminazione, zero altrimenti.
+\end{itemize}
 
 
 \subsubsection{Modifica dei servizi esistenti}

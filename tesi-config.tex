@@ -10,12 +10,27 @@
 \newcommand{\mappaturaemetodo}[2]{\textbf{Mappatura}: \texttt{#1}, \textbf{metodo HTTP}: #2}
 \newcommand{\class}[1]{\textit{\textbf{#1}}}
 \newcommand{\myparagraph}[1]{\paragraph*{#1}\mbox{}\\}
+\newcommand{\mysubparagraph}[1]{\subparagraph*{#1}\mbox{}\vspace{3pt} \\}
+\makeatletter
+\newcounter{subsubparagraph}[subparagraph]
+\renewcommand\thesubsubparagraph{%
+  \thesubparagraph.\@arabic\c@subsubparagraph}
+\newcommand\subsubparagraph{%
+  \@startsection{subsubparagraph}    % counter
+    {6}                              % level
+    {\parindent}                     % indent
+    {3.25ex \@plus 1ex \@minus .2ex} % beforeskip
+    {-1em}                           % afterskip
+    {\normalfont\normalsize\bfseries}}
+\newcommand\l@subsubparagraph{\@dottedtocline{6}{10em}{5em}}
+\newcommand{\subsubparagraphmark}[1]{}
+\makeatother
 
 \definecolor{codegray}{gray}{0.9}
 \newcommand{\code}[1]{\colorbox{codegray}{\texttt{#1}}}
 \newcommand{\myName}{Lorenzo Matterazzo\xspace} 
 \newcommand{\myCompany}{Sync Lab S.r.l.\xspace}                                    
-\newcommand{\myTitle}{Realizzazione di un microservizio con Spring per un'applicazione per la gestione di attività sportive}
+\newcommand{\myTitle}{Integrazione di nuove funzionalità ad un applicativo web utilizzando Spring e Angular}
 \newcommand{\productName}{\textit{\textbf{SportWill}}\xspace}
 % Tipo di tesi                   
 \newcommand{\myDegree}{Tesi di laurea triennale}
@@ -250,6 +265,7 @@
 
 \titlespacing*{\section}{0pt}{1.1\baselineskip}{\baselineskip}
 \titlespacing*{\subsection}{0pt}{1.1\baselineskip}{\baselineskip}
+% \titlespacing*{\subparagraph}{0pt}{1.1\baselineskip}{\baselineskip}
 
 
 %**************************************************************
