@@ -372,6 +372,20 @@ Come in \hyperref[JointUsciteCrewRepository]{JointUsciteCrewRepository}, quando 
 
 
 \subsubsection{Modifica dei servizi esistenti}
+\myparagraph{Uscite Service}
+Le modifiche effettuate sono: 
+\begin{itemize}
+    \item aggiunta di un campo booleano \texttt{visGlobale} alla classe \class{Uscita} che permette di specificare se l'uscita sarà visibile da tutti gli utenti oppure soltanto dagli utenti appartenenti agli stessi gruppi;
+    \item aggiunto al metodo \class{createUscita} presente nella classe \class{UsciteController} la possibilità di inserire nel corpo per la creazione dell'uscita il campo che specifica il tipo di visibilità desiderata. \\
+    Nello stesso metodo è stata anche inserita una chiamata HTTP che aggiunge l'uscita appena creata al \textit{repository} \hyperref[JointUsciteCrewRepository]{JointUsciteCrewRepository};
+    \item aggiunto al metodo \class{eliminaUscita} una chiamata HTTP che rimuove l'uscita dal \textit{repository} \hyperref[JointUsciteCrewRepository]{JointUsciteCrewRepository};
+    \item aggiunto un metodo \class{modificaVisibilita}  alla classe \textit{UsciteController} che permette di modificare la visibilità dell'uscita.
+    Questo metodo viene mappato in \texttt{uscite/modifica/visibilità/{id}}, ed id specifica l'id del gruppo del quale si vuole modificare la visibilità. Il metodo HTTP della chiamata è di tipo PUT; 
+    \item aggiunto metodo \class{getAllUsciteGlobali}  alla classe \textit{UsciteController} che permette di ricevere tutte le uscite che hanno il campo \code{visGlobale = true}. \\
+    Questo metodo viene mappato in \texttt{uscite/globali}, ed il metodo HTTP della chiamata è di tipo GET; 
+\end{itemize}
+
+
 \subsubsection{Api Gateway ed Eureka Server}
 \subsubsection{Docker}
 

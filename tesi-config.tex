@@ -7,10 +7,11 @@
 %**************************************************************
 
 % Autore
+
 \newcommand{\mappaturaemetodo}[2]{\textbf{Mappatura}: \texttt{#1}, \textbf{metodo HTTP}: #2}
 \newcommand{\class}[1]{\textit{\textbf{#1}}}
-\newcommand{\myparagraph}[1]{\paragraph*{#1}\mbox{}\\}
-\newcommand{\mysubparagraph}[1]{\subparagraph*{#1}\mbox{}\vspace{3pt} \\}
+\newcommand{\myparagraph}[1]{\paragraph{#1}\mbox{}\\}
+\newcommand{\mysubparagraph}[1]{\subparagraph{#1}\mbox{}\vspace{3pt} \\}
 \makeatletter
 \newcounter{subsubparagraph}[subparagraph]
 \renewcommand\thesubsubparagraph{%
@@ -263,9 +264,23 @@
 }
 
 
+
+
+
+%**************************************************************
+% titlespacing settings
+%**************************************************************
 \titlespacing*{\section}{0pt}{1.1\baselineskip}{\baselineskip}
 \titlespacing*{\subsection}{0pt}{1.1\baselineskip}{\baselineskip}
 % \titlespacing*{\subparagraph}{0pt}{1.1\baselineskip}{\baselineskip}
+
+
+
+%**************************************************************
+% titleformat settings
+%**************************************************************
+\titleformat{\subparagraph}[runin]{\normalfont\normalsize\bfseries}{}{0pt}{}
+\titleformat{\paragraph}[runin]{\normalfont\normalsize\bfseries}{}{0pt}{}
 
 
 %**************************************************************
