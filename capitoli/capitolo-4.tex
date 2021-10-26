@@ -384,9 +384,46 @@ Le modifiche effettuate sono:
 \end{itemize}
 
 
-\subsubsection{Api Gateway ed Eureka Server}
-\subsubsection{Docker}
+\subsubsection{Api Gateway}
+È stato implementato un Spring Cloud Gateway applicando dei filtri alle chiamate per verificare se è presente e valido l'autenticazione nell'\textit{header} della richiesta HTTP. \\
+Per fare ciò è stato creata una classe \class{AuthFilter} che estende l'interfaccia \class{AbstractGatewayFilterFactory} ed implementare la funzione \code{GatewayFilter apply(C config)}. In questa funzione viene letta la richiesta in entrata viene verificata l'autenticazione.
 
+\begin{figure}[H] 
+    \centering
+    \includegraphics[scale=0.25]{codice/AuthFilter.png} 
+    \caption{Implementazione della classe AuthFilter}
+\end{figure}
+\noindent È stata utilizzata la seguente configurazione dello \textit{Spring Cloud Gateway} nel file \texttt{configuration.yml}.
+\begin{figure}[H] 
+    \centering
+    \includegraphics[width=1\columnwidth]{codice/application.yml-API-Gateway.png} 
+    \caption{Configurazione dello \textit{Spring Cloud Gateway} nel file \texttt{application.yml} del microservizio API Gateway}
+\end{figure}
+
+\subsection{Eureka Server}
+Questo \gls{microservizio} contiene solo una classe al suo interno, che è la classe che viene generata automaticamente quando si inizializza un progetto con Spring. L'unica cosa aggiunta alla classe è l'annotazione \code{@EnableEurekaServer}, che permette di  attivare la l'Eureka Server come specificato nel file \texttt{application.yml}.
+\begin{figure}[H] 
+    \centering
+    \includegraphics[width=1\columnwidth]{codice/application.yml-Eureka.png} 
+    \caption{File \texttt{application.yml} del microservizio Eureka Server}
+\end{figure}
+\noindent Nella \textit{Main class} di tutti i \glspl{microservizio}  è stata aggiunta l'annotazione \code{@EnableEurekaClient}, che permette di registrarsi all'Eureka Server in base a quanto specificato nel file \texttt{application.properties}.\\
+\begin{figure}[H] 
+    \centering
+    \includegraphics[width=1\columnwidth]{codice/application.properties-registrazione-eureka.png} 
+    \caption{Configurazione per la registrazione di un microservizio all'Eureka Server nel file \texttt{application.properties}}
+\end{figure}
+
+\subsubsection{Docker}
+Per ogni \gls{microservizio} è stato creato un file \texttt{Dockerfile} contenente le operazioni da effettuare per la creazione di un'immagine Docker.
+Tutti i \texttt{Dockerfile} hanno la seguente struttura:
+\vspace{4pt}\\
+\code{FROM openjdk:11}\\
+\code{ARG JAR\_FILE=target/*.jar}\\
+\code{COPY \$\{JAR\_FILE\} Nome\_microservizio.jar}\\
+\code{ENTRYPOINT ["java","-jar","Nome\_microservizio.jar"]}
+\vspace{4pt}\\
+Per eseguire ogni \gls{container} nello stesso \textit{network} è stato creato un file \texttt{docker-compose.yml} in cui vengono specificate le immagini Docker da avviare. 
 \subsection{Front end}
 \subsubsection{Maschere}
 \subsubsection{Componenti}
