@@ -41,7 +41,7 @@ di grandi dimensioni e per la \gls{transcompilazione} in JavaScript. Poiché Typ
 
 \subsection*{Angular}
 %**************************************************************
-Angular è un \textit{framework} JavaScript per applicazioni \textit{web} dinamiche, utilizzato in particolare per la creazione di \gls{spa} e \textit{web app}. Consente di utilizzare HTML come linguaggio template e di estenderne la sintassi per esprimere le componenti di un'applicazione in modo chiaro e succinto.
+Angular è un \textit{framework} JavaScript per applicazioni \textit{web} dinamiche, utilizzato in particolare per la creazione di \gls{spa} e \textit{web app}. Consente di utilizzare HTML come linguaggio \textit{template} e di estenderne la sintassi per esprimere le componenti di un'applicazione in modo chiaro e succinto.
 %TODO: aggiungere bibliografia, link: https://psicografici.com/angular-js/#:~:text=Angular%20%C3%A8%20un%20framework%20JavaScript,in%20modo%20chiaro%20e%20succinto.
 
 \subsection*{Angular Material}
@@ -65,7 +65,7 @@ Spring Boot è un modulo di Spring \textit{framework}. Viene utilizzato per crea
 Spring Boot segue un'architettura a strati, in cui ogni livello comunica con gli strati vicini.\\
 Ci sono quattro strati in Spring Boot, che sono i seguenti:
 \begin{itemize}
-    \item \textbf{\textit{Presentation layer}:} gestisce le richieste HTTP, trasforma il parametro da formato JSON in classe e autentica la richiesta, per poi trasferirla al \textit{business layer};
+    \item \textbf{\textit{Presentation layer}:} gestisce le richieste HTTP, trasforma i parametri da formato JSON in classe e autentica la richiesta, per poi trasferirla al \textit{business layer};
     \item \textbf{\textit{Business Layer}:} gestisce tutta la \textit{business logic}. Consiste in classi di servizio e utilizza servizi forniti dagli strati di accesso ai dati;
     \item \textbf{\textit{Persistence Layer}:} contiene tutta la \textit{storage logic}, e trasformando gli oggetti provenienti dalla \textit{business logic} in righe del \textit{database};
     \item \textbf{\textit{Database Layer}:} in questo strato vengono effettuate le operazioni \gls{CRUD}.
@@ -77,7 +77,7 @@ Ci sono quattro strati in Spring Boot, che sono i seguenti:
 \end{figure}
 
 \subsubsection{Spring Boot Flow Architecture}
-% https://codingjam.it/microservizi-in-java-con-spring-boot-e-spring-cloud/
+% TODO: aggiungere alla bibliografia https://codingjam.it/microservizi-in-java-con-spring-boot-e-spring-cloud/
 \begin{figure}[H] 
     \centering 
     \includegraphics[width=1\columnwidth]{spring-boot-architecture.png} 
@@ -86,7 +86,7 @@ Ci sono quattro strati in Spring Boot, che sono i seguenti:
 Il \textit{workflow} con cui vengono effettuate richieste HTTP utilizzando Spring Boot è il seguente:
 \begin{itemize}
     \item il client esegue una richiesta HTTP (GET, POST, PUT O DELETE) ad un   \gls{endpoint} esposto;
-    \item la richiesta viene ricevuta dal \textit{controller}, che mappa la richiesta e la gestisce. Dopodiché chiama la \textit{service logic} presente nel nel \textit{service layer};
+    \item la richiesta viene ricevuta dal \textit{controller}, che mappa la richiesta e la gestisce. Dopodiché chiama la \textit{service logic} presente nel \textit{service layer};
     \item nel \textit{service layer} viene eseguita la \textit{business logic}. Vengono eseguite le operazioni sulle classi mappate nel \textit{database};
     \item il \textit{repository} \textit{JpaRepository} esegue le operazioni sul \textit{database};
     \item una pagina \gls{JSP} viene restituita all'utente se non si è verificato un errore.
@@ -103,9 +103,9 @@ Tuttavia, effettuare connessioni dirette fra \textit{front end} e ogni \gls{micr
     \item i \glspl{microservizio} devono esporre pubblicamente il proprio \gls{IP}, causando problemi sia di sicurezza, dovuta all'esposizione degli indirizzi \gls{IP} al mondo esterno, sia in fase di latenza, ovvero il tempo che intercorre tra l'invio di una richiesta ed una risposta tenderà ad essere sempre più alto.
 \end{itemize}
 
-\noindent Per far fronte a queste problematiche si è deciso di utilizzare un \gls{API Gateway}.\\
+\noindent Per far fronte a queste problematiche si è deciso di utilizzare un \nameref{sub:ApiGateway}.\\
 In questo modo, solamente un \gls{IP} sarà visibile pubblicamente, mentre quelli dei \glspl{microservizio} possono diventare privati.\\
-Per quanto riguarda la latenza il \textit{front end} comunicherà attraverso l'\gls{API Gateway}, stabilendo solo le connessioni per la richiesta e la risposta, lasciando all'\gls{API Gateway} il compito di smistare le richieste al giusto \gls{microservizio}, permettendo una connessione più rapida rispetto  all'utilizzo di connessioni diverse per ogni \gls{microservizio}, essendo tutti all'interno dello stesso \textit{network}.
+Per quanto riguarda la latenza il \textit{front end} comunicherà attraverso l'\nameref{sub:ApiGateway}, stabilendo solo le connessioni per la richiesta e la risposta, lasciando all'\nameref{sub:ApiGateway} il compito di smistare le richieste al giusto \gls{microservizio}, permettendo una connessione più rapida rispetto  all'utilizzo di connessioni diverse per ogni \gls{microservizio}, essendo tutti all'interno dello stesso \textit{network}.
 
 \subsection{Front end}
 \subsubsection{Architettura Angular}
@@ -113,41 +113,40 @@ Per quanto riguarda la latenza il \textit{front end} comunicherà attraverso l'\
 Il componente principale di Angular è il \textbf{modulo}. Un modulo è un contenitore di funzionalità che sono esposte ad altri moduli. Questa suddivisione in moduli rende la struttura dell'applicazione ordinata e il codice mantenibile.\\
 Un elemento fondamentale di Angular è il \textbf{component}, ovvero delle classi che gestiscono le \textit{view} dell'applicazione e la loro logica.\\
 I dati da visualizzare nella \textit{view} vengono forniti dalle classi dette \textbf{servizi}. Queste classi svolgono diverse funzioni, come per esempio  l'esecuzione delle richieste HTTP.\\  
-Ad ogni component è associato un \textit{template}, ovvero del codice HTML in cui si definisce come viene visualizzato il component.\\
+Ad ogni component è associato un \textit{template}, ovvero del codice HTML in cui si definisce come viene visualizzato il \textit{component}.\\
 È possibile personalizzare il codice HTML utilizzando le \textbf{direttive}, ovvero delle classi che aggiungono un comportamento aggiuntivo agli elementi nelle applicazioni Angular. Le direttive integrate di Angular permettono di gestire moduli, elenchi, stili e ciò che gli utenti vedono.\\
-È possibile creare un component che rappresenta la pagina completa, in cui inserire diversi component per ogni elemento contenuto in quella pagina.
-Ogni component contenuto si occuperà così di gestire la grafica di quella determinata funzionalità e di comunicare con i servizi di cui necessita; sarà poi il component \enquote*{padre} a gestire la disposizione dei component utilizzati. 
-\subsubsection{Organizzazione del codice}
-% TODO: aggiungere questa sezione alla parte di codifica
+È possibile creare un \textit{component} che rappresenta la pagina completa, in cui inserire diversi \textit{component} per ogni elemento contenuto in quella pagina.
+Ogni \textit{component} contenuto si occuperà così di gestire la grafica di quella determinata funzionalità e di comunicare con i servizi di cui necessita; sarà poi il \textit{component} \enquote*{padre} a gestire la disposizione dei \textit{component} utilizzati. 
+% \subsubsection{Organizzazione del codice}
+% % TODO: aggiungere questa sezione alla parte di codifica
 \subsubsection{Progettazione delle maschere}
 Con il \textit{tutor} aziendale è stato discusso come dovrebbe essere la grafica delle nuove maschere da aggiungere a \productName. Da queste discussioni è stato poi utilizzato \nameref{sub:Figma} per fare il \textit{mockup}, in modo da  testare come i vari elementi visivi lavorano insieme.\\
 Durante la progettazione del \textit{mockup} è stato seguito lo stile presente nella \textit{web app}, in modo da non disorientare l'utente durante la navigazione. \\
 I risultati della progettazione sono riportati in seguito.
 \begin{figure}[H] 
-    \centering 
-    \includegraphics[scale=0.6]{mockup/le-mie-crew.png} 
-    \caption{Mockup pagina per la visualizzazione dei gruppi creati dall'utente}
+    \includegraphics[scale=0.9]{mockup/le-mie-crew.png} 
+    \caption{\textit{Mockup} pagina per la visualizzazione dei gruppi creati dall'utente}
 \end{figure}
 
 \begin{figure}[H] 
     \centering 
     \includegraphics[scale=0.6]{mockup/lista-crew.png} 
-    \caption{Mockup pagina per la visualizzazione dei gruppi a cui partecipa l'utente}
+    \caption{\textit{Mockup} pagina per la visualizzazione dei gruppi a cui partecipa l'utente}
 \end{figure}
 
 \begin{figure}[H] 
     \centering 
     \includegraphics[scale=0.54]{mockup/dettagli-crew.png} 
-    \caption{Mockup pagina per la visualizzazione dei dettagli di un gruppo}
+    \caption{\textit{Mockup} pagina per la visualizzazione dei dettagli di un gruppo}
 \end{figure}
 
 \begin{figure}[H] 
     \centering 
     \includegraphics[scale=0.54]{mockup/modifica-crew.png} 
-    \caption{Mockup pagina per la modifica dei dettagli di un gruppo}
+    \caption{\textit{Mockup} pagina per la modifica dei dettagli di un gruppo}
 \end{figure}
 
-Come si può notare dalle immagini, sono stati omessi dalla progettazione l'header e il footer, in quanto sono già presenti nella \textit{web app}.
+Come si può notare dalle immagini, sono stati omessi dalla progettazione l'\textit{header} e il \textit{footer}, in quanto sono già presenti nella \textit{web app}.
 
 
 % \subsubsection{Namespace 1} %**************************
@@ -175,10 +174,10 @@ Nel contesto di questo progetto, sono stati implementati tre \glspl{microservizi
 \begin{figure}[H] 
     \centering 
     \includegraphics[scale=0.68]{progettazione/API-Gateway.png} 
-    \caption{Diagramma concettuale che descrive l'API Gateway}
+    \caption{Diagramma concettuale che descrive l'\textit{API Gateway}}
 \end{figure}
-Un \gls{API Gateway} è uno strumento di gestione delle \gls{API} che si situa tra un \textit{client} e una raccolta di servizi \textit{back end}. Un \gls{API Gateway} si comporta come un \textit{proxy} inverso per riceve tutte le chiamate \gls{API}, aggregando le chiamate alle \gls{API} dei servizi richiesti, gestendo e restituendo i risultati appropriati in base alle richieste ricevute.\\
-Utilizzare un \gls{API Gateway} è vantaggioso perché: 
+Un \class{API Gateway} è uno strumento di gestione delle \gls{API} che si situa tra un \textit{client} e una raccolta di servizi \textit{back end}. Un \textit{API Gateway} si comporta come un \textit{proxy} inverso per riceve tutte le chiamate \gls{API}, aggregando le chiamate alle \gls{API} dei servizi richiesti, gestendo e restituendo i risultati appropriati in base alle richieste ricevute.\\
+Utilizzare un \textit{API Gateway} è vantaggioso perché: 
 \begin{itemize}
     \item permette di centralizzare il punto di ingresso per le chiamate;
     \item permette di monitorare le risorse utilizzate;
@@ -191,7 +190,7 @@ Utilizzare un \gls{API Gateway} è vantaggioso perché:
 \begin{figure}[H] 
     \centering 
     \includegraphics[scale=0.4]{progettazione/registrazione-servizi.png} 
-    \caption{Diagramma concettuale che descrive la registrazione dei microservizi all'Eureka Server}
+    \caption{Diagramma concettuale che descrive la registrazione dei microservizi all'\textit{Eureka Server}}
 \end{figure}
 %TODO: aggungere bibliografia: https://lalverma.medium.com/spring-boot-microservices-implementing-service-discovery-cfc98e49b74f, https://microservices.io/patterns/service-registry.html
 I \glspl{microservizio} hanno una natura dinamica, in quanto è possibile che più istanze di un singolo \gls{microservizio} coesistano, probabilmente esponendo le loro \gls{API} in un indirizzo \gls{IP} diverso o in una porta diversa. Queste evenienze portano all'impossibilità di: 
@@ -202,13 +201,13 @@ I \glspl{microservizio} hanno una natura dinamica, in quanto è possibile che pi
 \end{itemize}
 La soluzione a questi problemi è l'utilizzo del \textit{pattern} \textbf{\textit{Client-side Service Discovery}}, che fornisce un meccanismo che tiene traccia di tutti i servizi e delle relative istanze. Tutti i \glspl{microservizio} si registrano ad un \textit{Service registry} e continuano ad aggiornare regolarmente le proprie informazioni di rete.\\
 Il \textit{pattern} \textbf{\textit{Service registry}} è stato applicato mediante l'implementazione di un \class{Eureka Server}. L'\textit{Eureka Server} è un \textit{database} di servizi che tiene traccia di ogni \gls{microservizio}, delle loro istanze e delle loro locazioni. I \glspl{microservizio} si registrano all'avvio dell'applicazione e vengono rimossi alla sua chiusura.\\
-L'utilizzo di questi \textit{pattern}  permette ai servizi di comunicare fra di loro, ottenendo le informazioni degli altri servizi direttamente dall'Eureka Server.
+L'utilizzo di questi \textit{pattern}  permette ai servizi di comunicare fra di loro, ottenendo le informazioni degli altri servizi direttamente dall'\textit{Eureka Server}.
 \subsection{MVC}
 % TODO: da fare
 \subsection{Dependency Injection}
 \label{sub:Dependency-Injection}
 % TODO: aggiungere alla bibliografia: https://davioooh.com/blog/2017/08/19/spring-dependency-injection
-Sia Angular sia Spring sono dei \textit{framework} che implementano delle convenzioni che permettono l'utilizzo del \textit{patter} \class{Dependency Injection}.\\
+Sia Angular sia Spring sono dei \textit{framework} che implementano delle convenzioni che permettono l'utilizzo del \textit{pattern} \class{Dependency Injection}.\\
 L'ecosistema all'interno del quale le applicazioni Spring vivono viene definito \textbf{IoC container}. L'\textit{IoC container} si occupa di istanziare gli oggetti (\textit{beans}) dichiarati nel progetto e di reperire e iniettare tutte le dipendenze ad essi associate. Tali dipendenze possono essere componenti del \textit{framework} o altri \textit{bean} dichiarati nel contesto applicativo.\\
 La dichiarazione di una classe come componente nel progetto avviene tramite l'utilizzo dell'annotazione \code{@Component}, che rappresenta la categoria più generica per la dichiarazione di un componente.
 Durante la fase di codifica del progetto sono state utilizzate le annotazioni \code{@RestController}, \code{@Service} e \code{@Repository}, che sono delle specializzazioni dell'annotazione \code{@Component}.\\
@@ -216,7 +215,7 @@ Per iniettare delle classi da recuperare dal \textit{IoC container} è sufficien
 \begin{figure}[H] 
     \centering 
     \includegraphics[scale=0.2]{progettazione/autowired-code.png}
-    \caption{Esempio di Dependency Injection con Spring}
+    \caption{Esempio di \textit{Dependency Injection} con Spring}
 \end{figure}
 % TODO: aggiungere alla bibliografia: https://angular.io/guide/dependency-injection
 \noindent Angular permette l'utilizzo della \textit{Dependency Injection} di tipo \textit{constructor}, che prevede che una classe dichiari nel costruttore le dipendenze di cui ha bisogno che in fase di inizializzazione gli verranno fornite.\\
@@ -254,12 +253,12 @@ Viene utilizzato questo \textit{pattern} per la gestione del \textit{routing}, a
 \begin{figure}[H] 
     \centering 
     \includegraphics[scale=0.3]{progettazione/routing.png}
-    \caption{Implementazione del \textit{pattern} \textit{Lazy loading} nel \class{AppRoutingModule}}
+    \caption{Implementazione del \textit{pattern} \textit{Lazy loading} nel \textit{AppRoutingModule}}
 \end{figure}
 \subsection{Observer}
 %TODO: aggiungere alla bibliografia: https://angular.io/guide/observables
 Gli \textit{\textbf{Observable}} forniscono supporto per il passaggio di messaggi tra le parti dell'applicazione. Sono usati frequentemente in Angular e sono una tecnica per la gestione ad eventi e la programmazione asincrona.\\
-Il \textit{pattern Observer} è un \textit{design pattern} in cui un oggetto, chiamato \class{Subject}, contiene una lista di suoi osservatori, chiamati \class{Observers}, e li notifica automaticamente ai cambiamenti di stato.\\
+Il \textit{pattern } \class{Observer} è un \textit{design pattern} in cui un oggetto, chiamato \class{Subject}, contiene una lista di suoi osservatori, chiamati \class{Observers}, e li notifica automaticamente ai cambiamenti di stato.\\
 Gli \textit{Observable} sono dichiarativi, ovvero viene definita una funzione che non viene eseguita fino a quando un \textit{Observer} si sottoscrive ad esso. L'\textit{Observer} viene quindi notificato al completamento della funzione, e il tipo di ritorno di un \textit{Observable} può cambiare in base al contesto, che nel caso nel progetto di \textit{stage} è stato prevalentemente di tipo HTTP \textit{response}. \\
 \begin{figure}[H] 
     \centering 
@@ -272,6 +271,7 @@ Gli \textit{Observable} sono dichiarativi, ovvero viene definita una funzione ch
 \subsection{Back end}
 \subsubsection{Gruppi service}
 \myparagraph{GruppiController}
+\label{par:GruppiController}
 % TODO: aggiungere immagine della classe
 Classe che permette di esporre le \gls{API} mappate nel \textit{path} \texttt{/gruppi}. 
 L'annotazione \code{@RestController} permette di creare un \textit{controller Restful}, e l'oggetto da restituire viene serializzato automaticamente in JSON e restituito all'oggetto di risposta HTTP.
@@ -279,7 +279,7 @@ L'annotazione \code{@RestController} permette di creare un \textit{controller Re
 \begin{itemize}
     \item \class{getAllGruppi}: gestisce la chiamata che visualizza tutti i gruppi.\\ \mappaturaemetodo{/}{GET};
     \item \class{getGruppo}:  gestisce la chiamata che visualizza uno specifico gruppo. \\ \mappaturaemetodo{/\{id\}}{GET};
-    \item \class{getUtentiByGruppo}: gestisce la chiamata che visualizza gli utenti di un appartenenti ad un gruppo. \\ \mappaturaemetodo{/\{idCrew\}/utenti}{GET};
+    \item \class{getUtentiByGruppo}: gestisce la chiamata che visualizza gli utenti appartenenti ad un gruppo. \\ \mappaturaemetodo{/\{idCrew\}/utenti}{GET};
     \item \class{createGruppo}: gestisce la chiamata che inserisce una nuovo gruppo. \\ \mappaturaemetodo{/inserisci}{POST};
     \item \class{modifyGruppo}: gestisce la chiamata che modifica un gruppo.\\ \mappaturaemetodo{/modifica/\{idCrew\}}{PUT};
     \item \class{getUsciteByGruppo}: gestisce la chiamata che visualizza le uscite di una gruppo.\\ \mappaturaemetodo{/\{idCrew\}/uscite}{GET};
@@ -295,22 +295,23 @@ L'annotazione \code{@RestController} permette di creare un \textit{controller Re
 \myparagraph{GruppiService}
 % TODO: aggiungere immagine della classe
 Classe responsabile della \textit{business logic} del \gls{microservizio}.  \\
-Siccome fornisce funzionalità di \textit{business}, questa classe è annotata con l'annotazione \code{@Service}, ed ha lo scopo di fungere da intermediario fra la classe \class{GruppiController} e  il \gls{DAO}, ovvero le classi \hyperref[CrewRepository]{CrewRepository}, \hyperref[JointUtentiCrewRepository]{JointUtentiCrewRepository} e \hyperref[JointUsciteCrewRepository]{JointUsciteCrewRepository}. 
+Siccome fornisce funzionalità di \textit{business}, questa classe è annotata con l'annotazione \code{@Service}, ed ha lo scopo di fungere da intermediario fra la classe \class{GruppiController} e  il \gls{DAO}, ovvero le classi \hyperref[CrewRepository]{CrewRepository}, \hyperref[JointUtentiCrewRepository]{JointUtentiCrewRepository} e \hyperref[JointUsciteCrewRepository]{JointUsciteCrewRepository}. \\
+I metodi di questa classe hanno gli stessi nomi e funzione dei metodi presenti in \nameref{par:GruppiController}.
 
 \myparagraph{Repository}
 \label{Repository}
 Interfacce con funzionalità \gls{JPA} che permettono di mappare una classe in una tabella di un \textit{database} relazionale, svolgendo anche il compito \gls{EntityManager}, effettuando l'accesso agli oggetti ed eseguendo operazioni \gls{CRUD} sui dati immagazzinati nelle tabelle del \textit{database}.\\
-Tutte queste interfacce estendono l'interfaccia \code{JpaRepository<T,ID>}, dove T è il tipo della classe da mappare, ed ID è il tipo dell'identificativo della classe mappata.\\
+Tutte queste interfacce estendono l'interfaccia \code{JpaRepository<T,ID>}, dove \texttt{T} è il tipo della classe da mappare, ed \texttt{ID} è il tipo dell'identificativo della classe mappata.\\
 L'interfaccia \textit{JpaRepository} permette di creare le \textit{query} a partire dal nome del metodo, senza doverlo necessariamente implementare.\\
 Il meccanismo che permette di generare le \textit{query} integrato nell'infrastruttura \textit{JPA Spring Data} è utile per creare \textit{query} vincolante sulle entità del \textit{repository}. Questo meccanismo rimuove i prefissi \textit{find...By}, \textit{read...By} e \textit{get...By} dal metodo ed effettua il \textit{parsing} della funzione alla ricerca dei nomi delle proprietà dell'entità mappata nel \textit{JpaRepository}, come nel seguente esempio: 
 \begin{center}
-    \code{Crew findById(int id);}
+    \code{List<JointUsciteCrew> findAllByIdCrew(int idCrew);}
 \end{center}
-in cui \textit{id} è una proprietà dell'entità \class{Crew}.\\ 
+in cui \texttt{idCrew} è una proprietà dell'entità \class{JointUsciteCrew}.\\ 
  Le proprietà inserite nel nome del metodo possono essere concatenate con \textit{And} e \textit{Or}, ma anche con operatori come \textit{Between}, \textit{LessThan}, \textit{GreaterThan}, \textit{Like}. \\
  Un esempio è il seguente: 
  \begin{center}
-     \code{long deleteByIdUscitaAndIdCrew (int idUscita, int idCrew);}
+     \code{Long deleteByIdUscitaAndIdCrew (int idUscita, int idCrew);}
  \end{center}
 È possibile applicare l'ordinamento statico aggiungendo una clausola \textit{OrderBy} al metodo di \textit{query} facendo riferimento ad una proprietà, come nel seguente caso:  
 \begin{center}
@@ -319,7 +320,7 @@ in cui \textit{id} è una proprietà dell'entità \class{Crew}.\\
 Ci sono tre \textit{repository} nel \gls{microservizio}: \nameref{JointUsciteCrewRepository}, \nameref{JointUtentiCrewRepository} e \nameref{CrewRepository}. 
 \mysubparagraph{JointUsciteCrewRepository} 
 \label{JointUsciteCrewRepository}
-\textit{Repository} che contiene le uscite di un gruppo. Ogni qualvolta un utente aggiunge un'uscita, essa viene aggiunta alle uscite di tutti i gruppi a cui appartiene. Viceversa quando viene eliminata un'uscita viene eliminata dalle uscite di tutti i gruppi.\\
+Classe di \textit{repository} che contiene le uscite di un gruppo. Ogni qualvolta un utente aggiunge un'uscita, essa viene aggiunta alle uscite di tutti i gruppi a cui appartiene. Viceversa quando viene eliminata un'uscita viene eliminata dalle uscite di tutti i gruppi.\\
 Un accorgimento che è stato fatto è che quando viene rimosso un gruppo, tutte le uscite associate a quel gruppo vengono rimosse da questa tabella (n.b. le uscite non vengono eliminate dalla tabella Uscite presente nel \textit{database}, vengono solo eliminate le voci relative nella tabella \textit{joint\_uscite\_crew}).
 \subsubparagraph{Metodi}
 \begin{itemize}
@@ -339,7 +340,7 @@ Un accorgimento che è stato fatto è che quando viene rimosso un gruppo, tutte 
 \mysubparagraph{JointUtentiCrewRepository}
 % TODO: aggiungere immagine della classe
 \label{JointUtentiCrewRepository}
-\textit{Repository} che contiene le partecipazioni degli utenti ai gruppi. \\
+Classe di \textit{repository} che contiene le partecipazioni degli utenti ai gruppi. \\
 Come in \hyperref[JointUsciteCrewRepository]{JointUsciteCrewRepository}, quando viene eliminato un utente vengono rimosse le partecipazioni degli utenti a tutti i gruppi a cui partecipava. Tuttavia è stato deciso di non eliminare i gruppi creati da un utente nel caso di eliminazione, in quanto i gruppi non sono strettamente associati al suo creatore, ma sono delle entità indipendenti.
 \subsubparagraph{Metodi}
 \begin{itemize}
@@ -360,7 +361,7 @@ Come in \hyperref[JointUsciteCrewRepository]{JointUsciteCrewRepository}, quando 
 \mysubparagraph{CrewRepository}
 % TODO: aggiungere immagine della classe
 \label{CrewRepository}
-\textit{Repository} che contiene i dettagli dei gruppi. \\
+Classe di \textit{repository} che contiene i dettagli dei gruppi. \\
 \subsubparagraph{Metodi}
 \begin{itemize}
     \item \class{List<Crew> findByOrderById()}: restituisce tutti i gruppi ordinati per id;
@@ -369,49 +370,48 @@ Come in \hyperref[JointUsciteCrewRepository]{JointUsciteCrewRepository}, quando 
 \end{itemize}
 
 
-\subsubsection{Modifica dei servizi esistenti}
-\myparagraph{Uscite Service}
-Le modifiche effettuate sono: 
+\subsubsection{Uscite Service}
+In questo \gls{microservizio} sono state effettuate le seguenti modifiche: 
 \begin{itemize}
-    \item aggiunta di un campo booleano \texttt{visGlobale} alla classe \class{Uscita} che permette di specificare se l'uscita sarà visibile da tutti gli utenti oppure soltanto dagli utenti appartenenti agli stessi gruppi;
-    \item aggiunto al metodo \class{createUscita} presente nella classe \class{UsciteController} la possibilità di inserire nel corpo per la creazione dell'uscita il campo che specifica il tipo di visibilità desiderata. \\
+    \item è stato aggiunto un campo booleano \texttt{visGlobale} alla classe \class{Uscita} che permette di specificare se l'uscita sarà visibile da tutti gli utenti oppure soltanto dagli utenti appartenenti agli stessi gruppi;
+    \item è stato aggiunto al metodo \class{createUscita} presente nella classe \class{UsciteController} la possibilità di inserire nel corpo per la creazione dell'uscita il campo che specifica il tipo di visibilità desiderata. \\
     Nello stesso metodo è stata anche inserita una chiamata HTTP che aggiunge l'uscita appena creata al \textit{repository} \hyperref[JointUsciteCrewRepository]{JointUsciteCrewRepository};
-    \item aggiunto al metodo \class{eliminaUscita} una chiamata HTTP che rimuove l'uscita dal \textit{repository} \hyperref[JointUsciteCrewRepository]{JointUsciteCrewRepository};
-    \item aggiunto un metodo \class{modificaVisibilita}  alla classe \textit{UsciteController} che permette di modificare la visibilità dell'uscita.
-    Questo metodo viene mappato in \texttt{uscite/modifica/visibilità/{id}}, ed id specifica l'id del gruppo del quale si vuole modificare la visibilità. Il verbo HTTP della chiamata è di tipo PUT; 
-    \item aggiunto metodo \class{getAllUsciteGlobali}  alla classe \textit{UsciteController} che permette di ricevere tutte le uscite che hanno il campo \code{visGlobale = true}. \\
+    \item è stato aggiunto al metodo \class{eliminaUscita} una chiamata HTTP che rimuove l'uscita dal \textit{repository} \hyperref[JointUsciteCrewRepository]{JointUsciteCrewRepository};
+    \item è stato aggiunto un metodo \class{modificaVisibilita}  alla classe \textit{UsciteController} che permette di modificare la visibilità dell'uscita.
+    Questo metodo viene mappato in \texttt{uscite/modifica/visibilità/\{id\}}, ed \texttt{id} specifica l'\texttt{id} del gruppo del quale si vuole modificare la visibilità. Il verbo HTTP della chiamata è di tipo PUT; 
+    \item è stato aggiunto un metodo \class{getAllUsciteGlobali}  alla classe \textit{UsciteController} che permette di ricevere tutte le uscite che hanno il campo \code{visGlobale = true}. \\
     Questo metodo viene mappato in \texttt{uscite/globali}, ed il verbo HTTP della chiamata è di tipo GET.
 \end{itemize}
 
 
 \subsubsection{Api Gateway}
-È stato implementato un Spring Cloud Gateway applicando dei filtri alle chiamate per verificare se è presente e valido l'autenticazione nell'\textit{header} della richiesta HTTP. \\
-Per fare ciò è stato creata una classe \class{AuthFilter} che estende l'interfaccia \class{AbstractGatewayFilterFactory} ed implementare la funzione \code{GatewayFilter apply(C config)}. In questa funzione viene letta la richiesta in entrata viene verificata l'autenticazione.
+È stato implementato un \textit{Spring Cloud Gateway} applicando dei filtri alle chiamate per verificare se è presente e valido il \textit{token} per l'autenticazione  presente nell'\textit{header} della richiesta HTTP.
+Per fare ciò è stato creata una classe \class{AuthFilter} che estende l'interfaccia \class{AbstractGatewayFilterFactory} ed implementa il metodo astratto \code{GatewayFilter apply(C config)} presente nella superclasse. In questa funzione viene letta la richiesta in entrata viene verificata l'autenticazione.
 
 \begin{figure}[H] 
     \centering
     \includegraphics[scale=0.25]{codice/AuthFilter.png} 
-    \caption{Implementazione della classe AuthFilter}
+    \caption{Implementazione della classe \textit{AuthFilter}}
 \end{figure}
-\noindent È stata utilizzata la seguente configurazione dello \textit{Spring Cloud Gateway} nel file \texttt{configuration.yml}.
+\noindent Infine, è stata utilizzata la seguente configurazione dello \textit{Spring Cloud Gateway} nel file \texttt{configuration.yml}.
 \begin{figure}[H] 
     \centering
     \includegraphics[width=1\columnwidth]{codice/application.yml-API-Gateway.png} 
-    \caption{Configurazione dello \textit{Spring Cloud Gateway} nel file \texttt{application.yml} del microservizio API Gateway}
+    \caption{Configurazione dello \textit{Spring Cloud Gateway} nel file \texttt{application.yml} del microservizio \textit{API Gateway}}
 \end{figure}
 
 \subsection{Eureka Server}
-Questo \gls{microservizio} contiene solo una classe al suo interno, che è la classe che viene generata automaticamente quando si inizializza un progetto con Spring. L'unica cosa aggiunta alla classe è l'annotazione \code{@EnableEurekaServer}, che permette di  attivare la l'Eureka Server come specificato nel file \texttt{application.yml}.
+Questo \gls{microservizio} contiene solo una classe al suo interno, che è la classe che viene generata automaticamente quando si inizializza un progetto con Spring. L'unica cosa aggiunta alla classe è l'annotazione \code{@EnableEurekaServer}, che permette di  attivare la l'\textit{Eureka Server} come specificato nel file \texttt{application.yml}.
 \begin{figure}[H] 
     \centering
     \includegraphics[width=1\columnwidth]{codice/application.yml-Eureka.png} 
-    \caption{File \texttt{application.yml} del microservizio Eureka Server}
+    \caption{File \texttt{application.yml} del microservizio \textit{Eureka} Server}
 \end{figure}
-\noindent Nella \textit{Main class} di tutti i \glspl{microservizio}  è stata aggiunta l'annotazione \code{@EnableEurekaClient}, che permette di registrarsi all'Eureka Server in base a quanto specificato nel file \texttt{application.properties}.\\
+\noindent Nella \textit{Main class} di tutti i \glspl{microservizio}  è stata aggiunta l'annotazione \code{@EnableEurekaClient}, che permette di registrarsi all'\textit{Eureka Server} in base a quanto specificato nel file \texttt{application.properties}.\\
 \begin{figure}[H] 
     \centering
     \includegraphics[width=1\columnwidth]{codice/application.properties-registrazione-eureka.png} 
-    \caption{Configurazione per la registrazione di un microservizio all'Eureka Server nel file \texttt{application.properties}}
+    \caption{Configurazione per la registrazione di un microservizio all'\textit{Eureka Server} nel file \texttt{application.properties}}
 \end{figure}
 
 \subsubsection{Docker}
