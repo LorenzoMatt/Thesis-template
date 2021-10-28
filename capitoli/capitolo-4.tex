@@ -433,8 +433,8 @@ Questa pagina permette ad un utente autenticato di visualizzare le \gls{will} vi
 \end{figure}
 \mysubparagraph{Componenti utilizzati}
 \begin{itemize}
-    \item \hyperref[par:Homepage]{Homepage}
-    \item \hyperref[par:CrewCard]{CrewCard}
+    \item \hyperref[par:HomepageComponent]{HomepageComponent}
+    % \item \hyperref[par:CrewCard]{CrewCard}
 \end{itemize}
 \mysubparagraph{Servizi}
 \begin{itemize}
@@ -443,6 +443,7 @@ Questa pagina permette ad un utente autenticato di visualizzare le \gls{will} vi
 \end{itemize}
 
 \myparagraph{Gruppi dell'utente}
+\label{par:Gruppi dell'utente}
 Questa pagina permette ad un utente autenticato di visualizzare i gruppi creati o a cui partecipa un utente. 
 \begin{figure}[H] 
     \centering 
@@ -452,7 +453,7 @@ Questa pagina permette ad un utente autenticato di visualizzare i gruppi creati 
 \mysubparagraph{Componenti utilizzati}
 \begin{itemize}
     \item \hyperref[par:Crewpage]{Crewpage}
-    \item \hyperref[par:CrewCard]{CrewCard}
+    % \item \hyperref[par:CrewCard]{CrewCard}
 \end{itemize}
 \mysubparagraph{Servizi}
 \begin{itemize}
@@ -461,6 +462,7 @@ Questa pagina permette ad un utente autenticato di visualizzare i gruppi creati 
 
 
 \myparagraph{Gruppi}
+\label{par:Gruppi}
 Questa pagina permette ad un utente autenticato di visualizzare i gruppi a cui può partecipare, senza visualizzare i gruppi a cui già partecipa. 
 \begin{figure}[H] 
     \centering 
@@ -470,7 +472,7 @@ Questa pagina permette ad un utente autenticato di visualizzare i gruppi a cui p
 \mysubparagraph{Componenti utilizzati}
 \begin{itemize}
     \item \hyperref[par:Crewpage]{Crewpage}
-    \item \hyperref[par:CrewCard]{CrewCard}
+    % \item \hyperref[par:CrewCard]{CrewCard}
 \end{itemize}
 \mysubparagraph{Servizi}
 \begin{itemize}
@@ -478,6 +480,8 @@ Questa pagina permette ad un utente autenticato di visualizzare i gruppi a cui p
 \end{itemize}
 
 \myparagraph{Crea nuovo gruppo}
+\label{par:Crea nuovo gruppo}
+
 Questa pagina permette ad un utente autenticato di creare un nuovo gruppo. 
 \begin{figure}[H] 
     \centerline{\includegraphics[scale=0.6]{sito/crea-gruppo.png}}     
@@ -509,14 +513,117 @@ Questa pagina permette ad un utente autenticato di modificare i dettagli di un g
 \end{itemize}
 
 \subsubsection{Componenti}
-\myparagraph{Homepage}
-\label{par:Homepage}
+\myparagraph{HomepageComponent}
+\label{par:HomepageComponent}
+Questo componente è composto da una lista di \nameref{par:WillCard}, ed ha le seguenti funzionalità: 
+\begin{itemize}
+    \item visualizzare le \gls{will} visibili a tutti gli utenti (anche quelli non autenticati);
+    \item visualizzare le \gls{will} dell'utente nel caso sia autenticato;
+    \item visualizzare le \gls{will} dei gruppi a cui appartiene l'utente nel caso sia autenticato.
+\end{itemize}
+
+\begin{figure}[H] 
+    \centering 
+    \includegraphics[scale=0.5]{sito/component/homepage-component.png} 
+    \caption{Componente Homepage di un utente autenticato}
+\end{figure}
+
+\begin{figure}[H] 
+    \centering 
+    \includegraphics[scale=0.5]{sito/component/homepage-non-autenticato.png} 
+    \caption{Componente Homepage di un utente non autenticato}
+\end{figure}
+
+\myparagraph{Servizi}
+\begin{itemize}
+    \item \nameref{par:WillDataService}
+    \item \nameref{par:GruppiService}
+\end{itemize}
+
+\myparagraph{Metodi}
+\begin{itemize}
+    \item \class{ngOnInit}: all'inizializzazione del componente viene controllato, mediante il servizio \class{AuthenticationService}(non implementato da me), se l'utente è autenticato, in modo da valutare se visualizzare anche la schermata \enquote*{le mie Will} e \enquote*{le Will dei tuoi gruppi} o meno;
+    \item \class{getDataWithGlobalVisibility}: ottiene le \gls{will} con visibilità globale;
+    \item \class{getDataPersonal}: ottiene le \gls{will} create dall'utente;
+    \item \class{getDataCrew}: ottiene le \gls{will} dei gruppi a cui appartiene l'utente;
+    \item \class{orderCards}: ordina le \gls{will} in base alla data d'uscita. 
+\end{itemize}
+
+
+\myparagraph{WillCard}
+\label{par:WillCard}
+Questo componente, implementato d un collega, permette di visualizzare l'anteprima di una \gls{will}, in particolare: 
+\begin{itemize}
+    \item Il nome dell'organizzatore;
+    \item lo sport relativo all'uscita;
+    \item la data d'uscita.
+\end{itemize}
+
+\begin{figure}[H] 
+    \centering 
+    \includegraphics[scale=1]{sito/component/card-component.png} 
+    \caption{Componente WillCard}
+\end{figure}
 
 \myparagraph{CrewCard}
 \label{par:CrewCard}
+Questo componente permette di visualizzare l'anteprima di una gruppo, in particolare:  
+\begin{itemize}
+    \item il nome del gruppo;
+    \item la descrizione.
+\end{itemize}
+
+\begin{figure}[H] 
+    \centering 
+    \includegraphics[scale=1]{sito/component/crew-component.png} 
+    \caption{Componente CrewCard}
+\end{figure}
+
+\myparagraph{Servizi}
+\begin{itemize}
+    \item \nameref{par:GruppiService}
+\end{itemize}
+\myparagraph{Input}
+\begin{itemize}
+    \item \textbf{crew}: gruppo da visualizzare.
+\end{itemize}
+
+\myparagraph{Metodi}
+\begin{itemize}
+    \item \class{getPartecipants}: ottiene gli utenti che partecipano al gruppo;
+    \item \class{navigate}: permette di navigare alla pagina di visualizzazione dei dettagli del gruppo. Se il gruppo cliccato è stato creato dall'utente allora viene visualizzato il \textit{compnent} \nameref{par:CrewEditable}, altrimenti \nameref{par:CrewDetail}.
+\end{itemize}
 
 \myparagraph{Crewpage}
 \label{par:Crewpage}
+Questo componente è composto da una lista di \nameref{par:CrewCard}, e permette di visualizzare le maschere dei \hyperref[par:Gruppi dell'utente]{gruppi dell'utente} e \hyperref[par:Gruppi]{gruppi a cui è possibile partecipare}.
+
+\begin{figure}[H] 
+    \centering 
+    \includegraphics[scale=0.6]{sito/component/gruppi-globali-component.png} 
+    \caption{Componente Crewpage che visualizza i gruppi in cui partecipare}
+\end{figure}
+
+\begin{figure}[H] 
+    \centering 
+    \includegraphics[scale=0.6]{sito/component/i-miei-gruppi-component.png} 
+    \caption{Componente Crewpage che visualizza la pagina di gestione dei gruppi dell'utente}
+\end{figure}
+
+\myparagraph{Servizi}
+\begin{itemize}
+    \item \nameref{par:GruppiService}
+\end{itemize}
+
+\myparagraph{Metodi}
+\begin{itemize}
+    \item \class{ngOnInit}: all'inizializzazione del componente viene valutato se visualizzare la schermata \nameref{par:Gruppi dell'utente} o \nameref{par:Gruppi};
+    \item \class{getGlobalCrew}: ottiene i gruppi a cui non partecipa un utente;
+    \item \class{getUserCrew}:  ottiene i gruppi create e a cui partecipa un utente;
+    \item \class{navigateToNewCrew}: permette di navigare alla pagina di \hyperref[par:Crea nuovo gruppo]{creazione di un nuovo gruppo};
+    \item \class{navigateToGlobalCrew}: permette di navigare alla pagina di visualizzazione dei \hyperref[par:Gruppi]{gruppi}.
+\end{itemize}
+
 
 
 \myparagraph{CrewDetail}
