@@ -25,23 +25,23 @@ rilasciato per la prima volta da Sun Microsystems nel 1995. Si è evoluto da umi
  continuano a fare affidamento su Java.
 %TODO: aggiungere bibliografia, link: https://java.com/en/download/help/whatis_java.html
 \subsection*{Spring}
-Spring è un \textit{framework} open source per lo sviluppo di applicazioni su piattaforma Java.
-A questo \textit{framework} sono associati tanti altri progetti, che hanno nomi composti come 
+Spring è un \gls{framework} open source per lo sviluppo di applicazioni su piattaforma Java.
+A questo \gls{framework} sono associati tanti altri progetti, che hanno nomi composti come 
 Spring Boot, Spring Data, Spring Batch, etc. Questi progetti sono stati ideati per
-fornire funzionalità aggiuntive al \textit{framework}.
+fornire funzionalità aggiuntive al \gls{framework}.
 %TODO: aggiungere bibliografia, link: https://it.wikipedia.org/wiki/Spring_Framework
 
 \subsection*{Typescript}
 %**************************************************************
 TypeScript è un linguaggio di programmazione sviluppato e gestito da Microsoft. 
-È un \gls{superset} di JavaScript, che permette di aggiungere la tipizzazione 
+È un \gls{superset} di JavaScript, permettendo di aggiungere la tipizzazione 
 statica opzionale al linguaggio. TypeScript è progettato per lo sviluppo di applicazioni 
 di grandi dimensioni e per la \gls{transcompilazione} in JavaScript. Poiché TypeScript è un \gls{superset} di JavaScript, anche i programmi JavaScript esistenti sono validi programmi TypeScript.
 %TODO: aggiungere bibliografia, link: https://en.wikipedia.org/wiki/TypeScript
 
 \subsection*{Angular}
 %**************************************************************
-Angular è un \textit{framework} JavaScript per applicazioni \textit{web} dinamiche, utilizzato in particolare per la creazione di \gls{spa} e \textit{web app}. Consente di utilizzare HTML come linguaggio \textit{template} e di estenderne la sintassi per esprimere le componenti di un'applicazione in modo chiaro e succinto.
+Angular è un \gls{framework} JavaScript per applicazioni \textit{web} dinamiche, utilizzato in particolare per la creazione di \gls{spa} e \textit{web app}. Consente di utilizzare HTML come linguaggio \textit{template} e di estenderne la sintassi per esprimere le componenti di un'applicazione in modo chiaro e succinto.
 %TODO: aggiungere bibliografia, link: https://psicografici.com/angular-js/#:~:text=Angular%20%C3%A8%20un%20framework%20JavaScript,in%20modo%20chiaro%20e%20succinto.
 
 \subsection*{Angular Material}
@@ -61,7 +61,7 @@ Node.js è utilizzato da Angular per gestire le dipendenze, permettendo la dichi
 
 \subsection{Back end}
 \subsubsection{Architettura Spring Boot}
-Spring Boot è un modulo di Spring \textit{framework}. Viene utilizzato per creare applicazioni \textit{stand-alone} di livello produttivo con il minimo sforzo.\\
+Spring Boot è un modulo di Spring \gls{framework}. Viene utilizzato per creare applicazioni \textit{stand-alone} di livello produttivo con il minimo sforzo.\\
 Spring Boot segue un'architettura a strati, in cui ogni livello comunica con gli strati vicini.\\
 Ci sono quattro strati in Spring Boot, che sono i seguenti:
 \begin{itemize}
@@ -105,13 +105,13 @@ Tuttavia, effettuare connessioni dirette fra \textit{front end} e ogni \gls{micr
 
 \noindent Per far fronte a queste problematiche si è deciso di utilizzare un \nameref{sub:ApiGateway}.\\
 In questo modo, solamente un \gls{IP} sarà visibile pubblicamente, mentre quelli dei \glspl{microservizio} possono diventare privati.\\
-Per quanto riguarda la latenza il \textit{front end} comunicherà attraverso l'\nameref{sub:ApiGateway}, stabilendo solo le connessioni per la richiesta e la risposta, lasciando all'\nameref{sub:ApiGateway} il compito di smistare le richieste al giusto \gls{microservizio}, permettendo una connessione più rapida rispetto  all'utilizzo di connessioni diverse per ogni \gls{microservizio}, essendo tutti all'interno dello stesso \textit{network}.
+Per quanto riguarda la latenza, il \textit{front end} comunicherà attraverso l'\nameref{sub:ApiGateway}, stabilendo solo le connessioni per la richiesta e la risposta, lasciando all'\nameref{sub:ApiGateway} il compito di smistare le richieste al giusto \gls{microservizio}, rendendo così la connessione più rapida rispetto all'utilizzo di diverse connessioni per ogni \gls{microservizio}, essendo tutte le richieste effettuate all'interno dello stesso \textit{network}.
 
 \subsection{Front end}
 \subsubsection{Architettura Angular}
 % TODO aggiungere alla bibliografia: https://angular.io/guide/architecture
 Il componente principale di Angular è il \textbf{modulo}. Un modulo è un contenitore di funzionalità che sono esposte ad altri moduli. Questa suddivisione in moduli rende la struttura dell'applicazione ordinata e il codice mantenibile.\\
-Un elemento fondamentale di Angular è il \textbf{component}, ovvero delle classi che gestiscono le \textit{view} dell'applicazione e la loro logica.\\
+Un elemento fondamentale di Angular è il \class{component}, ovvero delle classi che gestiscono le \textit{view} dell'applicazione e la loro logica.\\
 I dati da visualizzare nella \textit{view} vengono forniti dalle classi dette \textbf{servizi}. Queste classi svolgono diverse funzioni, come per esempio  l'esecuzione delle richieste HTTP.\\  
 Ad ogni component è associato un \textit{template}, ovvero del codice HTML in cui si definisce come viene visualizzato il \textit{component}.\\
 È possibile personalizzare il codice HTML utilizzando le \textbf{direttive}, ovvero delle classi che aggiungono un comportamento aggiuntivo agli elementi nelle applicazioni Angular. Le direttive integrate di Angular permettono di gestire moduli, elenchi, stili e ciò che gli utenti vedono.\\
@@ -120,29 +120,29 @@ Ogni \textit{component} contenuto si occuperà così di gestire la grafica di qu
 % \subsubsection{Organizzazione del codice}
 % % TODO: aggiungere questa sezione alla parte di codifica
 \subsubsection{Progettazione delle maschere}
-Con il \textit{tutor} aziendale è stato discusso come dovrebbe essere la grafica delle nuove maschere da aggiungere a \productName. Da queste discussioni è stato poi utilizzato \nameref{sub:Figma} per fare il \textit{mockup}, in modo da  testare come i vari elementi visivi lavorano insieme.\\
+Con il \textit{tutor} aziendale è stato discusso come dovrebbero essere graficamente le nuove maschere da aggiungere a \productName. A partire da questi confronti, è stato poi utilizzato \nameref{sub:Figma} per fare il \textit{mockup}, in modo da  testare come i vari elementi visivi siano accattivanti.\\
 Durante la progettazione del \textit{mockup} è stato seguito lo stile presente nella \textit{web app}, in modo da non disorientare l'utente durante la navigazione. \\
-I risultati della progettazione sono riportati in seguito.
+I risultati della progettazione delle maschere sono riportati in seguito.
 \begin{figure}[H] 
     \centerline{\includegraphics[scale=0.9]{mockup/le-mie-crew.png}} 
     \caption{\textit{Mockup} pagina per la visualizzazione dei gruppi creati dall'utente}
 \end{figure}
 
-\begin{figure}[H] 
-    \centering 
-    \includegraphics[scale=0.6]{mockup/lista-crew.png} 
-    \caption{\textit{Mockup} pagina per la visualizzazione dei gruppi a cui partecipa l'utente}
-\end{figure}
+% \begin{figure}[H] 
+%     \centering 
+%     \includegraphics[scale=0.6]{mockup/lista-crew.png} 
+%     \caption{\textit{Mockup} pagina per la visualizzazione dei gruppi a cui partecipa l'utente}
+% \end{figure}
 
 \begin{figure}[H] 
     \centering 
-    \includegraphics[scale=0.54]{mockup/dettagli-crew.png} 
+    \includegraphics[scale=0.8]{mockup/dettagli-crew.png} 
     \caption{\textit{Mockup} pagina per la visualizzazione dei dettagli di un gruppo}
 \end{figure}
 
 \begin{figure}[H] 
     \centering 
-    \includegraphics[scale=0.54]{mockup/modifica-crew.png} 
+    \includegraphics[scale=0.8]{mockup/modifica-crew.png} 
     \caption{\textit{Mockup} pagina per la modifica dei dettagli di un gruppo}
 \end{figure}
 
@@ -205,8 +205,8 @@ L'utilizzo di questi \textit{pattern}  permette ai servizi di comunicare fra di 
 \subsection{Dependency Injection}
 \label{sub:Dependency-Injection}
 % TODO: aggiungere alla bibliografia: https://davioooh.com/blog/2017/08/19/spring-dependency-injection
-Sia Angular sia Spring sono dei \textit{framework} che implementano delle convenzioni che permettono l'utilizzo del \textit{pattern} \class{Dependency Injection}.\\
-L'ecosistema all'interno del quale le applicazioni Spring vivono viene definito \textbf{IoC container}. L'\textit{IoC container} si occupa di istanziare gli oggetti (\textit{beans}) dichiarati nel progetto e di reperire e iniettare tutte le dipendenze ad essi associate. Tali dipendenze possono essere componenti del \textit{framework} o altri \textit{bean} dichiarati nel contesto applicativo.\\
+Sia Angular sia Spring sono dei \gls{framework} che implementano delle convenzioni che permettono l'utilizzo del \textit{pattern} \class{Dependency Injection}.\\
+L'ecosistema all'interno del quale le applicazioni Spring vivono viene definito \class{IoC container}. L'\textit{IoC container} si occupa di istanziare gli oggetti (\textit{beans}) dichiarati nel progetto e di reperire e iniettare tutte le dipendenze ad essi associate. Tali dipendenze possono essere componenti del \gls{framework} o altri \textit{bean} dichiarati nel contesto applicativo.\\
 La dichiarazione di una classe come componente nel progetto avviene tramite l'utilizzo dell'annotazione \code{@Component}, che rappresenta la categoria più generica per la dichiarazione di un componente.
 Durante la fase di codifica del progetto sono state utilizzate le annotazioni \code{@RestController}, \code{@Service} e \code{@Repository}, che sono delle specializzazioni dell'annotazione \code{@Component}.\\
 Per iniettare delle classi da recuperare dal \textit{IoC container} è sufficiente utilizzare l'annotazione \code{@Autowired}.

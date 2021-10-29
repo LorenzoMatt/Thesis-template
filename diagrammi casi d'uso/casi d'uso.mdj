@@ -6522,7 +6522,7 @@
 					"_parent": {
 						"$ref": "AAAAAAF8jYzDqJF6syg="
 					},
-					"name": "UC1.1.1 Vis. Nome del gruppo"
+					"name": "UC1.1.1 Vis. nome del gruppo"
 				},
 				{
 					"_type": "UMLUseCase",
@@ -15974,7 +15974,7 @@
 					"_parent": {
 						"$ref": "AAAAAAF8jefMH908XjY="
 					},
-					"name": "Sottocasi  UC12",
+					"name": "Sottocasi  UC11",
 					"ownedViews": [
 						{
 							"_type": "UMLUseCaseSubjectView",
@@ -16019,7 +16019,7 @@
 											"top": 335,
 											"width": 418.02490234375,
 											"height": 13,
-											"text": "UC12 Visualizza lista will degli utenti appartenenti agli stessi gruppi"
+											"text": "UC11 Visualizza lista will degli utenti appartenenti agli stessi gruppi"
 										},
 										{
 											"_type": "LabelView",
@@ -16300,7 +16300,7 @@
 											"top": 475.5,
 											"width": 183,
 											"height": 13,
-											"text": "UC12.1 Visualizza singola will"
+											"text": "UC11.1 Visualizza singola will"
 										},
 										{
 											"_type": "LabelView",
@@ -16333,7 +16333,7 @@
 									"font": "Arial;13;0",
 									"left": 440,
 									"top": 468.5,
-									"width": 193.26953125,
+									"width": 193,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAF8jeq6Xt3zq40="
@@ -16737,7 +16737,7 @@
 					"_parent": {
 						"$ref": "AAAAAAF8jefMH908XjY="
 					},
-					"name": "UC12 Visualizza lista will degli utenti appartenenti agli stessi gruppi"
+					"name": "UC11 Visualizza lista will degli utenti appartenenti agli stessi gruppi"
 				},
 				{
 					"_type": "UMLActor",
@@ -16863,7 +16863,7 @@
 					"_parent": {
 						"$ref": "AAAAAAF8jefMH908XjY="
 					},
-					"name": "UC12.1 Visualizza singola will"
+					"name": "UC11.1 Visualizza singola will"
 				},
 				{
 					"_type": "UMLUseCase",
@@ -16871,7 +16871,7 @@
 					"_parent": {
 						"$ref": "AAAAAAF8jefMH908XjY="
 					},
-					"name": "UC12.1.1 Visualizza nome del proprietario"
+					"name": "UC11.1.1 Visualizza nome del proprietario"
 				},
 				{
 					"_type": "UMLUseCase",
@@ -16879,7 +16879,7 @@
 					"_parent": {
 						"$ref": "AAAAAAF8jefMH908XjY="
 					},
-					"name": "UC12.1.2 Viusalizza descrizione"
+					"name": "UC11.1.2 Viusalizza descrizione"
 				},
 				{
 					"_type": "UMLUseCase",
@@ -16887,7 +16887,7 @@
 					"_parent": {
 						"$ref": "AAAAAAF8jefMH908XjY="
 					},
-					"name": "UC12.1.3 Visualizza data"
+					"name": "UC11.1.3 Visualizza data"
 				}
 			]
 		},
@@ -17130,7 +17130,7 @@
 											"top": 620.5,
 											"width": 184,
 											"height": 13,
-											"text": "UC1.1.1 Vis. Nome del gruppo"
+											"text": "UC1.1.1 Vis. nome del gruppo"
 										},
 										{
 											"_type": "LabelView",
@@ -17163,7 +17163,7 @@
 									"font": "Arial;13;0",
 									"left": 545.5,
 									"top": 613.5,
-									"width": 194.69140625,
+									"width": 194,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAF8ju9v1HZoQ4w="
@@ -19165,7 +19165,7 @@
 											"top": 503,
 											"width": 196,
 											"height": 13,
-											"text": "UC5.3.1.1 Vis. Nome e cognome"
+											"text": "UC5.3.1.1 Vis. nome e cognome"
 										},
 										{
 											"_type": "LabelView",
@@ -19198,7 +19198,7 @@
 									"font": "Arial;13;0",
 									"left": 619,
 									"top": 496,
-									"width": 206.99951171875,
+									"width": 206,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAF8krcrE13YUOg="
@@ -19730,7 +19730,7 @@
 					"_parent": {
 						"$ref": "AAAAAAF8krbwtF1CFHg="
 					},
-					"name": "UC5.3.1.1 Vis. Nome e cognome"
+					"name": "UC5.3.1.1 Vis. nome e cognome"
 				},
 				{
 					"_type": "UMLUseCaseSubject",
@@ -19756,7 +19756,7 @@
 					"_parent": {
 						"$ref": "AAAAAAF8kw5ooXWUgYI="
 					},
-					"name": "Sottocasi UC12.1",
+					"name": "Sottocasi UC11.1",
 					"ownedViews": [
 						{
 							"_type": "UMLUseCaseView",
@@ -19801,7 +19801,7 @@
 											"top": 531.5,
 											"width": 150,
 											"height": 13,
-											"text": "UC12.1.3 Visualizza data"
+											"text": "UC11.1.3 Visualizza data"
 										},
 										{
 											"_type": "LabelView",
@@ -19834,7 +19834,7 @@
 									"font": "Arial;13;0",
 									"left": 529.5,
 									"top": 524.5,
-									"width": 160.77587890625,
+									"width": 160.05859375,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAF8kw7JvHnAHPk="
@@ -20000,7 +20000,7 @@
 											"top": 459.5,
 											"width": 195,
 											"height": 13,
-											"text": "UC12.1.2 Viusalizza descrizione"
+											"text": "UC11.1.2 Viusalizza descrizione"
 										},
 										{
 											"_type": "LabelView",
@@ -20033,7 +20033,7 @@
 									"font": "Arial;13;0",
 									"left": 546.5,
 									"top": 452.5,
-									"width": 205.5712890625,
+									"width": 205,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAF8kw7JvXnX9M0="
@@ -20472,7 +20472,7 @@
 											"top": 395.5,
 											"width": 257,
 											"height": 13,
-											"text": "UC12.1.1 Visualizza nome del proprietario"
+											"text": "UC11.1.1 Visualizza nome del proprietario"
 										},
 										{
 											"_type": "LabelView",
@@ -20505,7 +20505,7 @@
 									"font": "Arial;13;0",
 									"left": 551.5,
 									"top": 388.5,
-									"width": 267.6767578125,
+									"width": 267,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAF8kw7JvXnuvDw="
@@ -21386,7 +21386,7 @@
 											"top": 343,
 											"width": 558,
 											"height": 13,
-											"text": "UC12.1 Visualizza singola will"
+											"text": "UC11.1 Visualizza singola will"
 										},
 										{
 											"_type": "LabelView",
@@ -21489,7 +21489,7 @@
 					"_parent": {
 						"$ref": "AAAAAAF8kw5ooXWUgYI="
 					},
-					"name": "UC12.1 Visualizza singola will"
+					"name": "UC11.1 Visualizza singola will"
 				}
 			]
 		}
