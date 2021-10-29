@@ -383,7 +383,7 @@ In questo \gls{microservizio} sono state effettuate le seguenti modifiche:
 
 
 \subsubsection{Api Gateway}
-È stato implementato un \textit{Spring Cloud Gateway} applicando dei filtri alle chiamate per verificare se è presente e valido il \textit{token} per l'autenticazione  presente nell'\textit{header} della richiesta HTTP.
+ÈÈ stato implementato un \textit{Spring Cloud Gateway} applicando dei filtri alle chiamate per verificare se è presente e valido il \textit{token} per l'autenticazione  presente nell'\textit{header} della richiesta HTTP.
 Per fare ciò è stato creata una classe \class{AuthFilter} che estende l'interfaccia \class{AbstractGatewayFilterFactory} ed implementa il metodo astratto \code{GatewayFilter apply(C config)} presente nella superclasse. In questa funzione viene letta la richiesta in entrata viene verificata l'autenticazione.
 
 \begin{figure}[H] 
@@ -436,11 +436,11 @@ Questa pagina permette ad un utente autenticato di visualizzare le \gls{will} vi
     \item \hyperref[par:HomepageComponent]{HomepageComponent}
     % \item \hyperref[par:CrewCard]{CrewCard}
 \end{itemize}
-\mysubparagraph{Servizi}
-\begin{itemize}
-    \item \hyperref[par:GruppiService]{GruppiService}
-    \item \hyperref[par:WillDataService]{WillDataService}
-\end{itemize}
+% \mysubparagraph{Servizi}
+% \begin{itemize}
+%     \item \hyperref[par:GruppiService]{GruppiService}
+%     \item \hyperref[par:WillDataService]{WillDataService}
+% \end{itemize}
 
 \myparagraph{Gruppi dell'utente}
 \label{par:Gruppi dell'utente}
@@ -455,10 +455,10 @@ Questa pagina permette ad un utente autenticato di visualizzare i gruppi creati 
     \item \hyperref[par:Crewpage]{Crewpage}
     % \item \hyperref[par:CrewCard]{CrewCard}
 \end{itemize}
-\mysubparagraph{Servizi}
-\begin{itemize}
-    \item \hyperref[par:GruppiService]{GruppiService}
-\end{itemize}
+% \mysubparagraph{Servizi}
+% \begin{itemize}
+%     \item \hyperref[par:GruppiService]{GruppiService}
+% \end{itemize}
 
 
 \myparagraph{Gruppi}
@@ -474,43 +474,57 @@ Questa pagina permette ad un utente autenticato di visualizzare i gruppi a cui p
     \item \hyperref[par:Crewpage]{Crewpage}
     % \item \hyperref[par:CrewCard]{CrewCard}
 \end{itemize}
-\mysubparagraph{Servizi}
-\begin{itemize}
-    \item \hyperref[par:GruppiService]{GruppiService}
-\end{itemize}
+% \mysubparagraph{Servizi}
+% \begin{itemize}
+%     \item \hyperref[par:GruppiService]{GruppiService}
+% \end{itemize}
 
 \myparagraph{Crea nuovo gruppo}
 \label{par:Crea nuovo gruppo}
 
 Questa pagina permette ad un utente autenticato di creare un nuovo gruppo. 
 \begin{figure}[H] 
-    \centerline{\includegraphics[scale=0.6]{sito/crea-gruppo.png}}     
+    \centerline{\includegraphics[scale=0.25]{sito/crea-gruppo.png}}     
     \caption{Pagina di creazione di un gruppo}
 \end{figure}
 \mysubparagraph{Componenti utilizzati}
 \begin{itemize}
     \item \hyperref[par:CrewDetail]{CrewDetail}
 \end{itemize}
-\mysubparagraph{Servizi}
-\begin{itemize}
-    \item \hyperref[par:GruppiService]{GruppiService}
-\end{itemize}
+% \mysubparagraph{Servizi}
+% \begin{itemize}
+%     \item \hyperref[par:GruppiService]{GruppiService}
+% \end{itemize}
 
 \myparagraph{Modifica un gruppo}
 Questa pagina permette ad un utente autenticato di modificare i dettagli di un gruppo. 
 \begin{figure}[H] 
-    \centerline{\includegraphics[scale=0.7]{sito/modifica-gruppo.png}} 
+    \centerline{\includegraphics[scale=0.25]{sito/modifica-gruppo.png}} 
     \caption{Pagina di modifica di un gruppo}
 \end{figure}
 \mysubparagraph{Componenti utilizzati}
 \begin{itemize}
     \item \hyperref[par:CrewEditable]{CrewEditable}
-    \item \hyperref[par:Dialog]{Dialog}
 \end{itemize}
-\mysubparagraph{Servizi}
+% \mysubparagraph{Servizi}
+% \begin{itemize}
+%     \item \hyperref[par:GruppiService]{GruppiService}
+% \end{itemize}
+
+\myparagraph{Visualizza dettagli di un gruppo}
+Questa pagina permette ad un utente autenticato di visualizzare i dettagli di un gruppo. 
+\begin{figure}[H] 
+    \centerline{\includegraphics[scale=0.25]{sito/dettagli-gruppo.png}} 
+    \caption{Pagina di visualizzazione dei dettagli di un gruppo}
+\end{figure}
+\mysubparagraph{Componenti utilizzati}
 \begin{itemize}
-    \item \hyperref[par:GruppiService]{GruppiService}
+    \item \hyperref[par:CrewDetail]{CrewDetail}
 \end{itemize}
+% \mysubparagraph{Servizi}
+% \begin{itemize}
+%     \item \hyperref[par:GruppiService]{GruppiService}
+% \end{itemize}
 
 \subsubsection{Componenti}
 \myparagraph{HomepageComponent}
@@ -534,11 +548,11 @@ Questo componente è composto da una lista di \nameref{par:WillCard}, ed ha le s
     \caption{Componente Homepage di un utente non autenticato}
 \end{figure}
 
-\myparagraph{Servizi}
-\begin{itemize}
-    \item \nameref{par:WillDataService}
-    \item \nameref{par:GruppiService}
-\end{itemize}
+% \myparagraph{Servizi}
+% \begin{itemize}
+%     \item \nameref{par:WillDataService}
+%     \item \nameref{par:GruppiService}
+% \end{itemize}
 
 \myparagraph{Metodi}
 \begin{itemize}
@@ -579,10 +593,10 @@ Questo componente permette di visualizzare l'anteprima di una gruppo, in partico
     \caption{Componente CrewCard}
 \end{figure}
 
-\myparagraph{Servizi}
-\begin{itemize}
-    \item \nameref{par:GruppiService}
-\end{itemize}
+% \myparagraph{Servizi}
+% \begin{itemize}
+%     \item \nameref{par:GruppiService}
+% \end{itemize}
 \myparagraph{Input}
 \begin{itemize}
     \item \textbf{crew}: gruppo da visualizzare.
@@ -590,7 +604,6 @@ Questo componente permette di visualizzare l'anteprima di una gruppo, in partico
 
 \myparagraph{Metodi}
 \begin{itemize}
-    \item \class{getPartecipants}: ottiene gli utenti che partecipano al gruppo;
     \item \class{navigate}: permette di navigare alla pagina di visualizzazione dei dettagli del gruppo. Se il gruppo cliccato è stato creato dall'utente allora viene visualizzato il \textit{compnent} \nameref{par:CrewEditable}, altrimenti \nameref{par:CrewDetail}.
 \end{itemize}
 
@@ -610,10 +623,10 @@ Questo componente è composto da una lista di \nameref{par:CrewCard}, e permette
     \caption{Componente Crewpage che visualizza la pagina di gestione dei gruppi dell'utente}
 \end{figure}
 
-\myparagraph{Servizi}
-\begin{itemize}
-    \item \nameref{par:GruppiService}
-\end{itemize}
+% \myparagraph{Servizi}
+% \begin{itemize}
+%     \item \nameref{par:GruppiService}
+% \end{itemize}
 
 \myparagraph{Metodi}
 \begin{itemize}
@@ -628,26 +641,129 @@ Questo componente è composto da una lista di \nameref{par:CrewCard}, e permette
 
 \myparagraph{CrewDetail}
 \label{par:CrewDetail}
+Questo componente permette di visualizzare i dettagli di un gruppo.  
+\begin{figure}[H] 
+    \centering 
+    \includegraphics[scale=0.3]{sito/component/dettagli-gruppo-component.png} 
+    \caption{Componente che permette di visualizzare i dettagli di un gruppo}
+\end{figure}
+\myparagraph{Componenti}
+\begin{itemize}
+    \item \nameref{par:MapComponent}
+\end{itemize}
+
+% \myparagraph{Servizi}
+% \begin{itemize}
+%     \item \nameref{par:GruppiService}
+% \end{itemize}
+
+\myparagraph{Metodi}
+\begin{itemize}
+    \item \class{getParticipants}: ottiene gli utenti che partecipano al gruppo;
+    \item \class{addParticipant}: aggiunge l'utente ad un gruppo;
+    \item \class{removeParticipant}: rimuove l'utente da un gruppo;
+    \item \class{getCrew}: ottiene i dettagli di un gruppo.
+\end{itemize}
+
 
 
 \myparagraph{CrewEditable}
 \label{par:CrewEditable}
 
+Questo componente permette di modificare i dettagli di un gruppo.  
+\begin{figure}[H] 
+    \centerline{\includegraphics[scale=0.4]{sito/component/modifica-gruppo-component.png}} 
+    \caption{Componente CrewEditable}
+\end{figure}
+\myparagraph{Componenti}
+\begin{itemize}
+    \item \nameref{par:MapComponent}
+    \item \nameref{par:Dialog}
+\end{itemize}
 
-\myparagraph{Dialog}
+% \myparagraph{Servizi}
+% \begin{itemize}
+%     \item \nameref{par:GruppiService}
+% \end{itemize}
+
+\myparagraph{Metodi}
+\begin{itemize}
+    \item \class{getCrew}: ottiene i dettagli di un gruppo;
+    \item \class{deleteCrew}: elimina il gruppo in questione. È richiesta la conferma dell'operazione attraverso il \hyperref[par:Dialog]{dialog} per confermare l'eliminazione; 
+    \item \class{saveCrew}: salva le modifiche effettuate ai dettagli del gruppo. È richiesta la conferma dell'operazione attraverso il \hyperref[par:Dialog]{dialog} per confermare la modifica; 
+\end{itemize}
+
+\myparagraph{DialogComponent}
 \label{par:Dialog}
+Questo componente serve per confermare le operazioni che possono effettuare delle modifiche all'applicativo.
 
+\begin{figure}[H] 
+    \centering 
+    \includegraphics[scale=1]{sito/component/dialog-component.png} 
+    \caption{Componente DialogComponent}
+\end{figure}
+
+\myparagraph{Input}
+\begin{itemize}
+    \item \class{message}: testo del messaggio da visualizzare.
+\end{itemize}
+
+\myparagraph{Output}
+\begin{itemize}
+    \item \class{clicked}: segnale emesso quando viene cliccata un'opzione. Il segnale emesso è di tipo \textit{booleano} ed indica se l'azione è stata confermata o meno. 
+\end{itemize}
+
+\myparagraph{Metodi}
+\begin{itemize}
+    \item \class{buttonClicked}: emette l'evento \texttt{clicked}. 
+\end{itemize}
+
+
+\myparagraph{MapComponent}
+\label{par:MapComponent}
+Questo componente permette di visualizzare una mappa in cui viene segnato con un \textit{marker} nelle coordinate specifiche nei campi \texttt{latitudine} e \texttt{longitudine}.
+\begin{figure}[H] 
+    \centerline{\includegraphics[scale=0.55]{sito/component/map-component.png}} 
+    \caption{Componente MapComponent}
+\end{figure}
+
+\myparagraph{Input}
+\begin{itemize}
+    \item \class{latitudine};
+    \item \class{longitudine};
+    \item \class{editable}: specifica se è possibile modificare il \textit{marker} nella mappa.
+\end{itemize}
+
+\myparagraph{Output}
+\begin{itemize}
+    \item \class{latitudineChanged}: segnale emesso quando viene spostato il \textit{marker}. Emette il nuovo valore per la latitudine; 
+    \item \class{longitudineChanged}: segnale emesso quando viene spostato il \textit{marker}. Emette il nuovo valore per la longitudine.
+\end{itemize}
+
+\myparagraph{Metodi}
+\begin{itemize}
+    \item \class{ngOnInit}: all'inizializzazione del componente viene valutato e la mappa sia modificabile o no e, nel caso lo fosse, viene effettuato un \textit{binding} fra il \textit{click} sulla mappa e la funzione \texttt{modify\_marker};
+    \item \class{modify\_marker}: modifica le coordinate da visualizzare sulla mappa in caso questa venga modificata. Emette inoltre i segnali \texttt{latitudineChanged} e \texttt{longitudineChanged}.
+\end{itemize}
 
 
 \subsection{Servizi}
-\myparagraph{GruppiService}
-\label{par:GruppiService}
-
-\myparagraph{WillDataService}
-\label{par:WillDataService}
-% Descrizione del componente
-% Servizi usati 
-% Metodi 
-\subsubsection{Servizi}
 % Descrizione del servizio
 % Metodi
+\myparagraph{GruppiService}
+\label{par:GruppiService}
+Servizio che si occupa di effettuare chiamate HTTP al \textit{back end} per richiedere, gestire e modificare i gruppi.
+
+\mysubparagraph{Metodi}
+\begin{itemize}
+    \item \class{getCrews}: ottiene la lista di tutti i gruppi;
+    \item \class{addCrew}: inserisce un nuovo gruppo alla lista dei gruppi;
+    \item \class{getInfoCrew}: ottiene le informazioni di un gruppo specifico;
+    \item \class{modifyCrew}: modifica i dettagli di un gruppo;
+    \item \class{getAllUsciteofCrew}: ottiene tutte le uscite di un gruppo; 
+    \item \class{getUsersOfCrew}: ottiene gli utenti di un gruppo;
+    \item \class{deleteCrew}: elimina un gruppo;
+    \item \class{getCrewsOfUser}: ottiene tutti i gruppi a cui appartiene un utente; 
+    \item \class{addUserToCrew}: aggiunge un utente ad un gruppo;  
+    \item \class{removeUserFromCrew}: rimuove un utente da un gruppo.
+\end{itemize}
