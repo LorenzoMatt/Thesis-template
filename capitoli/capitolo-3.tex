@@ -16,9 +16,9 @@ attore che rappresenta un utente che ha effettuato l'autenticazione
 all'interno dell'applicazione \textit{web}. Ha quindi la possibilità di vedere tutte le informazioni sui gruppi che sarebbero altrimenti inaccessibili. 
 
 \subsection*{Elenco dei casi d'uso}
-Per lo studio dei casi di utilizzo del prodotto sono stati creati dei diagrammi.
+Per lo studio dei casi di utilizzo del prodotto sono stati creati dei diagrammi dei casi d'uso.
 I diagrammi dei casi d'uso (in inglese \emph{Use Case Diagram}) sono diagrammi di tipo \gls{uml} dedicati alla descrizione delle funzioni o servizi offerti da un sistema, così come sono percepiti e utilizzati dagli attori che interagiscono col sistema stesso.\\
-I casi d'uso che riportati in seguito descrivono solo le funzionalità che dovranno essere implementate, senza quindi descrivere quelle già presenti nella \textit{web app}. 
+I casi d'uso riportati in seguito descrivono solo le funzionalità che dovranno essere implementate, senza quindi descrivere quelle già presenti nella \textit{web app}. 
 \begin{figure}[H] 
     \centering 
     \includegraphics[width=1\columnwidth]{usecase/diagramma generale dei casi d'uso.png} 
@@ -26,6 +26,7 @@ I casi d'uso che riportati in seguito descrivono solo le funzionalità che dovra
 \end{figure}
 
 \begin{usecase}{Visualizzazione lista dei gruppi}
+    \label{uc:scenario-visualizzazione-lista-gruppi}
     \usecaseactors{Utente autenticato}
     \usecasepre{L'utente ha aperto la \textit{web app} ed è autenticato}
     \usecasedesc{L'utente vuole visualizzare la lista dei gruppi}
@@ -35,7 +36,7 @@ I casi d'uso che riportati in seguito descrivono solo le funzionalità che dovra
             \item L'utente visualizza la lista dei gruppi.
         \end{enumerate}
     }
-    \label{uc:scenario-visualizzazione-lista-gruppi}
+    
 \end{usecase}
 \newpage
 
@@ -53,7 +54,8 @@ I casi d'uso che riportati in seguito descrivono solo le funzionalità che dovra
     \usecasepost{L'utente ha visualizzato un singolo gruppo nella lista dei gruppi}
     \usecasescenarioprincipale{
         \begin{enumerate}[nolistsep]
-            \item L'utente visualizza un singolo gruppo nella lista dei gruppi.
+            \item L'utente visualizza la pagina contenente la lista dei gruppi;
+            \item l'utente visualizza un singolo gruppo nella lista dei gruppi.
         \end{enumerate}
     }
 \end{subusecase}
@@ -74,7 +76,8 @@ I casi d'uso che riportati in seguito descrivono solo le funzionalità che dovra
     \usecasepost{L'utente ha visualizzato il nome di un gruppo dalla lista dei gruppi}
     \usecasescenarioprincipale{
         \begin{enumerate}[nolistsep]
-            \item L'utente visualizza il nome di un gruppo dalla lista dei gruppi.
+            \item L'utente visualizza la pagina contenente la lista dei gruppi;
+            \item l'utente visualizza il nome di un gruppo dalla lista dei gruppi.
         \end{enumerate}
     }
 \end{subsubusecase}
@@ -88,7 +91,8 @@ I casi d'uso che riportati in seguito descrivono solo le funzionalità che dovra
     \usecasepost{L'utente ha visualizzato la descrizione di un gruppo dalla lista dei gruppi}
     \usecasescenarioprincipale{
         \begin{enumerate}[nolistsep]
-            \item L'utente visualizza la descrizione di un gruppo dalla lista dei gruppi.
+            \item L'utente visualizza la pagina contenente la lista dei gruppi;
+            \item l'utente visualizza la descrizione di un gruppo dalla lista dei gruppi.
         \end{enumerate}
     }
 \end{subsubusecase}
@@ -138,18 +142,19 @@ I casi d'uso che riportati in seguito descrivono solo le funzionalità che dovra
 \begin{usecase}{Visualizzazione dettagli di un gruppo}
     \label{uc:scenario-visualizzazione-dettaglio-gruppo}
     \usecaseactors{Utente autenticato}
-    \usecasepre{L'utente ha aperto la \textit{web app} ed è autenticato}
+    \usecasepre{L'utente ha aperto la \textit{web app}, è autenticato e sta visualizzando la lista dei gruppi}
     \usecasedesc{L'utente vuole visualizzare i dettagli di un gruppo}
     \usecasepost{L'utente ha visualizzato i dettagli di un gruppo}
     \usecasescenarioprincipale{
         \begin{enumerate}[nolistsep]
-            \item L'utente visualizza i dettagli di un gruppo.
+            \item L'utente clicca su un gruppo sul quale vuole ottenere i dettagli; 
+            \item l'utente visualizza i dettagli di un gruppo.
         \end{enumerate}
     }
 \end{usecase}
 \begin{figure}[H] 
     \centering 
-    \includegraphics[width=1\columnwidth]{usecase/sottocasi UC5.png} 
+    \includegraphics[width=0.9\columnwidth]{usecase/sottocasi UC5.png} 
     \caption{UC5: Vis. dettagli di un gruppo}
 \end{figure}
 \newpage
@@ -227,7 +232,7 @@ I casi d'uso che riportati in seguito descrivono solo le funzionalità che dovra
     \usecasepost{L'utente ha visualizzato nome e cognome di un partecipante dalla lista dei partecipanti}
     \usecasescenarioprincipale{
         \begin{enumerate}[nolistsep]
-            \item L'utente ha visualizza nome e cognome di un partecipante dalla lista dei partecipanti.
+            \item L'utente visualizza nome e cognome di un partecipante dalla lista dei partecipanti.
         \end{enumerate}
     }
 \end{subsubsubusecase}
@@ -275,12 +280,13 @@ I casi d'uso che riportati in seguito descrivono solo le funzionalità che dovra
 \begin{usecase}{Modifica di un gruppo}
     \label{uc:scenario-modifica-gruppo}
     \usecaseactors{Utente autenticato}
-    \usecasepre{L'utente ha aperto la \textit{web app} ed è autenticato}
+    \usecasepre{L'utente ha aperto la \textit{web app}, è autenticato e sta visualizzando la lista dei gruppi creati da lui}
     \usecasedesc{L'utente vuole modificare i dettagli di un gruppo}
     \usecasepost{L'utente ha modificato i dettagli di un gruppo}
     \usecasescenarioprincipale{
         \begin{enumerate}[nolistsep]
-            \item L'utente modifica i dettagli di un gruppo.
+            \item l'utente clicca su un gruppo che vuole modificare;
+            \item l'utente modifica i dettagli di un gruppo.
         \end{enumerate}
     }
 \end{usecase}
@@ -289,7 +295,7 @@ I casi d'uso che riportati in seguito descrivono solo le funzionalità che dovra
 
 \begin{figure}[H] 
     \centering 
-    \includegraphics[scale=0.17]{usecase/sottocasi UC6.png} 
+    \includegraphics[width=0.8\columnwidth]{usecase/sottocasi UC6.png} 
     \caption{UC6: Modifica di un gruppo}
 \end{figure}
 
@@ -358,19 +364,21 @@ I casi d'uso che riportati in seguito descrivono solo le funzionalità che dovra
         \end{enumerate}
     }
 \end{subusecase}
-
-\begin{subusecase}{Rimozione utente}
-    \label{sub:rimozione-utente}
-    \usecaseactors{Utente autenticato}
-    \usecasepre{L'utente ha aperto la \textit{web app}, è autenticato e sta modificando i dettagli di un gruppo}
-    \usecasedesc{L'utente vuole rimuovere un utente dal gruppo}
-    \usecasepost{L'utente ha rimosso un utente dal gruppo}
-    \usecasescenarioprincipale{
-        \begin{enumerate}[nolistsep]
-            \item L'utente rimuove un utente dal gruppo.
-        \end{enumerate}
-    }
-\end{subusecase}
+% TODO: se resta tempo implementare questa funzionalità
+% \begin{subusecase}{Rimozione utente}
+%     \label{sub:rimozione-utente}
+%     \usecaseactors{Utente autenticato}
+%     \usecasepre{L'utente ha aperto la \textit{web app}, è autenticato e sta modificando i dettagli di un gruppo}
+%     \usecasedesc{L'utente vuole rimuovere un utente dal gruppo}
+%     \usecasepost{L'utente ha rimosso un utente dal gruppo}
+%     \usecasescenarioprincipale{
+%         \begin{enumerate}[nolistsep]
+%             \item L'utente visualizza la lista dei gruppi;
+%             \item l'utente clicca su un gruppo sul che vuole modificare;
+%             \item l'utente rimuove un utente dal gruppo.
+%         \end{enumerate}
+%     }
+% \end{subusecase}
 
 \begin{usecase}{Crea un nuovo gruppo}
     \label{uc:scenario-creazione-nuovo-gruppo}
@@ -461,7 +469,7 @@ I casi d'uso che riportati in seguito descrivono solo le funzionalità che dovra
 \begin{usecase}{Elimina un gruppo}
     \label{uc:scenario-elimina-gruppo}
     \usecaseactors{Utente autenticato}
-    \usecasepre{L'utente ha aperto la \textit{web app} ed è autenticato}
+    \usecasepre{L'utente ha aperto la \textit{web app}, è autenticato e si trova nella pagina di modifica di un gruppo}
     \usecasedesc{L'utente vuole eliminare un gruppo}
     \usecasepost{L'utente ha eliminato un gruppo}
     \usecasescenarioprincipale{
@@ -475,43 +483,41 @@ I casi d'uso che riportati in seguito descrivono solo le funzionalità che dovra
 \begin{usecase}{Partecipa ad un gruppo}
     \label{uc:scenario-partecipa-gruppo}
     \usecaseactors{Utente autenticato}
-    \usecasepre{L'utente ha aperto la \textit{web app} ed è autenticato}
+    \usecasepre{L'utente ha aperto la \textit{web app}, è autenticato e si trova nella pagina dei dettagli di un gruppo a cui non partecipa}
     \usecasedesc{L'utente vuole partecipare ad un gruppo}
-    \usecasepost{L'utente ha partecipato ad un gruppo}
+    \usecasepost{L'utente ha partecipato al gruppo}
     \usecasescenarioprincipale{
         \begin{enumerate}[nolistsep]
-            \item L'utente partecipa ad un gruppo.
-        \end{enumerate}
-    }
-    \usecasealt{il gruppo ha raggiunto la capienza massima}
-    \usecaseest{viene visualizzato un messaggio di errore a causa della capienza massima raggiunta dal gruppo}
-\end{usecase}
-
-
-\begin{usecase}{Visualizzazione errore numero di utenti massimo raggiunto}
-    \label{uc:errore-numero-utenti}
-    \usecaseactors{Utente autenticato}
-    \usecasepre{L'utente ha aperto la \textit{web app} ed è autenticato}
-    \usecasedesc{L'utente vuole partecipare ad un gruppo}
-    \usecasepost{L'utente non si unisce al gruppo}
-    \usecasescenarioprincipale{
-        \begin{enumerate}[nolistsep]
-            \item l'utente sceglie di partecipare ad un gruppo;
-            \item viene visualizzato un messaggio di errore a causa della capienza massima raggiunta dal gruppo.
+            \item L'utente partecipa al gruppo.
         \end{enumerate}
     }
 \end{usecase}
+
+
+% \begin{usecase}{Visualizzazione errore numero di utenti massimo raggiunto}
+%     \label{uc:errore-numero-utenti}
+%     \usecaseactors{Utente autenticato}
+%     \usecasepre{L'utente ha aperto la \textit{web app} ed è autenticato}
+%     \usecasedesc{L'utente vuole partecipare ad un gruppo}
+%     \usecasepost{L'utente non si unisce al gruppo}
+%     \usecasescenarioprincipale{
+%         \begin{enumerate}[nolistsep]
+%             \item l'utente sceglie di partecipare ad un gruppo;
+%             \item viene visualizzato un messaggio di errore a causa della capienza massima raggiunta dal gruppo.
+%         \end{enumerate}
+%     }
+% \end{usecase}
 
 
 \begin{usecase}{Annulla partecipazione ad un gruppo}
     \label{uc:scenario-annulla-partecipazione}
     \usecaseactors{Utente autenticato}
-    \usecasepre{L'utente ha aperto la \textit{web app} ed è autenticato}
-    \usecasedesc{L'utente vuole annullare la partecipazione ad un gruppo}
-    \usecasepost{L'utente ha annullato la partecipazione ad un gruppo}
+    \usecasepre{L'utente ha aperto la \textit{web app}, è autenticato e si trova nella pagina dei dettagli di un gruppo a cui partecipa}
+    \usecasedesc{L'utente vuole annullare la partecipazione al gruppo}
+    \usecasepost{L'utente ha annullato la partecipazione al gruppo}
     \usecasescenarioprincipale{
         \begin{enumerate}[nolistsep]
-            \item L'utente annulla la partecipazione ad un gruppo.
+            \item L'utente annulla la partecipazione al gruppo.
         \end{enumerate}
     }
 \end{usecase}
@@ -520,11 +526,11 @@ I casi d'uso che riportati in seguito descrivono solo le funzionalità che dovra
     \label{uc:scenario-visualizzazione-will}
     \usecaseactors{Utente autenticato}
     \usecasepre{L'utente ha aperto la \textit{web app} ed è autenticato}
-    \usecasedesc{L'utente vuole visualizzare la lista delle will degli utenti appartenenti agli stessi gruppi}
-    \usecasepost{L'utente ha visualizzato la lista delle will degli utenti appartenenti agli stessi gruppi}
+    \usecasedesc{L'utente vuole visualizzare la lista delle \textit{will} degli utenti appartenenti agli stessi gruppi}
+    \usecasepost{L'utente ha visualizzato la lista delle \textit{will} degli utenti appartenenti agli stessi gruppi}
     \usecasescenarioprincipale{
         \begin{enumerate}[nolistsep]
-            \item L'utente visualizza la lista delle will degli utenti appartenenti agli stessi gruppi.
+            \item L'utente visualizza la lista delle \textit{will} degli utenti appartenenti agli stessi gruppi.
         \end{enumerate}
     }
 \end{usecase}
@@ -533,14 +539,14 @@ I casi d'uso che riportati in seguito descrivono solo le funzionalità che dovra
  
 \begin{figure}[H] 
     \centering 
-    \includegraphics[width=1.2\columnwidth]{usecase/sottocasi UC12.png} 
-    \caption{UC12: Vis. lista \textit{will} degli utenti appartenenti agli stessi gruppi}
+    \includegraphics[width=1.2\columnwidth]{usecase/sottocasi UC11.png} 
+    \caption{UC11: Vis. lista \textit{will} degli utenti appartenenti agli stessi gruppi}
 \end{figure}
 
 \begin{subusecase}{Visualizzazione singola will in lista}
     \label{sub:visualizzazione-singola-will}
     \usecaseactors{Utente autenticato}
-    \usecasepre{L'utente ha aperto la \textit{web app}, è autenticato e sta visualizzando la lista dei gruppi}
+    \usecasepre{L'utente ha aperto la \textit{web app}, è autenticato e sta visualizzando la lista delle \gls{will}}
     \usecasedesc{L'utente vuole visualizzare una singola \gls{will} dalla lista delle \gls{will}}
     \usecasepost{L'utente ha visualizzato una singola \gls{will} dalla lista delle \gls{will}}
     \usecasescenarioprincipale{
@@ -552,8 +558,8 @@ I casi d'uso che riportati in seguito descrivono solo le funzionalità che dovra
 
 \begin{figure}[H] 
     \centering 
-    \includegraphics[width=1.2\columnwidth]{usecase/sottocasi UC12.1.png} 
-    \caption{UC12.1: Vis. singola \textit{will}}
+    \includegraphics[width=1.2\columnwidth]{usecase/sottocasi UC11.1.png} 
+    \caption{UC11.1: Vis. singola \textit{will}}
 \end{figure}
 
 
