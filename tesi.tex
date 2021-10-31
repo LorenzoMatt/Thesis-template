@@ -20,6 +20,7 @@
 % !TEX spellcheck = it-IT
 
 % PDF/A filecontents
+
 \RequirePackage{filecontents}
 \begin{filecontents*}{\jobname.xmpdata}
   \Title{Document’s title}
@@ -40,11 +41,13 @@
 %**************************************************************
 % Importazione package
 %************************************************************** 
-
 \PassOptionsToPackage{dvipsnames}{xcolor} % colori PDF/A
+
+\usepackage{xpatch}
 
 \usepackage[table]{xcolor}
 \usepackage{enumitem}
+
 
 \usepackage{titlesec}
 

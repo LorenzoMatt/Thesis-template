@@ -268,6 +268,24 @@ Gli \textit{Observable} sono dichiarativi, ovvero viene definita una funzione ch
 \section{Codifica}
 \subsection{Back end}
 \subsubsection{Gruppi service}
+\myparagraph{Crew}
+\label{par:Crew}
+Questa classe rappresenta i gruppi. La tabella che mappa la classe nel \textit{database} è rappresentata nella figura \ref{img:Crew-tabella}. Per aggiungere o modificare un gruppo è necessario rappresentare la classe in formato JSON, come in figura \ref{img:Crew-classe-json}. Per creare un nuovo gruppo è necessario specificare almeno i campi \texttt{nome, proprietario, latitudine} e \texttt{longitudine}. 
+
+
+\begin{figure}[H]
+    \centerline{\includegraphics[scale=0.7]{codice/crew-table.png}}
+    \caption{Tabella \textit{Crew}}
+    \label{img:Crew-tabella}
+\end{figure}
+
+\begin{figure}[H]
+    \centerline{\includegraphics[scale=0.3]{codice/crew-classe-json.png}}
+    \caption{Rappresentazione JSON della classe \textit{Crew}}
+    \label{img:Crew-classe-json}
+\end{figure}
+
+
 \myparagraph{GruppiController}
 \label{par:GruppiController}
 % TODO: aggiungere immagine della classe
@@ -276,10 +294,10 @@ L'annotazione \code{@RestController} permette di creare un \textit{controller Re
 \subparagraph*{Metodi principali}
 \begin{itemize}
     \item \class{getAllGruppi}: gestisce la chiamata che visualizza tutti i gruppi.\\ \mappaturaemetodo{/}{GET};
-    \item \class{getGruppo}:  gestisce la chiamata che visualizza uno specifico gruppo. \\ \mappaturaemetodo{/\{id\}}{GET};
+    \item \class{getGruppo}:  gestisce la chiamata che visualizza un gruppo specifico. \\ \mappaturaemetodo{/\{id\}}{GET};
     \item \class{getUtentiByGruppo}: gestisce la chiamata che visualizza gli utenti appartenenti ad un gruppo. \\ \mappaturaemetodo{/\{idCrew\}/utenti}{GET};
-    \item \class{createGruppo}: gestisce la chiamata che inserisce una nuovo gruppo. \\ \mappaturaemetodo{/inserisci}{POST};
-    \item \class{modifyGruppo}: gestisce la chiamata che modifica un gruppo.\\ \mappaturaemetodo{/modifica/\{idCrew\}}{PUT};
+    \item \class{createGruppo}: gestisce la chiamata che inserisce una nuovo gruppo. È necessario specificare i dati del gruppo da inserire nel \textit{body} della chiamata HTTP, come in figura \ref{img:Crew-classe-json}.   \\ \mappaturaemetodo{/inserisci}{POST};
+    \item \class{modifyGruppo}: gestisce la chiamata che modifica un gruppo. È necessario specificare i dati del gruppo da modificare nel \textit{body} della chiamata HTTP, come in figura \ref{img:Crew-classe-json}. I campi non specificati non verranno modificati. \\ \mappaturaemetodo{/modifica/\{idCrew\}}{PUT};
     \item \class{getUsciteByGruppo}: gestisce la chiamata che visualizza le uscite di una gruppo.\\ \mappaturaemetodo{/\{idCrew\}/uscite}{GET};
     \item \class{deleteGruppo}: gestisce la chiamata che elimina un gruppo. \\ \mappaturaemetodo{/elimina/\{idCrew\}}{DELETE};
     \item \class{getGruppiUtente}: gestisce la chiamata che richiede tutti i gruppi a cui appartiene un utente. \\ \mappaturaemetodo{/utente/\{idUtente\}}{GET};
@@ -293,7 +311,7 @@ L'annotazione \code{@RestController} permette di creare un \textit{controller Re
 \myparagraph{GruppiService}
 % TODO: aggiungere immagine della classe
 Classe responsabile della \textit{business logic} del \gls{microservizio}.  \\
-Siccome fornisce funzionalità di \textit{business}, questa classe è annotata con l'annotazione \code{@Service}, ed ha lo scopo di fungere da intermediario fra la classe \class{GruppiController} e  il \gls{DAO}, ovvero le classi \hyperref[CrewRepository]{CrewRepository}, \hyperref[JointUtentiCrewRepository]{JointUtentiCrewRepository} e \hyperref[JointUsciteCrewRepository]{JointUsciteCrewRepository}. \\
+Siccome fornisce funzionalità di \textit{business}, questa classe è annotata con l'annotazione \code{@Service}, e funge da intermediario fra la classe \nameref{par:GruppiController} e  il \gls{DAO}, ovvero le classi \hyperref[CrewRepository]{CrewRepository}, \hyperref[JointUtentiCrewRepository]{JointUtentiCrewRepository} e \hyperref[JointUsciteCrewRepository]{JointUsciteCrewRepository}. \\
 I metodi di questa classe hanno gli stessi nomi e funzione dei metodi presenti in \nameref{par:GruppiController}.
 
 \myparagraph{Repository}
@@ -301,7 +319,7 @@ I metodi di questa classe hanno gli stessi nomi e funzione dei metodi presenti i
 Interfacce con funzionalità \gls{JPA} che permettono di mappare una classe in una tabella di un \textit{database} relazionale, svolgendo anche il compito \gls{EntityManager}, effettuando l'accesso agli oggetti ed eseguendo operazioni \gls{CRUD} sui dati immagazzinati nelle tabelle del \textit{database}.\\
 Tutte queste interfacce estendono l'interfaccia \code{JpaRepository<T,ID>}, dove \texttt{T} è il tipo della classe da mappare, ed \texttt{ID} è il tipo dell'identificativo della classe mappata.\\
 L'interfaccia \textit{JpaRepository} permette di creare le \textit{query} a partire dal nome del metodo, senza doverlo necessariamente implementare.\\
-Il meccanismo che permette di generare le \textit{query} integrato nell'infrastruttura \textit{JPA Spring Data} è utile per creare \textit{query} vincolante sulle entità del \textit{repository}. Questo meccanismo rimuove i prefissi \textit{find...By}, \textit{read...By} e \textit{get...By} dal metodo ed effettua il \textit{parsing} della funzione alla ricerca dei nomi delle proprietà dell'entità mappata nel \textit{JpaRepository}, come nel seguente esempio: 
+Il meccanismo che permette di generare le \textit{query} integrato nell'infrastruttura JPA Spring Data è utile per creare \textit{query} vincolate sulle entità del \textit{repository}. Questo meccanismo rimuove i prefissi \textit{find...By}, \textit{read...By} e \textit{get...By} dal metodo ed effettua il \textit{parsing} della funzione alla ricerca dei nomi delle proprietà dell'entità mappata nel \textit{JpaRepository}, come nel seguente esempio: 
 \begin{center}
     \code{List<JointUsciteCrew> findAllByIdCrew(int idCrew);}
 \end{center}
@@ -319,7 +337,7 @@ Ci sono tre \textit{repository} nel \gls{microservizio}: \nameref{JointUsciteCre
 \mysubparagraph{JointUsciteCrewRepository} 
 \label{JointUsciteCrewRepository}
 Classe di \textit{repository} che contiene le uscite di un gruppo. Ogni qualvolta un utente aggiunge un'uscita, essa viene aggiunta alle uscite di tutti i gruppi a cui appartiene. Viceversa quando viene eliminata un'uscita viene eliminata dalle uscite di tutti i gruppi.\\
-Un accorgimento che è stato fatto è che quando viene rimosso un gruppo, tutte le uscite associate a quel gruppo vengono rimosse da questa tabella (n.b. le uscite non vengono eliminate dalla tabella Uscite presente nel \textit{database}, vengono solo eliminate le voci relative nella tabella \textit{joint\_uscite\_crew}).
+Un accorgimento che è stato fatto è che quando viene rimosso un gruppo, tutte le uscite associate a quel gruppo vengono rimosse da questa tabella (n.b. le uscite non vengono eliminate dalla tabella \texttt{Uscite} presente nel \textit{database}, vengono solo eliminate le voci relative nella tabella \texttt{joint\_uscite\_crew}).
 \subsubparagraph{Metodi}
 \begin{itemize}
     \item \class{List<JointUsciteCrew> findAllByIdCrew(int idCrew)}: restituisce tutte le occorrenze in base all'id del gruppo;
@@ -372,19 +390,19 @@ Classe di \textit{repository} che contiene i dettagli dei gruppi. \\
 In questo \gls{microservizio} sono state effettuate le seguenti modifiche: 
 \begin{itemize}
     \item è stato aggiunto un campo booleano \texttt{visGlobale} alla classe \class{Uscita} che permette di specificare se l'uscita sarà visibile da tutti gli utenti oppure soltanto dagli utenti appartenenti agli stessi gruppi;
-    \item è stato aggiunto al metodo \class{createUscita} presente nella classe \class{UsciteController} la possibilità di inserire nel corpo per la creazione dell'uscita il campo che specifica il tipo di visibilità desiderata. \\
+    \item è stato aggiunto al metodo \texttt{createUscita} presente nella classe \class{UsciteController} la possibilità di inserire nel corpo per la creazione dell'uscita il campo che specifica il tipo di visibilità desiderata. \\
     Nello stesso metodo è stata anche inserita una chiamata HTTP che aggiunge l'uscita appena creata al \textit{repository} \hyperref[JointUsciteCrewRepository]{JointUsciteCrewRepository};
-    \item è stato aggiunto al metodo \class{eliminaUscita} una chiamata HTTP che rimuove l'uscita dal \textit{repository} \hyperref[JointUsciteCrewRepository]{JointUsciteCrewRepository};
-    \item è stato aggiunto un metodo \class{modificaVisibilita}  alla classe \textit{UsciteController} che permette di modificare la visibilità dell'uscita.
+    \item è stato aggiunto al metodo \texttt{eliminaUscita} una chiamata HTTP che rimuove l'uscita dal \textit{repository} \hyperref[JointUsciteCrewRepository]{JointUsciteCrewRepository};
+    \item è stato aggiunto un metodo \texttt{modificaVisibilita}  alla classe \textit{UsciteController} che permette di modificare la visibilità dell'uscita.
     Questo metodo viene mappato in \texttt{uscite/modifica/visibilità/\{id\}}, ed \texttt{id} specifica l'\texttt{id} del gruppo del quale si vuole modificare la visibilità. Il verbo HTTP della chiamata è di tipo PUT; 
-    \item è stato aggiunto un metodo \class{getAllUsciteGlobali}  alla classe \textit{UsciteController} che permette di ricevere tutte le uscite che hanno il campo \code{visGlobale = true}. \\
+    \item è stato aggiunto un metodo \texttt{getAllUsciteGlobali}  alla classe \textit{UsciteController} che permette di ricevere tutte le uscite che hanno il campo \code{visGlobale = true}. \\
     Questo metodo viene mappato in \texttt{uscite/globali}, ed il verbo HTTP della chiamata è di tipo GET.
 \end{itemize}
 
 
 \subsubsection{Api Gateway}
-ÈÈ stato implementato un \textit{Spring Cloud Gateway} applicando dei filtri alle chiamate per verificare se è presente e valido il \textit{token} per l'autenticazione  presente nell'\textit{header} della richiesta HTTP.
-Per fare ciò è stato creata una classe \class{AuthFilter} che estende l'interfaccia \class{AbstractGatewayFilterFactory} ed implementa il metodo astratto \code{GatewayFilter apply(C config)} presente nella superclasse. In questa funzione viene letta la richiesta in entrata viene verificata l'autenticazione.
+È stato implementato un \textit{Spring Cloud Gateway} applicando dei filtri alle chiamate per verificare se è presente e valido il \textit{token} per l'autenticazione  presente nell'\textit{header} della richiesta HTTP.
+Per fare ciò è stato creata una classe \class{AuthFilter} che estende l'interfaccia \class{AbstractGatewayFilterFactory} ed implementa il metodo astratto \code{GatewayFilter apply(C config)} presente nella \textit{superclasse}. In questa funzione viene letta la richiesta in entrata viene verificata l'autenticazione.
 
 \begin{figure}[H] 
     \centerline{\includegraphics[scale=0.25]{codice/AuthFilter.png}}
@@ -405,21 +423,25 @@ Questo \gls{microservizio} contiene solo una classe al suo interno, che è la cl
     \caption{File \texttt{application.yml} del microservizio \textit{Eureka} Server}
 \end{figure}
 \noindent Nella \textit{Main class} di tutti i \glspl{microservizio}  è stata aggiunta l'annotazione \code{@EnableEurekaClient}, che permette di registrarsi all'\textit{Eureka Server} in base a quanto specificato nel file \texttt{application.properties}.\\
-\begin{figure}[H] 
-    \centering
-    \includegraphics[width=1\columnwidth]{codice/application.properties-registrazione-eureka.png} 
-    \caption{Configurazione per la registrazione di un microservizio all'\textit{Eureka Server} nel file \texttt{application.properties}}
-\end{figure}
+
+\begin{lstlisting}[style=Docker, caption = {Configurazione per la registrazione di un microservizio all'\textit{Eureka Server} nel file \texttt{application.properties}}]
+eureka.client.service-url.defaultZone: http:^//^localhost:8761/eureka
+eureka.client.register-with-eureka=true
+eureka.client.fetch-registry=true
+\end{lstlisting}
 
 \subsubsection{Docker}
 Per ogni \gls{microservizio} è stato creato un file \texttt{Dockerfile} contenente le operazioni da effettuare per la creazione di un'immagine Docker.
 Tutti i \texttt{Dockerfile} hanno la seguente struttura:
-\vspace{4pt}\\
-\code{FROM openjdk:11}\\
-\code{ARG JAR\_FILE=target/*.jar}\\
-\code{COPY \$\{JAR\_FILE\} nome\_microservizio.jar}\\
-\code{ENTRYPOINT ["java","-jar","nome\_microservizio.jar"]}
-\vspace{4pt}\\
+
+\begin{lstlisting}[style=Docker]
+FROM openjdk:11
+ARG JAR_FILE=target *.jar
+COPY ${JAR_FILE} nome_microservizio.jar
+ENTRYPOINT ["java","-jar","nome_microservizio.jar"]
+\end{lstlisting}
+
+
 Per eseguire ogni \gls{container} nello stesso \textit{network} è stato creato un file \texttt{docker-compose.yml} in cui vengono specificate le immagini Docker da avviare. 
 \subsection{Front end}
 In questa sezione verranno descritte solo le maschere, componenti e servizi modificati in maniera rilevante o creati. Tutto ciò che era già presente nella \textit{web app} non verrà descritta.
@@ -537,15 +559,13 @@ Questo componente è composto da una lista di \nameref{par:WillCard}, ed ha le s
 \end{itemize}
 
 \begin{figure}[H] 
-    \centering 
-    \includegraphics[scale=0.5]{sito/component/homepage-component.png} 
-    \caption{Componente Homepage di un utente autenticato}
+    \centerline{\includegraphics[scale=0.8]{sito/component/homepage-component.png}}
+    \caption{Componente \texttt{Homepage} di un utente autenticato}
 \end{figure}
 
 \begin{figure}[H] 
-    \centering 
-    \includegraphics[scale=0.5]{sito/component/homepage-non-autenticato.png} 
-    \caption{Componente Homepage di un utente non autenticato}
+    \centerline{\includegraphics[scale=0.6]{sito/component/homepage-non-autenticato.png}}
+    \caption{Componente \texttt{Homepage} di un utente non autenticato}
 \end{figure}
 
 % \myparagraph{Servizi}
@@ -556,7 +576,7 @@ Questo componente è composto da una lista di \nameref{par:WillCard}, ed ha le s
 
 \myparagraph{Metodi}
 \begin{itemize}
-    \item \class{ngOnInit}: all'inizializzazione del componente viene controllato, mediante il servizio \class{AuthenticationService}(non implementato da me), se l'utente è autenticato, in modo da valutare se visualizzare anche la schermata \enquote*{le mie Will} e \enquote*{le Will dei tuoi gruppi} o meno;
+    \item \class{ngOnInit}: all'inizializzazione del componente viene controllato, mediante il servizio \texttt{AuthenticationService}(non implementato da me), se l'utente è autenticato, in modo da valutare se visualizzare anche le schermate \enquote*{le mie Will} e \enquote*{le Will dei tuoi gruppi} o meno;
     \item \class{getDataWithGlobalVisibility}: ottiene le \gls{will} con visibilità globale;
     \item \class{getDataPersonal}: ottiene le \gls{will} create dall'utente;
     \item \class{getDataCrew}: ottiene le \gls{will} dei gruppi a cui appartiene l'utente;
@@ -566,7 +586,7 @@ Questo componente è composto da una lista di \nameref{par:WillCard}, ed ha le s
 
 \myparagraph{WillCard}
 \label{par:WillCard}
-Questo componente, implementato d un collega, permette di visualizzare l'anteprima di una \gls{will}, in particolare: 
+Questo componente, implementato da un collega, permette di visualizzare l'anteprima di una \gls{will}, in particolare: 
 \begin{itemize}
     \item Il nome dell'organizzatore;
     \item lo sport relativo all'uscita;
@@ -599,7 +619,7 @@ Questo componente permette di visualizzare l'anteprima di una gruppo, in partico
 % \end{itemize}
 \myparagraph{Input}
 \begin{itemize}
-    \item \textbf{crew}: gruppo da visualizzare.
+    \item \class{crew}: gruppo da visualizzare.
 \end{itemize}
 
 \myparagraph{Metodi}
@@ -695,7 +715,7 @@ Questo componente permette di modificare i dettagli di un gruppo.
 
 \myparagraph{DialogComponent}
 \label{par:Dialog}
-Questo componente serve per confermare le operazioni che possono effettuare delle modifiche all'applicativo.
+Questo componente serve per confermare le operazioni effettuano delle modifiche all'applicativo.
 
 \begin{figure}[H] 
     \centering 
@@ -742,7 +762,7 @@ Questo componente permette di visualizzare una mappa in cui viene segnato con un
 
 \myparagraph{Metodi}
 \begin{itemize}
-    \item \class{ngOnInit}: all'inizializzazione del componente viene valutato e la mappa sia modificabile o no e, nel caso lo fosse, viene effettuato un \textit{binding} fra il \textit{click} sulla mappa e la funzione \texttt{modify\_marker};
+    \item \class{ngOnInit}: all'inizializzazione del componente viene valutato se la mappa sia modificabile o no; nel caso lo fosse viene effettuato un \textit{binding} fra il \textit{click} sulla mappa e la funzione \texttt{modify\_marker};
     \item \class{modify\_marker}: modifica le coordinate da visualizzare sulla mappa in caso questa venga modificata. Emette inoltre i segnali \texttt{latitudineChanged} e \texttt{longitudineChanged}.
 \end{itemize}
 
