@@ -25,6 +25,7 @@ rilasciato per la prima volta da Sun Microsystems nel 1995. Si è evoluto da umi
  continuano a fare affidamento su Java.
 %TODO: aggiungere bibliografia, link: https://java.com/en/download/help/whatis_java.html
 \subsection*{Spring}
+
 Spring è un \gls{framework} open source per lo sviluppo di applicazioni su piattaforma Java.
 A questo \gls{framework} sono associati tanti altri progetti, che hanno nomi composti come 
 Spring Boot, Spring Data, Spring Batch, etc. Questi progetti sono stati ideati per
@@ -120,7 +121,7 @@ Ogni \textit{component} contenuto si occuperà così di gestire la grafica di qu
 % \subsubsection{Organizzazione del codice}
 % % TODO: aggiungere questa sezione alla parte di codifica
 \subsubsection{Progettazione delle maschere}
-Con il \textit{tutor} aziendale è stato discusso come dovrebbero essere graficamente le nuove maschere da aggiungere a \productName. A partire da questi confronti, è stato poi utilizzato \nameref{sub:Figma} per fare il \textit{mockup}, in modo da  testare come i vari elementi visivi siano accattivanti.\\
+Con il \textit{tutor} aziendale è stato discusso come dovrebbero essere graficamente le nuove maschere da aggiungere a \productName. A partire da questi confronti, è stato poi utilizzato \textbf{Figma} fare il \textit{mockup}, in modo da  testare come i vari elementi visivi siano accattivanti.\\
 Durante la progettazione del \textit{mockup} è stato seguito lo stile presente nella \textit{web app}, in modo da non disorientare l'utente durante la navigazione. \\
 I risultati della progettazione delle maschere sono riportati in seguito.
 \begin{figure}[H] 
@@ -200,7 +201,7 @@ I \glspl{microservizio} hanno una natura dinamica, in quanto è possibile che pi
     \item selezionare un'istanza di \gls{microservizio}.
 \end{itemize}
 La soluzione a questi problemi è l'utilizzo del \textit{pattern} \textbf{\textit{Client-side Service Discovery}}, che fornisce un meccanismo che tiene traccia di tutti i servizi e delle relative istanze. Tutti i \glspl{microservizio} si registrano ad un \textit{Service registry} e continuano ad aggiornare regolarmente le proprie informazioni di rete.\\
-Il \textit{pattern} \textbf{\textit{Service registry}} è stato applicato mediante l'implementazione di un \class{Eureka Server}. L'\textit{Eureka Server} è un \textit{database} di servizi che tiene traccia di ogni \gls{microservizio}, delle loro istanze e delle loro locazioni. I \glspl{microservizio} si registrano all'avvio dell'applicazione e vengono rimossi alla sua chiusura.\\
+Il \textit{pattern} \textbf{\textit{Service registry}} è stato applicato mediante l'implementazione di un \texttt{Eureka Server}. L'\textit{Eureka Server} è un \textit{database} di servizi che tiene traccia di ogni \gls{microservizio}, delle loro istanze e delle loro locazioni. I \glspl{microservizio} si registrano all'avvio dell'applicazione e vengono rimossi alla sua chiusura.\\
 L'utilizzo di questi \textit{pattern}  permette ai servizi di comunicare fra di loro, ottenendo le informazioni degli altri servizi direttamente dall'\textit{Eureka Server}.
 \subsection{Dependency Injection}
 \label{sub:Dependency-Injection}
@@ -262,8 +263,8 @@ Viene utilizzato questo \textit{pattern} per la gestione del \textit{routing}, a
 
 \subsection{Observer}
 %TODO: aggiungere alla bibliografia: https://angular.io/guide/observables
-Gli \textit{\textbf{Observable}} forniscono supporto per il passaggio di messaggi tra le parti dell'applicazione. Sono usati frequentemente in Angular e sono una tecnica per la gestione ad eventi e la programmazione asincrona.\\
-Il \textit{pattern } \class{Observer} è un \textit{design pattern} in cui un oggetto, chiamato \class{Subject}, contiene una lista di suoi osservatori, chiamati \class{Observers}, e li notifica automaticamente ai cambiamenti di stato.\\
+Gli \class{Observable} forniscono supporto per il passaggio di messaggi tra le parti dell'applicazione. Sono usati frequentemente in Angular e sono una tecnica per la gestione ad eventi e la programmazione asincrona.\\
+Il \textit{pattern} \class{Observer} è un \textit{design pattern} in cui un oggetto, chiamato \texttt{Subject}, contiene una lista di suoi osservatori, chiamati \texttt{Observers}, e li notifica automaticamente ai cambiamenti di stato.\\
 Gli \textit{Observable} sono dichiarativi, ovvero viene definita una funzione che non viene eseguita fino a quando un \textit{Observer} si sottoscrive ad esso. L'\textit{Observer} viene quindi notificato al completamento della funzione, e il tipo di ritorno di un \textit{Observable} può cambiare in base al contesto, che nel caso nel progetto di \textit{stage} è stato prevalentemente di tipo HTTP \textit{response}. \\
 % \begin{figure}[H] 
 %     \centering 
@@ -282,13 +283,13 @@ Questa classe rappresenta i gruppi. La tabella che mappa la classe nel \textit{d
 
 \begin{figure}[H]
     \centerline{\includegraphics[scale=0.7]{codice/crew-table.png}}
-    \caption{Tabella \textit{Crew}}
+    \caption{Tabella \texttt{Crew}}
     \label{img:Crew-tabella}
 \end{figure}
 
 % \begin{figure}[H]
 %     \centerline{\includegraphics[scale=0.3]{codice/crew-classe-json.png}}
-%     \caption{Rappresentazione JSON della classe \textit{Crew}}
+%     \caption{Rappresentazione JSON della classe \texttt{Crew}}
 %     \label{img:Crew-classe-json}
 % \end{figure}
 \input{codice/Crew.json.tex}
@@ -326,12 +327,12 @@ I metodi di questa classe hanno gli stessi nomi e funzione dei metodi presenti i
 \label{Repository}
 Interfacce con funzionalità \gls{JPA} che permettono di mappare una classe in una tabella di un \textit{database} relazionale, svolgendo anche il compito \gls{EntityManager}, effettuando l'accesso agli oggetti ed eseguendo operazioni \gls{CRUD} sui dati immagazzinati nelle tabelle del \textit{database}.\\
 Tutte queste interfacce estendono l'interfaccia \code{JpaRepository<T,ID>}, dove \texttt{T} è il tipo della classe da mappare, ed \texttt{ID} è il tipo dell'identificativo della classe mappata.\\
-L'interfaccia \textit{JpaRepository} permette di creare le \textit{query} a partire dal nome del metodo, senza doverlo necessariamente implementare.\\
-Il meccanismo che permette di generare le \textit{query} integrato nell'infrastruttura JPA Spring Data è utile per creare \textit{query} vincolate sulle entità del \textit{repository}. Questo meccanismo rimuove i prefissi \textit{find...By}, \textit{read...By} e \textit{get...By} dal metodo ed effettua il \textit{parsing} della funzione alla ricerca dei nomi delle proprietà dell'entità mappata nel \textit{JpaRepository}, come nel seguente esempio: 
+L'interfaccia \texttt{JpaRepository} permette di creare le \textit{query} a partire dal nome del metodo, senza doverlo necessariamente implementare.\\
+Il meccanismo che permette di generare le \textit{query} integrato nell'infrastruttura JPA Spring Data è utile per creare \textit{query} vincolate sulle entità del \textit{repository}. Questo meccanismo rimuove i prefissi \texttt{find...By}, \texttt{read...By} e \texttt{get...By} dal metodo ed effettua il \textit{parsing} della funzione alla ricerca dei nomi delle proprietà dell'entità mappata nel \texttt{JpaRepository}, come nel seguente esempio: 
 \begin{center}
     \code{List<JointUsciteCrew> findAllByIdCrew(int idCrew);}
 \end{center}
-in cui \texttt{idCrew} è una proprietà dell'entità \class{JointUsciteCrew}.\\ 
+in cui \texttt{idCrew} è una proprietà dell'entità \texttt{JointUsciteCrew}.\\ 
  Le proprietà inserite nel nome del metodo possono essere concatenate con \textit{And} e \textit{Or}, ma anche con operatori come \textit{Between}, \textit{LessThan}, \textit{GreaterThan}, \textit{Like}. \\
  Un esempio è il seguente: 
  \begin{center}
@@ -397,20 +398,20 @@ Classe di \textit{repository} che contiene i dettagli dei gruppi. \\
 \subsubsection{Uscite Service}
 In questo \gls{microservizio} sono state effettuate le seguenti modifiche: 
 \begin{itemize}
-    \item è stato aggiunto un campo booleano \texttt{visGlobale} alla classe \class{Uscita} che permette di specificare se l'uscita sarà visibile da tutti gli utenti oppure soltanto dagli utenti appartenenti agli stessi gruppi;
-    \item è stato aggiunto al metodo \texttt{createUscita} presente nella classe \class{UsciteController} la possibilità di inserire nel corpo per la creazione dell'uscita il campo che specifica il tipo di visibilità desiderata. \\
+    \item è stato aggiunto un campo booleano \texttt{visGlobale} alla classe \texttt{Uscita} che permette di specificare se l'uscita sarà visibile da tutti gli utenti oppure soltanto dagli utenti appartenenti agli stessi gruppi;
+    \item è stato aggiunto al metodo \texttt{createUscita} presente nella classe \texttt{UsciteController} la possibilità di inserire nel corpo per la creazione dell'uscita il campo che specifica il tipo di visibilità desiderata. \\
     Nello stesso metodo è stata anche inserita una chiamata HTTP che aggiunge l'uscita appena creata al \textit{repository} \hyperref[JointUsciteCrewRepository]{JointUsciteCrewRepository};
     \item è stato aggiunto al metodo \texttt{eliminaUscita} una chiamata HTTP che rimuove l'uscita dal \textit{repository} \hyperref[JointUsciteCrewRepository]{JointUsciteCrewRepository};
-    \item è stato aggiunto un metodo \texttt{modificaVisibilita}  alla classe \textit{UsciteController} che permette di modificare la visibilità dell'uscita.
+    \item è stato aggiunto un metodo \texttt{modificaVisibilita}  alla classe \texttt{UsciteController} che permette di modificare la visibilità dell'uscita.
     Questo metodo viene mappato in \texttt{uscite/modifica/visibilità/\{id\}}, ed \texttt{id} specifica l'\texttt{id} del gruppo del quale si vuole modificare la visibilità. Il verbo HTTP della chiamata è di tipo PUT; 
-    \item è stato aggiunto un metodo \texttt{getAllUsciteGlobali}  alla classe \textit{UsciteController} che permette di ricevere tutte le uscite che hanno il campo \code{visGlobale = true}. \\
+    \item è stato aggiunto un metodo \texttt{getAllUsciteGlobali}  alla classe \texttt{UsciteController} che permette di ricevere tutte le uscite che hanno il campo \code{visGlobale = true}. \\
     Questo metodo viene mappato in \texttt{uscite/globali}, ed il verbo HTTP della chiamata è di tipo GET.
 \end{itemize}
 
 
 \subsubsection{Api Gateway}
 È stato implementato un \textit{Spring Cloud Gateway} applicando dei filtri alle chiamate per verificare se è presente e valido il \textit{token} per l'autenticazione  presente nell'\textit{header} della richiesta HTTP.
-Per fare ciò è stato creata una classe \class{AuthFilter} che estende l'interfaccia \class{AbstractGatewayFilterFactory} ed implementa il metodo astratto \code{GatewayFilter apply(C config)} presente nella \textit{superclasse}. In questa funzione viene letta la richiesta in entrata viene verificata l'autenticazione.
+Per fare ciò è stato creata una classe \texttt{AuthFilter} che estende l'interfaccia \texttt{AbstractGatewayFilterFactory} ed implementa il metodo astratto \code{GatewayFilter apply(C config)} presente nella \textit{superclasse}. In questa funzione viene letta la richiesta in entrata viene verificata l'autenticazione.
 
 % \begin{figure}[H] 
 %     \centerline{\includegraphics[scale=0.25]{codice/AuthFilter.png}}
@@ -422,11 +423,11 @@ Per fare ciò è stato creata una classe \class{AuthFilter} che estende l'interf
 
 \input{codice/API-Gateway.yml.tex}
 
-\begin{figure}[H] 
-    \centering
-    \includegraphics[width=1\columnwidth]{codice/application.yml-API-Gateway.png} 
-    \caption{Configurazione dello \textit{Spring Cloud Gateway} nel file \texttt{application.yml} del microservizio \textit{API Gateway}}
-\end{figure}
+% \begin{figure}[H] 
+%     \centering
+%     \includegraphics[width=1\columnwidth]{codice/application.yml-API-Gateway.png} 
+%     \caption{Configurazione dello \textit{Spring Cloud Gateway} nel file \texttt{application.yml} del microservizio \textit{API Gateway}}
+% \end{figure}
 
 \subsection{Eureka Server}
 Questo \gls{microservizio} contiene solo una classe al suo interno, che è la classe che viene generata automaticamente quando si inizializza un progetto con Spring. L'unica cosa aggiunta alla classe è l'annotazione \code{@EnableEurekaServer}, che permette di  attivare la l'\textit{Eureka Server} come specificato nel file \texttt{application.yml}.
@@ -436,7 +437,7 @@ Questo \gls{microservizio} contiene solo una classe al suo interno, che è la cl
 %     \includegraphics[width=1\columnwidth]{codice/application.yml-Eureka.png} 
 %     \caption{File \texttt{application.yml} del microservizio \textit{Eureka} Server}
 % \end{figure}
-\begin{lstlisting}[language = yaml, caption = {File \texttt{application.yml} del microservizio \textit{Eureka} Server}]
+\begin{lstlisting}[language = yaml, caption = {File \texttt{application.yml} del microservizio \texttt{Eureka Server}}]
 server:
     port: 8761
 eureka:
@@ -450,7 +451,7 @@ eureka:
 \end{lstlisting}
 \noindent Nella \textit{Main class} di tutti i \glspl{microservizio}  è stata aggiunta l'annotazione \code{@EnableEurekaClient}, che permette di registrarsi all'\textit{Eureka Server} in base a quanto specificato nel file \texttt{application.properties}.\\
 
-\begin{lstlisting}[style=Docker, caption = {Configurazione per la registrazione di un microservizio all'\textit{Eureka Server} nel file \texttt{application.properties}}]
+\begin{lstlisting}[style=Docker, caption = {Configurazione per la registrazione di un microservizio all'\texttt{Eureka Server} nel file \texttt{application.properties}}]
 eureka.client.service-url.defaultZone: http:^//^localhost:8761/eureka
 eureka.client.register-with-eureka=true
 eureka.client.fetch-registry=true
@@ -622,7 +623,7 @@ Questo componente, implementato da un collega, permette di visualizzare l'antepr
 \begin{figure}[H] 
     \centering 
     \includegraphics[scale=1]{sito/component/card-component.png} 
-    \caption{Componente WillCard}
+    \caption{Componente \texttt{WillCard}}
 \end{figure}
 
 \myparagraph{CrewCard}
@@ -636,7 +637,7 @@ Questo componente permette di visualizzare l'anteprima di una gruppo, in partico
 \begin{figure}[H] 
     \centering 
     \includegraphics[scale=1]{sito/component/crew-component.png} 
-    \caption{Componente CrewCard}
+    \caption{Componente \texttt{CrewCard}}
 \end{figure}
 
 % \myparagraph{Servizi}
@@ -650,7 +651,7 @@ Questo componente permette di visualizzare l'anteprima di una gruppo, in partico
 
 \myparagraph{Metodi}
 \begin{itemize}
-    \item \class{navigate}: permette di navigare alla pagina di visualizzazione dei dettagli del gruppo. Se il gruppo cliccato è stato creato dall'utente allora viene visualizzato il \textit{compnent} \nameref{par:CrewEditable}, altrimenti \nameref{par:CrewDetail}.
+    \item \class{navigate}: permette di navigare alla pagina di visualizzazione dei dettagli del gruppo. Se il gruppo cliccato è stato creato dall'utente allora viene visualizzato il \textit{component} \nameref{par:CrewEditable}, altrimenti \nameref{par:CrewDetail}.
 \end{itemize}
 
 \myparagraph{Crewpage}
@@ -660,13 +661,13 @@ Questo componente è composto da una lista di \nameref{par:CrewCard}, e permette
 \begin{figure}[H] 
     \centering 
     \includegraphics[scale=0.6]{sito/component/gruppi-globali-component.png} 
-    \caption{Componente Crewpage che visualizza i gruppi in cui partecipare}
+    \caption{Componente \texttt{Crewpage} che visualizza i gruppi in cui partecipare}
 \end{figure}
 
 \begin{figure}[H] 
     \centering 
     \includegraphics[scale=0.6]{sito/component/i-miei-gruppi-component.png} 
-    \caption{Componente Crewpage che visualizza la pagina di gestione dei gruppi dell'utente}
+    \caption{Componente \texttt{Crewpage} che visualizza la pagina di gestione dei gruppi dell'utente}
 \end{figure}
 
 % \myparagraph{Servizi}
@@ -719,7 +720,7 @@ Questo componente permette di visualizzare i dettagli di un gruppo.
 Questo componente permette di modificare i dettagli di un gruppo.  
 \begin{figure}[H] 
     \centerline{\includegraphics[scale=0.4]{sito/component/modifica-gruppo-component.png}} 
-    \caption{Componente CrewEditable}
+    \caption{Componente \texttt{CrewEditable}}
 \end{figure}
 \myparagraph{Componenti}
 \begin{itemize}
@@ -746,7 +747,7 @@ Questo componente serve per confermare le operazioni effettuano delle modifiche 
 \begin{figure}[H] 
     \centering 
     \includegraphics[scale=1]{sito/component/dialog-component.png} 
-    \caption{Componente DialogComponent}
+    \caption{Componente \texttt{DialogComponent}}
 \end{figure}
 
 \myparagraph{Input}
@@ -770,7 +771,7 @@ Questo componente serve per confermare le operazioni effettuano delle modifiche 
 Questo componente permette di visualizzare una mappa in cui viene segnato con un \textit{marker} nelle coordinate specifiche nei campi \texttt{latitudine} e \texttt{longitudine}.
 \begin{figure}[H] 
     \centerline{\includegraphics[scale=0.55]{sito/component/map-component.png}} 
-    \caption{Componente MapComponent}
+    \caption{Componente \texttt{MapComponent}}
 \end{figure}
 
 \myparagraph{Input}

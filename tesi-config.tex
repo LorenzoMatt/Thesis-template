@@ -248,7 +248,7 @@
 
 \lstdefinestyle{Java}{
 language = Java , 
-frame = trBL ,
+% frame = trBL ,
 firstnumber = 1, 
 tabsize = 4, %% set tab space width
 showstringspaces = false, %% prevent space marking in strings, string is defined as the text that is generally printed directly to the console
@@ -258,6 +258,7 @@ keywordstyle = \color{blue}, %% set keyword color,
 numberstyle = \color{mygreen},
 morekeywords = {@Component, @RestController, @Slf4j, @RequestMapping, @CrossOrigin, @Override, @Autowired, EurekaClient, Mono, Void, Void, Config, String, ServerHttpResponse, typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break, class, export, boolean, constructor, throw, implements,let,of, import, this, private},
 captionpos=b,
+stepnumber=1,                    % the step between two line-numbers. If it's 1, each line will be numbered
 stringstyle = \color{red}, %% set string color
 rulecolor = \color{black}, %% set frame color to avoid being affected by text color
 morestring=[s]{`}{'},
@@ -642,6 +643,6 @@ literate=%
 }
 
 \newcommand{\obiettiviFacoltativi}{
-	 \item \underline{\textit{F01}}: Utilizzo della containerizzazione per portare tutti i \glspl{microservizio} su Docker.
+	 \item \underline{\textit{F01}}: Utilizzo della \gls{containerizzazione} per portare tutti i \glspl{microservizio} su Docker.
 }
 

@@ -33,7 +33,7 @@
 \newacronym[description={\glslink{DAOg}{Data Access Object}}]
 {DAO}{DAO}{Data Access Object}
 
-\newacronym[first={JPA},description={\glslink{JPAg}{}}]
+\newacronym[first={JPA},description={\glslink{JPAg}{Java Persistence API}}]
 {JPA}{JPA}{Java Persistence API}
 
 
@@ -44,7 +44,7 @@
 
 \newglossaryentry{apig}
 {
-    name=\glslink{api}{API},
+    name=\glslink{API}{API},
     text=Application Program Interface,
     sort=api,
     description={in informatica con il termine \emph{Application Programming Interface API} (ing. interfaccia di programmazione di un'applicazione) si indica ogni insieme di procedure disponibili al programmatore, di solito raggruppate a formare un set di strumenti specifici per l'espletamento di un determinato compito all'interno di un certo programma. La finalità è ottenere un'astrazione, di solito tra l'hardware e il programmatore o tra software a basso e quello ad alto livello semplificando così il lavoro di programmazione}
@@ -96,13 +96,13 @@
 \newglossaryentry{IPg}
 {
     name=IP,
-    description={codice numerico usato da tutti i dispositivi (\textit{computer}, \textit{server web}, stampanti, \textit{modem}) per navigare in Internet e per comunicare in una rete locale. Un indirizzo IP costituisce quindi la base per una trasmissione corretta delle informazioni dal mittente al ricevente.}
+    description={codice numerico usato da tutti i dispositivi (\textit{computer}, \textit{server web}, stampanti, \textit{modem}) per navigare in Internet e per comunicare in una rete locale. Un indirizzo IP costituisce quindi la base per una trasmissione corretta delle informazioni dal mittente al ricevente}
 }
 
 \newglossaryentry{spag}
 {
     name=SPA,
-    description={Una \textit{single-page application} (SPA) è un'applicazione \textit{web} o un sito \textit{web} che interagisce con l'utente riscrivendo dinamicamente la pagina \textit{web} corrente con nuovi dati dal server, invece del metodo predefinito di un \textit{browser} \textit{web} che carica intere nuove pagine.}
+    description={Una \textit{single-page application} (SPA) è un'applicazione \textit{web} o un sito \textit{web} che interagisce con l'utente riscrivendo dinamicamente la pagina \textit{web} corrente con nuovi dati dal server, invece del metodo predefinito di un \textit{browser} \textit{web} che carica intere nuove pagine}
 }
 
 \newglossaryentry{umlg}
@@ -115,7 +115,7 @@
 \newglossaryentry{microservizio}
 {
     name={microservizio},
-    description={},
+    description={approccio per sviluppare e organizzare l’architettura dei \textit{software} secondo cui quest’ultimi sono composti di servizi indipendenti di piccole dimensioni che comunicano tra loro tramite \gls{API} ben definite},
     plural = {microservizi}
 }
 
@@ -123,66 +123,56 @@
 {
     name={transcompilazione},
     description={Tipo di traduzione 
-    che prende come input il codice sorgente di un programma scritto in un linguaggio di programmazione e produce un codice sorgente equivalente nello stesso o in un linguaggio di programmazione diverso.},
+    che prende come input il codice sorgente di un programma scritto in un linguaggio di programmazione e produce un codice sorgente equivalente nello stesso o in un linguaggio di programmazione diverso},
 }
 
 
 \newglossaryentry{framework}
 {
     name={\textit{framework}},
-    description={}
+    description={piattaforma che funge da strato intermedio tra un sistema operativo e il \textit{software} che lo utilizza}
 }
-\newglossaryentry{Spring}
-{
-    name={Spring},
-    description={}
-}
+
 
 \newglossaryentry{CRUDg}
 {
     name={CRUD},
     description={Operazioni di base che possono essere svolte su un database. In particolare,
     sono creazione (Create), lettura (Read), modifica/aggiornamento (Update) ed
-    eliminazione (Delete).}
+    eliminazione (Delete)}
 }
 
 
 \newglossaryentry{SRP}
 {
     name=\textit{Single Responsibility Principle},
-    description={Nella programmazione orientata agli oggetti, il principio di singola responsabilità afferma che ogni elemento di un programma deve avere una sola responsabilità, e che tale responsabilità debba essere interamente incapsulata dall'elemento stesso.}
+    description={Nella programmazione orientata agli oggetti, il principio di singola responsabilità afferma che ogni elemento di un programma deve avere una sola responsabilità, e che tale responsabilità debba essere interamente incapsulata dall'elemento stesso}
 }
 
 \newglossaryentry{Eureka Server}
 {
     name={Eureka Server},
-    description={}
+    description={Applicazione che contiene le informazioni su tutte le applicazioni \textit{client-service}. Ogni \gls{microservizio} si registra nel server Eureka e il server Eureka conosce tutte le applicazioni in esecuzione su ciascuna porta e indirizzo \gls{IP}}
 }
 
 
 \newglossaryentry{will}
 {
     name={\textit{will}},
-    description={Intenzione di un utente di fare sport.}
+    description={Intenzione di un utente di fare sport}
 }
 
 
 \newglossaryentry{containerizzazione}
 {
-    name={containerizzazione},
-    description={}
-}
-
-\newglossaryentry{Angular}
-{
-    name={Angular},
-    description={}
+    name={\textit{containerizzazione}},
+    description={Approccio allo sviluppo del \textit{software} in cui un'applicazione o un servizio, le relative dipendenze e la corrispondente configurazione (astratti come file manifesto della distribuzione) sono inclusi in uno stesso pacchetto sotto forma di immagine del \gls{container}. L'applicazione inclusa nel \gls{container} può essere testata come unità e distribuita come istanza dell'immagine del \gls{container} al sistema operativo \textit{host}}
 }
 
 \newglossaryentry{Trello}
 {
     name={Trello},
-    description={}
+    description={\textit{web app} che serve per gestire il/i team, gestire task, programmare macro e micro attività, gestire l'esecuzione dei progetti, controllarne l'andamento e far sì che le varie azioni sui progetti o sul cliente, si intreccino in modo fluido}
 }
 
 \newglossaryentry{ICTg}
@@ -190,7 +180,7 @@
     name={ICT},
     description={in informatica con il termine \textit{Information and Comunications Tecnology} 
     si indica l'insieme dei metodi e delle tecniche utilizzate nella trasmissione, ricezione 
-    ed elaborazione di dati e informazioni.}
+    ed elaborazione di dati e informazioni}
 }
 
 
