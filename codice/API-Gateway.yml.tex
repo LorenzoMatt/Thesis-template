@@ -1,0 +1,44 @@
+
+\begin{lstlisting}[language = yaml, caption = {Configurazione dello \textit{Spring Cloud Gateway} nel file \texttt{application.yml} del microservizio \textit{API Gateway}}]
+    spring:
+    application:
+      name: API-GATEWAY-SERVICE
+    main:
+      allow-bean-definition-overriding: true
+    cloud:
+      gateway:
+        discovery.locator.enabled: true
+        routes:
+          - id: utenti
+            uri: lb://UTENTI-SERVICE
+            predicates:
+              - Path= /utenti/^**,^ /signin, /signup, /validateToken
+            filters:
+              - AuthFilter
+          - id: posizioni
+            uri: lb://POSIZIONI-SERVICE
+            predicates:
+              Path=/posizioni/^**^
+            filters:
+              - AuthFilter
+          - id: uscite
+            uri: lb://USCITE-SERVICE
+            predicates:
+              Path=/uscite/^**^
+            filters:
+              - AuthFilter
+          - id: gruppi
+            uri: lb://GRUPPI-SERVICE
+            predicates:
+              Path=/gruppi/^**^
+            filters:
+              - AuthFilter
+        default-filters:
+          - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
+        globalcors:
+          corsConfigurations:
+          `[/**]':
+                allowedOrigins: "http://localhost:4200/"
+                allowedMethods: "*"
+                allowedHeaders: "*"  
+\end{lstlisting}

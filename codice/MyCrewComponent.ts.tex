@@ -1,0 +1,37 @@
+\begin{lstlisting}[style=Java, caption = {Esempio implementazione \textit{pattern Observer}}]
+export class MyCrewpageComponent implements OnInit {
+    crewCards: Crew[] = [];
+    constructor(
+        private gruppiService: GruppiService,
+        private router: Router,
+        private route: ActivatedRoute) {
+    }
+    getGlobalCrew() {
+        this.gruppiService.getCrewsOfUser().subscribe((crews) => {
+          this.gruppiService.getCrews().subscribe((crews2) => {
+            this.crewCards = crews2.filter((c) => {
+              let toReturn: boolean = true;
+              for (let crew of crews){
+                if (crew.id == c.id){
+                  toReturn = false;
+                  break;
+                }
+              }
+              return toReturn;
+            });
+          });
+        });
+    }
+}
+
+@Injectable({
+  providedIn: `root',
+})
+export class GruppiService {
+  constructor(private http: HttpClient) {}
+
+  getCrews(): Observable<Crew[]> {
+    return this.http.get<Crew[]>(environment.getCrews);
+  }
+}
+\end{lstlisting}

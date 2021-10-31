@@ -20,17 +20,19 @@
     %*******************************************************
     % Elenco delle figure
     %*******************************************************    
-    \phantomsection
-    \pdfbookmark{\listfigurename}{lof}
+    % \phantomsection
+    % \pdfbookmark{\listfigurename}{lof}
+    \if@openright\cleardoublepage\else\clearpage\fi%
+    \pdfbookmark[0]{\contentsname}{toc}%
     \listoffigures
 
     \vspace*{8ex}
 
-    
+    \newpage
     %*******************************************************
     % Elenco del codice
     %*******************************************************    
-    \phantomsection
+    % \phantomsection
     % \pdfbookmark{\lstlistoflistings}{lof}
     \lstlistoflistings
 
@@ -39,8 +41,9 @@
     %*******************************************************
     % Elenco delle tabelle
     %*******************************************************
-    \phantomsection
-    \pdfbookmark{\listtablename}{lot}
+    % \phantomsection
+    % \pdfbookmark{\listtablename}{lot}
+    \newpage
     \listoftables
         
     \vspace*{8ex}

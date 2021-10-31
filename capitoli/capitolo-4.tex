@@ -210,28 +210,32 @@ L'ecosistema all'interno del quale le applicazioni Spring vivono viene definito 
 La dichiarazione di una classe come componente nel progetto avviene tramite l'utilizzo dell'annotazione \code{@Component}, che rappresenta la categoria più generica per la dichiarazione di un componente.
 Durante la fase di codifica del progetto sono state utilizzate le annotazioni \code{@RestController}, \code{@Service} e \code{@Repository}, che sono delle specializzazioni dell'annotazione \code{@Component}.\\
 Per iniettare delle classi da recuperare dal \textit{IoC container} è sufficiente utilizzare l'annotazione \code{@Autowired}.
-\begin{figure}[H] 
-    \centering 
-    \includegraphics[scale=0.2]{progettazione/autowired-code.png}
-    \caption{Esempio di \textit{Dependency Injection} con Spring}
-\end{figure}
+% \begin{figure}[H] 
+%     \centering 
+%     \includegraphics[scale=0.2]{progettazione/autowired-code.png}
+%     \caption{Esempio di \textit{Dependency Injection} con Spring}
+% \end{figure}
+
+\input{codice/Dependency-injection-spring.tex}
 % TODO: aggiungere alla bibliografia: https://angular.io/guide/dependency-injection
 \noindent Angular permette l'utilizzo della \textit{Dependency Injection} di tipo \textit{constructor}, che prevede che una classe dichiari nel costruttore le dipendenze di cui ha bisogno che in fase di inizializzazione gli verranno fornite.\\
 Angular include un meccanismo di \textit{Dependency Injection} davvero solido e molto flessibile, il cui utilizzo si può riassumere in due semplici passi: si crea il servizio e si inietta la dipendenza ove necessario.\\
 Nel dettaglio, le fasi sono le seguenti: 
 \begin{itemize}
     \item si crea un servizio, ovvero una classe Angular, che viene annotata come \code{@Injectable}. Di \textit{default}, questo decoratore ha una proprietà \texttt{ProvideIn}, che crea un \textit{provider} per il servizio. Nel caso, per esempio, di \code{ProvideIn: `root'}, viene specificato  che Angular dovrebbe fornire il servizio nella \textit{root injector}, ovvero diponibile a tutte le classi;
-    \begin{figure}[H] 
-        \centering 
-        \includegraphics[scale=0.2]{progettazione/injectable.png}
-        \caption{Esempio di creazione di un servizio}
-    \end{figure}
+    % \begin{figure}[H] 
+    %     \centering 
+    %     \includegraphics[scale=0.2]{progettazione/injectable.png}
+    %     \caption{Esempio di creazione di un servizio}
+    % \end{figure}
+    \input{codice/Gruppi-service.ts.tex}
     \item  si inietta il servizio e lo si utilizza ovunque sia necessario.
-    \begin{figure}[H] 
-        \centering 
-        \includegraphics[scale=0.2]{progettazione/injected-service.png}
-        \caption{Esempio di \textit{constructor injection}}
-    \end{figure}
+    % \begin{figure}[H] 
+    %     \centering 
+    %     \includegraphics[scale=0.2]{progettazione/injected-service.png}
+    %     \caption{Esempio di \textit{constructor injection}}
+    % \end{figure}
+    \input{codice/Dependency-injection-angular.tex}
 \end{itemize}
 \subsection{Singleton}
 \label{sub:Singleton}
@@ -248,22 +252,25 @@ Questo \textit{pattern} è utilizzato da Angular per estrarre da una classe di t
 %TODO: aggiungere alla bibliografia: https://angular.io/guide/lazy-loading-ngmodules
 Questo \textit{pattern} è utilizzato da Angular per caricare i moduli solo nel momento in cui effettivamente vengono utilizzati, ottenendo così bassa la quantità di dati scaricata dall'utente iniziale e una diminuzione del tempo necessario al caricamento dell'applicazione.\\
 Viene utilizzato questo \textit{pattern} per la gestione del \textit{routing}, associando ad una specifica \textit{view} dell'applicazione un \textit{path} di navigazione presente nella \gls{URL}.
-\begin{figure}[H] 
-    \centering 
-    \includegraphics[scale=0.3]{progettazione/routing.png}
-    \caption{Implementazione del \textit{pattern} \textit{Lazy loading} nel \textit{AppRoutingModule}}
-\end{figure}
+% \begin{figure}[H] 
+%     \centering 
+%     \includegraphics[scale=0.3]{progettazione/routing.png}
+%     \caption{Implementazione del \textit{pattern} \textit{Lazy loading} nel \textit{AppRoutingModule}}
+% \end{figure}\
+
+\input{codice/Routes.ts.tex}
+
 \subsection{Observer}
 %TODO: aggiungere alla bibliografia: https://angular.io/guide/observables
 Gli \textit{\textbf{Observable}} forniscono supporto per il passaggio di messaggi tra le parti dell'applicazione. Sono usati frequentemente in Angular e sono una tecnica per la gestione ad eventi e la programmazione asincrona.\\
 Il \textit{pattern } \class{Observer} è un \textit{design pattern} in cui un oggetto, chiamato \class{Subject}, contiene una lista di suoi osservatori, chiamati \class{Observers}, e li notifica automaticamente ai cambiamenti di stato.\\
 Gli \textit{Observable} sono dichiarativi, ovvero viene definita una funzione che non viene eseguita fino a quando un \textit{Observer} si sottoscrive ad esso. L'\textit{Observer} viene quindi notificato al completamento della funzione, e il tipo di ritorno di un \textit{Observable} può cambiare in base al contesto, che nel caso nel progetto di \textit{stage} è stato prevalentemente di tipo HTTP \textit{response}. \\
-\begin{figure}[H] 
-    \centering 
-    \includegraphics[scale=0.28]{progettazione/subscribe-example.png}
-    \caption{Esempio implementazione \textit{pattern Observer}}
-\end{figure}
-\newpage
+% \begin{figure}[H] 
+%     \centering 
+%     \includegraphics[scale=0.28]{progettazione/subscribe-example.png}
+%     \caption{Esempio implementazione \textit{pattern Observer}}
+% \end{figure}
+\input{codice/MyCrewComponent.ts.tex}
 %**************************************************************
 \section{Codifica}
 \subsection{Back end}
@@ -279,11 +286,12 @@ Questa classe rappresenta i gruppi. La tabella che mappa la classe nel \textit{d
     \label{img:Crew-tabella}
 \end{figure}
 
-\begin{figure}[H]
-    \centerline{\includegraphics[scale=0.3]{codice/crew-classe-json.png}}
-    \caption{Rappresentazione JSON della classe \textit{Crew}}
-    \label{img:Crew-classe-json}
-\end{figure}
+% \begin{figure}[H]
+%     \centerline{\includegraphics[scale=0.3]{codice/crew-classe-json.png}}
+%     \caption{Rappresentazione JSON della classe \textit{Crew}}
+%     \label{img:Crew-classe-json}
+% \end{figure}
+\input{codice/Crew.json.tex}
 
 
 \myparagraph{GruppiController}
@@ -404,11 +412,16 @@ In questo \gls{microservizio} sono state effettuate le seguenti modifiche:
 È stato implementato un \textit{Spring Cloud Gateway} applicando dei filtri alle chiamate per verificare se è presente e valido il \textit{token} per l'autenticazione  presente nell'\textit{header} della richiesta HTTP.
 Per fare ciò è stato creata una classe \class{AuthFilter} che estende l'interfaccia \class{AbstractGatewayFilterFactory} ed implementa il metodo astratto \code{GatewayFilter apply(C config)} presente nella \textit{superclasse}. In questa funzione viene letta la richiesta in entrata viene verificata l'autenticazione.
 
-\begin{figure}[H] 
-    \centerline{\includegraphics[scale=0.25]{codice/AuthFilter.png}}
-    \caption{Implementazione della classe \textit{AuthFilter}}
-\end{figure}
+% \begin{figure}[H] 
+%     \centerline{\includegraphics[scale=0.25]{codice/AuthFilter.png}}
+%     \caption{Implementazione della classe \textit{AuthFilter}}
+% \end{figure}
+\input{codice/AuthFilter.java.tex}
+
 \noindent Infine, è stata utilizzata la seguente configurazione dello \textit{Spring Cloud Gateway} nel file \texttt{configuration.yml}.
+
+\input{codice/API-Gateway.yml.tex}
+
 \begin{figure}[H] 
     \centering
     \includegraphics[width=1\columnwidth]{codice/application.yml-API-Gateway.png} 
@@ -417,11 +430,24 @@ Per fare ciò è stato creata una classe \class{AuthFilter} che estende l'interf
 
 \subsection{Eureka Server}
 Questo \gls{microservizio} contiene solo una classe al suo interno, che è la classe che viene generata automaticamente quando si inizializza un progetto con Spring. L'unica cosa aggiunta alla classe è l'annotazione \code{@EnableEurekaServer}, che permette di  attivare la l'\textit{Eureka Server} come specificato nel file \texttt{application.yml}.
-\begin{figure}[H] 
-    \centering
-    \includegraphics[width=1\columnwidth]{codice/application.yml-Eureka.png} 
-    \caption{File \texttt{application.yml} del microservizio \textit{Eureka} Server}
-\end{figure}
+
+% \begin{figure}[H] 
+%     \centering
+%     \includegraphics[width=1\columnwidth]{codice/application.yml-Eureka.png} 
+%     \caption{File \texttt{application.yml} del microservizio \textit{Eureka} Server}
+% \end{figure}
+\begin{lstlisting}[language = yaml, caption = {File \texttt{application.yml} del microservizio \textit{Eureka} Server}]
+server:
+    port: 8761
+eureka:
+    client:
+        registerWithEureka: false 
+        fetchRegistry: false
+        serviceUrl:
+        defaultZone: http://localhost:8761/eureka
+    server:
+        enable-self-preservation: false
+\end{lstlisting}
 \noindent Nella \textit{Main class} di tutti i \glspl{microservizio}  è stata aggiunta l'annotazione \code{@EnableEurekaClient}, che permette di registrarsi all'\textit{Eureka Server} in base a quanto specificato nel file \texttt{application.properties}.\\
 
 \begin{lstlisting}[style=Docker, caption = {Configurazione per la registrazione di un microservizio all'\textit{Eureka Server} nel file \texttt{application.properties}}]

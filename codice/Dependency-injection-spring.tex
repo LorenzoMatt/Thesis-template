@@ -1,0 +1,13 @@
+\begin{lstlisting}[style = Java, caption = {Esempio di \textit{Dependency Injection} con Spring}]
+@RestController
+@CrossOrigin(origins = "*", maxAge = 3600)
+@RequestMapping(value = "/gruppi")
+public class GruppiController {
+
+    @Autowired
+    private GruppiService gruppiService;
+
+    @Autowired
+    EurekaClient eurekaClient;
+}
+\end{lstlisting}

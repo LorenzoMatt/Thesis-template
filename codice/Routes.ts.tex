@@ -1,0 +1,22 @@
+\begin{lstlisting}[style=Java, caption = {Implementazione del \textit{pattern} \textit{Lazy loading} nel \textit{AppRoutingModule}}]
+const routes: Routes = [
+    { path: `homepage', component: HomepageComponent },
+    { path: `detail/:id', component: WillDetailComponent },
+    { path: `edit/:id', component: EditableFormComponent },
+    { path: `editcrew/:id', component: EditableCrewComponent},
+    { path: `detailcrew/:id', component: CrewDetailComponent },
+    { path: `signIn', component: SignInComponent },
+    { path: `myCrew/:type', component: MyCrewpageComponent },
+    { path: `signUp', component: SignUpComponent },
+    { path: `add', component: EditableFormComponent },
+    { path: `', redirectTo: `/homepage', pathMatch: `full' },
+    { path: `404', component: NotFoundComponent },
+    { path: `**', redirectTo: `404' },
+    ];
+    
+    @NgModule({
+        imports: [RouterModule.forRoot(routes)],
+        exports: [RouterModule]
+    })
+    export class AppRoutingModule { }  
+\end{lstlisting}

@@ -1,0 +1,51 @@
+\begin{lstlisting}[style = Java, caption = {Implementazione della classe \textit{AuthFilter}}]
+    @Component
+    public class AuthFilter extends AbstractGatewayFilterFactory<AuthFilter.Config> {
+    
+        private WebClient.Builder webClientBuilder;
+    
+        @Autowired
+        EurekaClient eurekaClient;
+    
+        public AuthFilter(Builder webClientBuilder) {
+            super(Config.class);
+            this.webClientBuilder = webClientBuilder;
+        }
+    
+        public static class Config {
+            /*
+             * Questa classe rimane vuota perche non c'e bisogno di particolari * impostazioni
+             * di configurazione
+             */
+        }
+    
+        private Mono<Void> onError(ServerWebExchange exchange, String err, HttpStatus httpStatus) {
+            ServerHttpResponse response = exchange.getResponse();
+            response.setStatusCode(httpStatus);
+    
+            return response.setComplete();
+        }
+        @Override
+        public GatewayFilter apply(Config config) {
+            return (exchange, chain) -> {
+                if (!exchange.getRequest().getHeaders().containsKey(HttpHeaders.AUTHORIZATION)) {
+                    return this.onError(exchange, "**** Informazioni di autorizzazione mancanti ****",  HttpStatus.UNAUTHORIZED);
+                }
+                String auth = exchange.getRequest().getHeaders().get(HttpHeaders.AUTHORIZATION).get(0);
+                String[] parts = auth.split(" ");
+                if (parts.length != 2 || !"Bearer".equals(parts[0])) {
+                    return this.onError(exchange, 
+                            "**** Autorizzazione incoretta ****", HttpStatus.UNAUTHORIZED);
+                }
+                InstanceInfo nextServerFromEureka = eurekaClient.getNextServerFromEureka("UTENTI-SERVICE", false);
+                String homeUrl = nextServerFromEureka.getHomePageUrl();
+                return webClientBuilder.build().post().uri(homeUrl + "/validateToken?token=" + parts[1]).retrieve()
+                        .bodyToMono(String.class).map(login -> {
+                            exchange.getRequest().mutate().header("X-auth-user-id", String.valueOf(login));
+                            return exchange;
+                        }).flatMap(chain::filter);
+            };
+        }
+    
+    }
+\end{lstlisting}

@@ -1,0 +1,13 @@
+\begin{lstlisting}[style= Java, caption = {Esempio di \textit{constructor injection}}]
+@Component({
+    selector: `app-crew-card',
+    templateUrl: `./crew-card.component.html',
+    styleUrls: [`./crew-card.component.css'],
+    })
+export class CrewCardComponent implements OnInit {
+
+    constructor(private auth: AuthenticationService, private router: Router,private gruppiService: GruppiService){
+
+    }
+}
+\end{lstlisting}
