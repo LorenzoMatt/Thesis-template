@@ -201,7 +201,7 @@ I \glspl{microservizio} hanno una natura dinamica, in quanto è possibile che pi
     \item selezionare un'istanza di \gls{microservizio}.
 \end{itemize}
 La soluzione a questi problemi è l'utilizzo del \textit{pattern} \textbf{\textit{Client-side Service Discovery}}, che fornisce un meccanismo che tiene traccia di tutti i servizi e delle relative istanze. Tutti i \glspl{microservizio} si registrano ad un \textit{Service registry} e continuano ad aggiornare regolarmente le proprie informazioni di rete.\\
-Il \textit{pattern} \textbf{\textit{Service registry}} è stato applicato mediante l'implementazione di un \texttt{Eureka Server}. L'\textit{Eureka Server} è un \textit{database} di servizi che tiene traccia di ogni \gls{microservizio}, delle loro istanze e delle loro locazioni. I \glspl{microservizio} si registrano all'avvio dell'applicazione e vengono rimossi alla sua chiusura.\\
+Il \textit{pattern} \textbf{\textit{Service registry}} è stato applicato mediante l'implementazione di un \class{Eureka Server}. L'\textit{Eureka Server} è un \textit{database} di servizi che tiene traccia di ogni \gls{microservizio}, delle loro istanze e delle loro locazioni. I \glspl{microservizio} si registrano all'avvio dell'applicazione e vengono rimossi alla sua chiusura.\\
 L'utilizzo di questi \textit{pattern}  permette ai servizi di comunicare fra di loro, ottenendo le informazioni degli altri servizi direttamente dall'\textit{Eureka Server}.
 \subsection{Dependency Injection}
 \label{sub:Dependency-Injection}
