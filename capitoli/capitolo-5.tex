@@ -7,30 +7,55 @@
 \label{cap:verifica-validazione}
 %**************************************************************
 
-
 \section{Accessibilità}
 \subsection{Elementi di accessibilità}
-Per rendere la navigazione al sito accessibile da tutte le categorie di utenti sono stati fatti alcuni accorgimenti:
+Per rendere la navigazione al sito accessibile da tutte le categorie di utenti
+sono stati fatti alcuni accorgimenti:
 \begin{itemize}
-    \item sono presenti gli attributi \textit{accesskey} con chiave uguale alla prima lettera della parola del \textit{tag label} associato, in modo da migliorare l'accessibilità alle \textit{form} da tastiera senza l'uso del \textit{mouse};
-    \item tutte le immagini contengono i \textit{tag alt}, che sono stati lasciati vuoti nel caso servissero solo per il \textit{layout};
+    \item sono presenti gli attributi \textit{accesskey} con chiave uguale alla
+          prima lettera della parola del \textit{tag label} associato, in modo da
+          migliorare l'accessibilità alle \textit{form} da tastiera senza l'uso del
+          \textit{mouse};
+    \item tutte le immagini contengono i \textit{tag alt}, che sono stati
+          lasciati vuoti nel caso servissero solo per il \textit{layout};
     \item è presente una barra di navigazione che aiuta a navigare nel sito;
-    \item i \textit{form} contengono dei \textit{tag label} per ogni \textit{input}, tuttavia non sono stati aggiunti \textit{tag optgroup} o \textit{fieldset} in quanto sono utili nel caso di \textit{form} molto grandi, ma essendo presenti solo \textit{form} di piccole dimensioni è stato ritenuto non necessario;
-    \item sono presenti degli aiuti contestuali che mostrano gli errori nel caso fossero presenti;
-    \item è presente del testo nascosto utile agli utenti con disabilità visive, come il \textit{link} con la funzione  di saltare al contenuto, ovvero di permettere di non far leggere allo \gls{screen reader} la barra di navigazione, passando direttamente al contenuto, ed è presente all'inizio della navigazione per segnalare che le scorciatoie da tastiera sono attive;
-    \item sono stati evitati testi scorrevoli, lampeggianti, barrati ed in generale \textit{font} troppo elaborati per agevolare la lettura.
+    \item i \textit{form} contengono dei \textit{tag label} per ogni
+          \textit{input}, tuttavia non sono stati aggiunti \textit{tag optgroup} o
+          \textit{fieldset} in quanto sono utili nel caso di \textit{form} molto grandi,
+          ma essendo presenti solo \textit{form} di piccole dimensioni è stato ritenuto
+          non necessario;
+    \item sono presenti degli aiuti contestuali che mostrano gli errori nel
+          caso fossero presenti;
+    \item è presente del testo nascosto utile agli utenti con disabilità
+          visive, come il \textit{link} con la funzione  di saltare al contenuto, ovvero
+          di permettere di non far leggere allo \gls{screen reader} la barra di
+          navigazione, passando direttamente al contenuto, ed è presente all'inizio della
+          navigazione per segnalare che le scorciatoie da tastiera sono attive;
+    \item sono stati evitati testi scorrevoli, lampeggianti, barrati ed in
+          generale \textit{font} troppo elaborati per agevolare la lettura.
 \end{itemize}
 
 \section{Verifica del GruppiService}
-In parallelo con la fase di codifica del \gls{microservizio} \nameref{par:GruppiService} è stata verificata la correttezza delle funzioni presenti nella classe \texttt{GruppiController}. \\
-Sono stati effettuati dei test di unità utilizzando \textbf{JUnit} e \textbf{Mockito}, \gls{framework} di \textit{testing} per il linguaggio Java.\\
-Per avere una reportistica dei test effettuati è stato utilizzato \textbf{JaCoCo}, strumento che fornisce informazioni sulla \textit{lines coverage}, \textit{branches coverage} e \textit{cyclomatic complexity}. 
-L'attività di verifica si è rivelata molto proficua, permettendomi di agevolare lo sviluppo in modo significativo, tanto da produrre un
-grande quantitativo di test, con un elevata copertura di casistiche, garantendo così qualità del prodotto.\\
-Come dimostra la \textit{code coverage} (figura \ref{img:code-coverage}) è stata raggiunta la massima copertura del codice, senza che questo inficiasse sulle tempistiche programmate.
+In parallelo con la fase di codifica del \gls{microservizio}
+\nameref{par:GruppiService} è stata verificata la correttezza delle funzioni
+presenti nella classe \texttt{GruppiController}. \\
+Sono stati effettuati dei test di unità utilizzando \textbf{JUnit} e
+\textbf{Mockito}, \gls{framework} di \textit{testing} per il linguaggio Java.\\
+Per avere una reportistica dei test effettuati è stato utilizzato
+\textbf{JaCoCo}, strumento che fornisce informazioni sulla \textit{lines
+    coverage}, \textit{branches coverage} e \textit{cyclomatic complexity}.
+L'attività di verifica si è rivelata molto proficua, permettendomi di agevolare
+lo sviluppo in modo significativo, tanto da produrre un
+grande quantitativo di test, con un elevata copertura di casistiche, garantendo
+così qualità del prodotto.\\
+Come dimostra la \textit{code coverage} (figura \ref{img:code-coverage}) è
+stata raggiunta la massima copertura del codice, senza che questo inficiasse
+sulle tempistiche programmate.
 
-\begin{figure}[H] 
-    \centerline{\includegraphics[scale=0.3]{verifica/coverage-gruppi-controller.jpg}} 
+\begin{figure}[H]
+
+    \centerline{\includegraphics[scale=0.3]{verifica/coverage-gruppi-controller.jpg}}
+
     \caption{Code coverage della classe \texttt{GruppiController}}
     \label{img:code-coverage}
 \end{figure}
@@ -39,11 +64,4 @@ Come dimostra la \textit{code coverage} (figura \ref{img:code-coverage}) è stat
 
 \input{tabelle/tabellaTestUnita.tex}
 
-
-
-
-
 % \section{Validazione e collaudo}
-
-
-

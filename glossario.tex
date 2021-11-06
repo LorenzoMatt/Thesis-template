@@ -1,41 +1,38 @@
-
 %**************************************************************
 % Acronimi
 %**************************************************************
 \renewcommand{\acronymname}{Acronimi e abbreviazioni}
 
 \newacronym[description={\glslink{apig}{Application Program Interface}}]
-    {API}{API}{Application Program Interface}
+{API}{API}{Application Program Interface}
 
 \newacronym[description={\glslink{umlg}{Unified Modeling Language}}]
-    {uml}{UML}{Unified Modeling Language}
+{uml}{UML}{Unified Modeling Language}
 
-\newacronym[description={\glslink{spag}{Single-Page Application}}]{spa}{SPA}{Single-Page Application}
+\newacronym[description={\glslink{spag}{Single-Page
+                Application}}]{spa}{SPA}{Single-Page Application}
 
-
-\newacronym[first={IP}, description={\glslink{IPg}{Internet Protocol address}}]{IP}{IP}{Internet Protocol address}
-
+\newacronym[first={IP}, description={\glslink{IPg}{Internet Protocol
+                address}}]{IP}{IP}{Internet Protocol address}
 
 \newacronym[first = {URL}]{URL}{URL}{
-        Uniform Resource Locator}
-
+    Uniform Resource Locator}
 
 \newacronym[description={\glslink{CRUDg}{Create Read Update Delete}}]
-    {CRUD}{CRUD}{Create Read Update Delete}
+{CRUD}{CRUD}{Create Read Update Delete}
 
-    \newacronym[description={\glslink{JSPg}{JavaServer Pages}}]
-    {JSP}{JSP}{JavaServer Pages}
+\newacronym[description={\glslink{JSPg}{JavaServer Pages}}]
+{JSP}{JSP}{JavaServer Pages}
 
-\newacronym[description={\glslink{ICTg}{Information and Comunications Tecnology}}]
-    {ICT}{ICT}{Information and Comunications Tecnology}
-
+\newacronym[description={\glslink{ICTg}{Information and Comunications
+                Tecnology}}]
+{ICT}{ICT}{Information and Comunications Tecnology}
 
 \newacronym[description={\glslink{DAOg}{Data Access Object}}]
 {DAO}{DAO}{Data Access Object}
 
 \newacronym[first={JPA},description={\glslink{JPAg}{Java Persistence API}}]
 {JPA}{JPA}{Java Persistence API}
-
 
 %**************************************************************
 % Glossario
@@ -47,65 +44,90 @@
     name=\glslink{API}{API},
     text=Application Program Interface,
     sort=api,
-    description={Insieme di procedure disponibili al programmatore, di solito raggruppate a formare un set di strumenti specifici per l'espletamento di un determinato compito all'interno di un certo programma. La finalità è ottenere un'astrazione, di solito tra l'hardware e il programmatore o tra software a basso e quello ad alto livello semplificando così il lavoro di programmazione}
+    description={Insieme di procedure disponibili al programmatore, di solito
+            raggruppate a formare un set di strumenti specifici per l'espletamento di un
+            determinato compito all'interno di un certo programma. La finalità è ottenere
+            un'astrazione, di solito tra l'hardware e il programmatore o tra software a
+            basso e quello ad alto livello semplificando così il lavoro di programmazione}
 }
 \newglossaryentry{DAOg}
 {
     name=DAO,
-    description={\textit{Pattern} che consente di isolare il \textit{business layer} dal \textit{persistence layer} (di solito un database relazionale, ma potrebbe essere qualsiasi altro meccanismo di persistenza)}
+    description={\textit{Pattern} che consente di isolare il \textit{business
+                layer} dal \textit{persistence layer} (di solito un database relazionale, ma
+            potrebbe essere qualsiasi altro meccanismo di persistenza)}
 }
 
 % description={\textit{pattern} che consente di isolare l'\textit{application}/\textit{business layer} dal \textit{persistence layer} (di solito un database relazionale, ma potrebbe essere qualsiasi altro meccanismo di persistenza)}
 
-
-
-
 \newglossaryentry{superset}
 {
     name=\textit{superset},
-    description={Un linguaggio di programmazione che contiene tutte le funzionalità di un determinato linguaggi, però ampliandolo o migliorandolo per includere anche altre funzionalità}
+    description={Un linguaggio di programmazione che contiene tutte le
+            funzionalità di un determinato linguaggi, però ampliandolo o migliorandolo per
+            includere anche altre funzionalità}
 }
 \newglossaryentry{endpoint}
 {
     name=\textit{endpoint},
-    description={Canale da cui le \gls{API} possono accedere alle risorse di cui hanno bisogno per eseguire la loro funzione}
+    description={Canale da cui le \gls{API} possono accedere alle risorse di
+            cui hanno bisogno per eseguire la loro funzione}
 }
 
 \newglossaryentry{JPAg}
 {
     name=JPA,
-    description={\Gls{framework} che offre delle \gls{API} per aiutare gli sviluppatori nelle operazioni di persistenza dei dati su un \textit{database} relazionale}
+    description={\Gls{framework} che offre delle \gls{API} per aiutare gli
+            sviluppatori nelle operazioni di persistenza dei dati su un \textit{database}
+            relazionale}
 }
-
 
 \newglossaryentry{EntityManager}
 {
     name=EntityManager,
-    description={API che gestisce il ciclo di vita delle istanze di entità in un \textit{database}}
+    description={API che gestisce il ciclo di vita delle istanze di entità in
+            un \textit{database}}
 }
 
 \newglossaryentry{container}
 {
     name=container,
-    description={Formato di creazione dei pacchetti che racchiude tutto il codice e le dipendenze di un'applicazione in un formato \textit{standard} che ne consente l'esecuzione rapida e affidabile in tutti gli ambienti di elaborazione.\\ Ogni container Docker ha il proprio \textit{file system}, il proprio \textit{stack} di rete (quindi il proprio indirizzo \gls{IP}), il proprio spazio di elaborazione e limitazioni di risorse definite per CPU e memoria}
+    description={Formato di creazione dei pacchetti che racchiude tutto il
+            codice e le dipendenze di un'applicazione in un formato \textit{standard} che
+            ne consente l'esecuzione rapida e affidabile in tutti gli ambienti di
+            elaborazione.\\ Ogni container Docker ha il proprio \textit{file system}, il
+            proprio \textit{stack} di rete (quindi il proprio indirizzo \gls{IP}), il
+            proprio spazio di elaborazione e limitazioni di risorse definite per CPU e
+            memoria}
 }
 
 \newglossaryentry{JSPg}
 {
     name=JSP,
-    description={Documento di testo, scritto con una specifica sintassi, che rappresenta una pagina \textit{web} di contenuto parzialmente o totalmente dinamico. Elaborando la pagina JSP, il motore JSP produce dinamicamente la pagina HTML finale che verrà rappresentata nel \textit{browser} dell'utente}
+    description={Documento di testo, scritto con una specifica sintassi, che
+            rappresenta una pagina \textit{web} di contenuto parzialmente o totalmente
+            dinamico. Elaborando la pagina JSP, il motore JSP produce dinamicamente la
+            pagina HTML finale che verrà rappresentata nel \textit{browser} dell'utente}
 }
 
 \newglossaryentry{IPg}
 {
     name=IP,
-    description={Codice numerico usato da tutti i dispositivi (\textit{computer}, \textit{server web}, stampanti, \textit{modem}) per navigare in Internet e per comunicare in una rete locale. Un indirizzo IP costituisce quindi la base per una trasmissione corretta delle informazioni dal mittente al ricevente}
+    description={Codice numerico usato da tutti i dispositivi
+            (\textit{computer}, \textit{server web}, stampanti, \textit{modem}) per
+            navigare in Internet e per comunicare in una rete locale. Un indirizzo IP
+            costituisce quindi la base per una trasmissione corretta delle informazioni dal
+            mittente al ricevente}
 }
 
 \newglossaryentry{spag}
 {
     name=SPA,
-    description={Una \textit{single-page application} (SPA) è un'applicazione \textit{web} o un sito \textit{web} che interagisce con l'utente riscrivendo dinamicamente la pagina \textit{web} corrente con nuovi dati dal \textit{server}, invece del metodo predefinito di un \textit{browser} \textit{web} che carica intere nuove pagine}
+    description={Una \textit{single-page application} (SPA) è un'applicazione
+            \textit{web} o un sito \textit{web} che interagisce con l'utente riscrivendo
+            dinamicamente la pagina \textit{web} corrente con nuovi dati dal
+            \textit{server}, invece del metodo predefinito di un \textit{browser}
+            \textit{web} che carica intere nuove pagine}
 }
 
 \newglossaryentry{umlg}
@@ -113,51 +135,65 @@
     name=\glslink{uml}{UML},
     text=UML,
     sort=uml,
-    description={Linguaggio di modellazione basato sul paradigma \textit{object-oriented}. L'\emph{UML} svolge un'importantissima funzione di \enquote*{lingua franca} nella comunità della progettazione e programmazione a oggetti. Gran parte della letteratura di settore usa tale linguaggio per descrivere soluzioni analitiche e progettuali in modo sintetico e comprensibile a un vasto pubblico}
+    description={Linguaggio di modellazione basato sul paradigma
+            \textit{object-oriented}. L'\emph{UML} svolge un'importantissima funzione di
+            \enquote*{lingua franca} nella comunità della progettazione e programmazione a
+            oggetti. Gran parte della letteratura di settore usa tale linguaggio per
+            descrivere soluzioni analitiche e progettuali in modo sintetico e comprensibile
+            a un vasto pubblico}
 }
 \newglossaryentry{microservizio}
 {
     name={microservizio},
-    description={Approccio per sviluppare e organizzare l'architettura dei \textit{software} secondo cui quest’ultimi sono composti di servizi indipendenti di piccole dimensioni che comunicano tra loro tramite \gls{API} ben definite},
+    description={Approccio per sviluppare e organizzare l'architettura dei
+            \textit{software} secondo cui quest’ultimi sono composti di servizi
+            indipendenti di piccole dimensioni che comunicano tra loro tramite \gls{API}
+            ben definite},
     plural = {microservizi}
 }
 
 \newglossaryentry{transcompilazione}
 {
     name={transcompilazione},
-    description={Tipo di traduzione 
-    che prende come \textit{input} il codice sorgente di un programma scritto in un linguaggio di programmazione e produce un codice sorgente equivalente nello stesso o in un linguaggio di programmazione diverso},
+    description={Tipo di traduzione
+            che prende come \textit{input} il codice sorgente di un programma scritto
+            in un linguaggio di programmazione e produce un codice sorgente equivalente
+            nello stesso o in un linguaggio di programmazione diverso},
 }
-
 
 \newglossaryentry{framework}
 {
     name={\textit{framework}},
-    description={Piattaforma che funge da strato intermedio tra un sistema operativo e il \textit{software} che lo utilizza}
+    description={Piattaforma che funge da strato intermedio tra un sistema
+            operativo e il \textit{software} che lo utilizza}
 }
-
 
 \newglossaryentry{CRUDg}
 {
     name={CRUD},
-    description={Operazioni di base che possono essere svolte su un \textit{database}. In particolare,
-    sono creazione (Create), lettura (Read), modifica/aggiornamento (Update) ed
-    eliminazione (Delete)}
+    description={Operazioni di base che possono essere svolte su un
+            \textit{database}. In particolare,
+            sono creazione (Create), lettura (Read), modifica/aggiornamento (Update) ed
+            eliminazione (Delete)}
 }
-
 
 \newglossaryentry{SRP}
 {
     name=\textit{Single Responsibility Principle},
-    description={Nella programmazione orientata agli oggetti, il principio di singola responsabilità afferma che ogni elemento di un programma deve avere una sola responsabilità, e che tale responsabilità debba essere interamente incapsulata dall'elemento stesso}
+    description={Nella programmazione orientata agli oggetti, il principio di
+            singola responsabilità afferma che ogni elemento di un programma deve avere una
+            sola responsabilità, e che tale responsabilità debba essere interamente
+            incapsulata dall'elemento stesso}
 }
 
 \newglossaryentry{Eureka Server}
 {
     name={Eureka Server},
-    description={Applicazione che contiene le informazioni su tutte le applicazioni \textit{client-service}. Ogni \gls{microservizio} si registra nel \textit{server} Eureka e il \textit{server} Eureka conosce tutte le applicazioni in esecuzione su ciascuna porta e indirizzo \gls{IP}}
+    description={Applicazione che contiene le informazioni su tutte le
+            applicazioni \textit{client-service}. Ogni \gls{microservizio} si registra nel
+            \textit{server} Eureka e il \textit{server} Eureka conosce tutte le
+            applicazioni in esecuzione su ciascuna porta e indirizzo \gls{IP}}
 }
-
 
 \newglossaryentry{will}
 {
@@ -165,33 +201,42 @@
     description={Intenzione di un utente di fare sport}
 }
 
-
 \newglossaryentry{screen reader}
 {
     name={\textit{screen reader}},
-    description={\textit{Software} che identifica ed interpreta il testo mostrato sullo schermo di un \textit{computer}, presentandolo tramite sintesi vocale o attraverso un \textit{display braille}. Sono utilizzati prevalentemente da persone con problemi di vista}
+    description={\textit{Software} che identifica ed interpreta il testo
+            mostrato sullo schermo di un \textit{computer}, presentandolo tramite sintesi
+            vocale o attraverso un \textit{display braille}. Sono utilizzati
+            prevalentemente da persone con problemi di vista}
 }
-
-
 
 \newglossaryentry{containerizzazione}
 {
     name={\textit{containerizzazione}},
-    description={Approccio allo sviluppo del \textit{software} in cui un'applicazione o un servizio, le relative dipendenze e la corrispondente configurazione (astratti come file manifesto della distribuzione) sono inclusi in uno stesso pacchetto sotto forma di immagine del \gls{container}. L'applicazione inclusa nel \gls{container} può essere testata come unità e distribuita come istanza dell'immagine del \gls{container} al sistema operativo \textit{host}}
+    description={Approccio allo sviluppo del \textit{software} in cui
+            un'applicazione o un servizio, le relative dipendenze e la corrispondente
+            configurazione (astratti come file manifesto della distribuzione) sono inclusi
+            in uno stesso pacchetto sotto forma di immagine del \gls{container}.
+            L'applicazione inclusa nel \gls{container} può essere testata come unità e
+            distribuita come istanza dell'immagine del \gls{container} al sistema operativo
+            \textit{host}}
 }
 
 \newglossaryentry{Trello}
 {
     name={Trello},
-    description={\textit{Web app} che serve per gestire il/i team, gestire \textit{task}, programmare \textit{macro} e \textit{micro} attività, gestire l'esecuzione dei progetti, controllarne l'andamento e far sì che le varie azioni sui progetti o sul cliente, si intreccino in modo fluido}
+    description={\textit{Web app} che serve per gestire il/i team, gestire
+            \textit{task}, programmare \textit{macro} e \textit{micro} attività, gestire
+            l'esecuzione dei progetti, controllarne l'andamento e far sì che le varie
+            azioni sui progetti o sul cliente, si intreccino in modo fluido}
 }
 
 \newglossaryentry{ICTg}
 {
     name={ICT},
-    description={Insieme dei metodi e delle tecniche utilizzate nella trasmissione, ricezione ed elaborazione di dati e informazioni}
+    description={Insieme dei metodi e delle tecniche utilizzate nella
+            trasmissione, ricezione ed elaborazione di dati e informazioni}
 }
-
 
 % Customize the format of the first use.  See the manual for details if
 % you want to include more information here such as the definition.

@@ -13,40 +13,41 @@
 %\markboth{\contentsname}{\contentsname} 
 \clearpage
 
-\begingroup 
-    \let\clearpage\relax
-    \let\cleardoublepage\relax
-    \let\cleardoublepage\relax
-    %*******************************************************
-    % Elenco delle figure
-    %*******************************************************    
-    % \phantomsection
-    % \pdfbookmark{\listfigurename}{lof}
-    \if@openright\cleardoublepage\else\clearpage\fi%
-    \pdfbookmark[0]{\contentsname}{toc}%
-    \listoffigures
+\begingroup
+\let\clearpage\relax
+\let\cleardoublepage\relax
+\let\cleardoublepage\relax
+%*******************************************************
+% Elenco delle figure
+%*******************************************************    
+% \phantomsection
+% \pdfbookmark{\listfigurename}{lof}
 
-    % \vspace*{8ex}
+\if@openright\cleardoublepage\else\clearpage\fi%
+\pdfbookmark[0]{\contentsname}{toc}%
+\listoffigures
 
-    \newpage
-    %*******************************************************
-    % Elenco del codice
-    %*******************************************************    
-    % \phantomsection
-    % \pdfbookmark{\lstlistoflistings}{lof}
-    \lstlistoflistings
+% \vspace*{8ex}
 
-    % \vspace*{8ex}
+\newpage
+%*******************************************************
+% Elenco del codice
+%*******************************************************    
+% \phantomsection
+% \pdfbookmark{\lstlistoflistings}{lof}
+\lstlistoflistings
 
-    %*******************************************************
-    % Elenco delle tabelle
-    %*******************************************************
-    % \phantomsection
-    % \pdfbookmark{\listtablename}{lot}
-    \newpage
-    \listoftables
-        
-    % \vspace*{8ex}
+% \vspace*{8ex}
+
+%*******************************************************
+% Elenco delle tabelle
+%*******************************************************
+% \phantomsection
+% \pdfbookmark{\listtablename}{lot}
+\newpage
+\listoftables
+
+% \vspace*{8ex}
 \endgroup
 
 \cleardoublepage
