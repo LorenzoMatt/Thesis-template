@@ -22,52 +22,51 @@ l'azienda \myCompany, situata a Padova.
 Lo \textit{stage} ha avuto come argomento principale l'implementazione di nuove
 funzionalità nel contesto dell'applicazione \productName, una
 \textit{web app} che dà modo all'utente di divulgare la sua intenzione
-(\gls{will}) di effettuare un'attività sportiva.
+(\textit{will}) di effettuare un'attività sportiva.
 La piattaforma faceva vedere tutto a tutti, rendendo troppo caotica la
 fruizione, quindi l'esigenza era di dare la possibilità all'utente
 di creare uno o più gruppi a cui utenti \enquote*{amici} possano unirsi,
-vedendo quindi solo le \gls{will} di gruppo.
+vedendo quindi solo le \textit{will} di gruppo.
 Le attività svolte nel corso dello \textit{stage} sono due:
 \begin{itemize}
       \item la prima è un insieme di attività che sono legate al \textit{back
                   end} della \textit{web app}, come lo sviluppo di tre
-            \glspl{microservizio}
-            mediante il \gls{framework} Spring Java.
+            microservizi
+            mediante il \textit{framework} Spring Java.
             In particolare:
             \begin{enumerate}
-                  \item il primo \gls{microservizio} consente l'effettuazione
-                        delle
-                        funzionalità \gls{CRUD} per la gestione dei gruppi e la
+                  \item il primo microservizio	gestisce i gruppi e la
                         visualizzazione delle
-                        \gls{will}
+                        \textit{will}
                         degli utenti appartenenti allo stesso gruppo;
                   \item il secondo è l'implementazione di un
-                        \nameref{sub:ApiGateway}, che permette di esporre le
-                        \gls{API} dei vari servizi
+                        \texttt{API Gateway}, che permette di esporre le
+                        API dei vari servizi
                         presenti in un
                         unico punto di accesso;
-                  \item il terzo è l'implementazione di un \gls{Eureka Server}
+                  \item il terzo è l'implementazione di un \texttt{Eureka
+                              Server}
                         che
                         contiene le informazioni di tutti i servizi che si
                         registrano nel suo server.
             \end{enumerate}
-            Oltre all'implementazione di nuovi \glspl{microservizio}, quelli
+            Oltre all'implementazione di nuovi microservizi, quelli
             esistenti
-            sono stati modificati affinché le \gls{will} possano
+            sono stati modificati affinché le \textit{will} possano
             essere visualizzate o da tutti gli utenti oppure solo dagli utenti
             appartenenti agli stessi gruppi.
             Ultimate le attività lato \textit{back end}, è stata effettuata la
-            \gls{containerizzazione} di tutti i \glspl{microservizio} su
+            \textit{containerizzazione} di tutti i microservizi su
             Docker.
       \item La seconda attività è stata la modifica del \textit{front end},
-            mediante il \gls{framework} Angular, per adeguarla alle nuove
+            mediante il \textit{framework} Angular, per adeguarla alle nuove
             funzionalità del
             \textit{back end}.
 \end{itemize}
-L'esito dello \textit{stage} è stato molto positivo: le attività obbligatorie e
-facoltative sono state portate a termine con successo abbastanza facilmente
-e con un un po' di anticipo, permettendomi così di implementare anche la parte
-\textit{front end} dell'applicazione.
+% L'esito dello \textit{stage} è stato molto positivo: le attività obbligatorie e
+% facoltative sono state portate a termine con successo abbastanza facilmente
+% e con un un po' di anticipo, permettendomi così di implementare anche la parte
+% \textit{front end} dell'applicazione.
 
 %\vfill
 %

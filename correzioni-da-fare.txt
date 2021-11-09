@@ -1,0 +1,10 @@
+Richiesta: il sommario dovrebbe dare un'idea generale e autocontenuta di quanto
+poi riportato nella tesi. Eviterei dunque link al glossario,
+eventualmente omettendo o fornendo una breve spiegazione dei termini più
+tecnici. Inoltre l'ultimo paragrafo può essere omesso. Considerazioni di
+questo genere stanno bene nell'introduzione e/o nelle conclusioni.
+
+Correzione Sommario: sono state rimossi i termini del glossario, adattando di conseguenza il testo. è stato inoltre 
+rimosso l'ultimo paragrgafo.
+
+- Richiesta:
