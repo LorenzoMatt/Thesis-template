@@ -5,22 +5,6 @@
 %**************************************************************
 \chapter{Introduzione}
 \label{cap:introduzione}
-%**************************************************************
-\section{Convenzioni tipografiche}
-\label{sec:convenzioni tipografiche}
-Durante la stesura del documento sono state adottate le seguenti convenzioni
-tipografiche:
-\begin{itemize}
-      \item gli acronimi, le abbreviazioni e i termini ambigui o di uso non
-            comune menzionati vengono definiti nel glossario, situato alla fine
-            del
-            presente documento;
-      \item per la prima occorrenza dei termini riportati nel glossario viene
-            utilizzata la seguente nomenclatura:
-            {\color{RoyalBlue}{parola\glsfirstoccur}};
-      \item i termini in lingua straniera o facenti parti del gergo tecnico
-            sono evidenziati con il carattere \emph{corsivo}.
-\end{itemize}
 
 %**************************************************************
 \section{L'azienda}
@@ -56,20 +40,35 @@ delle \gls{will}
 per gruppi, lo \textit{stage} proposto da \myCompany consiste nell'integrare
 alla piattaforma già esistente
 la visualizzazione delle \gls{will} agli utenti che appartengono agli stessi
-gruppi.\\
-Gli obbiettivi da raggiungere nel corso dello \textit{stage} sono
-principalmente due:
-\begin{itemize}
-      \item sviluppare un \gls{microservizio} utilizzando il \gls{framework}
-            Spring Java per la creazione dei gruppi;
-      \item modificare i \glspl{microservizio} esistenti affinché permettano la
-            visualizzazione solo delle \gls{will} di utenti appartenenti allo
-            stesso
-            gruppo.
-\end{itemize}
-Non è richiesta la modifica del \textit{front end} in modo da adeguarlo alle
-nuove funzionalità del \textit{back end}, a meno che
-non rimanga tempo da investire su questa attività.
+gruppi.\\ \\
+L'azienda possiede già i dati per la gestione degli utenti e delle
+\gls{will}, che vanno però associati ai gruppi, in particolare va tenuto
+traccia delle \gls{will} e degli utenti appartenenti ad ogni gruppo, attraverso
+la creazione di tabelle che congiungono gli
+utenti e le \gls{will} con la tabella dei gruppi.\\ \\
+La \textit{web app} si occupa, perciò, di mostrare le \gls{will} appartenenti
+ad ogni gruppo e quelle visibili da tutti, la visualizzazione dei gruppi creati
+da un utente, quelli a cui partecipa e quelli a cui può unirsi, e visualizzare,
+modificare ed eliminare un gruppo. \\ \\
+È stata prestata attenzione alla consistenza e alla coerenza dei dati in
+caso di eliminazione di un gruppo, utente o \gls{will} dal \textit{database},
+infatti nel caso di eliminazione bisogna aggiornare le le voci nelle tabelle di
+% congiunzione corrispondenti.
+% Ciò che è stato implementato è riassunto nei seguenti punti:
+% \begin{itemize}
+%       \item è stato sviluppato un \gls{microservizio} utilizzando il
+%             \gls{framework}
+%             Spring Java per la creazione dei gruppi;
+%       \item sono stati modificati i \glspl{microservizio} esistenti affinché
+%             permettano la
+%             visualizzazione solo delle \gls{will} di utenti appartenenti allo
+%             stesso
+%             gruppo;
+%       \item sono stati implementati due \glspl{microservizio} per la creazione
+%             di un \nameref{sub:ApiGateway} e un \gls{Eureka Server};
+%       \item è stato adattato il \textit{frontend} in modo da fornire le nuove
+%             funzionalità implementate nel \textit{back end}.
+% \end{itemize}
 
 \section{Strumenti utilizzati}
 \subsection{Visual Studio Code}
@@ -90,7 +89,8 @@ Le estensioni utilizzate nel corso dello \textit{stage} sono:
       \item \textbf{W3C Web Validator}: controlla la validità del
             \textit{markup} dei documenti HTML e CSS;
       \item \textbf{Web Accessibility}: verifica l'accessibilità dei
-            documenti HTML, evidenziando gli elementi che si potrebbe prendere in
+            documenti HTML, evidenziando gli elementi che si potrebbe prendere
+            in
             considerazione di cambiare e dando suggerimenti su come potrebbero
             essere
             modificati;
@@ -136,7 +136,8 @@ Al termine dello \textit{stage} le integrazioni delle funzionalità con la
 sono state testate e sono state integrate anche nel \textit{front end}.
 L'integrazione delle nuove funzionalità permettono alla \textit{web app} di:
 \begin{itemize}
-      \item  visualizzare le \gls{will} appartenenti agli utenti che partecipano
+      \item  visualizzare le \gls{will} appartenenti agli utenti che
+            partecipano
             agli stessi gruppi;
       \item visualizzare le \gls{will} con visibilità globale (quindi che non
             sono visibili solo agli utenti che partecipano agli stessi gruppi);
@@ -151,7 +152,8 @@ L'integrazione delle nuove funzionalità permettono alla \textit{web app} di:
       \item[{\hyperref[cap:descrizione-stage]{Il secondo capitolo}}] descrive
       l'analisi preventiva dei rischi, gli obiettivi dello \textit{stage} e
       la pianificazione delle ore di lavoro.
-      \item[{\hyperref[cap:analisi-requisiti]{Il terzo capitolo}}] approfondisce
+      \item[{\hyperref[cap:analisi-requisiti]{Il terzo capitolo}}]
+      approfondisce
       l'analisi dei requisiti del prodotto.
 
       \item[{\hyperref[cap:progettazione-codifica]{Il quarto capitolo}}]
@@ -160,6 +162,24 @@ L'integrazione delle nuove funzionalità permettono alla \textit{web app} di:
       \item[{\hyperref[cap:verifica-validazione]{Il quinto capitolo}}]
       approfondisce l'accessibilità e la fase di verifica e validazione.
 
-      \item[{\hyperref[cap:conclusioni]{Il sesto capitolo}}] contiene un’analisi
+      \item[{\hyperref[cap:conclusioni]{Il sesto capitolo}}] contiene
+      un’analisi
       del lavoro svolto e le conclusioni tratte.
 \end{description}
+
+%**************************************************************
+\section{Convenzioni tipografiche}
+\label{sec:convenzioni tipografiche}
+Durante la stesura del documento sono state adottate le seguenti convenzioni
+tipografiche:
+\begin{itemize}
+      \item gli acronimi, le abbreviazioni e i termini ambigui o di uso non
+            comune menzionati vengono definiti nel glossario, situato alla fine
+            del
+            presente documento;
+      \item per la prima occorrenza dei termini riportati nel glossario viene
+            utilizzata la seguente nomenclatura:
+            {\color{RoyalBlue}{parola\glsfirstoccur}};
+      \item i termini in lingua straniera o facenti parti del gergo tecnico
+            sono evidenziati con il carattere \emph{corsivo}.
+\end{itemize}
