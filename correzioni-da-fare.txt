@@ -18,7 +18,8 @@ rimosso l'ultimo paragrgafo.
 		--- la descrizione dello stage (1.3) dovrebbe essere un po' più
 		dettagliata, e dato che la relazione è scritta a posteriori, anticipare
 		il vero contenuto dello stage, inclusa la modifica del front-end.
-		- Correzione effettuata: DA FARE
+		- Correzione effettuata: È stato riscritta la sezione in modo da descrivere 
+		lo stage a posteriori.(DA RIRVEDERE)
 
 		--- gli strumenti utilizzati possono essere menzionati in modo meno
 		frammentario, spiegando come sono stati usati nel progetto (quindi non
