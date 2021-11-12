@@ -4,8 +4,8 @@ eventualmente omettendo o fornendo una breve spiegazione dei termini più
 tecnici. Inoltre l'ultimo paragrafo può essere omesso. Considerazioni di
 questo genere stanno bene nell'introduzione e/o nelle conclusioni.
 
-Correzione Sommario: sono state rimossi i termini del glossario, adattando di conseguenza il testo. è stato inoltre 
-rimosso l'ultimo paragrgafo.
+Correzione Sommario: sono stati rimossi i termini del glossario, adattando di conseguenza il testo.
+È stato inoltre rimosso l'ultimo paragrgafo.
 
 - Richiesta:
 		
@@ -26,11 +26,14 @@ rimosso l'ultimo paragrgafo.
 		suddivisi in sottosezioni), questo dovrebbe portare alla descrizione del
 		prodotto ottenuto, che allo stato attuale è un po' troppo schematica e
 		sintetica
-		- Correzione effettuata: DA FARE
+		- Correzione effettuata: Sono state rimosse le sottosezioni, rendendo la descrizione degli 
+		strumenti utilizzati più coesa. Sono state inoltre  aggiunte delle brevi descrizioni su come 
+		sono stati utilizzati gli strumenti.
 
 		--- In generale il resto del documento va abbastanza bene. Sarebbe opportuno
 		avere, in alcuni punti, una descrizione meno schematica con qualche
 		frase di spiegazione (ad esempio nei casi d'uso).
-		- Correzione effettuata: DA FARE
+		- Correzione effettuata: Gli scenari principali dei casi d'uso sono stati modificati, 
+		rendendoli discorsivi e spiegando meglio le dinamiche di ogni caso d'uso.
 
 		

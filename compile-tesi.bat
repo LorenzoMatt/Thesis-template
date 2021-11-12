@@ -3,7 +3,7 @@ set MAIN=tesi
 set BUILD_DIR=.\
 
 call clean.bat
-del *.pdf
+del tesi.pdf
 if not exist %BUILD_DIR% mkdir %BUILD_DIR%
 
 @echo --------------------------------------------------------------

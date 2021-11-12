@@ -8,7 +8,8 @@
 %**************************************************************
 
 \intro{Il presente capitolo descrive in maniera dettagliata requisiti e casi
-    d'uso individuati durante la fase di analisi del progetto di \textit{stage}.}\\
+    d'uso individuati durante la fase di analisi del progetto di
+    \textit{stage}.}\\
 
 \section{Casi d'uso}
 \subsection*{Attori pricipali}
@@ -42,9 +43,8 @@ essere implementate, senza quindi descrivere quelle già presenti nella
     \usecasedesc{L'utente vuole visualizzare la lista dei gruppi}
     \usecasepost{L'utente ha visualizzato la lista dei gruppi}
     \usecasescenarioprincipale{
-        \begin{enumerate}[nolistsep]
-            \item L'utente visualizza la lista dei gruppi.
-        \end{enumerate}
+        L'utente si trova nella schermata di visualizzazione della lista dei
+        gruppi.
     }
 
 \end{usecase}
@@ -66,10 +66,8 @@ essere implementate, senza quindi descrivere quelle già presenti nella
     \usecasepost{L'utente ha visualizzato un singolo gruppo nella lista dei
         gruppi}
     \usecasescenarioprincipale{
-        \begin{enumerate}[nolistsep]
-            \item L'utente visualizza la pagina contenente la lista dei gruppi;
-            \item l'utente visualizza un singolo gruppo nella lista dei gruppi.
-        \end{enumerate}
+        L'utente si trova nella schermata di visualizzazione dei gruppi e
+        visualizza un singolo gruppo dalla lista dei gruppi.
     }
 \end{subusecase}
 
@@ -91,11 +89,8 @@ essere implementate, senza quindi descrivere quelle già presenti nella
     \usecasepost{L'utente ha visualizzato il nome di un gruppo dalla lista dei
         gruppi}
     \usecasescenarioprincipale{
-        \begin{enumerate}[nolistsep]
-            \item L'utente visualizza la pagina contenente la lista dei gruppi;
-            \item l'utente visualizza il nome di un gruppo dalla lista dei
-                  gruppi.
-        \end{enumerate}
+        L'utente si trova nella schermata di visualizzazione dei gruppi e
+        visualizza dalla lista dei gruppi il nome di uno specifico gruppo.
     }
 \end{subsubusecase}
 
@@ -109,11 +104,9 @@ essere implementate, senza quindi descrivere quelle già presenti nella
     \usecasepost{L'utente ha visualizzato la descrizione di un gruppo dalla
         lista dei gruppi}
     \usecasescenarioprincipale{
-        \begin{enumerate}[nolistsep]
-            \item L'utente visualizza la pagina contenente la lista dei gruppi;
-            \item l'utente visualizza la descrizione di un gruppo dalla lista
-                  dei gruppi.
-        \end{enumerate}
+        L'utente si trova nella schermata di visualizzazione dei gruppi
+        evisualizza dalla lista dei gruppi la descrizione di uno specifico
+        gruppo.
     }
 \end{subsubusecase}
 
@@ -124,9 +117,8 @@ essere implementate, senza quindi descrivere quelle già presenti nella
     \usecasedesc{L'utente vuole visualizzare la lista dei gruppi creati da lui}
     \usecasepost{L'utente ha visualizzato la lista dei gruppi creati da lui}
     \usecasescenarioprincipale{
-        \begin{enumerate}[nolistsep]
-            \item L'utente visualizza la lista dei gruppi creati da lui.
-        \end{enumerate}
+        L'utente si trova nella schermata di visualizzazione dei gruppi, in
+        particolare la schermata dei gruppi creati dall'utente.
     }
 \end{usecase}
 
@@ -138,9 +130,11 @@ essere implementate, senza quindi descrivere quelle già presenti nella
         partecipa}
     \usecasepost{L'utente ha visualizzato la lista dei gruppi a cui partecipa}
     \usecasescenarioprincipale{
-        \begin{enumerate}[nolistsep]
-            \item L'utente visualizza la lista dei gruppi a cui partecipa.
-        \end{enumerate}
+        L'utente si trova nella schermata di visualizzazione dei gruppi, in
+        particolare la schermata dei gruppi a cui partecipa l'utente. I gruppi
+        creati
+        dall'utente, nonostante vi partecipi, non sono visualizzati in questa
+        schermata.
     }
 \end{usecase}
 
@@ -153,10 +147,11 @@ essere implementate, senza quindi descrivere quelle già presenti nella
     \usecasepost{L'utente ha visualizzato la lista dei gruppi creati da altri
         utenti}
     \usecasescenarioprincipale{
-        \begin{enumerate}[nolistsep]
-            \item L'utente visualizza la lista dei gruppi creati da altri
-                  utenti.
-        \end{enumerate}
+        L'utente si trova nella schermata di visualizzazione dei gruppi, in
+        particolare la schermata dei gruppi creati da altri utenti a cui è
+        possibile
+        partecipare. Non sono quindi presenti in questa schermata i gruppi a
+        cui partecipa già un utente.
     }
 \end{usecase}
 
@@ -168,16 +163,13 @@ essere implementate, senza quindi descrivere quelle già presenti nella
     \usecasedesc{L'utente vuole visualizzare i dettagli di un gruppo}
     \usecasepost{L'utente ha visualizzato i dettagli di un gruppo}
     \usecasescenarioprincipale{
-        \begin{enumerate}[nolistsep]
-            \item L'utente clicca su un gruppo sul quale vuole ottenere i
-                  dettagli;
-            \item l'utente visualizza i dettagli di un gruppo.
-        \end{enumerate}
+        L'utente, che si trova nella schermata di visualizzazione dei gruppi,
+        decide di visualizzare i dettagli di un gruppo.
     }
 \end{usecase}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.9\columnwidth]{usecase/sottocasi UC5.png}
+    \includegraphics[width=0.85\columnwidth]{usecase/sottocasi UC5.png}
     \caption{UC5: Vis. dettagli di un gruppo}
 \end{figure}
 \newpage
@@ -190,9 +182,9 @@ essere implementate, senza quindi descrivere quelle già presenti nella
     \usecasedesc{L'utente vuole visualizzare il nome di un gruppo}
     \usecasepost{L'utente ha visualizzato il nome di un gruppo}
     \usecasescenarioprincipale{
-        \begin{enumerate}[nolistsep]
-            \item L'utente visualizza il nome di un gruppo.
-        \end{enumerate}
+        L'utente dalla schermata dei gruppi ha deciso di visualizzare i
+        dettagli di un gruppo, e dalla schermata di visualizzazione dei
+        dettagli di un gruppo visualizza il nome del gruppo.
     }
 \end{subusecase}
 
@@ -204,9 +196,10 @@ essere implementate, senza quindi descrivere quelle già presenti nella
     \usecasedesc{L'utente vuole visualizzare l'immagine di un gruppo}
     \usecasepost{L'utente ha visualizzato l'immagine di un gruppo}
     \usecasescenarioprincipale{
-        \begin{enumerate}[nolistsep]
-            \item L'utente visualizza l'immagine di un gruppo.
-        \end{enumerate}
+        L'utente dalla schermata dei gruppi ha deciso di visualizzare i
+        dettagli di un gruppo, e dalla schermata di visualizzazione dei
+        dettagli di un gruppo visualizza l'immagine del
+        gruppo.
     }
 \end{subusecase}
 
@@ -220,9 +213,10 @@ essere implementate, senza quindi descrivere quelle già presenti nella
     \usecasepost{L'utente ha visualizzato la lista dei partecipanti ad un
         gruppo}
     \usecasescenarioprincipale{
-        \begin{enumerate}[nolistsep]
-            \item L'utente visualizza la lista dei partecipanti ad un gruppo.
-        \end{enumerate}
+        L'utente dalla schermata dei gruppi ha deciso di visualizzare i
+        dettagli di un gruppo, e dalla schermata di visualizzazione dei
+        dettagli di un gruppo visualizza	la lista dei
+        partecipanti ad un gruppo.
     }
 \end{subusecase}
 
@@ -242,10 +236,11 @@ essere implementate, senza quindi descrivere quelle già presenti nella
     \usecasepost{L'utente ha visualizzato un partecipante dalla lista dei
         partecipanti ad un gruppo}
     \usecasescenarioprincipale{
-        \begin{enumerate}[nolistsep]
-            \item L'utente visualizza un partecipante dalla lista dei
-                  partecipanti ad un gruppo.
-        \end{enumerate}
+        L'utente dalla schermata dei gruppi ha deciso di visualizzare i
+        dettagli di un gruppo, e dalla schermata di visualizzazione dei
+        dettagli di un gruppo visualizza	un partecipante dalla
+        lista dei
+        partecipanti ad un gruppo.
     }
 \end{subsubusecase}
 
@@ -265,10 +260,11 @@ essere implementate, senza quindi descrivere quelle già presenti nella
     \usecasepost{L'utente ha visualizzato nome e cognome di un partecipante
         dalla lista dei partecipanti}
     \usecasescenarioprincipale{
-        \begin{enumerate}[nolistsep]
-            \item L'utente visualizza nome e cognome di un partecipante dalla
-                  lista dei partecipanti.
-        \end{enumerate}
+        L'utente dalla schermata dei gruppi ha deciso di visualizzare i
+        dettagli di un gruppo, e dalla schermata di visualizzazione dei
+        dettagli di un gruppo visualizza	il nome e il cognome di
+        un
+        partecipante dalla lista dei partecipanti ad un gruppo.
     }
 \end{subsubsubusecase}
 
@@ -280,9 +276,10 @@ essere implementate, senza quindi descrivere quelle già presenti nella
     \usecasedesc{L'utente vuole visualizzare la descrizione di un gruppo}
     \usecasepost{L'utente ha visualizzato la descrizione di un gruppo}
     \usecasescenarioprincipale{
-        \begin{enumerate}[nolistsep]
-            \item L'utente visualizza la descrizione di un gruppo.
-        \end{enumerate}
+        L'utente dalla schermata dei gruppi ha deciso di visualizzare i
+        dettagli di un gruppo, e dalla schermata di visualizzazione dei
+        dettagli di un gruppo visualizza	la descrizione di un
+        gruppo.
     }
 \end{subusecase}
 
@@ -294,9 +291,10 @@ essere implementate, senza quindi descrivere quelle già presenti nella
     \usecasedesc{L'utente vuole visualizzare gli obbiettivi di un gruppo}
     \usecasepost{L'utente ha visualizzato gli obbiettivi di un gruppo}
     \usecasescenarioprincipale{
-        \begin{enumerate}[nolistsep]
-            \item L'utente visualizza gli obbiettivi di un gruppo.
-        \end{enumerate}
+        L'utente dalla schermata dei gruppi ha deciso di visualizzare i
+        dettagli di un gruppo, e dalla schermata di visualizzazione dei
+        dettagli di un gruppo visualizza gli obbiettivi di un
+        gruppo.
     }
 \end{subusecase}
 
@@ -308,9 +306,10 @@ essere implementate, senza quindi descrivere quelle già presenti nella
     \usecasedesc{L'utente vuole visualizzare la località di un gruppo}
     \usecasepost{L'utente ha visualizzato la località di un gruppo}
     \usecasescenarioprincipale{
-        \begin{enumerate}[nolistsep]
-            \item L'utente visualizza la località di un gruppo.
-        \end{enumerate}
+        L'utente dalla schermata dei gruppi ha deciso di visualizzare i
+        dettagli di un gruppo, e dalla schermata di visualizzazione dei
+        dettagli di un gruppo visualizza la località in cui il
+        gruppo è presente.
     }
 \end{subusecase}
 
@@ -322,13 +321,11 @@ essere implementate, senza quindi descrivere quelle già presenti nella
     \usecasedesc{L'utente vuole modificare i dettagli di un gruppo}
     \usecasepost{L'utente ha modificato i dettagli di un gruppo}
     \usecasescenarioprincipale{
-        \begin{enumerate}[nolistsep]
-            \item L'utente modifica i dettagli di un gruppo.
-        \end{enumerate}
+        L'utente si trova nella schermata di visualizzazione dei gruppi, in
+        particolare dei gruppi creati dall'utente e desidera modificare i
+        dettagli di un gruppo dalla schermata di modifica dei gruppi.
     }
 \end{usecase}
-
-\newpage
 
 \begin{figure}[H]
     \centering
@@ -344,9 +341,9 @@ essere implementate, senza quindi descrivere quelle già presenti nella
     \usecasedesc{L'utente vuole modificare il nome di un gruppo}
     \usecasepost{L'utente ha modificato il nome di un gruppo}
     \usecasescenarioprincipale{
-        \begin{enumerate}[nolistsep]
-            \item L'utente modifica il nome di un gruppo.
-        \end{enumerate}
+        L'utente si trova nella schermata di visualizzazione dei gruppi, in
+        particolare dei gruppi creati dall'utente e desidera modificare il nome
+        di un gruppo dalla schermata di modifica dei gruppi.
     }
 \end{subusecase}
 
@@ -358,9 +355,9 @@ essere implementate, senza quindi descrivere quelle già presenti nella
     \usecasedesc{L'utente vuole modificare la descrizione di un gruppo}
     \usecasepost{L'utente ha modificato la descrizione di un gruppo}
     \usecasescenarioprincipale{
-        \begin{enumerate}[nolistsep]
-            \item L'utente modifica la descrizione di un gruppo.
-        \end{enumerate}
+        L'utente si trova nella schermata di visualizzazione dei gruppi, in
+        particolare dei gruppi creati dall'utente e desidera modificare la
+        descrizione di un gruppo dalla schermata di modifica dei gruppi.
     }
 \end{subusecase}
 
@@ -372,9 +369,9 @@ essere implementate, senza quindi descrivere quelle già presenti nella
     \usecasedesc{L'utente vuole modificare gli obbiettivi di un gruppo}
     \usecasepost{L'utente ha modificato gli obbiettivi di un gruppo}
     \usecasescenarioprincipale{
-        \begin{enumerate}[nolistsep]
-            \item L'utente modifica gli obbiettivi di un gruppo.
-        \end{enumerate}
+        L'utente si trova nella schermata di visualizzazione dei gruppi, in
+        particolare dei gruppi creati dall'utente e desidera modificare gli
+        obbiettivi di un gruppo dalla schermata di modifica dei gruppi.
     }
 \end{subusecase}
 
@@ -388,9 +385,11 @@ essere implementate, senza quindi descrivere quelle già presenti nella
     \usecasepost{L'utente ha modificato il numero massimo di utenti di un
         gruppo}
     \usecasescenarioprincipale{
-        \begin{enumerate}[nolistsep]
-            \item L'utente modifica il numero massimo di utenti di un gruppo.
-        \end{enumerate}
+        L'utente si trova nella schermata di visualizzazione dei gruppi, in
+        particolare dei gruppi creati dall'utente e desidera modificare il
+        numero massimo di partecipanti ad un gruppo dalla schermata di
+        modifica. Nel caso al gruppo vi partecipino più utenti di quanto
+        modificato, non sarà più permesso ad altri utenti unirsi al gruppo.
     }
 \end{subusecase}
 
@@ -402,9 +401,10 @@ essere implementate, senza quindi descrivere quelle già presenti nella
     \usecasedesc{L'utente vuole modificare la località di un gruppo}
     \usecasepost{L'utente ha modificato la località di un gruppo}
     \usecasescenarioprincipale{
-        \begin{enumerate}[nolistsep]
-            \item L'utente modifica la località di un gruppo.
-        \end{enumerate}
+        L'utente si trova nella schermata di visualizzazione dei gruppi, in
+        particolare dei gruppi creati dall'utente e desidera modificare la
+        località in cui è presente un gruppo dalla schermata di modifica dei
+        gruppi.
     }
 \end{subusecase}
 % TODO: se resta tempo implementare questa funzionalità
@@ -430,9 +430,9 @@ essere implementate, senza quindi descrivere quelle già presenti nella
     \usecasedesc{L'utente vuole creare un nuovo gruppo}
     \usecasepost{L'utente ha creato un nuovo gruppo}
     \usecasescenarioprincipale{
-        \begin{enumerate}[nolistsep]
-            \item L'utente crea un nuovo gruppo.
-        \end{enumerate}
+        L'utente si trova nella schermata di visualizzazione dei gruppi, in
+        particolare dei gruppi creati dall'utente e crea un nuovo
+        gruppo dalla schermata di creazione di un gruppo.
     }
 \end{usecase}
 
@@ -450,9 +450,9 @@ essere implementate, senza quindi descrivere quelle già presenti nella
     \usecasedesc{L'utente vuole inserire il nome del gruppo}
     \usecasepost{L'utente ha inserito il nome del gruppo}
     \usecasescenarioprincipale{
-        \begin{enumerate}[nolistsep]
-            \item L'utente inserisce il nome del gruppo.
-        \end{enumerate}
+        L'utente si trova nella schermata di visualizzazione dei gruppi, in
+        particolare dei gruppi creati dall'utente e inserisce il nome
+        del gruppo dalla schermata di creazione di un gruppo.
     }
 \end{subusecase}
 
@@ -464,9 +464,9 @@ essere implementate, senza quindi descrivere quelle già presenti nella
     \usecasedesc{L'utente vuole inserire la descrizione del gruppo}
     \usecasepost{L'utente ha inserito la descrizione del gruppo}
     \usecasescenarioprincipale{
-        \begin{enumerate}[nolistsep]
-            \item L'utente inserisce la descrizione del gruppo.
-        \end{enumerate}
+        L'utente si trova nella schermata di visualizzazione dei gruppi, in
+        particolare dei gruppi creati dall'utente e inserisce la
+        descrizione del gruppo dalla schermata di creazione di un gruppo.
     }
 \end{subusecase}
 
@@ -478,9 +478,9 @@ essere implementate, senza quindi descrivere quelle già presenti nella
     \usecasedesc{L'utente vuole inserire gli obbiettivi del gruppo}
     \usecasepost{L'utente ha inserito gli obbiettivi del gruppo}
     \usecasescenarioprincipale{
-        \begin{enumerate}[nolistsep]
-            \item L'utente inserisce gli obbiettivi del gruppo.
-        \end{enumerate}
+        L'utente si trova nella schermata di visualizzazione dei gruppi, in
+        particolare dei gruppi creati dall'utente e inserisce gli
+        obbiettivi del gruppo dalla schermata di creazione di un gruppo.
     }
 \end{subusecase}
 
@@ -493,9 +493,10 @@ essere implementate, senza quindi descrivere quelle già presenti nella
         gruppo}
     \usecasepost{L'utente ha inserito il numero massimo di utenti del gruppo}
     \usecasescenarioprincipale{
-        \begin{enumerate}[nolistsep]
-            \item L'utente inserisce il numero massimo di utenti del gruppo.
-        \end{enumerate}
+        L'utente si trova nella schermata di visualizzazione dei gruppi, in
+        particolare dei gruppi creati dall'utente e inserisce il numero
+        massimo di partecipanti al gruppo dalla schermata di creazione di un
+        gruppo.
     }
 \end{subusecase}
 
@@ -507,9 +508,10 @@ essere implementate, senza quindi descrivere quelle già presenti nella
     \usecasedesc{L'utente vuole inserire la località del gruppo}
     \usecasepost{L'utente ha inserito la località del gruppo}
     \usecasescenarioprincipale{
-        \begin{enumerate}[nolistsep]
-            \item L'utente inserisce la località del gruppo.
-        \end{enumerate}
+        L'utente si trova nella schermata di visualizzazione dei gruppi, in
+        particolare dei gruppi creati dall'utente e inserisce la
+        località in cui è presente il gruppo dalla schermata di creazione di un
+        gruppo.
     }
 \end{subusecase}
 
@@ -521,9 +523,9 @@ essere implementate, senza quindi descrivere quelle già presenti nella
     \usecasedesc{L'utente vuole eliminare un gruppo}
     \usecasepost{L'utente ha eliminato un gruppo}
     \usecasescenarioprincipale{
-        \begin{enumerate}[nolistsep]
-            \item L'utente elimina un gruppo.
-        \end{enumerate}
+        L'utente si trova nella schermata di modifica dei gruppi di un gruppo
+        creato
+        dall'utente ed elimina il gruppo in questione.
     }
 \end{usecase}
 
@@ -535,9 +537,8 @@ essere implementate, senza quindi descrivere quelle già presenti nella
     \usecasedesc{L'utente vuole partecipare ad un gruppo}
     \usecasepost{L'utente ha partecipato al gruppo}
     \usecasescenarioprincipale{
-        \begin{enumerate}[nolistsep]
-            \item L'utente partecipa al gruppo.
-        \end{enumerate}
+        L'utente si trova nella schermata dei dettagli di un  gruppo a cui
+        non partecipa, e partecipa al gruppo in questione.
     }
 \end{usecase}
 
@@ -563,9 +564,8 @@ essere implementate, senza quindi descrivere quelle già presenti nella
     \usecasedesc{L'utente vuole annullare la partecipazione al gruppo}
     \usecasepost{L'utente ha annullato la partecipazione al gruppo}
     \usecasescenarioprincipale{
-        \begin{enumerate}[nolistsep]
-            \item L'utente annulla la partecipazione al gruppo.
-        \end{enumerate}
+        L'utente si trova nella schermata dei dettagli di un  gruppo a cui
+        già partecipa, e annulla la partecipazione al gruppo in questione.
     }
 \end{usecase}
 
@@ -579,14 +579,13 @@ essere implementate, senza quindi descrivere quelle già presenti nella
     \usecasepost{L'utente ha visualizzato la lista delle \textit{will} degli
         utenti appartenenti agli stessi gruppi}
     \usecasescenarioprincipale{
-        \begin{enumerate}[nolistsep]
-            \item L'utente visualizza la lista delle \textit{will} degli utenti
-                  appartenenti agli stessi gruppi.
-        \end{enumerate}
+        L'utente si trova nella schermata principale della \textit{web app}
+        nella finestra di visualizzazione della lista delle \textit{will} degli
+        utenti
+        appartenenti agli stessi gruppi a cui partecipa l'utente.
     }
 \end{usecase}
 
-\newpage
 
 \begin{figure}[H]
     \centering
@@ -605,10 +604,11 @@ essere implementate, senza quindi descrivere quelle già presenti nella
     \usecasepost{L'utente ha visualizzato una singola \gls{will} dalla lista
         delle \gls{will}}
     \usecasescenarioprincipale{
-        \begin{enumerate}[nolistsep]
-            \item L'utente visualizza una singola \gls{will} dalla lista delle
-                  \gls{will}.
-        \end{enumerate}
+        L'utente si trova nella schermata principale della \textit{web app},
+        nella finestra di visualizzazione dalla
+        lista
+        delle \textit{will} degli utenti appartenenti agli stessi gruppi a cui
+        partecipa l'utente e visualizza una \textit{will} da questa lista.
     }
 \end{subusecase}
 
@@ -628,10 +628,12 @@ essere implementate, senza quindi descrivere quelle già presenti nella
     \usecasepost{L'utente ha visualizzato il nome del proprietario della
         \gls{will} dalla lista delle \gls{will}}
     \usecasescenarioprincipale{
-        \begin{enumerate}[nolistsep]
-            \item L'utente visualizza il nome del proprietario della \gls{will}
-                  dalla lista delle \gls{will}.
-        \end{enumerate}
+        L'utente si trova nella schermata principale della \textit{web app},
+        nella finestra di visualizzazione dalla
+        lista
+        delle \textit{will} degli utenti appartenenti agli stessi gruppi a cui
+        partecipa l'utente e visualizza il nome del proprietario di una
+        \textit{will} dalla lista delle \textit{will}.
     }
 \end{subsubusecase}
 
@@ -645,10 +647,12 @@ essere implementate, senza quindi descrivere quelle già presenti nella
     \usecasepost{L'utente ha visualizzato la descrizione della \gls{will} dalla
         lista delle \gls{will}}
     \usecasescenarioprincipale{
-        \begin{enumerate}[nolistsep]
-            \item L'utente visualizza la descrizione della \gls{will} dalla
-                  lista delle \gls{will}.
-        \end{enumerate}
+        L'utente si trova nella schermata principale della \textit{web app},
+        nella finestra di visualizzazione dalla
+        lista
+        delle \textit{will} degli utenti appartenenti agli stessi gruppi a cui
+        partecipa l'utente e visualizza la descrizione di una
+        \textit{will} dalla lista delle \textit{will}.
     }
 \end{subsubusecase}
 
@@ -662,9 +666,12 @@ essere implementate, senza quindi descrivere quelle già presenti nella
     \usecasepost{L'utente ha visualizzato la data in cui verrà effettuata
         l'uscita}
     \usecasescenarioprincipale{
-        \begin{enumerate}[nolistsep]
-            \item L'utente visualizza la data in cui verrà effettuata l'uscita.
-        \end{enumerate}
+        L'utente si trova nella schermata principale della \textit{web app},
+        nella finestra di visualizzazione dalla
+        lista
+        delle \textit{will} degli utenti appartenenti agli stessi gruppi a cui
+        partecipa l'utente e visualizza la data di uscita di una
+        \textit{will} dalla lista delle \textit{will}.
     }
 \end{subsubusecase}
 
