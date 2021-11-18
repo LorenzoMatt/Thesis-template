@@ -8,8 +8,8 @@ export class MyCrewpageComponent implements OnInit {
     }
     getGlobalCrew() {
         this.gruppiService.getCrewsOfUser().subscribe((crews) => {
-          this.gruppiService.getCrews().subscribe((crews2) => {
-            this.crewCards = crews2.filter((c) => {
+          this.gruppiService.getCrews().subscribe((secondCrews) => {
+            this.crewCards = secondCrews.filter((c) => {
               let toReturn: boolean = true;
               for (let crew of crews){
                 if (crew.id == c.id){

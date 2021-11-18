@@ -17,20 +17,21 @@
 
 Il presente documento descrive il lavoro svolto durante il periodo di
 \textit{stage},
-della durata di 320 ore, dal laureando \myName\xspace presso
+della durata di 320 ore, dal laureando \myName presso
 l'azienda \myCompany, situata a Padova.
 Lo \textit{stage} ha avuto come argomento principale l'implementazione di nuove
 funzionalità nel contesto dell'applicazione \productName, una
 \textit{web app} che dà modo all'utente di divulgare la sua intenzione
 (\textit{will}) di effettuare un'attività sportiva.
-La piattaforma faceva vedere tutto a tutti, rendendo troppo caotica la
+La piattaforma permetteva ad ogni utente l'accesso a tutte le informazioni,
+rendendo troppo caotica la
 fruizione, quindi l'esigenza era di dare la possibilità all'utente
-di creare uno o più gruppi a cui utenti \enquote*{amici} possano unirsi,
-vedendo quindi solo le \textit{will} di gruppo.
-Le attività svolte nel corso dello \textit{stage} sono due:
+di creare uno o più gruppi a cui utenti \enquote*{amici} potessero unirsi,
+vedendo quindi solo le \textit{will} relative al gruppo.
+Le attività svolte nel corso dello \textit{stage} sono state due:
 \begin{itemize}
-      \item la prima è un insieme di attività che sono legate al \textit{back
-                  end} della \textit{web app}, come lo sviluppo di tre
+      \item l'aggiornamento del \textit{back
+                  end} della \textit{web app}, mediante lo sviluppo di tre
             microservizi
             mediante il \textit{framework} Spring Java.
             In particolare:
@@ -50,16 +51,14 @@ Le attività svolte nel corso dello \textit{stage} sono due:
                         contiene le informazioni di tutti i servizi che si
                         registrano nel suo server.
             \end{enumerate}
-            Oltre all'implementazione di nuovi microservizi, quelli
-            esistenti
-            sono stati modificati affinché le \textit{will} possano
-            essere visualizzate o da tutti gli utenti oppure solo dagli utenti
-            appartenenti agli stessi gruppi.
+            Inoltre i microservizi esistenti sono stati modificati affinché le
+            \textit{will} possano essere visualizzate o da tutti gli utenti oppure solo
+            dagli utenti appartenenti agli stessi gruppi.
             Ultimate le attività lato \textit{back end}, è stata effettuata la
             \textit{containerizzazione} di tutti i microservizi su
             Docker.
-      \item La seconda attività è stata la modifica del \textit{front end},
-            mediante il \textit{framework} Angular, per adeguarla alle nuove
+      \item La modifica del \textit{front end},
+            mediante il \textit{framework} Angular, per adeguarlo alle nuove
             funzionalità del
             \textit{back end}.
 \end{itemize}
