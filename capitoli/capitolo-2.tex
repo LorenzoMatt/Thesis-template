@@ -8,14 +8,17 @@
 %**************************************************************
 
 \intro{In questo capitolo è presente un'analisi preventiva dei rischi a cui si
-    sarebbe potuto incombere durante lo \textit{stage}, la lista degli obiettivi da
+    sarebbe potuto incombere durante lo \textit{stage}, la lista degli
+    obiettivi da
     raggiungere e la pianificazione
     delle ore di lavoro.}\\
 %**************************************************************
 \section{Analisi preventiva dei rischi}
 
-In questa fase vengono analizzati i rischi emersi durante la fase di analisi iniziale in
-cui si potrebbe incombere. Per ogni rischio individuato, si è proceduto quindi all'elaborazione di un piano di contingenza per ogni rischio individuato.
+In questa fase vengono analizzati i rischi emersi durante la fase di analisi
+iniziale in
+cui si potrebbe incombere. Si è proceduto quindi all'elaborazione di un piano
+di contingenza per ogni rischio individuato.
 
 \begin{risk}{Inesperienza tecnologica}
     \riskdescription{le tecnologie da utilizzare sono nuove o esplorate
@@ -23,26 +26,32 @@ cui si potrebbe incombere. Per ogni rischio individuato, si è proceduto quindi 
         alla nascita di problemi operativi}
     \risksolution{le attività che richiedono maggior tempo oppure un
         livello di capacità tecnicha elevata
-        saranno trattate per prime, in modo da migliorarle incrementalmente durante
+        saranno trattate per prime, in modo da migliorarle incrementalmente
+        durante
         il periodo di stage}
     \label{risk:Inesperienza tecnologica}
 \end{risk}
 
 \begin{risk}{Problematiche \textit{software} di supporto}
-    \riskdescription{il \textit{computer} in cui si sviluppa il prodotto potrebbe avere malfunzionamenti, il che  potrebbe essere causa/provocare gravi ritardi}
+    \riskdescription{il \textit{computer} in cui si sviluppa il prodotto
+        potrebbe avere malfunzionamenti, il che  potrebbe essere causare gravi
+        ritardi}
     \risksolution{ad ogni \textit{commit} effettuato è necessario aggiornare la
         \textit{repository} remota.
-        Inoltre deve essere possibile replicare velocemente l'ambiente di lavoro in
+        Inoltre, deve essere possibile replicare velocemente l'ambiente di
+        lavoro in
         un altro \textit{computer}
         in modo da tornare operativi nel minor tempo possibile. Un modo per
         ripristinare velocemente le impostazioni
         di lavoro è la creazione di una cartella da versionare chiamata
         \texttt{.vscode} in cui inserire:
         \begin{itemize}
-            \item il file \texttt{settings.json}, in cui salvare le impostazioni
+            \item il file \texttt{settings.json}, in cui salvare le
+                  impostazioni
                   dell'editor;
             \item il file \texttt{extensions.json}, in cui aggingere gli le
-                  stringhe identificative di ogni estensione utilizzata in Visual Studio Code;
+                  stringhe identificative di ogni estensione utilizzata in
+                  Visual Studio Code;
             \item Il file \texttt{launch.json}, in cui configurare il
                   \textit{debugger} in Visual Studio Code.
         \end{itemize}
@@ -52,12 +61,12 @@ cui si potrebbe incombere. Per ogni rischio individuato, si è proceduto quindi 
 \begin{risk}{Tempistiche}
     \riskdescription{il tempo di apprendimento di nuove tecnologie potrebbe
         indurre in ritardi sulle scadenze previste.
-        I ritardi verranno individuati nel caso in cui il lavoro da effettuare si
+        I ritardi verranno individuati nel caso in cui il lavoro da effettuare
+        si
         scostasse dalla pianificazione presente su \gls{Trello}}
     \risksolution{appena si rilevano difficoltà o scostamenti rispetto al piano
-        di lavoro, si dovrà avvisare tempestivamente il
-        \textit{tutor} aziendale, con cui ci si potrà confrontare, e solo in caso
-        estremo rimandare le scadenze prefissate}
+        di lavoro si dovrà avvisare tempestivamente il
+        \textit{tutor} aziendale, con cui ci si potrà confrontare, considerando il rinvio delle scadenze prefissate solo in caso estremo}
     \label{risk:Tempistiche}
 \end{risk}
 
@@ -80,7 +89,7 @@ cui si potrebbe incombere. Per ogni rischio individuato, si è proceduto quindi 
         con il \textit{tutor} aziendale.
         Nel caso si notassero assenze nei requisiti, si procederà alla sua
         conseguante analisi e si deciderà come
-        procedere in maniera da limitare un eventuale rallentamento sulla di
+        procedere in maniera da limitare un eventuale rallentamento nello
         sviluppo}
     \label{risk:Interpretazione errata o non sufficiente dei requisiti}
 \end{risk}
