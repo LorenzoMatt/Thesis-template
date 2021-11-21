@@ -20,15 +20,15 @@ utilizzati.
 
 \subsection*{Java}
 Java è un linguaggio di programmazione e una piattaforma di elaborazione
-rilasciato per la prima volta da Sun Microsystems nel 1995. Si è evoluto da
-umili
-origini per sostenere gran parte del mondo digitale di oggi, fornendo una
+rilasciato per la prima volta da Sun Microsystems nel 1995. Si è evoluto a tal
+punto da sostenere oggi gran parte del mondo digitale, fornendo una
 piattaforma affidabile su cui costruire molti servizi e applicazioni.
-Tuttora anche i nuovi prodotti fanno affidamento su Java.
+Infatti, molti dei nuovi prodotti fanno affidamento su Java.
 \cite{site-what-is-java} \\
 \subsection*{Spring}
 
-Spring è un \gls{framework} open source per lo sviluppo di applicazioni su
+Spring è un \gls{framework} \textit{open source} per lo sviluppo di
+applicazioni su
 piattaforma Java.
 A questo \gls{framework} sono associati tanti altri progetti, che hanno nomi
 composti come
@@ -40,7 +40,9 @@ fornire funzionalità aggiuntive al \gls{framework}. \cite{site-spring}
 %**************************************************************
 TypeScript è un linguaggio di programmazione sviluppato e gestito da Microsoft.
 
-\noindent È un \gls{superset} di JavaScript, poiché permette di aggiungere la
+\noindent È un \gls{superset} di JavaScript, dal momento che permette di
+aggiungere
+la
 tipizzazione
 statica opzionale al linguaggio. TypeScript è progettato per lo sviluppo di
 applicazioni
@@ -50,7 +52,7 @@ esistenti sono validi programmi TypeScript. \cite{site-typescript}
 \subsection*{Angular}
 %**************************************************************
 Angular è un \gls{framework} JavaScript per applicazioni \textit{web}
-dinamiche utilizzato per la creazione di \gls{spa} e
+dinamiche che viene utilizzato per la creazione di \gls{spa} e
 \textit{web app}. Consente di utilizzare HTML come linguaggio \textit{template}
 e di estenderne la sintassi per esprimere le componenti di un'applicazione in
 modo chiaro e succinto. \cite{site-Angular}
@@ -60,7 +62,7 @@ modo chiaro e succinto. \cite{site-Angular}
 Angular Material è una libreria sviluppata da Google nel 2014 allo scopo di
 aiutare a sviluppare pagine \textit{web} in modo strutturato. \\
 I suoi componenti aiutano a creare pagine \textit{web} e applicazioni
-\textit{web} attraenti, coerenti e funzionali.
+\textit{web} attraenti, coerenti e funzionali. \cite{site-Angular}
 
 \subsection*{Node.js}
 Node.js è una piattaforma di sviluppo open source per l'esecuzione di codice
@@ -184,7 +186,7 @@ ovvero delle classi che aggiungono un comportamento aggiuntivo agli elementi
 nelle applicazioni Angular. Le direttive integrate di Angular permettono di
 gestire moduli, elenchi, stili e ciò che gli utenti vedono.\\
 È possibile creare un \textit{component} che rappresenta la pagina completa. In
-questo \textit{component} è possibile inserire diversi altri \textit{component}
+questo \textit{component} si possono inserire diversi altri \textit{component}
 per ogni elemento della pagina.
 Ogni \textit{component} contenuto si occuperà così di gestire la grafica di
 quella determinata funzionalità e di comunicare con i servizi di cui necessita;
@@ -193,8 +195,9 @@ sarà poi il \textit{component} \enquote*{padre} a gestire la disposizione dei
 
 \subsubsection{Progettazione delle maschere}
 Con il \textit{tutor} aziendale è stato discusso come dovrebbe essere la
-grafica delle nuove maschere da aggiungere a \productName. A partire da
-questi confronti, è stato poi utilizzato \textbf{Figma} per fare il
+grafica delle nuove maschere da aggiungere a \productName. A partire dai
+confronti con il \textit{tutor}, è stato poi utilizzato \textbf{Figma} per fare
+il
 \textit{mockup}, in modo da  testare quanto siano accattivanti i vari elementi
 visivi.\\
 Durante la progettazione del \textit{mockup} è stato seguito lo stile presente
@@ -242,7 +245,8 @@ l'\textit{header} e il \textit{footer}, in quanto sono già presenti nella
 \section{Design Pattern utilizzati}
 \subsection{Microservizi}
 I \glspl{microservizio} sono un approccio per lo sviluppo e l'organizzazione
-dell'architettura \textit{software} secondo il quale questi ultimi sono
+dell'architettura \textit{software}. Secondo questo approccio, questi ultimi
+sono
 composti di servizi indipendenti di piccole dimensioni che comunicano tra loro
 tramite \gls{API}.\\
 Nel contesto di questo progetto sono stati implementati tre
@@ -287,7 +291,7 @@ Utilizzare un \textit{API Gateway} è vantaggioso perché:
 \end{figure}
 % TODO: aggungere bibliografia: https://lalverma.medium.com/spring-boot-microservices-implementing-service-discovery-cfc98e49b74f, https://microservices.io/patterns/service-registry.html
 I \glspl{microservizio} hanno una natura dinamica, in quanto è possibile che
-più istanze di un singolo \gls{microservizio} coesistano, in alcuni casi
+più istanze di un singolo \gls{microservizio} coesistano, talvolta
 esponendo le loro \gls{API} in un indirizzo \gls{IP} diverso o in una porta
 diversa. Queste evenienze portano all'impossibilità di:
 \begin{itemize}
@@ -342,8 +346,8 @@ sufficiente utilizzare l'annotazione
 tipo \textit{constructor}, che prevede che una classe dichiari nel costruttore
 le dipendenze di cui ha bisogno che in fase di inizializzazione gli verranno
 fornite.\\
-Angular include un meccanismo di \textit{Dependency Injection} solido e
-molto flessibile, il cui utilizzo si può riassumere in due semplici passi: si
+Angular include un meccanismo di \textit{Dependency Injection} molto solido e
+flessibile, il cui utilizzo si può riassumere in due semplici passi: si
 crea il servizio e si inietta la dipendenza ove necessario.\\
 Nel dettaglio, le fasi sono le seguenti:
 \begin{itemize}
@@ -352,7 +356,7 @@ Nel dettaglio, le fasi sono le seguenti:
           una
           proprietà \texttt{ProvideIn}, che crea un \textit{provider} per il
           servizio.
-          Nel caso, per esempio, di \code{ProvideIn: `root'} viene specificato
+          Nel caso di \code{ProvideIn: `root'}, per esempio, viene specificato
           che
           Angular dovrebbe fornire il servizio nella \textit{root injector},
           vale a dire
@@ -396,10 +400,10 @@ Mediante l'utilizzo del \textit{pattern} \nameref{sub:Singleton} e
 tutti i componenti dell'applicazione. \cite{site-feature-modules}
 \subsection{Lazy Loading}
 Questo \textit{pattern} è utilizzato da Angular per caricare i moduli solo nel
-momento in cui effettivamente vengono utilizzati, tenendo così bassa la
+momento in cui effettivamente essi vengono utilizzati, tenendo così bassa la
 quantità di dati scaricata e una diminuzione del tempo
 necessario al caricamento dell'applicazione.\\
-Viene utilizzato questo \textit{pattern} per la gestione del \textit{routing},
+Questo \textit{pattern} per la gestione del \textit{routing} viene applicato
 mediante l'associazione di una specifica \textit{view} a un \textit{path} di
 navigazione presente nella \gls{URL}.\cite{site-lazy-loading}
 % \begin{figure}[H] 
@@ -421,7 +425,7 @@ stato.\\
 Gli \textit{Observable} sono dichiarativi, ovvero viene definita una funzione
 che non viene eseguita fino a quando un \textit{Observer} si sottoscrive ad
 esso. L'\textit{Observer} viene quindi notificato al completamento della
-funzione, inoltre il tipo di ritorno di un \textit{Observable} può cambiare in
+funzione. Inoltre, il tipo di ritorno di un \textit{Observable} può cambiare in
 base al contesto, che nel caso nel progetto di \textit{stage} è stato
 prevalentemente di tipo HTTP \textit{response}. \cite{site-observable}\\
 % \begin{figure}[H] 
@@ -564,7 +568,7 @@ Ci sono tre \textit{repository} nel \gls{microservizio}:
 \label{JointUsciteCrewRepository}
 Classe di \textit{repository} che contiene le uscite di un gruppo. Ogni
 qualvolta un utente aggiunge un'uscita, essa viene aggiunta alle uscite di
-tutti i gruppi a cui appartiene. Viceversa, quando viene eliminata un'uscita
+tutti i gruppi a cui appartiene. Allo stesso modo, quando viene eliminata un'uscita
 viene eliminata dalle uscite di tutti i gruppi.\\
 Quando viene rimosso un gruppo tutte
 le uscite associate a quel gruppo vengono rimosse da questa tabella (n.b. le
@@ -751,7 +755,7 @@ Docker da avviare.
 \subsection{Front end}
 In questa sezione verranno descritte solo le maschere, i componenti e i servizi
 modificati in maniera rilevante o creati. Tutto ciò che era già presente nella
-\textit{web app} non verrà descritto.
+\textit{web app} non verrà illustrato.
 \subsubsection{Maschere}
 \myparagraph{Homepage}
 Questa pagina permette ad un utente autenticato di visualizzare le \gls{will}
