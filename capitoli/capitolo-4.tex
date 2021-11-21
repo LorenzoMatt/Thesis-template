@@ -9,23 +9,23 @@
 
 \intro{Il seguente capitolo descrive gli strumenti e la progettazione con cui
     sono
-    state implementate le integrazione con la \textit{web app} \productName.}\\
+    state implementate le integrazioni con la \textit{web app} \productName.}\\
 
 %**************************************************************
 \section{Tecnologie}
 \label{sec:tecnologie-strumenti}
 
-Di seguito viene data una panoramica delle tecnologie e strumenti utilizzati.
+Di seguito viene data una panoramica delle tecnologie e degli strumenti
+utilizzati.
 
 \subsection*{Java}
 Java è un linguaggio di programmazione e una piattaforma di elaborazione
 rilasciato per la prima volta da Sun Microsystems nel 1995. Si è evoluto da
 umili
 origini per sostenere gran parte del mondo digitale di oggi, fornendo una
-piattaforma affidabile su cui sono costruiti molti servizi e applicazioni.
-Anche i nuovi prodotti, innovativi nei servizi digitali progettati per il
-futuro,
-continuano a fare affidamento su Java. \cite{site-what-is-java} \\
+piattaforma affidabile su cui costruire molti servizi e applicazioni.
+Tuttora anche i nuovi prodotti fanno affidamento su Java.
+\cite{site-what-is-java} \\
 \subsection*{Spring}
 
 Spring è un \gls{framework} open source per lo sviluppo di applicazioni su
@@ -40,7 +40,7 @@ fornire funzionalità aggiuntive al \gls{framework}. \cite{site-spring}
 %**************************************************************
 TypeScript è un linguaggio di programmazione sviluppato e gestito da Microsoft.
 
-\noindent È un \gls{superset} di JavaScript, permettendo di aggiungere la
+\noindent È un \gls{superset} di JavaScript, poiché permette di aggiungere la
 tipizzazione
 statica opzionale al linguaggio. TypeScript è progettato per lo sviluppo di
 applicazioni
@@ -50,18 +50,17 @@ esistenti sono validi programmi TypeScript. \cite{site-typescript}
 \subsection*{Angular}
 %**************************************************************
 Angular è un \gls{framework} JavaScript per applicazioni \textit{web}
-dinamiche, utilizzato in particolare per la creazione di \gls{spa} e
+dinamiche utilizzato per la creazione di \gls{spa} e
 \textit{web app}. Consente di utilizzare HTML come linguaggio \textit{template}
 e di estenderne la sintassi per esprimere le componenti di un'applicazione in
-modo chiaro e succinto.
-% TODO: aggiungere bibliografia, link: https://psicografici.com/angular-js/#:~:text=Angular%20%C3%A8%20un%20framework%20JavaScript,in%20modo%20chiaro%20e%20succinto.
+modo chiaro e succinto. \cite{site-Angular}
 
 \subsection*{Angular Material}
 %**************************************************************
-Angular Material è una libreria sviluppata da Google nel 2014 progettata per
+Angular Material è una libreria sviluppata da Google nel 2014 allo scopo di
 aiutare a sviluppare pagine \textit{web} in modo strutturato. \\
 I suoi componenti aiutano a creare pagine \textit{web} e applicazioni
-\textit{web} attraenti, coerenti e funzionali. \cite{site-Angular}
+\textit{web} attraenti, coerenti e funzionali.
 
 \subsection*{Node.js}
 Node.js è una piattaforma di sviluppo open source per l'esecuzione di codice
@@ -70,7 +69,8 @@ richiedono una connessione permanente dal \textit{browser} al \textit{server}
 ed è spesso utilizzato per applicazioni in tempo reale come chat, feed di
 notizie e di notifiche.\\
 Node.js è utilizzato da Angular per gestire le dipendenze, permettendo la
-dichiarazione di due insiemi di dipendenze: per gli sviluppatori e per far
+dichiarazione di due insiemi di dipendenze: uno per gli sviluppatori e uno per
+far
 funzionare l'applicativo. In questo modo è possibile differenziare quali
 librerie si possono tralasciare in fase di \textit{deploy} dell'applicazione
 perché, ad esempio, necessarie solo per effettuare i test. \cite{site-node}
@@ -95,7 +95,8 @@ Ci sono quattro strati in Spring Boot, che sono i seguenti:
           dagli strati
           di accesso ai dati;
     \item \textbf{\textit{Persistence Layer}:} contiene tutta la
-          \textit{storage logic}, e trasformando gli oggetti provenienti dalla
+          \textit{storage logic}, poiché trasforma gli oggetti provenienti
+          dalla
           \textit{business logic} in righe del \textit{database};
     \item \textbf{\textit{Database Layer}:} in questo strato vengono effettuate
           le operazioni \gls{CRUD}.
@@ -115,9 +116,11 @@ Ci sono quattro strati in Spring Boot, che sono i seguenti:
 Il \textit{workflow} con cui vengono effettuate richieste HTTP utilizzando
 Spring Boot è il seguente:
 \begin{itemize}
-    \item il \textit{client} esegue una richiesta HTTP (GET, POST, PUT O DELETE) ad un
+    \item il \textit{client} esegue una richiesta HTTP (GET, POST, PUT O
+          DELETE) ad un
           \gls{endpoint} esposto;
-    \item la richiesta viene ricevuta dal \textit{controller}, che mappa la
+    \item la richiesta viene ricevuta dal \textit{controller}, il quale mappa
+          la
           richiesta e la gestisce. Dopodiché chiama la \textit{service logic}
           presente
           nel \textit{service layer};
@@ -180,19 +183,20 @@ cui si definisce come viene visualizzato il \textit{component}.\\
 ovvero delle classi che aggiungono un comportamento aggiuntivo agli elementi
 nelle applicazioni Angular. Le direttive integrate di Angular permettono di
 gestire moduli, elenchi, stili e ciò che gli utenti vedono.\\
-È possibile creare un \textit{component} che rappresenta la pagina completa, in
-cui inserire diversi \textit{component} per ogni elemento contenuto in quella
-pagina.
+È possibile creare un \textit{component} che rappresenta la pagina completa. In
+questo \textit{component} è possibile inserire diversi altri \textit{component}
+per ogni elemento della pagina.
 Ogni \textit{component} contenuto si occuperà così di gestire la grafica di
 quella determinata funzionalità e di comunicare con i servizi di cui necessita;
 sarà poi il \textit{component} \enquote*{padre} a gestire la disposizione dei
 \textit{component} utilizzati. \cite{site-angular-concepts}
 
 \subsubsection{Progettazione delle maschere}
-Con il \textit{tutor} aziendale è stato discusso come dovrebbero essere
-graficamente le nuove maschere da aggiungere a \productName. A partire da
+Con il \textit{tutor} aziendale è stato discusso come dovrebbe essere la
+grafica delle nuove maschere da aggiungere a \productName. A partire da
 questi confronti, è stato poi utilizzato \textbf{Figma} per fare il
-\textit{mockup}, in modo da  testare quanto siano accattivanti i vari elementi visivi.\\
+\textit{mockup}, in modo da  testare quanto siano accattivanti i vari elementi
+visivi.\\
 Durante la progettazione del \textit{mockup} è stato seguito lo stile presente
 nella \textit{web app}, in modo da non disorientare l'utente durante la
 navigazione. \\
@@ -238,10 +242,10 @@ l'\textit{header} e il \textit{footer}, in quanto sono già presenti nella
 \section{Design Pattern utilizzati}
 \subsection{Microservizi}
 I \glspl{microservizio} sono un approccio per lo sviluppo e l'organizzazione
-dell'architettura \textit{software} secondo cui quest'ultimi sono composti di
-servizi indipendenti di piccole dimensioni che comunicano tra loro tramite
-\gls{API} ben definite.\\
-Nel contesto di questo progetto, sono stati implementati tre
+dell'architettura \textit{software} secondo il quale questi ultimi sono
+composti di servizi indipendenti di piccole dimensioni che comunicano tra loro
+tramite \gls{API}.\\
+Nel contesto di questo progetto sono stati implementati tre
 \glspl{microservizio}:
 \begin{itemize}
     \item \textbf{SW\_Gruppi}: \gls{microservizio} responsabile per la gestione
@@ -283,7 +287,7 @@ Utilizzare un \textit{API Gateway} è vantaggioso perché:
 \end{figure}
 % TODO: aggungere bibliografia: https://lalverma.medium.com/spring-boot-microservices-implementing-service-discovery-cfc98e49b74f, https://microservices.io/patterns/service-registry.html
 I \glspl{microservizio} hanno una natura dinamica, in quanto è possibile che
-più istanze di un singolo \gls{microservizio} coesistano, probabilmente
+più istanze di un singolo \gls{microservizio} coesistano, in alcuni casi
 esponendo le loro \gls{API} in un indirizzo \gls{IP} diverso o in una porta
 diversa. Queste evenienze portano all'impossibilità di:
 \begin{itemize}
@@ -338,21 +342,21 @@ sufficiente utilizzare l'annotazione
 tipo \textit{constructor}, che prevede che una classe dichiari nel costruttore
 le dipendenze di cui ha bisogno che in fase di inizializzazione gli verranno
 fornite.\\
-Angular include un meccanismo di \textit{Dependency Injection} davvero solido e
+Angular include un meccanismo di \textit{Dependency Injection} solido e
 molto flessibile, il cui utilizzo si può riassumere in due semplici passi: si
 crea il servizio e si inietta la dipendenza ove necessario.\\
 Nel dettaglio, le fasi sono le seguenti:
 \begin{itemize}
     \item si crea un servizio, ovvero una classe Angular, che viene annotata
-          come \code{@Injectable}. Di \textit{default}, questo decoratore ha
+          come \code{@Injectable}. Di \textit{default} questo decoratore ha
           una
           proprietà \texttt{ProvideIn}, che crea un \textit{provider} per il
           servizio.
-          Nel caso, per esempio, di \code{ProvideIn: `root'}, viene specificato
+          Nel caso, per esempio, di \code{ProvideIn: `root'} viene specificato
           che
           Angular dovrebbe fornire il servizio nella \textit{root injector},
-          ovvero
-          diponibile a tutte le classi;
+          vale a dire
+          disponibile a tutte le classi;
           % \begin{figure}[H] 
           %     \centering 
           %     \includegraphics[scale=0.2]{progettazione/injectable.png}
@@ -377,9 +381,10 @@ Utilizzando questo \textit{pattern} è stato possibile creare una sola istanza
 di una classe, potendola utilizzare fra i vari servizi e componenti.\\
 L'utilizzo del \textit{pattern Singleton}, tuttavia, potrebbe violare il
 \gls{SRP}, rendendolo un \textit{anti-pattern}. Nel contesto del progetto di
-\textit{stage}, questo \textit{pattern} è stato utilizzato per le classi di
+\textit{stage} questo \textit{pattern} è stato utilizzato per le classi di
 tipo \textit{Controller}, \textit{Service} e \textit{Repository}. In questo
-caso il suo utilizzo è necessario in quanto sarebbe logicamente sbagliato avere
+caso il suo utilizzo è necessario, in quanto sarebbe logicamente sbagliato
+avere
 più istanze per il tipo di classi sopra citate. \cite{site-singleton}
 
 \subsection{Feature Service}
@@ -391,11 +396,11 @@ Mediante l'utilizzo del \textit{pattern} \nameref{sub:Singleton} e
 tutti i componenti dell'applicazione. \cite{site-feature-modules}
 \subsection{Lazy Loading}
 Questo \textit{pattern} è utilizzato da Angular per caricare i moduli solo nel
-momento in cui effettivamente vengono utilizzati, ottenendo così bassa la
-quantità di dati scaricata dall'utente iniziale e una diminuzione del tempo
+momento in cui effettivamente vengono utilizzati, tenendo così bassa la
+quantità di dati scaricata e una diminuzione del tempo
 necessario al caricamento dell'applicazione.\\
 Viene utilizzato questo \textit{pattern} per la gestione del \textit{routing},
-associando ad una specifica \textit{view} dell'applicazione un \textit{path} di
+mediante l'associazione di una specifica \textit{view} a un \textit{path} di
 navigazione presente nella \gls{URL}.\cite{site-lazy-loading}
 % \begin{figure}[H] 
 %     \centering 
@@ -416,8 +421,8 @@ stato.\\
 Gli \textit{Observable} sono dichiarativi, ovvero viene definita una funzione
 che non viene eseguita fino a quando un \textit{Observer} si sottoscrive ad
 esso. L'\textit{Observer} viene quindi notificato al completamento della
-funzione, e il tipo di ritorno di un \textit{Observable} può cambiare in base
-al contesto, che nel caso nel progetto di \textit{stage} è stato
+funzione, inoltre il tipo di ritorno di un \textit{Observable} può cambiare in
+base al contesto, che nel caso nel progetto di \textit{stage} è stato
 prevalentemente di tipo HTTP \textit{response}. \cite{site-observable}\\
 % \begin{figure}[H] 
 %     \centering 
@@ -457,7 +462,8 @@ gruppo è necessario specificare almeno i campi \texttt{nome, proprietario,
 Classe che permette di esporre le \gls{API} mappate nel \textit{path}
 \texttt{/gruppi}.
 L'annotazione \code{@RestController} permette di creare un \textit{controller
-    Restful}, e l'oggetto da restituire viene serializzato automaticamente in
+    Restful}, mentre l'oggetto da restituire viene serializzato automaticamente
+in
 JSON
 e restituito all'oggetto di risposta HTTP.
 \subparagraph*{Metodi principali}
@@ -515,12 +521,15 @@ in \nameref{par:GruppiController}.
 
 \myparagraph{Repository}
 \label{Repository}
-Interfacce con funzionalità \gls{JPA} che permettono di mappare una classe in
-una tabella di un \textit{database} relazionale, svolgendo anche il compito
-\gls{EntityManager}, effettuando l'accesso agli oggetti ed eseguendo operazioni
-\gls{CRUD} sui dati immagazzinati nelle tabelle del \textit{database}.\\
+\noindent Interfacce con funzionalità \gls{JPA} che permettono di mappare una
+classe in
+una tabella
+di un database relazionale. Oltre a ciò, le repository svolgono al contempo il
+compito di \gls{EntityManager}, ossia effettuano
+l'accesso agli oggetti ed eseguono operazioni \gls{CRUD} sui dati immagazzinati
+nelle tabelle del \textit{database}.\\
 Tutte queste interfacce estendono l'interfaccia \code{JpaRepository<T,ID>},
-dove \texttt{T} è il tipo della classe da mappare, ed \texttt{ID} è il tipo
+dove \texttt{T} è il tipo della classe da mappare, mentre \texttt{ID} è il tipo
 dell'identificativo della classe mappata.\\
 L'interfaccia \texttt{JpaRepository} permette di creare le \textit{query} a
 partire dal nome del metodo, senza doverlo necessariamente implementare.\\
@@ -555,9 +564,9 @@ Ci sono tre \textit{repository} nel \gls{microservizio}:
 \label{JointUsciteCrewRepository}
 Classe di \textit{repository} che contiene le uscite di un gruppo. Ogni
 qualvolta un utente aggiunge un'uscita, essa viene aggiunta alle uscite di
-tutti i gruppi a cui appartiene. Viceversa quando viene eliminata un'uscita
+tutti i gruppi a cui appartiene. Viceversa, quando viene eliminata un'uscita
 viene eliminata dalle uscite di tutti i gruppi.\\
-Un accorgimento che è stato fatto è che quando viene rimosso un gruppo, tutte
+Quando viene rimosso un gruppo tutte
 le uscite associate a quel gruppo vengono rimosse da questa tabella (n.b. le
 uscite non vengono eliminate dalla tabella \texttt{Uscite} presente nel
 \textit{database}, vengono solo eliminate le voci relative nella tabella
@@ -587,7 +596,7 @@ Classe di \textit{repository} che contiene le partecipazioni degli utenti ai
 gruppi. \\
 Come in \hyperref[JointUsciteCrewRepository]{JointUsciteCrewRepository}, quando
 viene eliminato un utente vengono rimosse le partecipazioni degli utenti a
-tutti i gruppi a cui partecipava. Tuttavia è stato deciso di non eliminare i
+tutti i gruppi a cui partecipava. Tuttavia, è stato deciso di non eliminare i
 gruppi creati da un utente nel caso di eliminazione, in quanto i gruppi non
 sono strettamente associati al suo creatore, ma sono delle entità indipendenti.
 \subsubparagraph{Metodi}
@@ -668,7 +677,7 @@ l'autenticazione  presente nell'\textit{header} della richiesta HTTP.
 Per fare ciò è stato creata una classe \texttt{AuthFilter} che estende
 l'interfaccia \texttt{AbstractGatewayFilterFactory} ed implementa il metodo
 astratto \code{GatewayFilter apply(C config)} presente nella
-\textit{superclasse}. In questa funzione viene letta la richiesta in entrata
+\textit{superclasse}. In questa funzione viene letta la richiesta in entrata e
 viene verificata l'autenticazione.
 
 % \begin{figure}[H] 
@@ -689,9 +698,10 @@ viene verificata l'autenticazione.
 % \end{figure}
 
 \subsection{Eureka Server}
-Questo \gls{microservizio} contiene solo una classe al suo interno, che è la
+Questo \gls{microservizio} contiene solo una classe al suo interno, ossia
+quella
 classe che viene generata automaticamente quando si inizializza un progetto con
-Spring. L'unica cosa aggiunta alla classe è l'annotazione
+Spring. L'unica modifica effettuata alla classe è l'annotazione
 \code{@EnableEurekaServer}, che permette di  attivare la l'\gls{Eureka Server}
 come specificato nel file \texttt{application.yml}.
 
@@ -739,9 +749,9 @@ Per eseguire ogni \gls{container} nello stesso \textit{network} è stato creato
 un file \texttt{docker-compose.yml} in cui vengono specificate le immagini
 Docker da avviare.
 \subsection{Front end}
-In questa sezione verranno descritte solo le maschere, componenti e servizi
+In questa sezione verranno descritte solo le maschere, i componenti e i servizi
 modificati in maniera rilevante o creati. Tutto ciò che era già presente nella
-\textit{web app} non verrà descritta.
+\textit{web app} non verrà descritto.
 \subsubsection{Maschere}
 \myparagraph{Homepage}
 Questa pagina permette ad un utente autenticato di visualizzare le \gls{will}
@@ -884,12 +894,10 @@ seguenti funzionalità:
 \myparagraph{Metodi}
 \begin{itemize}
     \item \class{ngOnInit}: all'inizializzazione del componente viene
-          controllato, mediante il servizio \texttt{AuthenticationService}(non
-          implementato da me), se l'utente è autenticato, in modo da valutare
-          se
-          visualizzare anche le schermate \enquote*{le mie Will} e \enquote*{le
-              Will dei
-              tuoi gruppi} o meno;
+          controllato, mediante il servizio \texttt{AuthenticationService}(già
+          implementato prima del presente \textit{stage}), se l'utente è
+          autenticato, in modo da valutare se visualizzare anche le schermate
+          \enquote*{le mie Will} e \enquote*{le Will dei tuoi gruppi} o meno;
     \item \class{getDataWithGlobalVisibility}: ottiene le \gls{will} con
           visibilità globale;
     \item \class{getDataPersonal}: ottiene le \gls{will} create dall'utente;
@@ -950,7 +958,7 @@ particolare:
 
 \myparagraph{Crewpage}
 \label{par:Crewpage}
-Questo componente è composto da una lista di \nameref{par:CrewCard}, e permette
+Questo componente è composto da una lista di \nameref{par:CrewCard} e permette
 di visualizzare le maschere dei \hyperref[par:Gruppi dell'utente]{gruppi
     dell'utente} e \hyperref[par:Gruppi]{gruppi a cui è possibile partecipare}.
 
@@ -1107,7 +1115,7 @@ un \textit{marker} nelle coordinate specifiche nei campi \texttt{latitudine} e
 \myparagraph{Metodi}
 \begin{itemize}
     \item \class{ngOnInit}: all'inizializzazione del componente viene valutato
-          se la mappa sia modificabile o no; nel caso lo fosse viene effettuato
+          se la mappa sia modificabile o no; in caso lo sia viene effettuato
           un
           \textit{binding} fra il \textit{click} sulla mappa e la funzione
           \texttt{modify\_marker};
