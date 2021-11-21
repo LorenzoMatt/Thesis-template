@@ -7354,7 +7354,7 @@
 											"top": 709.5,
 											"width": 246,
 											"height": 13,
-											"text": "UC5.5 Vis. obbiettivi di un gruppo"
+											"text": "UC5.5 Vis. obiettivi di un gruppo"
 										},
 										{
 											"_type": "LabelView",
@@ -9786,7 +9786,7 @@
 					"_parent": {
 						"$ref": "AAAAAAF8jcu7Jrwxb9E="
 					},
-					"name": "UC5.5 Vis. obbiettivi di un gruppo"
+					"name": "UC5.5 Vis. obiettivi di un gruppo"
 				},
 				{
 					"_type": "UMLUseCase",
@@ -10437,7 +10437,7 @@
 											"top": 503.5,
 											"width": 224,
 											"height": 13,
-											"text": "UC6.3 Modifica obbiettivi del gruppo"
+											"text": "UC6.3 Modifica obiettivi del gruppo"
 										},
 										{
 											"_type": "LabelView",
@@ -13098,7 +13098,7 @@
 					"_parent": {
 						"$ref": "AAAAAAF8jd5noMr8EQQ="
 					},
-					"name": "UC6.3 Modifica obbiettivi del gruppo"
+					"name": "UC6.3 Modifica obiettivi del gruppo"
 				},
 				{
 					"_type": "UMLUseCase",
@@ -13771,7 +13771,7 @@
 											"top": 407.5,
 											"width": 249,
 											"height": 13,
-											"text": "UC7.3 Inserimento  obbiettivi del gruppo"
+											"text": "UC7.3 Inserimento  obiettivi del gruppo"
 										},
 										{
 											"_type": "LabelView",
@@ -15932,7 +15932,7 @@
 					"_parent": {
 						"$ref": "AAAAAAF8jeJ/QdMT5AA="
 					},
-					"name": "UC7.3 Inserimento  obbiettivi del gruppo"
+					"name": "UC7.3 Inserimento  obiettivi del gruppo"
 				},
 				{
 					"_type": "UMLUseCase",
