@@ -179,7 +179,8 @@ che gestiscono le \textit{view} dell'applicazione e la loro logica.\\
 I dati da visualizzare nella \textit{view} vengono forniti dalle classi dette
 \textbf{servizi}. Queste classi svolgono diverse funzioni, come per esempio
 l'esecuzione delle richieste HTTP.\\
-Ad ogni component è associato un \textit{template}, ovvero del codice HTML in
+Ad ogni \textit{component} è associato un \textit{template}, ovvero del codice
+HTML in
 cui si definisce come viene visualizzato il \textit{component}.\\
 È possibile personalizzare il codice HTML utilizzando le \textbf{direttive},
 ovvero delle classi che aggiungono un comportamento aggiuntivo agli elementi
@@ -269,7 +270,7 @@ Nel contesto di questo progetto sono stati implementati tre
 \end{figure}
 Un \class{API Gateway} è uno strumento di gestione delle \gls{API} che si situa
 tra un \textit{client} e una raccolta di servizi \textit{back end}. Un
-\textit{API Gateway} si comporta come un \textit{proxy} inverso per riceve
+\textit{API Gateway} si comporta come un \textit{proxy} inverso che riceve
 tutte le chiamate \gls{API}, aggregando le chiamate alle \gls{API} dei servizi
 richiesti, gestendo e restituendo i risultati appropriati in base alle
 richieste ricevute.\\
@@ -287,7 +288,7 @@ Utilizzare un \textit{API Gateway} è vantaggioso perché:
     \centering
     \includegraphics[scale=0.4]{progettazione/registrazione-servizi.png}
     \caption{Diagramma concettuale che descrive la registrazione dei
-        microservizi all'\gls{Eureka Server}}
+        microservizi all'\textit{Eureka Server}}
 \end{figure}
 % TODO: aggungere bibliografia: https://lalverma.medium.com/spring-boot-microservices-implementing-service-discovery-cfc98e49b74f, https://microservices.io/patterns/service-registry.html
 I \glspl{microservizio} hanno una natura dinamica, in quanto è possibile che
@@ -528,7 +529,8 @@ in \nameref{par:GruppiController}.
 \noindent Interfacce con funzionalità \gls{JPA} che permettono di mappare una
 classe in
 una tabella
-di un database relazionale. Oltre a ciò, le repository svolgono al contempo il
+di un \textit{database} relazionale. Oltre a ciò, le repository svolgono al
+contempo il
 compito di \gls{EntityManager}, ossia effettuano
 l'accesso agli oggetti ed eseguono operazioni \gls{CRUD} sui dati immagazzinati
 nelle tabelle del \textit{database}.\\
@@ -568,7 +570,8 @@ Ci sono tre \textit{repository} nel \gls{microservizio}:
 \label{JointUsciteCrewRepository}
 Classe di \textit{repository} che contiene le uscite di un gruppo. Ogni
 qualvolta un utente aggiunge un'uscita, essa viene aggiunta alle uscite di
-tutti i gruppi a cui appartiene. Allo stesso modo, quando viene eliminata un'uscita
+tutti i gruppi a cui appartiene. Allo stesso modo, quando viene eliminata
+un'uscita
 viene eliminata dalle uscite di tutti i gruppi.\\
 Quando viene rimosso un gruppo tutte
 le uscite associate a quel gruppo vengono rimosse da questa tabella (n.b. le
@@ -706,7 +709,7 @@ Questo \gls{microservizio} contiene solo una classe al suo interno, ossia
 quella
 classe che viene generata automaticamente quando si inizializza un progetto con
 Spring. L'unica modifica effettuata alla classe è l'annotazione
-\code{@EnableEurekaServer}, che permette di  attivare la l'\gls{Eureka Server}
+\code{@EnableEurekaServer}, che permette di  attivare l'\gls{Eureka Server}
 come specificato nel file \texttt{application.yml}.
 
 % \begin{figure}[H] 
@@ -764,7 +767,7 @@ dei gruppi a cui partecipa.
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.6]{sito/homepage-will-globali.png}
-    \caption{Pagina di homepage}
+    \caption{Pagina homepage}
 \end{figure}
 \mysubparagraph{Componenti utilizzati}
 \begin{itemize}
@@ -915,7 +918,7 @@ seguenti funzionalità:
 Questo componente, implementato da un collega, permette di visualizzare
 l'anteprima di una \gls{will}, in particolare:
 \begin{itemize}
-    \item Il nome dell'organizzatore;
+    \item il nome dell'organizzatore;
     \item lo sport relativo all'uscita;
     \item la data d'uscita.
 \end{itemize}
@@ -992,7 +995,7 @@ di visualizzare le maschere dei \hyperref[par:Gruppi dell'utente]{gruppi
           \nameref{par:Gruppi};
     \item \class{getGlobalCrew}: ottiene i gruppi a cui non partecipa un
           utente;
-    \item \class{getUserCrew}:	ottiene i gruppi create e a cui partecipa un
+    \item \class{getUserCrew}:	ottiene i gruppi e a cui partecipa un
           utente;
     \item \class{navigateToNewCrew}: permette di navigare alla pagina di
           \hyperref[par:Crea nuovo gruppo]{creazione di un nuovo gruppo};
@@ -1092,7 +1095,7 @@ all'applicativo.
 \myparagraph{MapComponent}
 \label{par:MapComponent}
 Questo componente permette di visualizzare una mappa in cui viene segnato con
-un \textit{marker} nelle coordinate specifiche nei campi \texttt{latitudine} e
+un \textit{marker} nelle coordinate specificate nei campi \texttt{latitudine} e
 \texttt{longitudine}.
 \begin{figure}[H]
     \centerline{\includegraphics[scale=0.55]{sito/component/map-component.png}}
