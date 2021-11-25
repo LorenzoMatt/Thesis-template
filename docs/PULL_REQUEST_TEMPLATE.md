@@ -8,15 +8,15 @@ Hai dubbi o domande? Ti serve aiuto? Dai un'occhiata ai nostri gruppi social: ht
 
 ### Requisiti
 
-* E' richiesto di compilare il template. Qualsiasi pull request che non includa abbastanza informazioni per essere rivista può essere chiusa a discrezione dei manutentori.
-* Tutto il nuovo codice richiede dei test che garantiscano l'assenza idi regressioni.
+- E' richiesto di compilare il template. Qualsiasi pull request che non includa abbastanza informazioni per essere rivista può essere chiusa a discrezione dei manutentori.
+- Tutto il nuovo codice richiede dei test che garantiscano l'assenza idi regressioni.
 
 ### Descrizione delle modifiche
 
 <!--
 
-Dobbiamo essere in grado di capire il perché della modifica da questa descrizione. Se non si riesce a capire cosa faccia il codice da questa descrizione, la pull request potrebbe essere chiusa secondo la discrezione dei manutentori. Tieni a mente che i manutentori che controlleranno la PR potrebbero non avere familiarità o non aver lavorato recentemente al progetto, quindi per favore aiutali a capire 
-l'impatto delle modifiche. 
+Dobbiamo essere in grado di capire il perché della modifica da questa descrizione. Se non si riesce a capire cosa faccia il codice da questa descrizione, la pull request potrebbe essere chiusa secondo la discrezione dei manutentori. Tieni a mente che i manutentori che controlleranno la PR potrebbero non avere familiarità o non aver lavorato recentemente al progetto, quindi per favore aiutali a capire
+l'impatto delle modifiche.
 -->
 
 ### Design Alternativi
